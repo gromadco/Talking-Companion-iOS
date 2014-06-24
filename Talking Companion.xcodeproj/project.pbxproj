@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD023C08195999A3000CDC9D /* PlacesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD023C07195999A3000CDC9D /* PlacesListTableViewController.swift */; };
+		BD4F9D061959A2B5006D5987 /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4F9D051959A2B5006D5987 /* SMXMLDocument.m */; };
+		BD8D60761959C7260032B20C /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8D60741959C7260032B20C /* PlaceTableViewCell.swift */; };
+		BD8D60771959C7260032B20C /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD8D60751959C7260032B20C /* PlaceTableViewCell.xib */; };
 		BDB58981195888670090E178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB58980195888670090E178 /* AppDelegate.swift */; };
-		BDB58983195888670090E178 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB58982195888670090E178 /* ViewController.swift */; };
 		BDB58986195888670090E178 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDB58984195888670090E178 /* Main.storyboard */; };
 		BDB58988195888670090E178 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB58987195888670090E178 /* Images.xcassets */; };
 		BDB58994195888670090E178 /* Talking_CompanionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB58993195888670090E178 /* Talking_CompanionTests.swift */; };
+		BDB589A51958AE8B0090E178 /* map.osm in Resources */ = {isa = PBXBuildFile; fileRef = BDB589A41958AE8B0090E178 /* map.osm */; };
+		BDB589A71958AEDB0090E178 /* OSMNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB589A61958AEDB0090E178 /* OSMNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,15 +30,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD023C07195999A3000CDC9D /* PlacesListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesListTableViewController.swift; sourceTree = "<group>"; };
+		BD4F9D041959A2B5006D5987 /* SMXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMXMLDocument.h; sourceTree = "<group>"; };
+		BD4F9D051959A2B5006D5987 /* SMXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMXMLDocument.m; sourceTree = "<group>"; };
+		BD8D60461959B4B30032B20C /* Talking Companion-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Talking Companion-Bridging-Header.h"; sourceTree = "<group>"; };
+		BD8D60741959C7260032B20C /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
+		BD8D60751959C7260032B20C /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
 		BDB5897B195888670090E178 /* Talking Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Talking Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB5897F195888670090E178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDB58980195888670090E178 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BDB58982195888670090E178 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BDB58985195888670090E178 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BDB58987195888670090E178 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BDB5898D195888670090E178 /* Talking CompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Talking CompanionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB58992195888670090E178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDB58993195888670090E178 /* Talking_CompanionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talking_CompanionTests.swift; sourceTree = "<group>"; };
+		BDB589A41958AE8B0090E178 /* map.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.osm; sourceTree = "<group>"; };
+		BDB589A61958AEDB0090E178 /* OSMNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD4F9D031959A2B5006D5987 /* SMXMLDocument */ = {
+			isa = PBXGroup;
+			children = (
+				BD4F9D041959A2B5006D5987 /* SMXMLDocument.h */,
+				BD4F9D051959A2B5006D5987 /* SMXMLDocument.m */,
+			);
+			path = SMXMLDocument;
+			sourceTree = "<group>";
+		};
 		BDB58972195888670090E178 = {
 			isa = PBXGroup;
 			children = (
@@ -75,9 +96,11 @@
 		BDB5897D195888670090E178 /* Talking Companion */ = {
 			isa = PBXGroup;
 			children = (
+				BDB589A31958AE8B0090E178 /* Resources */,
+				BDB5899E1958AE3F0090E178 /* Custom classes */,
+				BDB5899F1958AE4D0090E178 /* ViewContollers */,
 				BDB58980195888670090E178 /* AppDelegate.swift */,
-				BDB58982195888670090E178 /* ViewController.swift */,
-				BDB58984195888670090E178 /* Main.storyboard */,
+				BD8D60461959B4B30032B20C /* Talking Companion-Bridging-Header.h */,
 				BDB58987195888670090E178 /* Images.xcassets */,
 				BDB5897E195888670090E178 /* Supporting Files */,
 			);
@@ -107,6 +130,34 @@
 				BDB58992195888670090E178 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BDB5899E1958AE3F0090E178 /* Custom classes */ = {
+			isa = PBXGroup;
+			children = (
+				BDB589A61958AEDB0090E178 /* OSMNode.swift */,
+			);
+			name = "Custom classes";
+			sourceTree = "<group>";
+		};
+		BDB5899F1958AE4D0090E178 /* ViewContollers */ = {
+			isa = PBXGroup;
+			children = (
+				BDB58984195888670090E178 /* Main.storyboard */,
+				BD023C07195999A3000CDC9D /* PlacesListTableViewController.swift */,
+				BD8D60741959C7260032B20C /* PlaceTableViewCell.swift */,
+				BD8D60751959C7260032B20C /* PlaceTableViewCell.xib */,
+			);
+			name = ViewContollers;
+			sourceTree = "<group>";
+		};
+		BDB589A31958AE8B0090E178 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BD4F9D031959A2B5006D5987 /* SMXMLDocument */,
+				BDB589A41958AE8B0090E178 /* map.osm */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,8 +240,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDB589A51958AE8B0090E178 /* map.osm in Resources */,
 				BDB58986195888670090E178 /* Main.storyboard in Resources */,
 				BDB58988195888670090E178 /* Images.xcassets in Resources */,
+				BD8D60771959C7260032B20C /* PlaceTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,8 +261,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDB58983195888670090E178 /* ViewController.swift in Sources */,
+				BD023C08195999A3000CDC9D /* PlacesListTableViewController.swift in Sources */,
 				BDB58981195888670090E178 /* AppDelegate.swift in Sources */,
+				BDB589A71958AEDB0090E178 /* OSMNode.swift in Sources */,
+				BD4F9D061959A2B5006D5987 /* SMXMLDocument.m in Sources */,
+				BD8D60761959C7260032B20C /* PlaceTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +337,8 @@
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Talking Companion/Talking Companion-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -316,6 +374,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				METAL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Talking Companion/Talking Companion-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
