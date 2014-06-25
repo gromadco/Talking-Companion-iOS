@@ -1,37 +1,76 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pGL-h9-zzr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="I51-cH-MMB">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
     </dependencies>
     <scenes>
-        <!--Places List Table View Controller-->
-        <scene sceneID="Uuv-rl-fhP">
+        <!--Main View Controller-->
+        <scene sceneID="wMz-Ul-Zq7">
             <objects>
-                <tableViewController id="pGL-h9-zzr" customClass="PlacesListTableViewController" customModule="Talking_Companion" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="117" sectionHeaderHeight="22" sectionFooterHeight="22" id="7fQ-lp-375">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                <viewController id="I51-cH-MMB" customClass="MainViewController" customModule="Talking_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pV6-1g-lTa"/>
+                        <viewControllerLayoutGuide type="bottom" id="FCm-z1-55l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rlf-2F-lZF">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current speed:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLz-jx-c65">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="103" y="210" width="115" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0U4-Zf-lF3">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="239" width="280" height="21"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKc-HR-cXx">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="load manager">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="67" y="20" width="187" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="loadManagerButtonPressed:" destination="I51-cH-MMB" eventType="touchUpInside" id="HSf-kg-kg0"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                        <variation key="widthClass=compact" ambiguous="YES">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="aLz-jx-c65"/>
+                                <exclude reference="0U4-Zf-lF3"/>
+                                <exclude reference="JKc-HR-cXx"/>
+                            </mask>
                         </variation>
-                        <variation key="heightClass=compact-widthClass=compact" ambiguous="YES">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="aLz-jx-c65"/>
+                                <include reference="0U4-Zf-lF3"/>
+                                <include reference="JKc-HR-cXx"/>
+                            </mask>
                         </variation>
-                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
-                        </variation>
-                        <connections>
-                            <outlet property="dataSource" destination="pGL-h9-zzr" id="7lr-73-cHA"/>
-                            <outlet property="delegate" destination="pGL-h9-zzr" id="v35-qj-vho"/>
-                        </connections>
-                    </tableView>
-                    <size key="freeformSize" width="320" height="480"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lkl-hV-DgP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <connections>
+                        <outlet property="currentSpeedLabel" destination="0U4-Zf-lF3" id="MNb-mg-2GF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F1p-Az-nyt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="279" y="282"/>
+            <point key="canvasLocation" x="28.5" y="347"/>
         </scene>
     </scenes>
 </document>

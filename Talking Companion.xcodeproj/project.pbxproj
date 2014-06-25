@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		BD023C08195999A3000CDC9D /* PlacesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD023C07195999A3000CDC9D /* PlacesListTableViewController.swift */; };
+		BD2E7C80195AEAFB00D57518 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */; };
 		BD4F9D061959A2B5006D5987 /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4F9D051959A2B5006D5987 /* SMXMLDocument.m */; };
 		BD647CC1195AD6B60078DE44 /* OSMWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD647CC0195AD6B60078DE44 /* OSMWay.swift */; };
+		BD647CC3195AE7980078DE44 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD647CC2195AE7980078DE44 /* MainViewController.swift */; };
 		BD8D60761959C7260032B20C /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8D60741959C7260032B20C /* PlaceTableViewCell.swift */; };
 		BD8D60771959C7260032B20C /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD8D60751959C7260032B20C /* PlaceTableViewCell.xib */; };
 		BDB58981195888670090E178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB58980195888670090E178 /* AppDelegate.swift */; };
@@ -32,9 +34,11 @@
 
 /* Begin PBXFileReference section */
 		BD023C07195999A3000CDC9D /* PlacesListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesListTableViewController.swift; sourceTree = "<group>"; };
+		BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BD4F9D041959A2B5006D5987 /* SMXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMXMLDocument.h; sourceTree = "<group>"; };
 		BD4F9D051959A2B5006D5987 /* SMXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMXMLDocument.m; sourceTree = "<group>"; };
 		BD647CC0195AD6B60078DE44 /* OSMWay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMWay.swift; sourceTree = "<group>"; };
+		BD647CC2195AE7980078DE44 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BD8D60461959B4B30032B20C /* Talking Companion-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Talking Companion-Bridging-Header.h"; sourceTree = "<group>"; };
 		BD8D60741959C7260032B20C /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
 		BD8D60751959C7260032B20C /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
@@ -55,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD2E7C80195AEAFB00D57518 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,9 +82,20 @@
 			path = SMXMLDocument;
 			sourceTree = "<group>";
 		};
+		BD647CC4195AE7A00078DE44 /* not used yet */ = {
+			isa = PBXGroup;
+			children = (
+				BD023C07195999A3000CDC9D /* PlacesListTableViewController.swift */,
+				BD8D60741959C7260032B20C /* PlaceTableViewCell.swift */,
+				BD8D60751959C7260032B20C /* PlaceTableViewCell.xib */,
+			);
+			name = "not used yet";
+			sourceTree = "<group>";
+		};
 		BDB58972195888670090E178 = {
 			isa = PBXGroup;
 			children = (
+				BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */,
 				BDB5897D195888670090E178 /* Talking Companion */,
 				BDB58990195888670090E178 /* Talking CompanionTests */,
 				BDB5897C195888670090E178 /* Products */,
@@ -147,9 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				BDB58984195888670090E178 /* Main.storyboard */,
-				BD023C07195999A3000CDC9D /* PlacesListTableViewController.swift */,
-				BD8D60741959C7260032B20C /* PlaceTableViewCell.swift */,
-				BD8D60751959C7260032B20C /* PlaceTableViewCell.xib */,
+				BD647CC2195AE7980078DE44 /* MainViewController.swift */,
+				BD647CC4195AE7A00078DE44 /* not used yet */,
 			);
 			name = ViewContollers;
 			sourceTree = "<group>";
@@ -212,6 +227,11 @@
 				TargetAttributes = {
 					BDB5897A195888670090E178 = {
 						CreatedOnToolsVersion = 6.0;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					BDB5898C195888670090E178 = {
 						CreatedOnToolsVersion = 6.0;
@@ -264,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD647CC3195AE7980078DE44 /* MainViewController.swift in Sources */,
 				BD023C08195999A3000CDC9D /* PlacesListTableViewController.swift in Sources */,
 				BDB58981195888670090E178 /* AppDelegate.swift in Sources */,
 				BDB589A71958AEDB0090E178 /* OSMNode.swift in Sources */,
@@ -340,6 +361,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Talking Companion/Talking Companion-Bridging-Header.h";
@@ -377,6 +399,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				METAL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Talking Companion/Talking Companion-Bridging-Header.h";
@@ -390,8 +413,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Talking Companion/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -401,8 +426,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Talking Companion/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
