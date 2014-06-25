@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BD023C08195999A3000CDC9D /* PlacesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD023C07195999A3000CDC9D /* PlacesListTableViewController.swift */; };
 		BD4F9D061959A2B5006D5987 /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4F9D051959A2B5006D5987 /* SMXMLDocument.m */; };
+		BD647CC1195AD6B60078DE44 /* OSMWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD647CC0195AD6B60078DE44 /* OSMWay.swift */; };
 		BD8D60761959C7260032B20C /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8D60741959C7260032B20C /* PlaceTableViewCell.swift */; };
 		BD8D60771959C7260032B20C /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD8D60751959C7260032B20C /* PlaceTableViewCell.xib */; };
 		BDB58981195888670090E178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB58980195888670090E178 /* AppDelegate.swift */; };
@@ -33,6 +34,7 @@
 		BD023C07195999A3000CDC9D /* PlacesListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesListTableViewController.swift; sourceTree = "<group>"; };
 		BD4F9D041959A2B5006D5987 /* SMXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMXMLDocument.h; sourceTree = "<group>"; };
 		BD4F9D051959A2B5006D5987 /* SMXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMXMLDocument.m; sourceTree = "<group>"; };
+		BD647CC0195AD6B60078DE44 /* OSMWay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMWay.swift; sourceTree = "<group>"; };
 		BD8D60461959B4B30032B20C /* Talking Companion-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Talking Companion-Bridging-Header.h"; sourceTree = "<group>"; };
 		BD8D60741959C7260032B20C /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
 		BD8D60751959C7260032B20C /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				BDB589A61958AEDB0090E178 /* OSMNode.swift */,
+				BD647CC0195AD6B60078DE44 /* OSMWay.swift */,
 			);
 			name = "Custom classes";
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				BDB589A71958AEDB0090E178 /* OSMNode.swift in Sources */,
 				BD4F9D061959A2B5006D5987 /* SMXMLDocument.m in Sources */,
 				BD8D60761959C7260032B20C /* PlaceTableViewCell.swift in Sources */,
+				BD647CC1195AD6B60078DE44 /* OSMWay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

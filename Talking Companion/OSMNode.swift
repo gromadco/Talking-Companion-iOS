@@ -34,13 +34,13 @@ class OSMNode: NSObject {
         var description:String = "node at (\(self.latitude); \(self.longitude)) by user '\(user)'"
         
         if let amenity = self.amenity {
-            description += " ;amenity = '\(amenity)'"
+            description += "; amenity = '\(amenity)'"
         }
         if let shop = self.shop {
-            description += " shop = '\(shop)'"
+            description += "; shop = '\(shop)'"
         }
         if let operator = self.operator {
-            description += " operator = '\(operator)'"
+            description += "; operator = '\(operator)'"
         }
         
         return description
@@ -49,7 +49,5 @@ class OSMNode: NSObject {
     func coordinates() -> String {
         return "(\(self.latitude); \(self.longitude))"
     }
-    
-    
 }
 
