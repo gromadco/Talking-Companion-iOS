@@ -1,0 +1,20 @@
+//
+//  SpeedViewController.h
+//  Talking Companion
+//
+//  Created by Sergey Butenko on 25.06.14.
+//  Copyright (c) 2014 serejahh inc. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+
+@interface SpeedViewController : UIViewController <CLLocationManagerDelegate>
+{
+    CLLocationManager *manager;
+    CLLocationSpeed currentSpeed;
+}
+
+@property (weak, nonatomic) IBOutlet UILabel *currentSpeedLabel;
+
+@end

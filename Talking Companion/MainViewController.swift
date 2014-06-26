@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreLocation
+import AVFoundation
 
-class MainViewController: UIViewController, CLLocationManagerDelegate {
+class MainViewController: UIViewController {
 
     @IBOutlet var currentSpeedLabel: UILabel
     
@@ -19,18 +20,18 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func loadLocationManager() {
-        var manager = CLLocationManager()
-        manager.delegate = self;
-        
-        manager.distanceFilter = kCLDistanceFilterNone;
-        manager.desiredAccuracy = kCLLocationAccuracyBest;
-        manager.purpose = "geolocation disabled";
-        
-        manager.startUpdatingLocation()
+        var sentence = AVSpeechUtterance(string: "Yeah. It works!")
+        var synth = AVSpeechSynthesizer()
+        synth.speakUtterance(sentence);
+
     }
     
     @IBAction func loadManagerButtonPressed(sender: AnyObject) {
         loadLocationManager()
+    }
+    
+    func locationUpdated(newLocation: CLLocation!, oldLocation: CLLocation!) {
+        
     }
     
     // MARK: - CLLocationManager Delegate

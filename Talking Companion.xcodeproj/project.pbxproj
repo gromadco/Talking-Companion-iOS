@@ -20,6 +20,8 @@
 		BDB58994195888670090E178 /* Talking_CompanionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB58993195888670090E178 /* Talking_CompanionTests.swift */; };
 		BDB589A51958AE8B0090E178 /* map.osm in Resources */ = {isa = PBXBuildFile; fileRef = BDB589A41958AE8B0090E178 /* map.osm */; };
 		BDB589A71958AEDB0090E178 /* OSMNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB589A61958AEDB0090E178 /* OSMNode.swift */; };
+		BDD89B83195B05670020ACA7 /* SpeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD89B82195B05670020ACA7 /* SpeedViewController.m */; };
+		BDD89B85195B095F0020ACA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD89B84195B095F0020ACA7 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,9 @@
 		BDB58993195888670090E178 /* Talking_CompanionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talking_CompanionTests.swift; sourceTree = "<group>"; };
 		BDB589A41958AE8B0090E178 /* map.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.osm; sourceTree = "<group>"; };
 		BDB589A61958AEDB0090E178 /* OSMNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMNode.swift; sourceTree = "<group>"; };
+		BDD89B81195B05670020ACA7 /* SpeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeedViewController.h; sourceTree = "<group>"; };
+		BDD89B82195B05670020ACA7 /* SpeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeedViewController.m; sourceTree = "<group>"; };
+		BDD89B84195B095F0020ACA7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDD89B85195B095F0020ACA7 /* AVFoundation.framework in Frameworks */,
 				BD2E7C80195AEAFB00D57518 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,6 +91,7 @@
 		BD647CC4195AE7A00078DE44 /* not used yet */ = {
 			isa = PBXGroup;
 			children = (
+				BD647CC2195AE7980078DE44 /* MainViewController.swift */,
 				BD023C07195999A3000CDC9D /* PlacesListTableViewController.swift */,
 				BD8D60741959C7260032B20C /* PlaceTableViewCell.swift */,
 				BD8D60751959C7260032B20C /* PlaceTableViewCell.xib */,
@@ -95,6 +102,7 @@
 		BDB58972195888670090E178 = {
 			isa = PBXGroup;
 			children = (
+				BDD89B84195B095F0020ACA7 /* AVFoundation.framework */,
 				BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */,
 				BDB5897D195888670090E178 /* Talking Companion */,
 				BDB58990195888670090E178 /* Talking CompanionTests */,
@@ -163,8 +171,9 @@
 			isa = PBXGroup;
 			children = (
 				BDB58984195888670090E178 /* Main.storyboard */,
-				BD647CC2195AE7980078DE44 /* MainViewController.swift */,
 				BD647CC4195AE7A00078DE44 /* not used yet */,
+				BDD89B81195B05670020ACA7 /* SpeedViewController.h */,
+				BDD89B82195B05670020ACA7 /* SpeedViewController.m */,
 			);
 			name = ViewContollers;
 			sourceTree = "<group>";
@@ -284,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDD89B83195B05670020ACA7 /* SpeedViewController.m in Sources */,
 				BD647CC3195AE7980078DE44 /* MainViewController.swift in Sources */,
 				BD023C08195999A3000CDC9D /* PlacesListTableViewController.swift in Sources */,
 				BDB58981195888670090E178 /* AppDelegate.swift in Sources */,
