@@ -8,6 +8,8 @@
 
 #import "SpeedViewController.h"
 
+static const NSTimeInterval pronounceSpeedTimerInterval = 15;
+
 @implementation SpeedViewController
 
 - (void)viewDidLoad
@@ -18,6 +20,23 @@
     manager.delegate = self;
     manager.desiredAccuracy = kCLLocationAccuracyBest;
     [manager startUpdatingLocation];
+    
+    speechTimer = [NSTimer scheduledTimerWithTimeInterval:pronounceSpeedTimerInterval target:self selector:@selector(pronounceSpeed) userInfo:nil repeats:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    if ([speechTimer isValid]) {
+        [speechTimer invalidate];
+    }
+}
+
+- (void)pronounceSpeed
+{
+    NSString *string = [NSString stringWithFormat:@"%.2lf km per hour", currentSpeed];
+    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:string];
+    [synth speakUtterance:utterance];
 }
 
 #pragma mark - CLLocationManager Delegate

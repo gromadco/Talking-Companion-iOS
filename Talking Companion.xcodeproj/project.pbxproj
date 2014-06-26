@@ -102,10 +102,9 @@
 		BDB58972195888670090E178 = {
 			isa = PBXGroup;
 			children = (
-				BDD89B84195B095F0020ACA7 /* AVFoundation.framework */,
-				BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */,
 				BDB5897D195888670090E178 /* Talking Companion */,
 				BDB58990195888670090E178 /* Talking CompanionTests */,
+				BDFFA009195C367700288E6D /* Frameworks */,
 				BDB5897C195888670090E178 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -185,6 +184,16 @@
 				BDB589A41958AE8B0090E178 /* map.osm */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		BDFFA009195C367700288E6D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDD89B84195B095F0020ACA7 /* AVFoundation.framework */,
+				BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			path = "Talking CompanionTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
