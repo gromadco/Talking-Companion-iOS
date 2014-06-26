@@ -14,11 +14,16 @@
 {
     CLLocationManager *manager;
     CLLocationSpeed currentSpeed;
+    CLLocation *currentLocation;
+    NSArray *nodes;
     
     AVSpeechSynthesizer *synth;
     NSTimer *speechTimer;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *currentSpeedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 
 @end

@@ -15,6 +15,7 @@ class OSMWay: NSObject {
     var wayId:String
     var user:String
     var nodes:Array<String> = Array()
+    var isAnnounced = false
     
     var amenity:String?
     var building:String?

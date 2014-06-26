@@ -7,47 +7,47 @@
 //
 
 import UIKit
+import CoreLocation
 
 class OSMNode: NSObject {
     
     // MARK: - Properties
     
-    var latitude:Double
-    var longitude:Double
-    
+    var location:CLLocation
     var user:String
+    var isAnnounced = false
+    
+    
     var amenity:String?
-    var shop:String?
+    var name:String?
     var operator:String?
+    var shop:String?
     
     // MARK: - Initializing
 
     init(latitude:Double, longitude:Double, user:NSString) {
-        self.latitude = latitude
-        self.longitude = longitude
+        self.location = CLLocation(latitude: latitude, longitude: longitude)
         self.user = user
     }
     
     // MARK: - Other
 
     func description() -> String {
-        var description:String = "node at (\(self.latitude); \(self.longitude)) by user '\(user)'"
+        var description:String = "node at (\(self.location.coordinate.latitude); \(self.location.coordinate.longitude))"
         
-        if let amenity = self.amenity {
-            description += "; amenity = '\(amenity)'"
-        }
-        if let shop = self.shop {
-            description += "; shop = '\(shop)'"
-        }
-        if let operator = self.operator {
-            description += "; operator = '\(operator)'"
+        if let name = self.name {
+            description += "; name = '\(name)'"
         }
         
         return description
     }
     
     func coordinates() -> String {
-        return "(\(self.latitude); \(self.longitude))"
+        return "(\(self.location.coordinate.latitude); \(self.location.coordinate.longitude))"
+    }
+    
+    func announce() {
+        self.isAnnounced = true;
     }
 }
 

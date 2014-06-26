@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BD023C08195999A3000CDC9D /* PlacesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD023C07195999A3000CDC9D /* PlacesListTableViewController.swift */; };
+		BD1302CA195C4D05008FFE4C /* gps.gpx in Resources */ = {isa = PBXBuildFile; fileRef = BD1302C9195C4D05008FFE4C /* gps.gpx */; };
 		BD2E7C80195AEAFB00D57518 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */; };
 		BD4F9D061959A2B5006D5987 /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4F9D051959A2B5006D5987 /* SMXMLDocument.m */; };
 		BD647CC1195AD6B60078DE44 /* OSMWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD647CC0195AD6B60078DE44 /* OSMWay.swift */; };
@@ -22,6 +23,7 @@
 		BDB589A71958AEDB0090E178 /* OSMNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB589A61958AEDB0090E178 /* OSMNode.swift */; };
 		BDD89B83195B05670020ACA7 /* SpeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD89B82195B05670020ACA7 /* SpeedViewController.m */; };
 		BDD89B85195B095F0020ACA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD89B84195B095F0020ACA7 /* AVFoundation.framework */; };
+		BDFFA00B195C38C400288E6D /* OSMElementsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFFA00A195C38C400288E6D /* OSMElementsParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		BD023C07195999A3000CDC9D /* PlacesListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesListTableViewController.swift; sourceTree = "<group>"; };
+		BD1302C9195C4D05008FFE4C /* gps.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = gps.gpx; path = ../../gps.gpx; sourceTree = "<group>"; };
 		BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BD4F9D041959A2B5006D5987 /* SMXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMXMLDocument.h; sourceTree = "<group>"; };
 		BD4F9D051959A2B5006D5987 /* SMXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMXMLDocument.m; sourceTree = "<group>"; };
@@ -57,6 +60,7 @@
 		BDD89B81195B05670020ACA7 /* SpeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeedViewController.h; sourceTree = "<group>"; };
 		BDD89B82195B05670020ACA7 /* SpeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeedViewController.m; sourceTree = "<group>"; };
 		BDD89B84195B095F0020ACA7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BDFFA00A195C38C400288E6D /* OSMElementsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMElementsParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,7 @@
 			children = (
 				BDB589A61958AEDB0090E178 /* OSMNode.swift */,
 				BD647CC0195AD6B60078DE44 /* OSMWay.swift */,
+				BDFFA00A195C38C400288E6D /* OSMElementsParser.swift */,
 			);
 			name = "Custom classes";
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				BD4F9D031959A2B5006D5987 /* SMXMLDocument */,
+				BD1302C9195C4D05008FFE4C /* gps.gpx */,
 				BDB589A41958AE8B0090E178 /* map.osm */,
 			);
 			path = Resources;
@@ -281,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD1302CA195C4D05008FFE4C /* gps.gpx in Resources */,
 				BDB589A51958AE8B0090E178 /* map.osm in Resources */,
 				BDB58986195888670090E178 /* Main.storyboard in Resources */,
 				BDB58988195888670090E178 /* Images.xcassets in Resources */,
@@ -307,6 +314,7 @@
 				BD023C08195999A3000CDC9D /* PlacesListTableViewController.swift in Sources */,
 				BDB58981195888670090E178 /* AppDelegate.swift in Sources */,
 				BDB589A71958AEDB0090E178 /* OSMNode.swift in Sources */,
+				BDFFA00B195C38C400288E6D /* OSMElementsParser.swift in Sources */,
 				BD4F9D061959A2B5006D5987 /* SMXMLDocument.m in Sources */,
 				BD8D60761959C7260032B20C /* PlaceTableViewCell.swift in Sources */,
 				BD647CC1195AD6B60078DE44 /* OSMWay.swift in Sources */,
@@ -434,7 +442,7 @@
 				INFOPLIST_FILE = "Talking Companion/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Talking Companion";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -447,7 +455,7 @@
 				INFOPLIST_FILE = "Talking Companion/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Talking Companion";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -467,7 +475,7 @@
 				INFOPLIST_FILE = "Talking CompanionTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Talking CompanionTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -483,7 +491,7 @@
 				INFOPLIST_FILE = "Talking CompanionTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Talking CompanionTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
