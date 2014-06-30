@@ -19,11 +19,16 @@
     
     AVSpeechSynthesizer *synth;
     NSTimer *speechTimer;
+    
+    NSTimer *announceDirectionTimer;
+    CLLocation *previousLocation;
+    CLLocation *closestPlaceLocation;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *currentSpeedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *directionLabel;
 
 @end

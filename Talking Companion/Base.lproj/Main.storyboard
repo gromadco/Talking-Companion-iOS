@@ -40,7 +40,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="52" width="129" height="21"/>
+                                    <rect key="frame" x="20" y="52" width="115" height="21"/>
                                 </variation>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvN-GG-6dF">
@@ -70,6 +70,15 @@
                                     <rect key="frame" x="20" y="114" width="39" height="21"/>
                                 </variation>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="direction:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9x-ji-gRC">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="137" width="72" height="21"/>
+                                </variation>
+                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjF-NS-KER">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -94,7 +103,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="63" y="114" width="237" height="21"/>
+                                    <rect key="frame" x="67" y="114" width="233" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ON-Ce-3gt">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="100" y="137" width="200" height="21"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -108,9 +126,11 @@
                                 <exclude reference="yvN-GG-6dF"/>
                                 <exclude reference="3rk-Xb-2c3"/>
                                 <exclude reference="D2s-g5-09a"/>
+                                <exclude reference="Z9x-ji-gRC"/>
                                 <exclude reference="IjF-NS-KER"/>
                                 <exclude reference="yTZ-2r-SL3"/>
                                 <exclude reference="Xb4-f1-WCi"/>
+                                <exclude reference="4ON-Ce-3gt"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -121,14 +141,17 @@
                                 <include reference="yvN-GG-6dF"/>
                                 <include reference="3rk-Xb-2c3"/>
                                 <include reference="D2s-g5-09a"/>
+                                <include reference="Z9x-ji-gRC"/>
                                 <include reference="IjF-NS-KER"/>
                                 <include reference="yTZ-2r-SL3"/>
                                 <include reference="Xb4-f1-WCi"/>
+                                <include reference="4ON-Ce-3gt"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="currentSpeedLabel" destination="0U4-Zf-lF3" id="2tA-2R-nFi"/>
+                        <outlet property="directionLabel" destination="4ON-Ce-3gt" id="0le-yQ-Uwl"/>
                         <outlet property="distanceLabel" destination="yTZ-2r-SL3" id="ioh-WF-jZK"/>
                         <outlet property="nameLabel" destination="IjF-NS-KER" id="5Zf-3m-Etz"/>
                         <outlet property="typeLabel" destination="Xb4-f1-WCi" id="5NJ-u9-y69"/>
