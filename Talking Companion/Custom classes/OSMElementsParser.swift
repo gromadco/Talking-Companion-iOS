@@ -28,7 +28,7 @@ class OSMElementsParser: NSObject {
     
     // MARK: - Parsing
     
-    func parser() -> SMXMLDocument {
+    func parser() -> AnyObject {
         var filePath = NSBundle.mainBundle().pathForResource("map", ofType:"osm")
         var data = NSData(contentsOfFile:filePath)
         var xml = NSString(data: data, encoding: NSUTF8StringEncoding)
@@ -38,7 +38,7 @@ class OSMElementsParser: NSObject {
     }
     
     func parseNodes() -> Array<OSMNode> {
-        let parser = self.parser()
+        let parser:SMXMLDocument = self.parser() as SMXMLDocument
         
         var node:OSMNode
         var nodes:Array<OSMNode> = Array()
@@ -79,7 +79,7 @@ class OSMElementsParser: NSObject {
     }
     
     func parseWays() -> Array<OSMWay> {
-        let parser = self.parser()
+        let parser:SMXMLDocument = self.parser() as SMXMLDocument
         
         var way:OSMWay
         var ways:Array<OSMWay> = Array()

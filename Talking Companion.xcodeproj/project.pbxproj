@@ -7,23 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BD023C08195999A3000CDC9D /* PlacesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD023C07195999A3000CDC9D /* PlacesListTableViewController.swift */; };
 		BD1302CA195C4D05008FFE4C /* gps.gpx in Resources */ = {isa = PBXBuildFile; fileRef = BD1302C9195C4D05008FFE4C /* gps.gpx */; };
 		BD2E7C80195AEAFB00D57518 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */; };
 		BD4F9D061959A2B5006D5987 /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4F9D051959A2B5006D5987 /* SMXMLDocument.m */; };
-		BD647CC1195AD6B60078DE44 /* OSMWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD647CC0195AD6B60078DE44 /* OSMWay.swift */; };
-		BD647CC3195AE7980078DE44 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD647CC2195AE7980078DE44 /* MainViewController.swift */; };
-		BD8D60761959C7260032B20C /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8D60741959C7260032B20C /* PlaceTableViewCell.swift */; };
-		BD8D60771959C7260032B20C /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD8D60751959C7260032B20C /* PlaceTableViewCell.xib */; };
+		BD4FBD171963174400D8F725 /* OSMElementsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4FBD141963174400D8F725 /* OSMElementsParser.swift */; };
+		BD4FBD181963174400D8F725 /* OSMNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4FBD151963174400D8F725 /* OSMNode.swift */; };
+		BD4FBD191963174400D8F725 /* OSMWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4FBD161963174400D8F725 /* OSMWay.swift */; };
+		BD4FBD251963179200D8F725 /* SpeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4FBD201963179200D8F725 /* SpeedViewController.m */; };
 		BDB58981195888670090E178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB58980195888670090E178 /* AppDelegate.swift */; };
 		BDB58986195888670090E178 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDB58984195888670090E178 /* Main.storyboard */; };
 		BDB58988195888670090E178 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB58987195888670090E178 /* Images.xcassets */; };
 		BDB58994195888670090E178 /* Talking_CompanionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB58993195888670090E178 /* Talking_CompanionTests.swift */; };
 		BDB589A51958AE8B0090E178 /* map.osm in Resources */ = {isa = PBXBuildFile; fileRef = BDB589A41958AE8B0090E178 /* map.osm */; };
-		BDB589A71958AEDB0090E178 /* OSMNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB589A61958AEDB0090E178 /* OSMNode.swift */; };
-		BDD89B83195B05670020ACA7 /* SpeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD89B82195B05670020ACA7 /* SpeedViewController.m */; };
 		BDD89B85195B095F0020ACA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD89B84195B095F0020ACA7 /* AVFoundation.framework */; };
-		BDFFA00B195C38C400288E6D /* OSMElementsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFFA00A195C38C400288E6D /* OSMElementsParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,16 +33,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BD023C07195999A3000CDC9D /* PlacesListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesListTableViewController.swift; sourceTree = "<group>"; };
 		BD1302C9195C4D05008FFE4C /* gps.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = gps.gpx; path = ../../gps.gpx; sourceTree = "<group>"; };
 		BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BD4F9D041959A2B5006D5987 /* SMXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMXMLDocument.h; sourceTree = "<group>"; };
 		BD4F9D051959A2B5006D5987 /* SMXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMXMLDocument.m; sourceTree = "<group>"; };
-		BD647CC0195AD6B60078DE44 /* OSMWay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMWay.swift; sourceTree = "<group>"; };
-		BD647CC2195AE7980078DE44 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BD4FBD141963174400D8F725 /* OSMElementsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMElementsParser.swift; sourceTree = "<group>"; };
+		BD4FBD151963174400D8F725 /* OSMNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMNode.swift; sourceTree = "<group>"; };
+		BD4FBD161963174400D8F725 /* OSMWay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMWay.swift; sourceTree = "<group>"; };
+		BD4FBD1F1963179200D8F725 /* SpeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeedViewController.h; sourceTree = "<group>"; };
+		BD4FBD201963179200D8F725 /* SpeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeedViewController.m; sourceTree = "<group>"; };
 		BD8D60461959B4B30032B20C /* Talking Companion-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Talking Companion-Bridging-Header.h"; sourceTree = "<group>"; };
-		BD8D60741959C7260032B20C /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
-		BD8D60751959C7260032B20C /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
 		BDB5897B195888670090E178 /* Talking Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Talking Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB5897F195888670090E178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDB58980195888670090E178 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,11 +52,7 @@
 		BDB58992195888670090E178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDB58993195888670090E178 /* Talking_CompanionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talking_CompanionTests.swift; sourceTree = "<group>"; };
 		BDB589A41958AE8B0090E178 /* map.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.osm; sourceTree = "<group>"; };
-		BDB589A61958AEDB0090E178 /* OSMNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMNode.swift; sourceTree = "<group>"; };
-		BDD89B81195B05670020ACA7 /* SpeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeedViewController.h; sourceTree = "<group>"; };
-		BDD89B82195B05670020ACA7 /* SpeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeedViewController.m; sourceTree = "<group>"; };
 		BDD89B84195B095F0020ACA7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		BDFFA00A195C38C400288E6D /* OSMElementsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMElementsParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,15 +84,24 @@
 			path = SMXMLDocument;
 			sourceTree = "<group>";
 		};
-		BD647CC4195AE7A00078DE44 /* not used yet */ = {
+		BD4FBD131963174400D8F725 /* Custom classes */ = {
 			isa = PBXGroup;
 			children = (
-				BD647CC2195AE7980078DE44 /* MainViewController.swift */,
-				BD023C07195999A3000CDC9D /* PlacesListTableViewController.swift */,
-				BD8D60741959C7260032B20C /* PlaceTableViewCell.swift */,
-				BD8D60751959C7260032B20C /* PlaceTableViewCell.xib */,
+				BD4FBD141963174400D8F725 /* OSMElementsParser.swift */,
+				BD4FBD151963174400D8F725 /* OSMNode.swift */,
+				BD4FBD161963174400D8F725 /* OSMWay.swift */,
 			);
-			name = "not used yet";
+			path = "Custom classes";
+			sourceTree = "<group>";
+		};
+		BD4FBD1A1963179200D8F725 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BDB58984195888670090E178 /* Main.storyboard */,
+				BD4FBD1F1963179200D8F725 /* SpeedViewController.h */,
+				BD4FBD201963179200D8F725 /* SpeedViewController.m */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		BDB58972195888670090E178 = {
@@ -125,9 +126,9 @@
 		BDB5897D195888670090E178 /* Talking Companion */ = {
 			isa = PBXGroup;
 			children = (
+				BD4FBD131963174400D8F725 /* Custom classes */,
 				BDB589A31958AE8B0090E178 /* Resources */,
-				BDB5899E1958AE3F0090E178 /* Custom classes */,
-				BDB5899F1958AE4D0090E178 /* ViewContollers */,
+				BD4FBD1A1963179200D8F725 /* View Controllers */,
 				BDB58980195888670090E178 /* AppDelegate.swift */,
 				BD8D60461959B4B30032B20C /* Talking Companion-Bridging-Header.h */,
 				BDB58987195888670090E178 /* Images.xcassets */,
@@ -159,27 +160,6 @@
 				BDB58992195888670090E178 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		BDB5899E1958AE3F0090E178 /* Custom classes */ = {
-			isa = PBXGroup;
-			children = (
-				BDB589A61958AEDB0090E178 /* OSMNode.swift */,
-				BD647CC0195AD6B60078DE44 /* OSMWay.swift */,
-				BDFFA00A195C38C400288E6D /* OSMElementsParser.swift */,
-			);
-			name = "Custom classes";
-			sourceTree = "<group>";
-		};
-		BDB5899F1958AE4D0090E178 /* ViewContollers */ = {
-			isa = PBXGroup;
-			children = (
-				BDB58984195888670090E178 /* Main.storyboard */,
-				BD647CC4195AE7A00078DE44 /* not used yet */,
-				BDD89B81195B05670020ACA7 /* SpeedViewController.h */,
-				BDD89B82195B05670020ACA7 /* SpeedViewController.m */,
-			);
-			name = ViewContollers;
 			sourceTree = "<group>";
 		};
 		BDB589A31958AE8B0090E178 /* Resources */ = {
@@ -291,7 +271,6 @@
 				BDB589A51958AE8B0090E178 /* map.osm in Resources */,
 				BDB58986195888670090E178 /* Main.storyboard in Resources */,
 				BDB58988195888670090E178 /* Images.xcassets in Resources */,
-				BD8D60771959C7260032B20C /* PlaceTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,15 +288,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDD89B83195B05670020ACA7 /* SpeedViewController.m in Sources */,
-				BD647CC3195AE7980078DE44 /* MainViewController.swift in Sources */,
-				BD023C08195999A3000CDC9D /* PlacesListTableViewController.swift in Sources */,
+				BD4FBD171963174400D8F725 /* OSMElementsParser.swift in Sources */,
+				BD4FBD251963179200D8F725 /* SpeedViewController.m in Sources */,
 				BDB58981195888670090E178 /* AppDelegate.swift in Sources */,
-				BDB589A71958AEDB0090E178 /* OSMNode.swift in Sources */,
-				BDFFA00B195C38C400288E6D /* OSMElementsParser.swift in Sources */,
+				BD4FBD181963174400D8F725 /* OSMNode.swift in Sources */,
 				BD4F9D061959A2B5006D5987 /* SMXMLDocument.m in Sources */,
-				BD8D60761959C7260032B20C /* PlaceTableViewCell.swift in Sources */,
-				BD647CC1195AD6B60078DE44 /* OSMWay.swift in Sources */,
+				BD4FBD191963174400D8F725 /* OSMWay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +322,7 @@
 				BDB58985195888670090E178 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
