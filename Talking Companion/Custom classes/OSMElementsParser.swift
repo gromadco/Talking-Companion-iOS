@@ -16,15 +16,17 @@ extension String {
 
 class OSMElementsParser: NSObject {
     
-    func initialize() {
-        self.nodes = parseNodes()
-        self.ways = parseWays()
-    }
-    
     // MARK: - Properties
     
     var nodes:Array<OSMNode> = Array()
     var ways:Array<OSMWay> = Array()
+    
+    // MARK: - Initializing
+    
+    func initialize() {
+        nodes = parseNodes()
+        ways = parseWays()
+    }
     
     // MARK: - Parsing
     

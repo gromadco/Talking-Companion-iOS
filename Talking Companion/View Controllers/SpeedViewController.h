@@ -19,6 +19,7 @@
     
     AVSpeechSynthesizer *synth;
     NSTimer *speechTimer;
+    NSTimer *tilesTimer;
     
     NSTimer *announceDirectionTimer;
     CLLocation *previousLocation;

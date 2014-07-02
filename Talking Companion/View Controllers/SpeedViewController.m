@@ -13,6 +13,11 @@ static const NSTimeInterval pronounceSpeedTimeInterval = 15;
 static const NSTimeInterval announceDirectionTimeInterval = 2;
 static const double kKilometersPerHour = 3.6;
 
+static const NSTimeInterval downloadTilesTimeInterval = 60;
+static const NSInteger kDefaultZoom = 16;
+static const CLLocationDegrees kDefaulLatitude = 47.817997;
+static const CLLocationDegrees kDefaulLongitude = 35.19622;
+
 #define RADIANS_TO_DEGREES(radians) ((radians) * (180.0 / M_PI))
 
 @implementation SpeedViewController
@@ -27,12 +32,11 @@ static const double kKilometersPerHour = 3.6;
     [parser initialize];
     nodes = [parser nodesWithProperty:@"name"];
     
-    manager = [[CLLocationManager alloc] init];
-    manager.delegate = self;
-    manager.desiredAccuracy = kCLLocationAccuracyBest;
-    [manager startUpdatingLocation];
+    [self loadLocationManager];
+    [self neighboringTilesForCoordinates:CLLocationCoordinate2DMake(kDefaulLatitude, kDefaulLongitude)];
     
     speechTimer = [NSTimer scheduledTimerWithTimeInterval:pronounceSpeedTimeInterval target:self selector:@selector(pronounceSpeed) userInfo:nil repeats:YES];
+    tilesTimer = [NSTimer scheduledTimerWithTimeInterval:downloadTilesTimeInterval target:self selector:@selector(downloadTiles) userInfo:nil repeats:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -41,6 +45,59 @@ static const double kKilometersPerHour = 3.6;
     if ([speechTimer isValid]) {
         [speechTimer invalidate];
     }
+    if ([tilesTimer isValid]) {
+        [tilesTimer invalidate];
+    }
+}
+
+#pragma mark -
+
+- (void)downloadTiles
+{
+    [self neighboringTilesForCoordinates:currentLocation.coordinate];
+}
+
+- (void)neighboringTilesForCoordinates:(CLLocationCoordinate2D)coordinates
+{
+    OSMTile *centerTile = [[OSMTile alloc] initWithLatitude:coordinates.latitude longitude:coordinates.latitude zoom:kDefaultZoom];
+    CLLocationCoordinate2D current = centerTile.toCoordinates;
+    CLLocationCoordinate2D deltas = centerTile.deltas;
+    
+    OSMTile *leftTop = [[OSMTile alloc] initWithLatitude:current.latitude + deltas.latitude/4
+                                               longitude:current.longitude - deltas.longitude/4
+                                                    zoom:centerTile.zoom];
+    OSMTile *leftCeter = [[OSMTile alloc] initWithLatitude:current.latitude
+                                                 longitude:current.longitude - deltas.longitude/4
+                                                      zoom:centerTile.zoom];
+    OSMTile *leftBottom = [[OSMTile alloc] initWithLatitude:current.latitude - deltas.latitude/4
+                                               longitude:current.longitude - deltas.longitude/4
+                                                    zoom:centerTile.zoom];
+    
+    OSMTile *centerTop = [[OSMTile alloc] initWithLatitude:current.latitude + deltas.latitude/4
+                                                 longitude:current.longitude
+                                                      zoom:centerTile.zoom];
+    OSMTile *centerBottom = [[OSMTile alloc] initWithLatitude:current.latitude - deltas.latitude/4
+                                                    longitude:current.longitude
+                                                         zoom:centerTile.zoom];
+    
+    OSMTile *rightTop = [[OSMTile alloc] initWithLatitude:current.latitude + deltas.latitude/4
+                                               longitude:current.longitude + deltas.longitude/4
+                                                    zoom:centerTile.zoom];
+    OSMTile *rightCeter = [[OSMTile alloc] initWithLatitude:current.latitude
+                                                 longitude:current.longitude + deltas.longitude/4
+                                                      zoom:centerTile.zoom];
+    OSMTile *rightBottom = [[OSMTile alloc] initWithLatitude:current.latitude - deltas.latitude/4
+                                                  longitude:current.longitude + deltas.longitude/4
+                                                       zoom:centerTile.zoom];
+    NSLog(@"center - %@", centerTile.link);
+    NSLog(@"leftTop - %@", leftTop.link);
+    NSLog(@"leftCeter - %@", leftCeter.link);
+    NSLog(@"leftBottom - %@", leftBottom.link);
+    NSLog(@"centerBottom - %@", centerBottom.link);
+    NSLog(@"centerTop - %@", centerTop.link);
+    NSLog(@"rightTop - %@", rightTop.link);
+    NSLog(@"rightCeter - %@", rightCeter.link);
+    NSLog(@"rightBottom - %@", rightBottom.link);
 }
 
 #pragma mark - Place details
@@ -130,6 +187,14 @@ static const double kKilometersPerHour = 3.6;
 }
 
 #pragma mark - CLLocationManager Delegate
+
+- (void)loadLocationManager
+{
+    manager = [[CLLocationManager alloc] init];
+    manager.delegate = self;
+    manager.desiredAccuracy = kCLLocationAccuracyBest;
+    [manager startUpdatingLocation];
+}
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {

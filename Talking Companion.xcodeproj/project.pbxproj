@@ -14,6 +14,7 @@
 		BD4FBD181963174400D8F725 /* OSMNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4FBD151963174400D8F725 /* OSMNode.swift */; };
 		BD4FBD191963174400D8F725 /* OSMWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4FBD161963174400D8F725 /* OSMWay.swift */; };
 		BD4FBD251963179200D8F725 /* SpeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4FBD201963179200D8F725 /* SpeedViewController.m */; };
+		BD4FBD271963187900D8F725 /* OSMTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4FBD261963187900D8F725 /* OSMTile.swift */; };
 		BDB58981195888670090E178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB58980195888670090E178 /* AppDelegate.swift */; };
 		BDB58986195888670090E178 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDB58984195888670090E178 /* Main.storyboard */; };
 		BDB58988195888670090E178 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB58987195888670090E178 /* Images.xcassets */; };
@@ -42,6 +43,7 @@
 		BD4FBD161963174400D8F725 /* OSMWay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMWay.swift; sourceTree = "<group>"; };
 		BD4FBD1F1963179200D8F725 /* SpeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeedViewController.h; sourceTree = "<group>"; };
 		BD4FBD201963179200D8F725 /* SpeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeedViewController.m; sourceTree = "<group>"; };
+		BD4FBD261963187900D8F725 /* OSMTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMTile.swift; sourceTree = "<group>"; };
 		BD8D60461959B4B30032B20C /* Talking Companion-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Talking Companion-Bridging-Header.h"; sourceTree = "<group>"; };
 		BDB5897B195888670090E178 /* Talking Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Talking Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB5897F195888670090E178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				BD4FBD141963174400D8F725 /* OSMElementsParser.swift */,
 				BD4FBD151963174400D8F725 /* OSMNode.swift */,
 				BD4FBD161963174400D8F725 /* OSMWay.swift */,
+				BD4FBD261963187900D8F725 /* OSMTile.swift */,
 			);
 			path = "Custom classes";
 			sourceTree = "<group>";
@@ -126,8 +129,8 @@
 		BDB5897D195888670090E178 /* Talking Companion */ = {
 			isa = PBXGroup;
 			children = (
-				BD4FBD131963174400D8F725 /* Custom classes */,
 				BDB589A31958AE8B0090E178 /* Resources */,
+				BD4FBD131963174400D8F725 /* Custom classes */,
 				BD4FBD1A1963179200D8F725 /* View Controllers */,
 				BDB58980195888670090E178 /* AppDelegate.swift */,
 				BD8D60461959B4B30032B20C /* Talking Companion-Bridging-Header.h */,
@@ -294,6 +297,7 @@
 				BD4FBD181963174400D8F725 /* OSMNode.swift in Sources */,
 				BD4F9D061959A2B5006D5987 /* SMXMLDocument.m in Sources */,
 				BD4FBD191963174400D8F725 /* OSMWay.swift in Sources */,
+				BD4FBD271963187900D8F725 /* OSMTile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
