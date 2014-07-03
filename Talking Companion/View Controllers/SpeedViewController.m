@@ -59,45 +59,10 @@ static const CLLocationDegrees kDefaulLongitude = 35.19622;
 
 - (void)neighboringTilesForCoordinates:(CLLocationCoordinate2D)coordinates
 {
-    OSMTile *centerTile = [[OSMTile alloc] initWithLatitude:coordinates.latitude longitude:coordinates.latitude zoom:kDefaultZoom];
-    CLLocationCoordinate2D current = centerTile.toCoordinates;
-    CLLocationCoordinate2D deltas = centerTile.deltas;
-    
-    OSMTile *leftTop = [[OSMTile alloc] initWithLatitude:current.latitude + deltas.latitude/4
-                                               longitude:current.longitude - deltas.longitude/4
-                                                    zoom:centerTile.zoom];
-    OSMTile *leftCeter = [[OSMTile alloc] initWithLatitude:current.latitude
-                                                 longitude:current.longitude - deltas.longitude/4
-                                                      zoom:centerTile.zoom];
-    OSMTile *leftBottom = [[OSMTile alloc] initWithLatitude:current.latitude - deltas.latitude/4
-                                               longitude:current.longitude - deltas.longitude/4
-                                                    zoom:centerTile.zoom];
-    
-    OSMTile *centerTop = [[OSMTile alloc] initWithLatitude:current.latitude + deltas.latitude/4
-                                                 longitude:current.longitude
-                                                      zoom:centerTile.zoom];
-    OSMTile *centerBottom = [[OSMTile alloc] initWithLatitude:current.latitude - deltas.latitude/4
-                                                    longitude:current.longitude
-                                                         zoom:centerTile.zoom];
-    
-    OSMTile *rightTop = [[OSMTile alloc] initWithLatitude:current.latitude + deltas.latitude/4
-                                               longitude:current.longitude + deltas.longitude/4
-                                                    zoom:centerTile.zoom];
-    OSMTile *rightCeter = [[OSMTile alloc] initWithLatitude:current.latitude
-                                                 longitude:current.longitude + deltas.longitude/4
-                                                      zoom:centerTile.zoom];
-    OSMTile *rightBottom = [[OSMTile alloc] initWithLatitude:current.latitude - deltas.latitude/4
-                                                  longitude:current.longitude + deltas.longitude/4
-                                                       zoom:centerTile.zoom];
-    NSLog(@"center - %@", centerTile.link);
-    NSLog(@"leftTop - %@", leftTop.link);
-    NSLog(@"leftCeter - %@", leftCeter.link);
-    NSLog(@"leftBottom - %@", leftBottom.link);
-    NSLog(@"centerBottom - %@", centerBottom.link);
-    NSLog(@"centerTop - %@", centerTop.link);
-    NSLog(@"rightTop - %@", rightTop.link);
-    NSLog(@"rightCeter - %@", rightCeter.link);
-    NSLog(@"rightBottom - %@", rightBottom.link);
+    OSMTile *centerTile = [[OSMTile alloc] initWithLatitude:coordinates.latitude longitude:coordinates.longitude zoom:kDefaultZoom];
+
+    OSMTilesDownloader *downloader = [[OSMTilesDownloader alloc] init];
+    [downloader downloadNeighboringTilesForTile:centerTile];
 }
 
 #pragma mark - Place details

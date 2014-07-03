@@ -7,3 +7,4 @@
 //
 
 #import "SMXMLDocument.h"
+#import "AFNetworking.h"

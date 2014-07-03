@@ -36,5 +36,7 @@
 	<string>something</string>
 	<key>NSLocationUsageDescription</key>
 	<string>something</string>
+	<key>OSMDefaultZoom</key>
+	<integer>16</integer>
 </dict>
 </plist>

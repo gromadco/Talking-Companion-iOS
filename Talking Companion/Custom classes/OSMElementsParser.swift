@@ -20,6 +20,7 @@ class OSMElementsParser: NSObject {
     
     var nodes:Array<OSMNode> = Array()
     var ways:Array<OSMWay> = Array()
+    var filePath:String = NSBundle.mainBundle().pathForResource("map", ofType:"osm")
     
     // MARK: - Initializing
     
@@ -31,7 +32,6 @@ class OSMElementsParser: NSObject {
     // MARK: - Parsing
     
     func parser() -> AnyObject {
-        var filePath = NSBundle.mainBundle().pathForResource("map", ofType:"osm")
         var data = NSData(contentsOfFile:filePath)
         var xml = NSString(data: data, encoding: NSUTF8StringEncoding)
         var parser = SMXMLDocument(data: data, error: nil)
@@ -45,6 +45,12 @@ class OSMElementsParser: NSObject {
         var node:OSMNode
         var nodes:Array<OSMNode> = Array()
         var nodesXML = parser.childrenNamed("node");
+        
+        println("start parsing with count of nodes: \(nodesXML.count)")
+        
+        if nodesXML?.count == 0 {
+            return nodes
+        }
         
         for nodeXML:AnyObject in nodesXML {
             var element:SMXMLElement = nodeXML as SMXMLElement
