@@ -12,13 +12,7 @@ let pathToDB = NSHomeDirectory().stringByAppendingPathComponent("Documents").str
 
 class SQLAccess: NSObject {
 
-    class func createTableTiles() {
-        var db = FMDatabase(path: pathToDB)
-        if db.open() {
-            db.executeUpdate("CREATE TABLE IF NOT EXISTS tiles (id INTEGER PRIMARY KEY, x DOUBLE, y DOUBLE, zoom INTEGER)", withArgumentsInArray: [])
-            db.close()
-        }
-    }
+    // MARK: - Nodes
     
     class func createTableNodes() {
         var db = FMDatabase(path: pathToDB)
@@ -41,6 +35,37 @@ class SQLAccess: NSObject {
         db.commit()
         db.close()
     }
+
+    class func nodes() -> Array<OSMNode> {
+        var nodes:Array<OSMNode> = Array()
+        
+        var db = FMDatabase(path: pathToDB)
+        if !db.open() {
+            return nodes
+        }
+        
+        var result = db.executeQuery("SELECT * FROM nodes", withArgumentsInArray: [])
+        while result.next() {
+            var latitude = result.doubleForColumn("latitude")
+            var longitude = result.doubleForColumn("longitude")
+            var user = result.stringForColumn("user")
+
+            nodes += OSMNode(latitude: latitude, longitude: latitude, user: "user")
+        }
+        
+        db.close()
+        return nodes
+    }
+
+    // MARK: - Tiles
+
+    class func createTableTiles() {
+        var db = FMDatabase(path: pathToDB)
+        if db.open() {
+            db.executeUpdate("CREATE TABLE IF NOT EXISTS tiles (id INTEGER PRIMARY KEY, x INTEGER, y INTEGER, zoom INTEGER)", withArgumentsInArray: [])
+            db.close()
+        }
+    }
     
     class func saveTile(tile:OSMTile) -> Int {
         var lastId:Int = 0
@@ -53,7 +78,7 @@ class SQLAccess: NSObject {
         
         return lastId
     }
-    
+
     class func hasTile(tile:OSMTile) -> Bool {
         var db = FMDatabase(path: pathToDB)
         var has = false
@@ -66,5 +91,29 @@ class SQLAccess: NSObject {
             db.close()
         }
         return has;
+    }
+    
+    class func tiles() -> Array<OSMTile> {
+        var tiles:Array<OSMTile> = Array()
+        
+        var db = FMDatabase(path: pathToDB)
+        if !db.open() {
+            return tiles
+        }
+        
+        var result = db.executeQuery("SELECT * FROM tiles", withArgumentsInArray: [])
+        while result.next() {
+            var uid = Int(result.intForColumn("id"))
+            var x = Int(result.intForColumn("x"))
+            var y = Int(result.intForColumn("y"))
+            var zoom = Int(result.intForColumn("zoom"))
+        
+            var tile = OSMTile(x: x, y: y, zoom: zoom)
+            tile.uid = uid
+            tiles += tile
+        }
+        
+        db.close()
+        return tiles
     }
 }

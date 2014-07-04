@@ -13,7 +13,7 @@ class OSMNode: NSObject {
     
     // MARK: - Properties
     
-    var location:CLLocation // change to CLLocationCoordinate2D
+    var location:CLLocation
     var user:String
     var isAnnounced = false
     

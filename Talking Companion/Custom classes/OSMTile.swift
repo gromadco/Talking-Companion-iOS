@@ -11,6 +11,7 @@ import CoreLocation
 import ObjectiveC
 
 class OSMTile: NSObject {
+    var uid:Int?
     var x:Int
     var y:Int
     var zoom:Int = NSBundle.mainBundle().objectForInfoDictionaryKey("OSMDefaultZoom") as Int
