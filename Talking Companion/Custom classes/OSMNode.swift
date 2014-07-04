@@ -13,10 +13,9 @@ class OSMNode: NSObject {
     
     // MARK: - Properties
     
-    var location:CLLocation
+    var location:CLLocation // change to CLLocationCoordinate2D
     var user:String
     var isAnnounced = false
-    
     
     var amenity:String?
     var name:String?
@@ -38,7 +37,7 @@ class OSMNode: NSObject {
         if let name = self.name {
             description += "; name = '\(name)'"
         }
-        
+
         return description
     }
     

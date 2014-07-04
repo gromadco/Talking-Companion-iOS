@@ -53,7 +53,7 @@ class OSMWay: NSObject {
         return description
     }
     
-    func isClosedWay() -> Bool{
+    func isClosedWay() -> Bool {
         return nodes[0] == nodes[nodes.count-1]
     }
 }

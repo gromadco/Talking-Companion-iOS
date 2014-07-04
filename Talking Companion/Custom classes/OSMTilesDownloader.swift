@@ -14,10 +14,13 @@ class OSMTilesDownloader: NSObject {
         var tiles:Array<OSMTile> = centerTile.neighboringTiles()
         
         for (index, tile) in enumerate(tiles) {
-            // if tile not exist in db then ..., else to next tile
+            if SQLAccess.hasTile(tile) {
+                continue
+            }
+            
             var box = OSMBoundingBox(tile: tile)
             
-            // download .osm
+            // downloading .osm
             var request = NSURLRequest(URL: NSURL(string: box.url))
             var operation = AFHTTPRequestOperation(request: request)
             var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
@@ -28,6 +31,9 @@ class OSMTilesDownloader: NSObject {
                     var parser = OSMElementsParser()
                     parser.filePath = path
                     parser.initialize()
+
+                    var tileId = SQLAccess.saveTile(tile)
+                    SQLAccess.saveNodes(parser.nodes, forTileId: tileId)
                 },
                 failure: { [unowned self] (_, error) in })
             operation.start()

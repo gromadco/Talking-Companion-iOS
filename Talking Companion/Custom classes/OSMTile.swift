@@ -8,11 +8,13 @@
 
 import UIKit
 import CoreLocation
+import ObjectiveC
 
 class OSMTile: NSObject {
     var x:Int
     var y:Int
     var zoom:Int = NSBundle.mainBundle().objectForInfoDictionaryKey("OSMDefaultZoom") as Int
+    var link:String { return "http://tile.openstreetmap.org/\(zoom)/\(x)/\(y).png" }
    
     init(x:Int, y:Int, zoom:Int) {
         self.x = x
@@ -43,14 +45,8 @@ class OSMTile: NSObject {
         return CLLocationCoordinate2DMake(deltaLatitude, deltaLongitude)
     }
     
-    func link() -> String {
-        return "http://tile.openstreetmap.org/\(zoom)/\(x)/\(y).png"
-    }
-    
     func neighboringTiles() -> Array<OSMTile> {
-        var tiles:Array<OSMTile> = Array()
-        
-        let deltas = self.deltas();
+        let deltas = self.deltas()
         let center = self.toCoordinates()
         
         let leftTop = OSMTile(latitude: center.latitude + deltas.latitude/4, longitude: center.longitude - deltas.longitude/4, zoom: zoom)
@@ -64,12 +60,12 @@ class OSMTile: NSObject {
         let rightMiddle = OSMTile(latitude: center.latitude, longitude: center.longitude + deltas.longitude/4, zoom: zoom)
         let rightBottom = OSMTile(latitude: center.latitude + deltas.latitude/4, longitude: center.longitude - deltas.longitude/4, zoom: zoom)
         
-        tiles += [self, leftTop, leftMiddle, leftBottom, centerTop, centerBottom, rightTop, rightMiddle, rightBottom];
+        var set = NSMutableSet(array: [self, leftTop, leftMiddle, leftBottom, centerTop, centerBottom, rightTop, rightMiddle, rightBottom])
+        var tiles:Array<OSMTile> = set.allObjects as OSMTile[]
         return tiles
     }
     
     func toBoundingBox() -> OSMBoundingBox {
-        
         return OSMBoundingBox(tile: self)
     }
 
@@ -84,27 +80,22 @@ class OSMTile: NSObject {
         var longitude = Double(x) / pow(2.0, CDouble(zoom)) * 360.0 - 180.0
         return longitude
     }
+    
+    // MARK: - NSObject methods
+    
+    func description() -> String {
+        return "(\(x); \(y); \(zoom))"
+    }
+    
+    override func isEqual(object: AnyObject!) -> Bool {
+        if let tile = object as? OSMTile {
+            return x == tile.x && y == tile.y && zoom == tile.zoom
+        }
+        
+        return false
+    }
+    
+    func hash() -> Int {
+        return (x << 16) + (y << 8) + (zoom << 4)
+    }
 }
-
-/*
-int long2tilex(double lon, int z)
-{
-    return (int)(floor((lon + 180.0) / 360.0 * pow(2.0, z)));
-}
-
-int lat2tiley(double lat, int z)
-{
-    return (int)(floor((1.0 - log( tan(lat * M_PI/180.0) + 1.0 / cos(lat * M_PI/180.0)) / M_PI) / 2.0 * pow(2.0, z)));
-}
-
-double tilex2long(int x, int z)
-{
-    return x / pow(2.0, z) * 360.0 - 180;
-}
-
-double tiley2lat(int y, int z)
-{
-    double n = M_PI - 2.0 * M_PI * y / pow(2.0, z);
-    return 180.0 / M_PI * atan(0.5 * (exp(n) - exp(-n)));
-}
-*/
