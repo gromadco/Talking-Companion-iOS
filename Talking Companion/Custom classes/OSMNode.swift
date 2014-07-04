@@ -22,6 +22,25 @@ class OSMNode: NSObject {
     var operator:String?
     var shop:String?
     
+    var type:String {
+        var type:String = ""
+        
+        if let amenity = self.amenity {
+            type += "\(amenity) "
+        }
+        if let name = self.name {
+            type += "\(name) "
+        }
+        if let operator = self.operator {
+            type += "\(operator) "
+        }
+        if let shop = self.shop {
+            type += "\(shop) "
+        }
+
+        return type
+    }
+    
     // MARK: - Initializing
 
     init(latitude:Double, longitude:Double, user:NSString) {

@@ -105,6 +105,7 @@ static const CLLocationDegrees kDefaulLongitude = 35.19622;
     }
     _nameLabel.text = closestPlace.name;
     _distanceLabel.text = [NSString stringWithFormat:@"%li m.", (long)minDistance];
+    _typeLabel.text = closestPlace.type;
     closestPlaceLocation = closestPlace.location;
 }
 
