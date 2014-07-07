@@ -15,7 +15,6 @@ class OSMWay: NSObject {
     var wayId:String
     var user:String
     var nodes:Array<String> = Array()
-    var isAnnounced = false
     
     var amenity:String?
     var building:String?
@@ -54,6 +53,9 @@ class OSMWay: NSObject {
     }
     
     func isClosedWay() -> Bool {
-        return nodes[0] == nodes[nodes.count-1]
+        if (nodes.count > 1) {
+            return nodes[0] == nodes[nodes.count-1]
+        }
+        return false
     }
 }
