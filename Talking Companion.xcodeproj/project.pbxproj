@@ -60,6 +60,31 @@
 		BD0C9F7D1967505B003A88AC /* OSMTileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F7C1967505B003A88AC /* OSMTileTests.swift */; };
 		BD0C9F7F196750D5003A88AC /* OSMElementsParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F7E196750D5003A88AC /* OSMElementsParserTests.swift */; };
 		BD0C9F8119675336003A88AC /* OSMWayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F8019675336003A88AC /* OSMWayTests.swift */; };
+		BD1178EF196C3D41002A2277 /* odessa.zip in Resources */ = {isa = PBXBuildFile; fileRef = BD1178EE196C3D41002A2277 /* odessa.zip */; };
+		BD117922196C3DB8002A2277 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BD1178F1196C3DB8002A2277 /* .gitignore */; };
+		BD117923196C3DB8002A2277 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = BD1178F6196C3DB8002A2277 /* ioapi.c */; };
+		BD117924196C3DB8002A2277 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = BD1178F8196C3DB8002A2277 /* unzip.c */; };
+		BD117925196C3DB8002A2277 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = BD1178FA196C3DB8002A2277 /* zip.c */; };
+		BD117926196C3DB8002A2277 /* FileInZipInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1178FE196C3DB8002A2277 /* FileInZipInfo.m */; };
+		BD117927196C3DB8002A2277 /* ZipException.m in Sources */ = {isa = PBXBuildFile; fileRef = BD117900196C3DB8002A2277 /* ZipException.m */; };
+		BD117928196C3DB8002A2277 /* ZipFile.m in Sources */ = {isa = PBXBuildFile; fileRef = BD117902196C3DB8002A2277 /* ZipFile.m */; };
+		BD117929196C3DB8002A2277 /* ZipReadStream.m in Sources */ = {isa = PBXBuildFile; fileRef = BD117904196C3DB8002A2277 /* ZipReadStream.m */; };
+		BD11792A196C3DB8002A2277 /* ZipWriteStream.m in Sources */ = {isa = PBXBuildFile; fileRef = BD117906196C3DB8002A2277 /* ZipWriteStream.m */; };
+		BD11792B196C3DB8002A2277 /* adler32.c in Sources */ = {isa = PBXBuildFile; fileRef = BD117908196C3DB8002A2277 /* adler32.c */; };
+		BD11792C196C3DB8002A2277 /* compress.c in Sources */ = {isa = PBXBuildFile; fileRef = BD117909196C3DB8002A2277 /* compress.c */; };
+		BD11792D196C3DB8002A2277 /* crc32.c in Sources */ = {isa = PBXBuildFile; fileRef = BD11790A196C3DB8002A2277 /* crc32.c */; };
+		BD11792E196C3DB8002A2277 /* deflate.c in Sources */ = {isa = PBXBuildFile; fileRef = BD11790C196C3DB8002A2277 /* deflate.c */; };
+		BD11792F196C3DB8002A2277 /* gzclose.c in Sources */ = {isa = PBXBuildFile; fileRef = BD11790E196C3DB8002A2277 /* gzclose.c */; };
+		BD117930196C3DB8002A2277 /* gzlib.c in Sources */ = {isa = PBXBuildFile; fileRef = BD117910196C3DB8002A2277 /* gzlib.c */; };
+		BD117931196C3DB8002A2277 /* gzread.c in Sources */ = {isa = PBXBuildFile; fileRef = BD117911196C3DB8002A2277 /* gzread.c */; };
+		BD117932196C3DB8002A2277 /* gzwrite.c in Sources */ = {isa = PBXBuildFile; fileRef = BD117912196C3DB8002A2277 /* gzwrite.c */; };
+		BD117933196C3DB8002A2277 /* infback.c in Sources */ = {isa = PBXBuildFile; fileRef = BD117913196C3DB8002A2277 /* infback.c */; };
+		BD117934196C3DB8002A2277 /* inffast.c in Sources */ = {isa = PBXBuildFile; fileRef = BD117914196C3DB8002A2277 /* inffast.c */; };
+		BD117935196C3DB8002A2277 /* inflate.c in Sources */ = {isa = PBXBuildFile; fileRef = BD117917196C3DB8002A2277 /* inflate.c */; };
+		BD117936196C3DB8002A2277 /* inftrees.c in Sources */ = {isa = PBXBuildFile; fileRef = BD117919196C3DB8002A2277 /* inftrees.c */; };
+		BD117937196C3DB8002A2277 /* trees.c in Sources */ = {isa = PBXBuildFile; fileRef = BD11791B196C3DB8002A2277 /* trees.c */; };
+		BD117938196C3DB8002A2277 /* uncompr.c in Sources */ = {isa = PBXBuildFile; fileRef = BD11791D196C3DB8002A2277 /* uncompr.c */; };
+		BD117939196C3DB8002A2277 /* zutil.c in Sources */ = {isa = PBXBuildFile; fileRef = BD117920196C3DB8002A2277 /* zutil.c */; };
 		BD2E7C80195AEAFB00D57518 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */; };
 		BD2EB9BA1966EC1200C8DEDD /* SQLAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2EB9B91966EC1200C8DEDD /* SQLAccess.swift */; };
 		BD2EB9BC1966F0E600C8DEDD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */; };
@@ -72,6 +97,7 @@
 		BDB58981195888670090E178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB58980195888670090E178 /* AppDelegate.swift */; };
 		BDB58986195888670090E178 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDB58984195888670090E178 /* Main.storyboard */; };
 		BDB58988195888670090E178 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB58987195888670090E178 /* Images.xcassets */; };
+		BDB68427196C3BBF005AA31F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB6841D196C33D1005AA31F /* libz.dylib */; };
 		BDBEAC4D19641372000EC6ED /* OSMTilesDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBEAC4C19641372000EC6ED /* OSMTilesDownloader.swift */; };
 		BDBEAC4F19641405000EC6ED /* OSMBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBEAC4E19641405000EC6ED /* OSMBoundingBox.swift */; };
 		BDD89B85195B095F0020ACA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD89B84195B095F0020ACA7 /* AVFoundation.framework */; };
@@ -180,6 +206,52 @@
 		BD0C9F7C1967505B003A88AC /* OSMTileTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMTileTests.swift; sourceTree = "<group>"; };
 		BD0C9F7E196750D5003A88AC /* OSMElementsParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMElementsParserTests.swift; sourceTree = "<group>"; };
 		BD0C9F8019675336003A88AC /* OSMWayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMWayTests.swift; sourceTree = "<group>"; };
+		BD1178EE196C3D41002A2277 /* odessa.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = odessa.zip; sourceTree = "<group>"; };
+		BD1178F1196C3DB8002A2277 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		BD1178F3196C3DB8002A2277 /* ARCHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCHelper.h; sourceTree = "<group>"; };
+		BD1178F5196C3DB8002A2277 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		BD1178F6196C3DB8002A2277 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		BD1178F7196C3DB8002A2277 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		BD1178F8196C3DB8002A2277 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		BD1178F9196C3DB8002A2277 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		BD1178FA196C3DB8002A2277 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		BD1178FB196C3DB8002A2277 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		BD1178FD196C3DB8002A2277 /* FileInZipInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileInZipInfo.h; sourceTree = "<group>"; };
+		BD1178FE196C3DB8002A2277 /* FileInZipInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileInZipInfo.m; sourceTree = "<group>"; };
+		BD1178FF196C3DB8002A2277 /* ZipException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipException.h; sourceTree = "<group>"; };
+		BD117900196C3DB8002A2277 /* ZipException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipException.m; sourceTree = "<group>"; };
+		BD117901196C3DB8002A2277 /* ZipFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipFile.h; sourceTree = "<group>"; };
+		BD117902196C3DB8002A2277 /* ZipFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipFile.m; sourceTree = "<group>"; };
+		BD117903196C3DB8002A2277 /* ZipReadStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipReadStream.h; sourceTree = "<group>"; };
+		BD117904196C3DB8002A2277 /* ZipReadStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipReadStream.m; sourceTree = "<group>"; };
+		BD117905196C3DB8002A2277 /* ZipWriteStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipWriteStream.h; sourceTree = "<group>"; };
+		BD117906196C3DB8002A2277 /* ZipWriteStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipWriteStream.m; sourceTree = "<group>"; };
+		BD117908196C3DB8002A2277 /* adler32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = adler32.c; sourceTree = "<group>"; };
+		BD117909196C3DB8002A2277 /* compress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = compress.c; sourceTree = "<group>"; };
+		BD11790A196C3DB8002A2277 /* crc32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = crc32.c; sourceTree = "<group>"; };
+		BD11790B196C3DB8002A2277 /* crc32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crc32.h; sourceTree = "<group>"; };
+		BD11790C196C3DB8002A2277 /* deflate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = deflate.c; sourceTree = "<group>"; };
+		BD11790D196C3DB8002A2277 /* deflate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = deflate.h; sourceTree = "<group>"; };
+		BD11790E196C3DB8002A2277 /* gzclose.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gzclose.c; sourceTree = "<group>"; };
+		BD11790F196C3DB8002A2277 /* gzguts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gzguts.h; sourceTree = "<group>"; };
+		BD117910196C3DB8002A2277 /* gzlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gzlib.c; sourceTree = "<group>"; };
+		BD117911196C3DB8002A2277 /* gzread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gzread.c; sourceTree = "<group>"; };
+		BD117912196C3DB8002A2277 /* gzwrite.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gzwrite.c; sourceTree = "<group>"; };
+		BD117913196C3DB8002A2277 /* infback.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = infback.c; sourceTree = "<group>"; };
+		BD117914196C3DB8002A2277 /* inffast.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inffast.c; sourceTree = "<group>"; };
+		BD117915196C3DB8002A2277 /* inffast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inffast.h; sourceTree = "<group>"; };
+		BD117916196C3DB8002A2277 /* inffixed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inffixed.h; sourceTree = "<group>"; };
+		BD117917196C3DB8002A2277 /* inflate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inflate.c; sourceTree = "<group>"; };
+		BD117918196C3DB8002A2277 /* inflate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inflate.h; sourceTree = "<group>"; };
+		BD117919196C3DB8002A2277 /* inftrees.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inftrees.c; sourceTree = "<group>"; };
+		BD11791A196C3DB8002A2277 /* inftrees.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inftrees.h; sourceTree = "<group>"; };
+		BD11791B196C3DB8002A2277 /* trees.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = trees.c; sourceTree = "<group>"; };
+		BD11791C196C3DB8002A2277 /* trees.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trees.h; sourceTree = "<group>"; };
+		BD11791D196C3DB8002A2277 /* uncompr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = uncompr.c; sourceTree = "<group>"; };
+		BD11791E196C3DB8002A2277 /* zconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zconf.h; sourceTree = "<group>"; };
+		BD11791F196C3DB8002A2277 /* zlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zlib.h; sourceTree = "<group>"; };
+		BD117920196C3DB8002A2277 /* zutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zutil.c; sourceTree = "<group>"; };
+		BD117921196C3DB8002A2277 /* zutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zutil.h; sourceTree = "<group>"; };
 		BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BD2EB9B91966EC1200C8DEDD /* SQLAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLAccess.swift; sourceTree = "<group>"; };
 		BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -197,6 +269,8 @@
 		BDB58987195888670090E178 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BDB5898D195888670090E178 /* Talking CompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Talking CompanionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB58992195888670090E178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDB6841D196C33D1005AA31F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		BDB6841F196C38A4005AA31F /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		BDBEAC4C19641372000EC6ED /* OSMTilesDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMTilesDownloader.swift; sourceTree = "<group>"; };
 		BDBEAC4E19641405000EC6ED /* OSMBoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMBoundingBox.swift; sourceTree = "<group>"; };
 		BDD89B84195B095F0020ACA7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -208,6 +282,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDB68427196C3BBF005AA31F /* libz.dylib in Frameworks */,
 				BD2EB9BC1966F0E600C8DEDD /* libsqlite3.dylib in Frameworks */,
 				BDD89B85195B095F0020ACA7 /* AVFoundation.framework in Frameworks */,
 				BD2E7C80195AEAFB00D57518 /* CoreLocation.framework in Frameworks */,
@@ -228,6 +303,8 @@
 		BD0C9F101967388A003A88AC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BD1178F0196C3DB8002A2277 /* Objective-Zip-master */,
+				BD1178EE196C3D41002A2277 /* odessa.zip */,
 				BDF87792196C294200134E89 /* empty.osm */,
 				BD0C9F311967388A003A88AC /* map.osm */,
 				BD0C9F111967388A003A88AC /* AFNetworking */,
@@ -313,6 +390,90 @@
 				BD0C9F461967388A003A88AC /* UIWebView+AFNetworking.m */,
 			);
 			path = "UIKit+AFNetworking";
+			sourceTree = "<group>";
+		};
+		BD1178F0196C3DB8002A2277 /* Objective-Zip-master */ = {
+			isa = PBXGroup;
+			children = (
+				BD1178F1196C3DB8002A2277 /* .gitignore */,
+				BD1178F2196C3DB8002A2277 /* ARCHelper */,
+				BD1178F4196C3DB8002A2277 /* MiniZip */,
+				BD1178FC196C3DB8002A2277 /* Objective-Zip */,
+				BD117907196C3DB8002A2277 /* ZLib */,
+			);
+			path = "Objective-Zip-master";
+			sourceTree = "<group>";
+		};
+		BD1178F2196C3DB8002A2277 /* ARCHelper */ = {
+			isa = PBXGroup;
+			children = (
+				BD1178F3196C3DB8002A2277 /* ARCHelper.h */,
+			);
+			path = ARCHelper;
+			sourceTree = "<group>";
+		};
+		BD1178F4196C3DB8002A2277 /* MiniZip */ = {
+			isa = PBXGroup;
+			children = (
+				BD1178F5196C3DB8002A2277 /* crypt.h */,
+				BD1178F6196C3DB8002A2277 /* ioapi.c */,
+				BD1178F7196C3DB8002A2277 /* ioapi.h */,
+				BD1178F8196C3DB8002A2277 /* unzip.c */,
+				BD1178F9196C3DB8002A2277 /* unzip.h */,
+				BD1178FA196C3DB8002A2277 /* zip.c */,
+				BD1178FB196C3DB8002A2277 /* zip.h */,
+			);
+			path = MiniZip;
+			sourceTree = "<group>";
+		};
+		BD1178FC196C3DB8002A2277 /* Objective-Zip */ = {
+			isa = PBXGroup;
+			children = (
+				BD1178FD196C3DB8002A2277 /* FileInZipInfo.h */,
+				BD1178FE196C3DB8002A2277 /* FileInZipInfo.m */,
+				BD1178FF196C3DB8002A2277 /* ZipException.h */,
+				BD117900196C3DB8002A2277 /* ZipException.m */,
+				BD117901196C3DB8002A2277 /* ZipFile.h */,
+				BD117902196C3DB8002A2277 /* ZipFile.m */,
+				BD117903196C3DB8002A2277 /* ZipReadStream.h */,
+				BD117904196C3DB8002A2277 /* ZipReadStream.m */,
+				BD117905196C3DB8002A2277 /* ZipWriteStream.h */,
+				BD117906196C3DB8002A2277 /* ZipWriteStream.m */,
+			);
+			path = "Objective-Zip";
+			sourceTree = "<group>";
+		};
+		BD117907196C3DB8002A2277 /* ZLib */ = {
+			isa = PBXGroup;
+			children = (
+				BD117908196C3DB8002A2277 /* adler32.c */,
+				BD117909196C3DB8002A2277 /* compress.c */,
+				BD11790A196C3DB8002A2277 /* crc32.c */,
+				BD11790B196C3DB8002A2277 /* crc32.h */,
+				BD11790C196C3DB8002A2277 /* deflate.c */,
+				BD11790D196C3DB8002A2277 /* deflate.h */,
+				BD11790E196C3DB8002A2277 /* gzclose.c */,
+				BD11790F196C3DB8002A2277 /* gzguts.h */,
+				BD117910196C3DB8002A2277 /* gzlib.c */,
+				BD117911196C3DB8002A2277 /* gzread.c */,
+				BD117912196C3DB8002A2277 /* gzwrite.c */,
+				BD117913196C3DB8002A2277 /* infback.c */,
+				BD117914196C3DB8002A2277 /* inffast.c */,
+				BD117915196C3DB8002A2277 /* inffast.h */,
+				BD117916196C3DB8002A2277 /* inffixed.h */,
+				BD117917196C3DB8002A2277 /* inflate.c */,
+				BD117918196C3DB8002A2277 /* inflate.h */,
+				BD117919196C3DB8002A2277 /* inftrees.c */,
+				BD11791A196C3DB8002A2277 /* inftrees.h */,
+				BD11791B196C3DB8002A2277 /* trees.c */,
+				BD11791C196C3DB8002A2277 /* trees.h */,
+				BD11791D196C3DB8002A2277 /* uncompr.c */,
+				BD11791E196C3DB8002A2277 /* zconf.h */,
+				BD11791F196C3DB8002A2277 /* zlib.h */,
+				BD117920196C3DB8002A2277 /* zutil.c */,
+				BD117921196C3DB8002A2277 /* zutil.h */,
+			);
+			path = ZLib;
 			sourceTree = "<group>";
 		};
 		BD4FBD131963174400D8F725 /* Custom classes */ = {
@@ -404,6 +565,8 @@
 		BDFFA009195C367700288E6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BDB6841F196C38A4005AA31F /* libz.1.2.5.dylib */,
+				BDB6841D196C33D1005AA31F /* libz.dylib */,
 				BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */,
 				BDD89B84195B095F0020ACA7 /* AVFoundation.framework */,
 				BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */,
@@ -506,6 +669,8 @@
 				BDF87793196C294200134E89 /* empty.osm in Resources */,
 				BDB58986195888670090E178 /* Main.storyboard in Resources */,
 				BDB58988195888670090E178 /* Images.xcassets in Resources */,
+				BD117922196C3DB8002A2277 /* .gitignore in Resources */,
+				BD1178EF196C3D41002A2277 /* odessa.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,38 +690,61 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD11792D196C3DB8002A2277 /* crc32.c in Sources */,
+				BD117926196C3DB8002A2277 /* FileInZipInfo.m in Sources */,
 				BD0C9F4F1967388A003A88AC /* AFSecurityPolicy.m in Sources */,
+				BD11792F196C3DB8002A2277 /* gzclose.c in Sources */,
+				BD11792E196C3DB8002A2277 /* deflate.c in Sources */,
 				BD0C9F591967388A003A88AC /* FMDatabase.m in Sources */,
+				BD117932196C3DB8002A2277 /* gzwrite.c in Sources */,
+				BD117936196C3DB8002A2277 /* inftrees.c in Sources */,
 				BD0C9F6D1967388A003A88AC /* UIButton+AFNetworking.m in Sources */,
 				BD4FBD171963174400D8F725 /* OSMElementsParser.swift in Sources */,
+				BD117933196C3DB8002A2277 /* infback.c in Sources */,
 				BD0C9F751967388A003A88AC /* UIWebView+AFNetworking.m in Sources */,
 				BD0C9F711967388A003A88AC /* UIProgressView+AFNetworking.m in Sources */,
 				BD0C9F4D1967388A003A88AC /* AFNetworkReachabilityManager.m in Sources */,
 				BD0C9F5D1967388A003A88AC /* FMDatabasePool.m in Sources */,
 				BD0C9F6F1967388A003A88AC /* UIImageView+AFNetworking.m in Sources */,
 				BD4FBD251963179200D8F725 /* SpeedViewController.m in Sources */,
+				BD117930196C3DB8002A2277 /* gzlib.c in Sources */,
 				BD0C9F511967388A003A88AC /* AFURLConnectionOperation.m in Sources */,
 				BD0C9F471967388A003A88AC /* AFHTTPRequestOperation.m in Sources */,
+				BD11792C196C3DB8002A2277 /* compress.c in Sources */,
 				BD0C9F4B1967388A003A88AC /* AFHTTPSessionManager.m in Sources */,
 				BD0C9F531967388A003A88AC /* AFURLRequestSerialization.m in Sources */,
 				BD0C9F651967388A003A88AC /* SMXMLDocument.m in Sources */,
+				BD117938196C3DB8002A2277 /* uncompr.c in Sources */,
 				BD2EB9BA1966EC1200C8DEDD /* SQLAccess.swift in Sources */,
 				BD0C9F691967388A003A88AC /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				BD0C9F571967388A003A88AC /* AFURLSessionManager.m in Sources */,
+				BD117925196C3DB8002A2277 /* zip.c in Sources */,
 				BDBEAC4D19641372000EC6ED /* OSMTilesDownloader.swift in Sources */,
+				BD11792A196C3DB8002A2277 /* ZipWriteStream.m in Sources */,
+				BD117927196C3DB8002A2277 /* ZipException.m in Sources */,
+				BD117929196C3DB8002A2277 /* ZipReadStream.m in Sources */,
 				BD0C9F491967388A003A88AC /* AFHTTPRequestOperationManager.m in Sources */,
+				BD117939196C3DB8002A2277 /* zutil.c in Sources */,
 				BDB58981195888670090E178 /* AppDelegate.swift in Sources */,
 				BD0C9F551967388A003A88AC /* AFURLResponseSerialization.m in Sources */,
 				BD4FBD181963174400D8F725 /* OSMNode.swift in Sources */,
 				BD0C9F611967388A003A88AC /* FMResultSet.m in Sources */,
 				BD4FBD191963174400D8F725 /* OSMWay.swift in Sources */,
+				BD117937196C3DB8002A2277 /* trees.c in Sources */,
 				BD0C9F731967388A003A88AC /* UIRefreshControl+AFNetworking.m in Sources */,
 				BD0C9F6B1967388A003A88AC /* UIAlertView+AFNetworking.m in Sources */,
 				BDBEAC4F19641405000EC6ED /* OSMBoundingBox.swift in Sources */,
+				BD117924196C3DB8002A2277 /* unzip.c in Sources */,
 				BD0C9F5F1967388A003A88AC /* FMDatabaseQueue.m in Sources */,
+				BD117928196C3DB8002A2277 /* ZipFile.m in Sources */,
 				BD4FBD271963187900D8F725 /* OSMTile.swift in Sources */,
+				BD117935196C3DB8002A2277 /* inflate.c in Sources */,
+				BD117923196C3DB8002A2277 /* ioapi.c in Sources */,
+				BD117934196C3DB8002A2277 /* inffast.c in Sources */,
 				BD0C9F5B1967388A003A88AC /* FMDatabaseAdditions.m in Sources */,
 				BD0C9F671967388A003A88AC /* AFNetworkActivityIndicatorManager.m in Sources */,
+				BD11792B196C3DB8002A2277 /* adler32.c in Sources */,
+				BD117931196C3DB8002A2277 /* gzread.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,8 +920,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Talking Companion/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Talking",
+					Companion/Resources,
+				);
 				PRODUCT_NAME = "Talking Companion";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Talking Companion/Talking_Companion-Bridging-Header.h";
@@ -746,8 +939,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Talking Companion/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Talking",
+					Companion/Resources,
+				);
 				PRODUCT_NAME = "Talking Companion";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Talking Companion/Talking_Companion-Bridging-Header.h";
