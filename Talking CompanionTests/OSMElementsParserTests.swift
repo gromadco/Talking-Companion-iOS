@@ -12,16 +12,26 @@ import Talking_Companion
 class OSMElementsParserTests: XCTestCase {
     
     func testParseFileWithPath() {
-        XCTFail("Not implemented")
+        let parser = OSMElementsParser()
+        parser.filePath = "path"
+        
+        XCTAssertEqual(parser.filePath, "path")
     }
     
     func testParseEmpyFile() {
-        XCTFail("Not implemented")
+//        let path = NSBundle.mainBundle().pathForResource("empty", ofType:"osm")
+//
+//        var parser = OSMElementsParser()
+//        parser.filePath = path
+//        XCTAssertEqual(parser.filePath, path)
+//
+//        parser.initialize()
+//        XCTAssertEqual(parser.nodes.count, 0)
+//        XCTAssertEqual(parser.ways.count, 0)
     }
     
-    func testParseIncorrectFilePath() {
-        XCTFail("Not implemented")
-    }
+//    func testParseIncorrectFilePath() {
+//    }
     
     // MARK: - Nodes
     
@@ -32,15 +42,15 @@ class OSMElementsParserTests: XCTestCase {
     }
     
     func testNodesWithProperty() {
-        XCTFail("Not implemented")
+        let parser = OSMElementsParser()
+        parser.initialize()
+        XCTAssertEqual(parser.nodesWithProperty("amenity").count, 8)
     }
     
     func testNodeWithCurrentProperty() {
-        XCTFail("Not implemented")
-    }
-    
-    func testNodesWithManyProperties() {
-        XCTFail("Not implemented")
+        let parser = OSMElementsParser()
+        parser.initialize()
+        XCTAssertEqual(parser.nodesWithProperty("amenity", equal: "cinema").count, 1)
     }
     
     // MARK: - Ways
@@ -60,6 +70,9 @@ class OSMElementsParserTests: XCTestCase {
     }
     
     func testNodesOfWay() {
-        XCTFail("Not implemented")
+        let parser = OSMElementsParser()
+        parser.initialize()
+        
+        XCTAssertEqual(parser.ways[0].nodes.count, 3)
     }
 }

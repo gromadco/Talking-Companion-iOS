@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import AVFoundation
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet var currentSpeedLabel: UILabel
     
@@ -20,9 +20,11 @@ class MainViewController: UIViewController {
     }
     
     func loadLocationManager() {
-        var sentence = AVSpeechUtterance(string: "Yeah. It works!")
-        var synth = AVSpeechSynthesizer()
-        synth.speakUtterance(sentence);
+        var manager = CLLocationManager()
+        manager.delegate = self;
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestAlwaysAuthorization()
+        manager.startUpdatingLocation()
 
     }
     

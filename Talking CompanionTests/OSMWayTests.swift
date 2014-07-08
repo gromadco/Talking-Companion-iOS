@@ -18,6 +18,11 @@ class OSMWayTests: XCTestCase {
         XCTAssertEqual(way.user, "serejahh")
         XCTAssertEqual(way.nodes.count, 0)
         XCTAssertEqual(way.isClosedWay(), false)
+        
+        way.nodes.append("node1")
+        way.nodes.append("node2")
+        way.nodes.append("node1")
+        XCTAssertEqual(way.nodes.count, 3)
     }
     
     func testClosedWay() {
@@ -39,6 +44,16 @@ class OSMWayTests: XCTestCase {
     }
     
     func testAllProperties() {
-        XCTFail("Not implemented")
+        let way = OSMWay(wayId: "my_id", user: "serejahh")
+        
+        way.amenity = "some amenity"
+        way.building = "building1"
+        way.name = "awesome way"
+        way.shop = "shop??"
+        
+        XCTAssertEqual(way.amenity!, "some amenity")
+        XCTAssertEqual(way.building!, "building1")
+        XCTAssertEqual(way.name!, "awesome way")
+        XCTAssertEqual(way.shop!, "shop??")
     }
 }

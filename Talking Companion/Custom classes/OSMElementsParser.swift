@@ -46,11 +46,12 @@ class OSMElementsParser: NSObject {
         var nodes:Array<OSMNode> = Array()
         var nodesXML = parser.childrenNamed("node");
         
-        println("start parsing with count of nodes: \(nodesXML.count)")
-        
         if nodesXML?.count == 0 {
+            println("start parsing with count of nodes: 0")
             return nodes
         }
+        
+        println("start parsing with count of nodes: \(nodesXML.count)")
         
         for nodeXML:AnyObject in nodesXML {
             var element:SMXMLElement = nodeXML as SMXMLElement
@@ -149,6 +150,20 @@ class OSMElementsParser: NSObject {
         return tmpNodes
     }
     
+    func nodesWithProperty(property:String, equal:String) -> Array<OSMNode> {
+        var tmpNodes:Array<OSMNode> = Array()
+        
+        for node in nodes {
+            if let value : AnyObject = node.valueForKey(property)  {
+                if value as NSString == equal {
+                    tmpNodes.append(node)
+                }
+            }
+        }
+        
+        return tmpNodes
+    }
+    
     func waysWithProperty(property:String) -> Array<OSMWay> {
         var tmpWays:Array<OSMWay> = Array()
         
@@ -160,20 +175,4 @@ class OSMElementsParser: NSObject {
         
         return tmpWays
     }
-    
-    func showWaysWithProperty(property:String, equal:String) -> Array<OSMWay> {
-        var tmpWays:Array<OSMWay> = Array()
-        
-        for way in ways {
-            if let value : AnyObject = way.valueForKey(property)  {
-                if value as NSString == equal {
-                    tmpWays.append(way)
-                }
-            }
-        }
-        
-        return tmpWays
-    }
-
-    
 }

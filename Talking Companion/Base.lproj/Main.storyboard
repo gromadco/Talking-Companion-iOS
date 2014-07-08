@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="I51-cH-MMB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.7" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="I51-cH-MMB">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6181.2"/>
     </dependencies>
     <scenes>
         <!--Speed View Controller-->
@@ -115,9 +116,20 @@
                                     <rect key="frame" x="100" y="137" width="200" height="21"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HU9-0V-3Ye">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="137" y="174" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="uncompress:" destination="I51-cH-MMB" eventType="touchUpInside" id="oUE-82-Zuz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="aLz-jx-c65"/>
@@ -131,6 +143,7 @@
                                 <exclude reference="yTZ-2r-SL3"/>
                                 <exclude reference="Xb4-f1-WCi"/>
                                 <exclude reference="4ON-Ce-3gt"/>
+                                <exclude reference="HU9-0V-3Ye"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -146,6 +159,7 @@
                                 <include reference="yTZ-2r-SL3"/>
                                 <include reference="Xb4-f1-WCi"/>
                                 <include reference="4ON-Ce-3gt"/>
+                                <include reference="HU9-0V-3Ye"/>
                             </mask>
                         </variation>
                     </view>

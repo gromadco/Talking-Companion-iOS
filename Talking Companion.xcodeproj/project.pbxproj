@@ -75,6 +75,8 @@
 		BDBEAC4D19641372000EC6ED /* OSMTilesDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBEAC4C19641372000EC6ED /* OSMTilesDownloader.swift */; };
 		BDBEAC4F19641405000EC6ED /* OSMBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBEAC4E19641405000EC6ED /* OSMBoundingBox.swift */; };
 		BDD89B85195B095F0020ACA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD89B84195B095F0020ACA7 /* AVFoundation.framework */; };
+		BDF87793196C294200134E89 /* empty.osm in Resources */ = {isa = PBXBuildFile; fileRef = BDF87792196C294200134E89 /* empty.osm */; };
+		BDF87794196C294200134E89 /* empty.osm in Resources */ = {isa = PBXBuildFile; fileRef = BDF87792196C294200134E89 /* empty.osm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,13 @@
 			remoteInfo = "Talking Companion";
 		};
 		BD0C9F79196738A9003A88AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BDB58973195888670090E178 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDB5897A195888670090E178;
+			remoteInfo = "Talking Companion";
+		};
+		BD536AAC196A82780017345D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BDB58973195888670090E178 /* Project object */;
 			proxyType = 1;
@@ -191,6 +200,7 @@
 		BDBEAC4C19641372000EC6ED /* OSMTilesDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMTilesDownloader.swift; sourceTree = "<group>"; };
 		BDBEAC4E19641405000EC6ED /* OSMBoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMBoundingBox.swift; sourceTree = "<group>"; };
 		BDD89B84195B095F0020ACA7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BDF87792196C294200134E89 /* empty.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = empty.osm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +228,7 @@
 		BD0C9F101967388A003A88AC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BDF87792196C294200134E89 /* empty.osm */,
 				BD0C9F311967388A003A88AC /* map.osm */,
 				BD0C9F111967388A003A88AC /* AFNetworking */,
 				BD0C9F251967388A003A88AC /* fmdb */,
@@ -437,6 +448,7 @@
 				BD0C9F0C1967357D003A88AC /* PBXTargetDependency */,
 				BD0C9F781967389A003A88AC /* PBXTargetDependency */,
 				BD0C9F7A196738A9003A88AC /* PBXTargetDependency */,
+				BD536AAD196A82780017345D /* PBXTargetDependency */,
 			);
 			name = "Talking CompanionTests";
 			productName = "Talking CompanionTests";
@@ -491,6 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD0C9F631967388A003A88AC /* map.osm in Resources */,
+				BDF87793196C294200134E89 /* empty.osm in Resources */,
 				BDB58986195888670090E178 /* Main.storyboard in Resources */,
 				BDB58988195888670090E178 /* Images.xcassets in Resources */,
 			);
@@ -501,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD0C9F641967388A003A88AC /* map.osm in Resources */,
+				BDF87794196C294200134E89 /* empty.osm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +617,11 @@
 			isa = PBXTargetDependency;
 			target = BDB5897A195888670090E178 /* Talking Companion */;
 			targetProxy = BD0C9F79196738A9003A88AC /* PBXContainerItemProxy */;
+		};
+		BD536AAD196A82780017345D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BDB5897A195888670090E178 /* Talking Companion */;
+			targetProxy = BD536AAC196A82780017345D /* PBXContainerItemProxy */;
 		};
 		BDB5898F195888670090E178 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
