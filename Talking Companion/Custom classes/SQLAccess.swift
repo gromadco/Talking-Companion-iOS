@@ -17,7 +17,7 @@ class SQLAccess: NSObject {
     class func createTableNodes() {
         var db = FMDatabase(path: pathToDB)
         if db.open() {
-            db.executeUpdate("CREATE TABLE IF NOT EXISTS nodes (id INTEGER PRIMARY KEY, tile_id INTEGER, latitude DOUBLE, longitude DOUBLE, user TEXT)", withArgumentsInArray: [])
+            db.executeUpdate("CREATE TABLE IF NOT EXISTS nodes (id INTEGER PRIMARY KEY, tile_id INTEGER, latitude DOUBLE, longitude DOUBLE, user TEXT, name TEXT)", withArgumentsInArray: [])
             db.close()
         }
     }
@@ -30,7 +30,15 @@ class SQLAccess: NSObject {
         
         db.beginTransaction()
         for node in nodes {
-            db.executeUpdate("INSERT INTO nodes (tile_id, latitude, longitude, user) VALUES (?, ?, ?, ?)", withArgumentsInArray: [tileId, node.location.coordinate.latitude, node.location.coordinate.longitude, node.user])
+            var name = ""
+            if let nodeName = node.name? {
+                name = nodeName
+            }
+            else {
+                continue
+            }
+            
+            db.executeUpdate("INSERT INTO nodes (tile_id, latitude, longitude, user, name) VALUES (?, ?, ?, ?, ?)", withArgumentsInArray: [tileId, node.location.coordinate.latitude, node.location.coordinate.longitude, node.user, name])
         }
         db.commit()
         db.close()
@@ -49,12 +57,41 @@ class SQLAccess: NSObject {
             var latitude = result.doubleForColumn("latitude")
             var longitude = result.doubleForColumn("longitude")
             var user = result.stringForColumn("user")
-
-            nodes += OSMNode(latitude: latitude, longitude: latitude, user: "user")
+            var name = result.stringForColumn("name")
+            
+            var node = OSMNode(latitude: latitude, longitude: longitude, user: "user")
+            node.name = name
+            
+            nodes += node
         }
         
         db.close()
         return nodes
+    }
+    
+    class func nodesForTile(tile:OSMTile) -> [OSMNode]  {
+        var nodes = [OSMNode]()
+        
+        var db = FMDatabase(path: pathToDB)
+        if !db.open() {
+            return nodes
+        }
+
+        var result = db.executeQuery("SELECT * FROM ((SELECT id AS tileid FROM tiles WHERE x = ? AND y = ? AND zoom = ?) JOIN nodes) WHERE name <> '' AND nodes.tile_id = tileid", withArgumentsInArray:[tile.x, tile.y, tile.zoom])
+        while result.next() {
+            var latitude = result.doubleForColumn("latitude")
+            var longitude = result.doubleForColumn("longitude")
+            var user = result.stringForColumn("user")
+            var name = result.stringForColumn("name")
+            
+            var node = OSMNode(latitude: latitude, longitude: longitude, user: "user")
+            node.name = name
+            
+            nodes += node
+        }
+        
+        db.close()
+        return nodes;
     }
 
     // MARK: - Tiles

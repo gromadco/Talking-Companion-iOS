@@ -7,16 +7,14 @@
 //
 
 #import "SpeedViewController.h"
-#import "Talking_Companion-Swift.h"
 
 static const NSTimeInterval pronounceSpeedTimeInterval = 15;
-static const NSTimeInterval announceDirectionTimeInterval = 2;
+static const NSTimeInterval announceDirectionTimeInterval = 10;
 static const double kKilometersPerHour = 3.6;
 
-static const NSTimeInterval downloadTilesTimeInterval = 60;
+static const NSTimeInterval downloadTilesTimeInterval = 10; // 60
 static const NSInteger kDefaultZoom = 16;
-static const CLLocationDegrees kDefaulLatitude = 47.817997;
-static const CLLocationDegrees kDefaulLongitude = 35.19622;
+static const CLLocationDistance maxDistance = 1000000;
 
 #define RADIANS_TO_DEGREES(radians) ((radians) * (180.0 / M_PI))
 
@@ -27,27 +25,48 @@ static const CLLocationDegrees kDefaulLongitude = 35.19622;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    OSMElementsParser *parser = [[OSMElementsParser alloc] init];
-    [parser initialize];
-    nodes = [parser nodesWithProperty:@"name"];
+    tilesDownloader = [[OSMTilesDownloader alloc] init];
+    tilesDownloader.delegate = self;
     
     [self loadLocationManager];
-    [self neighboringTilesForCoordinates:CLLocationCoordinate2DMake(kDefaulLatitude, kDefaulLongitude)];
     
-    speechTimer = [NSTimer scheduledTimerWithTimeInterval:pronounceSpeedTimeInterval target:self selector:@selector(pronounceSpeed) userInfo:nil repeats:YES];
-    tilesTimer = [NSTimer scheduledTimerWithTimeInterval:downloadTilesTimeInterval target:self selector:@selector(downloadTiles) userInfo:nil repeats:YES];
+    NSLog(@"path to documents: %@", NSHomeDirectory());
 }
 
-- (void)viewWillDisappear:(BOOL)animated
+- (void)updateNodesFromDB
 {
-    [super viewWillDisappear:animated];
-    if ([speechTimer isValid]) {
-        [speechTimer invalidate];
+    OSMTile *centerTile = [[OSMTile alloc] initWithLatitude:currentLocation.coordinate.latitude
+                                                  longitude:currentLocation.coordinate.longitude zoom:kDefaultZoom];
+    
+    NSMutableArray *tmpNodes = [NSMutableArray array];
+    NSArray *neighboringTiles = [centerTile neighboringTiles];
+    for (OSMTile *currentTile in neighboringTiles) {
+        [tmpNodes addObjectsFromArray:[SQLAccess nodesForTile:currentTile]];
     }
-    if ([tilesTimer isValid]) {
-        [tilesTimer invalidate];
+    nodes = [NSArray arrayWithArray:tmpNodes];
+    NSLog(@"received nodes: %li", nodes.count);
+}
+
+- (void)checkLocationsPermissions
+{
+    if (isLocationEnabled) {
+        speechTimer = [NSTimer scheduledTimerWithTimeInterval:pronounceSpeedTimeInterval target:self selector:@selector(speakSpeed) userInfo:nil repeats:YES];
+        tilesTimer = [NSTimer scheduledTimerWithTimeInterval:downloadTilesTimeInterval target:self selector:@selector(downloadTiles) userInfo:nil repeats:YES];
+        announceDirectionTimer = [NSTimer scheduledTimerWithTimeInterval:announceDirectionTimeInterval target:self selector:@selector(announceDirection) userInfo:nil repeats:YES];
     }
+    else {
+        if ([speechTimer isValid]) {
+            [speechTimer invalidate];
+        }
+        if ([tilesTimer isValid]) {
+            [tilesTimer invalidate];
+        }
+        if ([announceDirectionTimer isValid]) {
+            [announceDirectionTimer invalidate];
+        }
+    }
+    
+    self.allowAccessLabel.hidden = isLocationEnabled;
 }
 
 #pragma mark -
@@ -59,31 +78,42 @@ static const CLLocationDegrees kDefaulLongitude = 35.19622;
 
 - (void)neighboringTilesForCoordinates:(CLLocationCoordinate2D)coordinates
 {
+    NSLog(@"downloading neighboring tiles for tile(%lf; %lf)", coordinates.latitude, coordinates.longitude);
+    
     OSMTile *centerTile = [[OSMTile alloc] initWithLatitude:coordinates.latitude longitude:coordinates.longitude zoom:kDefaultZoom];
-
-    OSMTilesDownloader *downloader = [[OSMTilesDownloader alloc] init];
-    [downloader downloadNeighboringTilesForTile:centerTile];
+    [tilesDownloader downloadNeighboringTilesForTile:centerTile];
 }
 
 #pragma mark - Place details
 
 #pragma mark Speed
 
-- (void)pronounceSpeed
+- (void)speakSpeed
 {
-    NSString *string = [NSString stringWithFormat:@"%.2lf km per hour", currentSpeed];
-    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:string];
-    [synth speakUtterance:utterance];
+    if (currentSpeed > 0) {
+        NSString *speedString = [NSString stringWithFormat:@"%i km per hour", (int)currentSpeed];
+        AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:speedString];
+        [synth speakUtterance:utterance];
+        
+        NSLog(@"speak speed: %@", speedString);
+    }
+    else {
+        NSLog(@"try to speak speed");
+    }
 }
 
 #pragma mark Closest place
 
 - (void)speakPlace:(OSMNode*)place distance:(CLLocationDistance)distance
 {
-    NSString *string = [NSString stringWithFormat:@"Closest plase is %@ with distance %li m", place.name, (long)distance];
-    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:string];
-    [synth speakUtterance:utterance];
-    [place announce];
+    if (distance > 0) {
+        NSString *placeString = [NSString stringWithFormat:@"Closest place is %@, %@ with distance %li m", place.name, place.type, (long)distance];
+        AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:placeString];
+        [synth speakUtterance:utterance];
+        [place announce];
+        
+         NSLog(@"announce place \"%@\"", placeString);
+    }
 }
 
 - (void)announceClosestPlace
@@ -93,19 +123,25 @@ static const CLLocationDegrees kDefaulLongitude = 35.19622;
     
     for (OSMNode *node in nodes) {
         CLLocationDistance distance = [currentLocation distanceFromLocation:node.location];
-        
+
         if (minDistance > distance) {
             minDistance = distance;
             closestPlace = node;
         }
     }
     
+    if (minDistance > maxDistance) {
+        _distanceLabel.text = @"can't detect";
+        return;
+    }
+    
     if (!closestPlace.isAnnounced) {
         [self speakPlace:closestPlace distance:minDistance];
     }
+    
     _nameLabel.text = closestPlace.name;
     _distanceLabel.text = [NSString stringWithFormat:@"%li m.", (long)minDistance];
-    _typeLabel.text = closestPlace.type;
+    //_typeLabel.text = closestPlace.type;
     closestPlaceLocation = closestPlace.location;
 }
 
@@ -120,8 +156,9 @@ static const CLLocationDegrees kDefaulLongitude = 35.19622;
     phi1 = atan2(y1, x1);
     phi1 = RADIANS_TO_DEGREES(phi1);
     
-    double y2 = sin(currentLocation.coordinate.longitude - closestPlaceLocation.coordinate.longitude) * cos(currentLocation.coordinate.latitude);
-    double x2 = cos(closestPlaceLocation.coordinate.latitude) * sin(currentLocation.coordinate.latitude) - sin(closestPlaceLocation.coordinate.latitude)*cos(currentLocation.coordinate.latitude);
+    double y2 = sin(closestPlaceLocation.coordinate.longitude - currentLocation.coordinate.longitude) * cos(closestPlaceLocation.coordinate.latitude);
+    double x2 = cos(currentLocation.coordinate.latitude) * sin(closestPlaceLocation.coordinate.latitude) - sin(currentLocation.coordinate.latitude)*cos(closestPlaceLocation.coordinate.latitude);
+    
     phi2 = atan2(y2, x2);
     phi2 = RADIANS_TO_DEGREES(phi2);
     
@@ -159,6 +196,7 @@ static const CLLocationDegrees kDefaulLongitude = 35.19622;
     manager = [[CLLocationManager alloc] init];
     manager.delegate = self;
     manager.desiredAccuracy = kCLLocationAccuracyBest;
+    [manager requestAlwaysAuthorization];
     [manager startUpdatingLocation];
 }
 
@@ -172,22 +210,36 @@ static const CLLocationDegrees kDefaulLongitude = 35.19622;
     [self announceClosestPlace];
     
     if (previousLocation == nil) {
+        NSLog(@"initial coordinates: (%lf; %lf)", currentLocation.coordinate.latitude, currentLocation.coordinate.longitude);
         previousLocation = newLocation;
-        announceDirectionTimer = [NSTimer scheduledTimerWithTimeInterval:announceDirectionTimeInterval target:self selector:@selector(announceDirection) userInfo:nil repeats:YES];
+        
+        [self updateNodesFromDB];
+        [self downloadTiles];
     }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    NSLog(@"location error: %@", error);
+    NSLog(@"location manager error: %@", error);
 }
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 {
-    if (status == kCLAuthorizationStatusDenied) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Access denied" message:@"Please enable access to location services" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        [alert show];
+    NSLog(@"location manager status: %i", status);
+    if (status == kCLAuthorizationStatusDenied || status == kCLAuthorizationStatusNotDetermined) {
+        isLocationEnabled = NO;
     }
+    else {
+        isLocationEnabled = YES;
+    }
+    [self checkLocationsPermissions];
+}
+
+#pragma mark - OSMTileDownloader Delegate
+
+- (void)tilesDownloaded
+{
+    [self updateNodesFromDB];
 }
 
 @end

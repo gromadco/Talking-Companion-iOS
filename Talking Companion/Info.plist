@@ -30,13 +30,11 @@
 	<array>
 		<string>armv7</string>
 	</array>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>something</string>
-	<key>NSLocationWhenInUsageDescription</key>
-	<string>something</string>
-	<key>NSLocationUsageDescription</key>
-	<string>something</string>
 	<key>OSMDefaultZoom</key>
 	<integer>16</integer>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string></string>
 </dict>
 </plist>

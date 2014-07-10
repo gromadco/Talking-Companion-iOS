@@ -9,13 +9,17 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <AVFoundation/AVFoundation.h>
+#import "Talking_Companion-Swift.h"
 
-@interface SpeedViewController : UIViewController <CLLocationManagerDelegate>
+@class OSMTilesDownloader;
+
+@interface SpeedViewController : UIViewController <CLLocationManagerDelegate, OSMTilesDownloaderDelegate>
 {
     CLLocationManager *manager;
     CLLocationSpeed currentSpeed;
     CLLocation *currentLocation;
     NSArray *nodes;
+    OSMTilesDownloader *tilesDownloader;
     
     AVSpeechSynthesizer *synth;
     NSTimer *speechTimer;
@@ -24,6 +28,8 @@
     NSTimer *announceDirectionTimer;
     CLLocation *previousLocation;
     CLLocation *closestPlaceLocation;
+    
+    BOOL isLocationEnabled;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *currentSpeedLabel;
@@ -31,5 +37,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *directionLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *allowAccessLabel;
 
 @end

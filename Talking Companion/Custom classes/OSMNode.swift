@@ -28,9 +28,9 @@ class OSMNode: NSObject {
         if let amenity = self.amenity {
             type += "\(amenity) "
         }
-        if let name = self.name {
-            type += "\(name) "
-        }
+//        if let name = self.name {
+//            type += "\(name) "
+//        }
         if let operator = self.operator {
             type += "\(operator) "
         }

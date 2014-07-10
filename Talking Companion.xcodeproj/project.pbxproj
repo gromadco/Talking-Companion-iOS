@@ -76,7 +76,6 @@
 		BDBEAC4D19641372000EC6ED /* OSMTilesDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBEAC4C19641372000EC6ED /* OSMTilesDownloader.swift */; };
 		BDBEAC4F19641405000EC6ED /* OSMBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBEAC4E19641405000EC6ED /* OSMBoundingBox.swift */; };
 		BDD89B85195B095F0020ACA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD89B84195B095F0020ACA7 /* AVFoundation.framework */; };
-		BDDA0F92196C547D000D26B1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BDDA0F85196C547D000D26B1 /* .gitignore */; };
 		BDDA0F93196C547D000D26B1 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = BDDA0F88196C547D000D26B1 /* ioapi.c */; };
 		BDDA0F94196C547D000D26B1 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = BDDA0F8A196C547D000D26B1 /* mztools.c */; };
 		BDDA0F95196C547D000D26B1 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = BDDA0F8C196C547D000D26B1 /* unzip.c */; };
@@ -209,7 +208,6 @@
 		BDBEAC4C19641372000EC6ED /* OSMTilesDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMTilesDownloader.swift; sourceTree = "<group>"; };
 		BDBEAC4E19641405000EC6ED /* OSMBoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMBoundingBox.swift; sourceTree = "<group>"; };
 		BDD89B84195B095F0020ACA7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		BDDA0F85196C547D000D26B1 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		BDDA0F87196C547D000D26B1 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
 		BDDA0F88196C547D000D26B1 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
 		BDDA0F89196C547D000D26B1 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
@@ -427,7 +425,6 @@
 		BDDA0F84196C547D000D26B1 /* SSZipArchive */ = {
 			isa = PBXGroup;
 			children = (
-				BDDA0F85196C547D000D26B1 /* .gitignore */,
 				BDDA0F86196C547D000D26B1 /* minizip */,
 				BDDA0F90196C547D000D26B1 /* SSZipArchive.h */,
 				BDDA0F91196C547D000D26B1 /* SSZipArchive.m */,
@@ -554,7 +551,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDDA0F92196C547D000D26B1 /* .gitignore in Resources */,
 				BD0C9F631967388A003A88AC /* map.osm in Resources */,
 				BDF87793196C294200134E89 /* empty.osm in Resources */,
 				BDB58986195888670090E178 /* Main.storyboard in Resources */,

@@ -8,8 +8,15 @@
 
 import UIKit
 
+@objc protocol OSMTilesDownloaderDelegate {
+    func tilesDownloaded();
+}
+
 class OSMTilesDownloader: NSObject {
    
+    var leftDownloading = 0
+    var delegate:OSMTilesDownloaderDelegate?
+    
     func downloadNeighboringTilesFor(tile centerTile:OSMTile) {
         var tiles:Array<OSMTile> = centerTile.neighboringTiles()
         
@@ -28,15 +35,24 @@ class OSMTilesDownloader: NSObject {
             operation.outputStream = NSOutputStream(toFileAtPath: path, append: false)
 
             operation.setCompletionBlockWithSuccess({ (_, responseObject) in
-                    var parser = OSMElementsParser()
-                    parser.filePath = path
-                    parser.initialize()
-
-                    var tileId = SQLAccess.saveTile(tile)
-                    SQLAccess.saveNodes(parser.nodes, forTileId: tileId)
+                println("tile \(tile) for \(index) downloaded")
+                var parser = OSMElementsParser(filePath: path)
+                var tileId = SQLAccess.saveTile(tile)
+                SQLAccess.saveNodes(parser.nodes, forTileId: tileId)
+                
+                self.leftDownloading--;
+                if self.leftDownloading == 0 {
+                    self.delegate?.tilesDownloaded()
+                }
+            
                 },
                 failure: { [unowned self] (_, error) in })
+            println("start downloading bounding box @ \(box.url)")
             operation.start()
+            leftDownloading++;
+        }
+        if self.leftDownloading == 0 {
+            self.delegate?.tilesDownloaded()
         }
     }
 }

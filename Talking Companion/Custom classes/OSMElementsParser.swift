@@ -14,21 +14,22 @@ extension String {
     }
 }
 
-class OSMElementsParser: NSObject {
+class OSMElementsParser {
     
     // MARK: - Properties
     
-    var nodes:Array<OSMNode> = Array()
-    var ways:Array<OSMWay> = Array()
-    var filePath:String = NSBundle.mainBundle().pathForResource("map", ofType:"osm")
+    var nodes = [OSMNode]()
+    var ways = [OSMWay]()
+    var filePath:String
     
     // MARK: - Initializing
     
-    func initialize() {
+    init(filePath:String)  {
+        self.filePath = filePath
         nodes = parseNodes()
         ways = parseWays()
     }
-    
+        
     // MARK: - Parsing
     
     func parser() -> AnyObject {
@@ -39,18 +40,17 @@ class OSMElementsParser: NSObject {
         return parser
     }
     
-    func parseNodes() -> Array<OSMNode> {
+    func parseNodes() -> [OSMNode] {
         let parser:SMXMLDocument = self.parser() as SMXMLDocument
         
         var node:OSMNode
-        var nodes:Array<OSMNode> = Array()
-        var nodesXML = parser.childrenNamed("node");
+        var nodes = [OSMNode]()
+        var nodesXML = parser.childrenNamed("node")
         
-        if nodesXML?.count == 0 {
-            println("start parsing with count of nodes: 0")
-            return nodes
+        if nodesXML? == nil {
+            return [OSMNode]()
         }
-        
+    
         println("start parsing with count of nodes: \(nodesXML.count)")
         
         for nodeXML:AnyObject in nodesXML {
@@ -87,13 +87,18 @@ class OSMElementsParser: NSObject {
         return nodes;
     }
     
-    func parseWays() -> Array<OSMWay> {
+    func parseWays() -> [OSMWay] {
         let parser:SMXMLDocument = self.parser() as SMXMLDocument
         
         var way:OSMWay
-        var ways:Array<OSMWay> = Array()
+        var ways = [OSMWay]()
         var waysXML = parser.childrenNamed("way");
-        //
+        
+        
+        if waysXML? == nil {
+            return [OSMWay]()
+        }
+        
         for wayXML:AnyObject in waysXML {
             var element:SMXMLElement = wayXML as SMXMLElement
             
