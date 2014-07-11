@@ -12,7 +12,7 @@ static const NSTimeInterval pronounceSpeedTimeInterval = 15;
 static const NSTimeInterval announceDirectionTimeInterval = 10;
 static const double kKilometersPerHour = 3.6;
 
-static const NSTimeInterval downloadTilesTimeInterval = 10; // 60
+static const NSTimeInterval downloadTilesTimeInterval = 60;
 static const NSInteger kDefaultZoom = 16;
 static const CLLocationDistance maxDistance = 10 * 1000;
 
@@ -141,7 +141,7 @@ static const CLLocationDistance maxDistance = 10 * 1000;
     
     _nameLabel.text = closestPlace.name;
     _distanceLabel.text = [NSString stringWithFormat:@"%li m.", (long)minDistance];
-    //_typeLabel.text = closestPlace.type;
+    _typeLabel.text = closestPlace.type;
     closestPlaceLocation = closestPlace.location;
 }
 

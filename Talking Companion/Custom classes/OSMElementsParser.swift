@@ -57,11 +57,12 @@ class OSMElementsParser {
             var element:SMXMLElement = nodeXML as SMXMLElement
             
             // required properties
+            var uid:Int = element.attributeNamed("uid").toInt()!
             var lat = element.attributeNamed("lat").doubleValue
             var lon = element.attributeNamed("lon").doubleValue
             var user = element.attributeNamed("user")
-            node = OSMNode(latitude: lat, longitude: lon, user:user)
-            
+            node = OSMNode(uid:uid, latitude: lat, longitude: lon, user:user)
+        
             // check tags
             if let tagsXML = element.childrenNamed("tag") {
                 for tagXML:AnyObject in tagsXML {
@@ -143,8 +144,8 @@ class OSMElementsParser {
     
     // MARK: -
     
-    func nodesWithProperty(property:String) -> Array<OSMNode> {
-        var tmpNodes:Array<OSMNode> = Array()
+    func nodesWithProperty(property:String) -> [OSMNode] {
+        var tmpNodes = [OSMNode]()
         
         for node in nodes {
             if node.valueForKey(property) {
@@ -155,8 +156,8 @@ class OSMElementsParser {
         return tmpNodes
     }
     
-    func nodesWithProperty(property:String, equal:String) -> Array<OSMNode> {
-        var tmpNodes:Array<OSMNode> = Array()
+    func nodesWithProperty(property:String, equal:String) -> [OSMNode] {
+        var tmpNodes = [OSMNode]()
         
         for node in nodes {
             if let value : AnyObject = node.valueForKey(property)  {
@@ -169,8 +170,8 @@ class OSMElementsParser {
         return tmpNodes
     }
     
-    func waysWithProperty(property:String) -> Array<OSMWay> {
-        var tmpWays:Array<OSMWay> = Array()
+    func waysWithProperty(property:String) -> [OSMWay] {
+        var tmpWays = [OSMWay]()
         
         for way in ways {
             if way.valueForKey(property) {

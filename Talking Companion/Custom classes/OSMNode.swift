@@ -15,7 +15,7 @@ class OSMNode: NSObject {
     
     // MARK: - Properties
     
-    var uid:Int?
+    var uid:Int
     var location:CLLocation
     var user:String
     var announcedDate:NSDate?
@@ -56,7 +56,8 @@ class OSMNode: NSObject {
     
     // MARK: - Initializing
 
-    init(latitude:Double, longitude:Double, user:NSString) {
+    init(uid:Int, latitude:Double, longitude:Double, user:NSString) {
+        self.uid = uid
         self.location = CLLocation(latitude: latitude, longitude: longitude)
         self.user = user
     }

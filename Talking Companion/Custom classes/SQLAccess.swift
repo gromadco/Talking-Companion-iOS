@@ -17,12 +17,12 @@ class SQLAccess: NSObject {
     class func createTableNodes() {
         var db = FMDatabase(path: pathToDB)
         if db.open() {
-            db.executeUpdate("CREATE TABLE IF NOT EXISTS nodes (id INTEGER PRIMARY KEY, tile_id INTEGER, announced_date DOUBLE,  latitude DOUBLE, longitude DOUBLE, user TEXT, name TEXT)", withArgumentsInArray: [])
+            db.executeUpdate("CREATE TABLE IF NOT EXISTS nodes (uid INTEGER UNIQUE, tile_id INTEGER, announced_date DOUBLE,  latitude DOUBLE, longitude DOUBLE, user TEXT, name TEXT, amenity TEXT, shop TEXT, operator TEXT)", withArgumentsInArray: [])
             db.close()
         }
     }
     
-    class func saveNodes(nodes:Array<OSMNode>, forTileId tileId:Int) {
+    class func saveNodes(nodes:[OSMNode], forTileId tileId:Int) {
         var db = FMDatabase(path: pathToDB)
         if !db.open() {
             return
@@ -31,22 +31,36 @@ class SQLAccess: NSObject {
         db.beginTransaction()
         for node in nodes {
             var name = ""
-
-            if let newName = node.name? {
-                name = newName
+            var amenity = "", shop = "", operator = ""
+            
+            if let nodeName = node.name? {
+                name = nodeName
             }
             else {
                 continue
             }
             
-            db.executeUpdate("INSERT INTO nodes (tile_id, latitude, longitude, user, name) VALUES (?, ?, ?, ?, ?)", withArgumentsInArray: [tileId, node.location.coordinate.latitude, node.location.coordinate.longitude, node.user, name])
+            if let nodeAmenity = node.amenity? {
+                amenity = nodeAmenity
+            }
+            if let nodeShop = node.shop? {
+                shop = nodeShop
+            }
+
+            if let nodeOperator = node.operator? {
+                operator = nodeOperator
+            }
+
+            
+            
+            db.executeUpdate("INSERT OR IGNORE INTO nodes (uid, tile_id, latitude, longitude, user, name, amenity, shop, operator) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", withArgumentsInArray: [node.uid, tileId, node.location.coordinate.latitude, node.location.coordinate.longitude, node.user, name, amenity, shop, operator])
         }
         db.commit()
         db.close()
     }
 
-    class func nodes() -> Array<OSMNode> {
-        var nodes:Array<OSMNode> = Array()
+    class func nodes() -> [OSMNode] {
+        var nodes = [OSMNode]()
         
         var db = FMDatabase(path: pathToDB)
         if !db.open() {
@@ -55,15 +69,7 @@ class SQLAccess: NSObject {
         
         var result = db.executeQuery("SELECT * FROM nodes", withArgumentsInArray: [])
         while result.next() {
-            var latitude = result.doubleForColumn("latitude")
-            var longitude = result.doubleForColumn("longitude")
-            var user = result.stringForColumn("user")
-            var name = result.stringForColumn("name")
-            
-            var node = OSMNode(latitude: latitude, longitude: longitude, user: "user")
-            node.name = name
-            
-            nodes += node
+            nodes += SQLAccess.nodeFromResult(result)
         }
         
         db.close()
@@ -80,19 +86,7 @@ class SQLAccess: NSObject {
 
         var result = db.executeQuery("SELECT * FROM ((SELECT id AS tileid FROM tiles WHERE x = ? AND y = ? AND zoom = ?) JOIN nodes) WHERE name <> '' AND nodes.tile_id = tileid", withArgumentsInArray:[tile.x, tile.y, tile.zoom])
         while result.next() {
-            var uid = Int(result.intForColumn("id"))
-            var announcedDate = result.dateForColumn("announced_date")
-            var latitude = result.doubleForColumn("latitude")
-            var longitude = result.doubleForColumn("longitude")
-            var user = result.stringForColumn("user")
-            var name = result.stringForColumn("name")
-            
-            var node = OSMNode(latitude: latitude, longitude: longitude, user: "user")
-            node.uid = uid
-            node.name = name
-            node.announcedDate = announcedDate
-            
-            nodes += node
+            nodes += SQLAccess.nodeFromResult(result)
         }
         
         db.close()
@@ -102,9 +96,27 @@ class SQLAccess: NSObject {
     class func updateNode(node:OSMNode) {
         var db = FMDatabase(path: pathToDB)
         if db.open() {
-            db.executeUpdate("UPDATE nodes SET announced_date = ? WHERE id = ?", withArgumentsInArray: [node.announcedDate!, node.uid!])
+            db.executeUpdate("UPDATE nodes SET announced_date = ? WHERE uid = ?", withArgumentsInArray: [node.announcedDate!, node.uid])
             db.close()
         }
+    }
+    
+    class func nodeFromResult(result:FMResultSet) -> OSMNode {
+        var uid = Int(result.intForColumn("uid"))
+        var announcedDate = result.dateForColumn("announced_date")
+        var latitude = result.doubleForColumn("latitude")
+        var longitude = result.doubleForColumn("longitude")
+        var user = result.stringForColumn("user")
+
+        var node = OSMNode(uid:uid, latitude: latitude, longitude: longitude, user: "user")
+        node.uid = uid
+        node.name = result.stringForColumn("name")
+        node.announcedDate = announcedDate
+        node.amenity = result.stringForColumn("amenity")
+        node.shop = result.stringForColumn("shop")
+        node.operator = result.stringForColumn("operator")
+        
+        return node;
     }
 
     // MARK: - Tiles
@@ -143,8 +155,8 @@ class SQLAccess: NSObject {
         return has;
     }
     
-    class func tiles() -> Array<OSMTile> {
-        var tiles:Array<OSMTile> = Array()
+    class func tiles() -> [OSMTile] {
+        var tiles = [OSMTile]()
         
         var db = FMDatabase(path: pathToDB)
         if !db.open() {
