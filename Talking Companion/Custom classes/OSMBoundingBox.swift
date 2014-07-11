@@ -21,7 +21,7 @@ class OSMBoundingBox: NSObject {
     init(tile:OSMTile) {
         north = OSMTile.tiley2latitude(y: tile.y, zoom: tile.zoom)
         south = OSMTile.tiley2latitude(y: tile.y+1, zoom: tile.zoom)
-        west  = OSMTile.tilex2longitude(x: tile.x, zoom: tile.zoom)
-        east  = OSMTile.tilex2longitude(x: tile.x+1, zoom: tile.zoom)
+        west = OSMTile.tilex2longitude(x: tile.x, zoom: tile.zoom)
+        east = OSMTile.tilex2longitude(x: tile.x+1, zoom: tile.zoom)
     }   
 }
