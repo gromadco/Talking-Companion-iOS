@@ -17,7 +17,7 @@ class SQLAccess: NSObject {
     class func createTableNodes() {
         var db = FMDatabase(path: pathToDB)
         if db.open() {
-            db.executeUpdate("CREATE TABLE IF NOT EXISTS nodes (id INTEGER PRIMARY KEY, tile_id INTEGER, latitude DOUBLE, longitude DOUBLE, user TEXT, name TEXT)", withArgumentsInArray: [])
+            db.executeUpdate("CREATE TABLE IF NOT EXISTS nodes (id INTEGER PRIMARY KEY, tile_id INTEGER, announced_date DOUBLE,  latitude DOUBLE, longitude DOUBLE, user TEXT, name TEXT)", withArgumentsInArray: [])
             db.close()
         }
     }
@@ -31,8 +31,9 @@ class SQLAccess: NSObject {
         db.beginTransaction()
         for node in nodes {
             var name = ""
-            if let nodeName = node.name? {
-                name = nodeName
+
+            if let newName = node.name? {
+                name = newName
             }
             else {
                 continue
@@ -79,19 +80,31 @@ class SQLAccess: NSObject {
 
         var result = db.executeQuery("SELECT * FROM ((SELECT id AS tileid FROM tiles WHERE x = ? AND y = ? AND zoom = ?) JOIN nodes) WHERE name <> '' AND nodes.tile_id = tileid", withArgumentsInArray:[tile.x, tile.y, tile.zoom])
         while result.next() {
+            var uid = Int(result.intForColumn("id"))
+            var announcedDate = result.dateForColumn("announced_date")
             var latitude = result.doubleForColumn("latitude")
             var longitude = result.doubleForColumn("longitude")
             var user = result.stringForColumn("user")
             var name = result.stringForColumn("name")
             
             var node = OSMNode(latitude: latitude, longitude: longitude, user: "user")
+            node.uid = uid
             node.name = name
+            node.announcedDate = announcedDate
             
             nodes += node
         }
         
         db.close()
         return nodes;
+    }
+    
+    class func updateNode(node:OSMNode) {
+        var db = FMDatabase(path: pathToDB)
+        if db.open() {
+            db.executeUpdate("UPDATE nodes SET announced_date = ? WHERE id = ?", withArgumentsInArray: [node.announcedDate!, node.uid!])
+            db.close()
+        }
     }
 
     // MARK: - Tiles

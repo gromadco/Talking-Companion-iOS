@@ -14,7 +14,7 @@ static const double kKilometersPerHour = 3.6;
 
 static const NSTimeInterval downloadTilesTimeInterval = 10; // 60
 static const NSInteger kDefaultZoom = 16;
-static const CLLocationDistance maxDistance = 1000000;
+static const CLLocationDistance maxDistance = 10 * 1000;
 
 #define RADIANS_TO_DEGREES(radians) ((radians) * (180.0 / M_PI))
 

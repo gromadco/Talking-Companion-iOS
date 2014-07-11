@@ -76,11 +76,6 @@
 		BDBEAC4D19641372000EC6ED /* OSMTilesDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBEAC4C19641372000EC6ED /* OSMTilesDownloader.swift */; };
 		BDBEAC4F19641405000EC6ED /* OSMBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBEAC4E19641405000EC6ED /* OSMBoundingBox.swift */; };
 		BDD89B85195B095F0020ACA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD89B84195B095F0020ACA7 /* AVFoundation.framework */; };
-		BDDA0F93196C547D000D26B1 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = BDDA0F88196C547D000D26B1 /* ioapi.c */; };
-		BDDA0F94196C547D000D26B1 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = BDDA0F8A196C547D000D26B1 /* mztools.c */; };
-		BDDA0F95196C547D000D26B1 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = BDDA0F8C196C547D000D26B1 /* unzip.c */; };
-		BDDA0F96196C547D000D26B1 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = BDDA0F8E196C547D000D26B1 /* zip.c */; };
-		BDDA0F97196C547D000D26B1 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDA0F91196C547D000D26B1 /* SSZipArchive.m */; };
 		BDF87793196C294200134E89 /* empty.osm in Resources */ = {isa = PBXBuildFile; fileRef = BDF87792196C294200134E89 /* empty.osm */; };
 		BDF87794196C294200134E89 /* empty.osm in Resources */ = {isa = PBXBuildFile; fileRef = BDF87792196C294200134E89 /* empty.osm */; };
 /* End PBXBuildFile section */
@@ -208,17 +203,6 @@
 		BDBEAC4C19641372000EC6ED /* OSMTilesDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMTilesDownloader.swift; sourceTree = "<group>"; };
 		BDBEAC4E19641405000EC6ED /* OSMBoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMBoundingBox.swift; sourceTree = "<group>"; };
 		BDD89B84195B095F0020ACA7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		BDDA0F87196C547D000D26B1 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
-		BDDA0F88196C547D000D26B1 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
-		BDDA0F89196C547D000D26B1 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
-		BDDA0F8A196C547D000D26B1 /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
-		BDDA0F8B196C547D000D26B1 /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
-		BDDA0F8C196C547D000D26B1 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
-		BDDA0F8D196C547D000D26B1 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
-		BDDA0F8E196C547D000D26B1 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
-		BDDA0F8F196C547D000D26B1 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
-		BDDA0F90196C547D000D26B1 /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
-		BDDA0F91196C547D000D26B1 /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
 		BDF87792196C294200134E89 /* empty.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = empty.osm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -253,7 +237,6 @@
 				BD0C9F111967388A003A88AC /* AFNetworking */,
 				BD0C9F251967388A003A88AC /* fmdb */,
 				BD0C9F321967388A003A88AC /* SMXMLDocument */,
-				BDDA0F84196C547D000D26B1 /* SSZipArchive */,
 				BD0C9F351967388A003A88AC /* UIKit+AFNetworking */,
 			);
 			path = Resources;
@@ -422,32 +405,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BDDA0F84196C547D000D26B1 /* SSZipArchive */ = {
-			isa = PBXGroup;
-			children = (
-				BDDA0F86196C547D000D26B1 /* minizip */,
-				BDDA0F90196C547D000D26B1 /* SSZipArchive.h */,
-				BDDA0F91196C547D000D26B1 /* SSZipArchive.m */,
-			);
-			path = SSZipArchive;
-			sourceTree = "<group>";
-		};
-		BDDA0F86196C547D000D26B1 /* minizip */ = {
-			isa = PBXGroup;
-			children = (
-				BDDA0F87196C547D000D26B1 /* crypt.h */,
-				BDDA0F88196C547D000D26B1 /* ioapi.c */,
-				BDDA0F89196C547D000D26B1 /* ioapi.h */,
-				BDDA0F8A196C547D000D26B1 /* mztools.c */,
-				BDDA0F8B196C547D000D26B1 /* mztools.h */,
-				BDDA0F8C196C547D000D26B1 /* unzip.c */,
-				BDDA0F8D196C547D000D26B1 /* unzip.h */,
-				BDDA0F8E196C547D000D26B1 /* zip.c */,
-				BDDA0F8F196C547D000D26B1 /* zip.h */,
-			);
-			path = minizip;
-			sourceTree = "<group>";
-		};
 		BDFFA009195C367700288E6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -575,7 +532,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD0C9F4F1967388A003A88AC /* AFSecurityPolicy.m in Sources */,
-				BDDA0F95196C547D000D26B1 /* unzip.c in Sources */,
 				BD0C9F591967388A003A88AC /* FMDatabase.m in Sources */,
 				BD0C9F6D1967388A003A88AC /* UIButton+AFNetworking.m in Sources */,
 				BD4FBD171963174400D8F725 /* OSMElementsParser.swift in Sources */,
@@ -595,22 +551,18 @@
 				BD0C9F571967388A003A88AC /* AFURLSessionManager.m in Sources */,
 				BDBEAC4D19641372000EC6ED /* OSMTilesDownloader.swift in Sources */,
 				BD0C9F491967388A003A88AC /* AFHTTPRequestOperationManager.m in Sources */,
-				BDDA0F96196C547D000D26B1 /* zip.c in Sources */,
 				BDB58981195888670090E178 /* AppDelegate.swift in Sources */,
 				BD0C9F551967388A003A88AC /* AFURLResponseSerialization.m in Sources */,
 				BD4FBD181963174400D8F725 /* OSMNode.swift in Sources */,
 				BD0C9F611967388A003A88AC /* FMResultSet.m in Sources */,
-				BDDA0F94196C547D000D26B1 /* mztools.c in Sources */,
 				BD4FBD191963174400D8F725 /* OSMWay.swift in Sources */,
 				BD0C9F731967388A003A88AC /* UIRefreshControl+AFNetworking.m in Sources */,
 				BD0C9F6B1967388A003A88AC /* UIAlertView+AFNetworking.m in Sources */,
 				BDBEAC4F19641405000EC6ED /* OSMBoundingBox.swift in Sources */,
 				BD0C9F5F1967388A003A88AC /* FMDatabaseQueue.m in Sources */,
 				BD4FBD271963187900D8F725 /* OSMTile.swift in Sources */,
-				BDDA0F93196C547D000D26B1 /* ioapi.c in Sources */,
 				BD0C9F5B1967388A003A88AC /* FMDatabaseAdditions.m in Sources */,
 				BD0C9F671967388A003A88AC /* AFNetworkActivityIndicatorManager.m in Sources */,
-				BDDA0F97196C547D000D26B1 /* SSZipArchive.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

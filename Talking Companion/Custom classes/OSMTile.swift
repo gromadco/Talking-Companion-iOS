@@ -62,7 +62,7 @@ class OSMTile: NSObject {
         let rightBottom = OSMTile(latitude: center.latitude + deltas.latitude/4, longitude: center.longitude - deltas.longitude/4, zoom: zoom)
         
         var set = NSMutableSet(array: [self, leftTop, leftMiddle, leftBottom, centerTop, centerBottom, rightTop, rightMiddle, rightBottom])
-        var tiles:Array<OSMTile> = set.allObjects as OSMTile[]
+        var tiles:[OSMTile] = set.allObjects as [OSMTile]
         return tiles
     }
     

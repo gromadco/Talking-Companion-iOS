@@ -9,13 +9,29 @@
 import UIKit
 import CoreLocation
 
+var oneDay:NSTimeInterval = 60*60*24
+
 class OSMNode: NSObject {
     
     // MARK: - Properties
     
+    var uid:Int?
     var location:CLLocation
     var user:String
-    var isAnnounced = false
+    var announcedDate:NSDate?
+    var isAnnounced:Bool {
+        get {
+            if announcedDate? == nil {
+                return false
+            }
+            
+            var announcedInterval = NSDate.date().timeIntervalSinceDate(announcedDate)
+            if announcedInterval > oneDay {
+                return false;
+            }
+            return true;
+        }
+    }
     
     var amenity:String?
     var name:String?
@@ -28,9 +44,6 @@ class OSMNode: NSObject {
         if let amenity = self.amenity {
             type += "\(amenity) "
         }
-//        if let name = self.name {
-//            type += "\(name) "
-//        }
         if let operator = self.operator {
             type += "\(operator) "
         }
@@ -65,7 +78,9 @@ class OSMNode: NSObject {
     }
     
     func announce() {
-        self.isAnnounced = true;
+        println("announced node")
+        self.announcedDate = NSDate.date()
+        SQLAccess.updateNode(self)
     }
 }
 

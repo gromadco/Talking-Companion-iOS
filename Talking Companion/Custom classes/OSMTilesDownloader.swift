@@ -35,7 +35,7 @@ class OSMTilesDownloader: NSObject {
             operation.outputStream = NSOutputStream(toFileAtPath: path, append: false)
 
             operation.setCompletionBlockWithSuccess({ (_, responseObject) in
-                println("tile \(tile) for \(index) downloaded")
+                println("tile \(tile) downloaded")
                 var parser = OSMElementsParser(filePath: path)
                 var tileId = SQLAccess.saveTile(tile)
                 SQLAccess.saveNodes(parser.nodes, forTileId: tileId)
@@ -47,7 +47,7 @@ class OSMTilesDownloader: NSObject {
             
                 },
                 failure: { [unowned self] (_, error) in })
-            println("start downloading bounding box @ \(box.url)")
+            println("start downloading @ \(box.url)")
             operation.start()
             leftDownloading++;
         }
