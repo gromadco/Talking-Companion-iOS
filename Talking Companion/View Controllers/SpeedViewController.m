@@ -153,6 +153,7 @@ static const CLLocationDistance maxDistance = 10 * 1000;
     
     double y1 = sin(currentLocation.coordinate.longitude - previousLocation.coordinate.longitude) * cos(currentLocation.coordinate.latitude);
     double x1 = cos(previousLocation.coordinate.latitude) * sin(currentLocation.coordinate.latitude) - sin(previousLocation.coordinate.latitude)*cos(currentLocation.coordinate.latitude);
+
     phi1 = atan2(y1, x1);
     phi1 = RADIANS_TO_DEGREES(phi1);
     
@@ -163,7 +164,22 @@ static const CLLocationDistance maxDistance = 10 * 1000;
     phi2 = RADIANS_TO_DEGREES(phi2);
     
     int theta = abs((int)(phi2 - phi1) % 360);
+    
+    NSLog(@"Calculating direction:");
+    NSLog(@"current location: (%lf, %lf)",
+          currentLocation.coordinate.longitude,
+          currentLocation.coordinate.latitude);
+    NSLog(@"previous location: (%lf, %lf)",
+          previousLocation.coordinate.longitude,
+          previousLocation.coordinate.latitude);
+    NSLog(@"closest place location: (%lf, %lf)",
+          closestPlaceLocation.coordinate.longitude,
+          closestPlaceLocation.coordinate.latitude);
+    NSLog(@"angle: %i",
+          theta);
+    
     [self updateDirectionWithAngle:theta];
+
 
     previousLocation = currentLocation;
 }
@@ -186,6 +202,8 @@ static const CLLocationDistance maxDistance = 10 * 1000;
     else if (angle >=315 && angle <= 360) {
         direction = @"in front";
     }
+    NSLog(@"direction: %@",
+          direction);
     _directionLabel.text = [NSString stringWithFormat:@"%@ (%i degree)", direction, angle];
 }
 
