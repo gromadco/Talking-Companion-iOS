@@ -12,11 +12,9 @@ static const NSTimeInterval pronounceSpeedTimeInterval = 15;
 static const NSTimeInterval announceDirectionTimeInterval = 10;
 static const double kKilometersPerHour = 3.6;
 
-static const NSTimeInterval downloadTilesTimeInterval = 60;
+static const NSTimeInterval downloadTilesTimeInterval = 5; // 60
 static const NSInteger kDefaultZoom = 16;
 static const CLLocationDistance maxDistance = 10 * 1000;
-
-#define RADIANS_TO_DEGREES(radians) ((radians) * (180.0 / M_PI))
 
 @implementation SpeedViewController
 
@@ -116,7 +114,7 @@ static const CLLocationDistance maxDistance = 10 * 1000;
     }
 }
 
-- (void)announceClosestPlace
+- (void)announceClosestPlaceWithAngle:(double)angle
 {
     OSMNode *closestPlace;
     CLLocationDistance minDistance = INT_MAX;
@@ -139,38 +137,7 @@ static const CLLocationDistance maxDistance = 10 * 1000;
         [self speakPlace:closestPlace distance:minDistance];
     }
     
-    _nameLabel.text = closestPlace.name;
-    _distanceLabel.text = [NSString stringWithFormat:@"%li m.", (long)minDistance];
-    _typeLabel.text = closestPlace.type;
-    closestPlaceLocation = closestPlace.location;
-}
-
-#pragma mark Direction
-
-- (void)announceDirection
-{
-    double phi1, phi2;
-    
-    double y1 = sin(currentLocation.coordinate.longitude - previousLocation.coordinate.longitude) * cos(currentLocation.coordinate.latitude);
-    double x1 = cos(previousLocation.coordinate.latitude) * sin(currentLocation.coordinate.latitude) - sin(previousLocation.coordinate.latitude)*cos(currentLocation.coordinate.latitude);
-    phi1 = atan2(y1, x1);
-    phi1 = RADIANS_TO_DEGREES(phi1);
-    
-    double y2 = sin(closestPlaceLocation.coordinate.longitude - currentLocation.coordinate.longitude) * cos(closestPlaceLocation.coordinate.latitude);
-    double x2 = cos(currentLocation.coordinate.latitude) * sin(closestPlaceLocation.coordinate.latitude) - sin(currentLocation.coordinate.latitude)*cos(closestPlaceLocation.coordinate.latitude);
-    
-    phi2 = atan2(y2, x2);
-    phi2 = RADIANS_TO_DEGREES(phi2);
-    
-    int theta = abs((int)(phi2 - phi1) % 360);
-    [self updateDirectionWithAngle:theta];
-
-    previousLocation = currentLocation;
-}
-
-- (void)updateDirectionWithAngle:(int)angle
-{
-    NSString *direction = @"cannot detect";
+    NSString *direction = @"can't detect";
     if (angle >=0 && angle < 45) {
         direction = @"in front";
     }
@@ -186,7 +153,21 @@ static const CLLocationDistance maxDistance = 10 * 1000;
     else if (angle >=315 && angle <= 360) {
         direction = @"in front";
     }
-    _directionLabel.text = [NSString stringWithFormat:@"%@ (%i degree)", direction, angle];
+    
+    _nameLabel.text = closestPlace.name;
+    _distanceLabel.text = [NSString stringWithFormat:@"%li m.", (long)minDistance];
+    _typeLabel.text = closestPlace.type;
+    _directionLabel.text = [NSString stringWithFormat:@"%@ (%i degree)", direction, (int)angle];
+    closestPlaceLocation = closestPlace.location;
+}
+
+#pragma mark Direction
+
+- (void)announceDirection
+{
+    double theta = [Calculations thetaForCurrentLocation:currentLocation previousLocation:previousLocation placeLocation:closestPlaceLocation];
+    [self announceClosestPlaceWithAngle:theta];
+    previousLocation = currentLocation;
 }
 
 #pragma mark - CLLocationManager Delegate
@@ -196,7 +177,7 @@ static const CLLocationDistance maxDistance = 10 * 1000;
     manager = [[CLLocationManager alloc] init];
     manager.delegate = self;
     manager.desiredAccuracy = kCLLocationAccuracyBest;
-    [manager requestAlwaysAuthorization];
+    //[manager requestAlwaysAuthorization];
     [manager startUpdatingLocation];
 }
 
@@ -207,7 +188,6 @@ static const CLLocationDistance maxDistance = 10 * 1000;
     _currentSpeedLabel.text = [NSString stringWithFormat:@"%.2lf km/h", currentSpeed];
     
     currentLocation = newLocation;
-    [self announceClosestPlace];
     
     if (previousLocation == nil) {
         NSLog(@"initial coordinates: (%lf; %lf)", currentLocation.coordinate.latitude, currentLocation.coordinate.longitude);
@@ -215,6 +195,7 @@ static const CLLocationDistance maxDistance = 10 * 1000;
         
         [self updateNodesFromDB];
         [self downloadTiles];
+        [self announceDirection];
     }
 }
 

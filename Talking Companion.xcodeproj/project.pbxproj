@@ -75,6 +75,8 @@
 		BDB68427196C3BBF005AA31F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB6841D196C33D1005AA31F /* libz.dylib */; };
 		BDBEAC4D19641372000EC6ED /* OSMTilesDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBEAC4C19641372000EC6ED /* OSMTilesDownloader.swift */; };
 		BDBEAC4F19641405000EC6ED /* OSMBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBEAC4E19641405000EC6ED /* OSMBoundingBox.swift */; };
+		BDBFD5B0197527B60088F1CB /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBFD5AF197527B60088F1CB /* Calculations.swift */; };
+		BDBFD5B21975325B0088F1CB /* CalculationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBFD5B11975325B0088F1CB /* CalculationsTests.swift */; };
 		BDD89B85195B095F0020ACA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD89B84195B095F0020ACA7 /* AVFoundation.framework */; };
 		BDF87793196C294200134E89 /* empty.osm in Resources */ = {isa = PBXBuildFile; fileRef = BDF87792196C294200134E89 /* empty.osm */; };
 		BDF87794196C294200134E89 /* empty.osm in Resources */ = {isa = PBXBuildFile; fileRef = BDF87792196C294200134E89 /* empty.osm */; };
@@ -202,6 +204,8 @@
 		BDB6841F196C38A4005AA31F /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		BDBEAC4C19641372000EC6ED /* OSMTilesDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMTilesDownloader.swift; sourceTree = "<group>"; };
 		BDBEAC4E19641405000EC6ED /* OSMBoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMBoundingBox.swift; sourceTree = "<group>"; };
+		BDBFD5AF197527B60088F1CB /* Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
+		BDBFD5B11975325B0088F1CB /* CalculationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculationsTests.swift; sourceTree = "<group>"; };
 		BDD89B84195B095F0020ACA7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BDF87792196C294200134E89 /* empty.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = empty.osm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -329,6 +333,7 @@
 				BDBEAC4C19641372000EC6ED /* OSMTilesDownloader.swift */,
 				BD4FBD161963174400D8F725 /* OSMWay.swift */,
 				BD2EB9B91966EC1200C8DEDD /* SQLAccess.swift */,
+				BDBFD5AF197527B60088F1CB /* Calculations.swift */,
 			);
 			path = "Custom classes";
 			sourceTree = "<group>";
@@ -392,6 +397,7 @@
 				BD0C9F061967332A003A88AC /* OSMNodeTests.swift */,
 				BD0C9F7C1967505B003A88AC /* OSMTileTests.swift */,
 				BD0C9F8019675336003A88AC /* OSMWayTests.swift */,
+				BDBFD5B11975325B0088F1CB /* CalculationsTests.swift */,
 				BDB58991195888670090E178 /* Supporting Files */,
 			);
 			path = "Talking CompanionTests";
@@ -547,6 +553,7 @@
 				BD0C9F531967388A003A88AC /* AFURLRequestSerialization.m in Sources */,
 				BD0C9F651967388A003A88AC /* SMXMLDocument.m in Sources */,
 				BD2EB9BA1966EC1200C8DEDD /* SQLAccess.swift in Sources */,
+				BDBFD5B0197527B60088F1CB /* Calculations.swift in Sources */,
 				BD0C9F691967388A003A88AC /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				BD0C9F571967388A003A88AC /* AFURLSessionManager.m in Sources */,
 				BDBEAC4D19641372000EC6ED /* OSMTilesDownloader.swift in Sources */,
@@ -577,6 +584,7 @@
 				BD0C9F721967388A003A88AC /* UIProgressView+AFNetworking.m in Sources */,
 				BD0C9F501967388A003A88AC /* AFSecurityPolicy.m in Sources */,
 				BD0C9F5A1967388A003A88AC /* FMDatabase.m in Sources */,
+				BDBFD5B21975325B0088F1CB /* CalculationsTests.swift in Sources */,
 				BD0C9F7D1967505B003A88AC /* OSMTileTests.swift in Sources */,
 				BD0C9F6C1967388A003A88AC /* UIAlertView+AFNetworking.m in Sources */,
 				BD0C9F481967388A003A88AC /* AFHTTPRequestOperation.m in Sources */,
@@ -738,7 +746,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Talking Companion/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -757,7 +765,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Talking Companion/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
