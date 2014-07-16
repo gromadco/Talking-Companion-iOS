@@ -9,23 +9,22 @@
 import XCTest
 import Talking_Companion
 
-var delta = 0.00000001
 
 class OSMBoundingBoxTests: XCTestCase {
     
     func testInit() {
-        var tile = OSMTile(x: 1, y: 1, zoom: 16)
-        var box = OSMBoundingBox(tile: tile)
-
-//        XCTAssertEqual(box.north, 85.0506548798275)
-//        XCTAssertEqual(box.south, 85.0501809345811)
-//        XCTAssertEqual(box.west, -179.9945068)
-//        XCTAssertEqual(box.east, -179.9890136)
+        let tile = OSMTile(x: 1, y: 1, zoom: 16)
+        let box = OSMBoundingBox(tile: tile)
+        
+        XCTAssertLessThanOrEqual(abs(box.north - 85.0506548798275), coordinatesThreshold)
+        XCTAssertLessThanOrEqual(abs(box.south - 85.0501809345811), coordinatesThreshold)
+        XCTAssertLessThanOrEqual(abs(box.west - -179.9945068), coordinatesThreshold)
+        XCTAssertLessThanOrEqual(abs(box.east - -179.9890136), coordinatesThreshold)
     }
     
     func testUrl() {
-        var tile = OSMTile(x: 1, y: 1, zoom: 16)
-        var box = OSMBoundingBox(tile: tile)
+        let tile = OSMTile(x: 1, y: 1, zoom: 16)
+        let box = OSMBoundingBox(tile: tile)
         
         XCTAssertEqual(box.url, "http://api.openstreetmap.org/api/0.6/map?bbox=-179.994506835938,85.0501809345811,-179.989013671875,85.0506548798275")
     }

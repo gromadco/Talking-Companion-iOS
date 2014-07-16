@@ -36,8 +36,6 @@
 		BD0C9F601967388A003A88AC /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F2D1967388A003A88AC /* FMDatabaseQueue.m */; };
 		BD0C9F611967388A003A88AC /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F301967388A003A88AC /* FMResultSet.m */; };
 		BD0C9F621967388A003A88AC /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F301967388A003A88AC /* FMResultSet.m */; };
-		BD0C9F631967388A003A88AC /* map.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD0C9F311967388A003A88AC /* map.osm */; };
-		BD0C9F641967388A003A88AC /* map.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD0C9F311967388A003A88AC /* map.osm */; };
 		BD0C9F651967388A003A88AC /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F341967388A003A88AC /* SMXMLDocument.m */; };
 		BD0C9F661967388A003A88AC /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F341967388A003A88AC /* SMXMLDocument.m */; };
 		BD0C9F671967388A003A88AC /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F371967388A003A88AC /* AFNetworkActivityIndicatorManager.m */; };
@@ -60,6 +58,8 @@
 		BD0C9F7D1967505B003A88AC /* OSMTileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F7C1967505B003A88AC /* OSMTileTests.swift */; };
 		BD0C9F7F196750D5003A88AC /* OSMElementsParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F7E196750D5003A88AC /* OSMElementsParserTests.swift */; };
 		BD0C9F8119675336003A88AC /* OSMWayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F8019675336003A88AC /* OSMWayTests.swift */; };
+		BD293FF11976D26000E91B2F /* empty.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD293FEF1976D26000E91B2F /* empty.osm */; };
+		BD293FF21976D26000E91B2F /* map.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD293FF01976D26000E91B2F /* map.osm */; };
 		BD2E7C80195AEAFB00D57518 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */; };
 		BD2EB9BA1966EC1200C8DEDD /* SQLAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2EB9B91966EC1200C8DEDD /* SQLAccess.swift */; };
 		BD2EB9BC1966F0E600C8DEDD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */; };
@@ -78,8 +78,6 @@
 		BDBFD5B0197527B60088F1CB /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBFD5AF197527B60088F1CB /* Calculations.swift */; };
 		BDBFD5B21975325B0088F1CB /* CalculationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBFD5B11975325B0088F1CB /* CalculationsTests.swift */; };
 		BDD89B85195B095F0020ACA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD89B84195B095F0020ACA7 /* AVFoundation.framework */; };
-		BDF87793196C294200134E89 /* empty.osm in Resources */ = {isa = PBXBuildFile; fileRef = BDF87792196C294200134E89 /* empty.osm */; };
-		BDF87794196C294200134E89 /* empty.osm in Resources */ = {isa = PBXBuildFile; fileRef = BDF87792196C294200134E89 /* empty.osm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,7 +158,6 @@
 		BD0C9F2E1967388A003A88AC /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
 		BD0C9F2F1967388A003A88AC /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		BD0C9F301967388A003A88AC /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
-		BD0C9F311967388A003A88AC /* map.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.osm; sourceTree = "<group>"; };
 		BD0C9F331967388A003A88AC /* SMXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMXMLDocument.h; sourceTree = "<group>"; };
 		BD0C9F341967388A003A88AC /* SMXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMXMLDocument.m; sourceTree = "<group>"; };
 		BD0C9F361967388A003A88AC /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
@@ -183,6 +180,8 @@
 		BD0C9F7C1967505B003A88AC /* OSMTileTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMTileTests.swift; sourceTree = "<group>"; };
 		BD0C9F7E196750D5003A88AC /* OSMElementsParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMElementsParserTests.swift; sourceTree = "<group>"; };
 		BD0C9F8019675336003A88AC /* OSMWayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMWayTests.swift; sourceTree = "<group>"; };
+		BD293FEF1976D26000E91B2F /* empty.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = empty.osm; path = "Talking Companion/Resources/empty.osm"; sourceTree = SOURCE_ROOT; };
+		BD293FF01976D26000E91B2F /* map.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = map.osm; path = "Talking Companion/Resources/map.osm"; sourceTree = SOURCE_ROOT; };
 		BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BD2EB9B91966EC1200C8DEDD /* SQLAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLAccess.swift; sourceTree = "<group>"; };
 		BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -207,7 +206,6 @@
 		BDBFD5AF197527B60088F1CB /* Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
 		BDBFD5B11975325B0088F1CB /* CalculationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculationsTests.swift; sourceTree = "<group>"; };
 		BDD89B84195B095F0020ACA7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		BDF87792196C294200134E89 /* empty.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = empty.osm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,8 +234,6 @@
 		BD0C9F101967388A003A88AC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BDF87792196C294200134E89 /* empty.osm */,
-				BD0C9F311967388A003A88AC /* map.osm */,
 				BD0C9F111967388A003A88AC /* AFNetworking */,
 				BD0C9F251967388A003A88AC /* fmdb */,
 				BD0C9F321967388A003A88AC /* SMXMLDocument */,
@@ -392,6 +388,8 @@
 		BDB58990195888670090E178 /* Talking CompanionTests */ = {
 			isa = PBXGroup;
 			children = (
+				BD293FEF1976D26000E91B2F /* empty.osm */,
+				BD293FF01976D26000E91B2F /* map.osm */,
 				BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */,
 				BD0C9F7E196750D5003A88AC /* OSMElementsParserTests.swift */,
 				BD0C9F061967332A003A88AC /* OSMNodeTests.swift */,
@@ -514,8 +512,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD0C9F631967388A003A88AC /* map.osm in Resources */,
-				BDF87793196C294200134E89 /* empty.osm in Resources */,
 				BDB58986195888670090E178 /* Main.storyboard in Resources */,
 				BDB58988195888670090E178 /* Images.xcassets in Resources */,
 			);
@@ -525,8 +521,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD0C9F641967388A003A88AC /* map.osm in Resources */,
-				BDF87794196C294200134E89 /* empty.osm in Resources */,
+				BD293FF21976D26000E91B2F /* map.osm in Resources */,
+				BD293FF11976D26000E91B2F /* empty.osm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

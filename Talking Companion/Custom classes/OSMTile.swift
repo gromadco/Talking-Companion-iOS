@@ -15,7 +15,7 @@ class OSMTile: NSObject {
     var x:Int
     var y:Int
     var zoom:Int = NSBundle.mainBundle().objectForInfoDictionaryKey("OSMDefaultZoom") as Int
-    var link:String { return "http://tile.openstreetmap.org/\(zoom)/\(x)/\(y).png" }
+    var url:String { return "http://tile.openstreetmap.org/\(zoom)/\(x)/\(y).png" }
    
     init(x:Int, y:Int, zoom:Int) {
         self.x = x
