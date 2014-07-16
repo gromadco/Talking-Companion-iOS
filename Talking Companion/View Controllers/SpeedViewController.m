@@ -12,21 +12,26 @@ static const NSTimeInterval pronounceSpeedTimeInterval = 15;
 static const NSTimeInterval announceDirectionTimeInterval = 10;
 static const double kKilometersPerHour = 3.6;
 
-static const NSTimeInterval downloadTilesTimeInterval = 5; // 60
+static const NSTimeInterval downloadTilesTimeInterval = 60;
 static const NSInteger kDefaultZoom = 16;
-static const CLLocationDistance maxDistance = 10 * 1000;
+static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
 
 @implementation SpeedViewController
 
 #pragma mark - View Methonds
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    previousLocation = nil;
+    [self loadLocationManager];
+    [super viewWillAppear:animated];
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     tilesDownloader = [[OSMTilesDownloader alloc] init];
     tilesDownloader.delegate = self;
-    
-    [self loadLocationManager];
     
     NSLog(@"path to documents: %@", NSHomeDirectory());
 }
@@ -76,9 +81,9 @@ static const CLLocationDistance maxDistance = 10 * 1000;
 
 - (void)neighboringTilesForCoordinates:(CLLocationCoordinate2D)coordinates
 {
-    NSLog(@"downloading neighboring tiles for tile(%lf; %lf)", coordinates.latitude, coordinates.longitude);
-    
     OSMTile *centerTile = [[OSMTile alloc] initWithLatitude:coordinates.latitude longitude:coordinates.longitude zoom:kDefaultZoom];
+    
+    NSLog(@"downloading neighboring tiles for tile(%lf; %lf) @ %@", coordinates.latitude, coordinates.longitude, [[OSMBoundingBox alloc] initWithTile:centerTile].url);
     [tilesDownloader downloadNeighboringTilesForTile:centerTile];
 }
 
