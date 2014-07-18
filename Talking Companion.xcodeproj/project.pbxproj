@@ -66,7 +66,7 @@
 		BD4FBD171963174400D8F725 /* OSMElementsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4FBD141963174400D8F725 /* OSMElementsParser.swift */; };
 		BD4FBD181963174400D8F725 /* OSMNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4FBD151963174400D8F725 /* OSMNode.swift */; };
 		BD4FBD191963174400D8F725 /* OSMWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4FBD161963174400D8F725 /* OSMWay.swift */; };
-		BD4FBD251963179200D8F725 /* SpeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4FBD201963179200D8F725 /* SpeedViewController.m */; };
+		BD4FBD251963179200D8F725 /* ClosestPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4FBD201963179200D8F725 /* ClosestPlaceViewController.m */; };
 		BD4FBD271963187900D8F725 /* OSMTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4FBD261963187900D8F725 /* OSMTile.swift */; };
 		BD536AAB196A7E1B0017345D /* OSMBoundingBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */; };
 		BDB58981195888670090E178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB58980195888670090E178 /* AppDelegate.swift */; };
@@ -188,8 +188,8 @@
 		BD4FBD141963174400D8F725 /* OSMElementsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMElementsParser.swift; sourceTree = "<group>"; };
 		BD4FBD151963174400D8F725 /* OSMNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMNode.swift; sourceTree = "<group>"; };
 		BD4FBD161963174400D8F725 /* OSMWay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMWay.swift; sourceTree = "<group>"; };
-		BD4FBD1F1963179200D8F725 /* SpeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeedViewController.h; sourceTree = "<group>"; };
-		BD4FBD201963179200D8F725 /* SpeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeedViewController.m; sourceTree = "<group>"; };
+		BD4FBD1F1963179200D8F725 /* ClosestPlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClosestPlaceViewController.h; sourceTree = "<group>"; };
+		BD4FBD201963179200D8F725 /* ClosestPlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClosestPlaceViewController.m; sourceTree = "<group>"; };
 		BD4FBD261963187900D8F725 /* OSMTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMTile.swift; sourceTree = "<group>"; };
 		BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMBoundingBoxTests.swift; sourceTree = "<group>"; };
 		BDB5897B195888670090E178 /* Talking Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Talking Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -338,8 +338,8 @@
 			isa = PBXGroup;
 			children = (
 				BDB58984195888670090E178 /* Main.storyboard */,
-				BD4FBD1F1963179200D8F725 /* SpeedViewController.h */,
-				BD4FBD201963179200D8F725 /* SpeedViewController.m */,
+				BD4FBD1F1963179200D8F725 /* ClosestPlaceViewController.h */,
+				BD4FBD201963179200D8F725 /* ClosestPlaceViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -542,7 +542,7 @@
 				BD0C9F4D1967388A003A88AC /* AFNetworkReachabilityManager.m in Sources */,
 				BD0C9F5D1967388A003A88AC /* FMDatabasePool.m in Sources */,
 				BD0C9F6F1967388A003A88AC /* UIImageView+AFNetworking.m in Sources */,
-				BD4FBD251963179200D8F725 /* SpeedViewController.m in Sources */,
+				BD4FBD251963179200D8F725 /* ClosestPlaceViewController.m in Sources */,
 				BD0C9F511967388A003A88AC /* AFURLConnectionOperation.m in Sources */,
 				BD0C9F471967388A003A88AC /* AFHTTPRequestOperation.m in Sources */,
 				BD0C9F4B1967388A003A88AC /* AFHTTPSessionManager.m in Sources */,

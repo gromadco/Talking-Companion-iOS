@@ -47,10 +47,13 @@ class OSMTilesDownloader: NSObject {
             
                 },
                 failure: { [unowned self] (_, error) in })
+            
             println("start downloading @ \(box.url)")
             operation.start()
             leftDownloading++;
         }
+        
+        // all tiles already downloaded
         if self.leftDownloading == 0 {
             self.delegate?.tilesDownloaded()
         }

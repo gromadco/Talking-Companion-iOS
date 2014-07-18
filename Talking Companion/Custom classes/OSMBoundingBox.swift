@@ -8,6 +8,7 @@
 
 import UIKit
 
+// bounding box for downloading contains OSM elements
 class OSMBoundingBox: NSObject {
     var north:Double
     var south:Double

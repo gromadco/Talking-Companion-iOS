@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6181.2"/>
     </dependencies>
     <scenes>
-        <!--Speed View Controller-->
+        <!--Closest Place View Controller-->
         <scene sceneID="wMz-Ul-Zq7">
             <objects>
-                <viewController id="I51-cH-MMB" customClass="SpeedViewController" sceneMemberID="viewController">
+                <viewController id="I51-cH-MMB" customClass="ClosestPlaceViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rlf-2F-lZF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

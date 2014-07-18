@@ -6,17 +6,38 @@
 //  Copyright (c) 2014 serejahh inc. All rights reserved.
 //
 
-#import "SpeedViewController.h"
+#import "ClosestPlaceViewController.h"
+#import <CoreLocation/CoreLocation.h>
+#import <AVFoundation/AVFoundation.h>
 
 static const NSTimeInterval pronounceSpeedTimeInterval = 15;
 static const NSTimeInterval announceDirectionTimeInterval = 10;
-static const double kKilometersPerHour = 3.6;
+static const double kKilometersPerHour = 3.6; // 60 * 60 / 1000
 
 static const NSTimeInterval downloadTilesTimeInterval = 60;
 static const NSInteger kDefaultZoom = 16;
 static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
 
-@implementation SpeedViewController
+@interface ClosestPlaceViewController ()
+{
+    BOOL isLocationEnabled;
+    CLLocationManager *locationManager;
+    CLLocationSpeed currentSpeed;
+    CLLocation *currentLocation;
+    NSArray *nodes;
+    OSMTilesDownloader *tilesDownloader;
+    
+    AVSpeechSynthesizer *synth;
+    NSTimer *speechTimer;
+    NSTimer *tilesTimer;
+    
+    NSTimer *announceDirectionTimer;
+    CLLocation *previousLocation;
+    CLLocation *closestPlaceLocation;
+}
+@end
+
+@implementation ClosestPlaceViewController
 
 #pragma mark - View Methonds
 
@@ -36,20 +57,9 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
     NSLog(@"path to documents: %@", NSHomeDirectory());
 }
 
-- (void)updateNodesFromDB
-{
-    OSMTile *centerTile = [[OSMTile alloc] initWithLatitude:currentLocation.coordinate.latitude
-                                                  longitude:currentLocation.coordinate.longitude zoom:kDefaultZoom];
-    
-    NSMutableArray *tmpNodes = [NSMutableArray array];
-    NSArray *neighboringTiles = [centerTile neighboringTiles];
-    for (OSMTile *currentTile in neighboringTiles) {
-        [tmpNodes addObjectsFromArray:[SQLAccess nodesForTile:currentTile]];
-    }
-    nodes = [NSArray arrayWithArray:tmpNodes];
-    NSLog(@"received nodes: %li", nodes.count);
-}
+#pragma mark -
 
+// start or stop downloading
 - (void)checkLocationsPermissions
 {
     if (isLocationEnabled) {
@@ -72,7 +82,19 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
     self.allowAccessLabel.hidden = isLocationEnabled;
 }
 
-#pragma mark -
+- (void)updateNodesFromDB
+{
+    OSMTile *centerTile = [[OSMTile alloc] initWithLatitude:currentLocation.coordinate.latitude
+                                                  longitude:currentLocation.coordinate.longitude zoom:kDefaultZoom];
+    
+    NSMutableArray *tmpNodes = [NSMutableArray array];
+    NSArray *neighboringTiles = [centerTile neighboringTiles];
+    for (OSMTile *currentTile in neighboringTiles) {
+        [tmpNodes addObjectsFromArray:[SQLAccess nodesForTile:currentTile]];
+    }
+    nodes = [NSArray arrayWithArray:tmpNodes];
+    NSLog(@"received nodes: %li", nodes.count);
+}
 
 - (void)downloadTiles
 {
@@ -137,7 +159,7 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
         _distanceLabel.text = @"can't detect";
         return;
     }
-    
+
     if (!closestPlace.isAnnounced) {
         [self speakPlace:closestPlace distance:minDistance];
     }
@@ -179,11 +201,11 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
 
 - (void)loadLocationManager
 {
-    manager = [[CLLocationManager alloc] init];
-    manager.delegate = self;
-    manager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     //[manager requestAlwaysAuthorization];
-    [manager startUpdatingLocation];
+    [locationManager startUpdatingLocation];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation

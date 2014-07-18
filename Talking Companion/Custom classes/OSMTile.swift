@@ -36,6 +36,7 @@ class OSMTile: NSObject {
         return CLLocationCoordinate2DMake(latitude, longitude)
     }
     
+    // width and height of OSMTile
     func deltas() -> CLLocationCoordinate2D {
         var neighboring = OSMTile(x: self.x+1, y: self.y+1, zoom: zoom)
         
@@ -46,6 +47,7 @@ class OSMTile: NSObject {
         return CLLocationCoordinate2DMake(deltaLatitude, deltaLongitude)
     }
     
+    //  square 3x3, center - current location
     func neighboringTiles() -> Array<OSMTile> {
         let deltas = self.deltas()
         let center = self.toCoordinates()
