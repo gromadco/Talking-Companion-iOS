@@ -61,23 +61,24 @@
 		BD293FF11976D26000E91B2F /* empty.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD293FEF1976D26000E91B2F /* empty.osm */; };
 		BD293FF21976D26000E91B2F /* map.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD293FF01976D26000E91B2F /* map.osm */; };
 		BD2E7C80195AEAFB00D57518 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */; };
-		BD2EB9BA1966EC1200C8DEDD /* SQLAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2EB9B91966EC1200C8DEDD /* SQLAccess.swift */; };
 		BD2EB9BC1966F0E600C8DEDD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */; };
-		BD4FBD171963174400D8F725 /* OSMElementsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4FBD141963174400D8F725 /* OSMElementsParser.swift */; };
-		BD4FBD181963174400D8F725 /* OSMNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4FBD151963174400D8F725 /* OSMNode.swift */; };
-		BD4FBD191963174400D8F725 /* OSMWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4FBD161963174400D8F725 /* OSMWay.swift */; };
-		BD4FBD251963179200D8F725 /* ClosestPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4FBD201963179200D8F725 /* ClosestPlaceViewController.m */; };
-		BD4FBD271963187900D8F725 /* OSMTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4FBD261963187900D8F725 /* OSMTile.swift */; };
+		BD34A43A1990BA9F0058C22A /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD34A42D1990BA9F0058C22A /* Calculations.swift */; };
+		BD34A43B1990BA9F0058C22A /* OSMBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD34A42E1990BA9F0058C22A /* OSMBoundingBox.swift */; };
+		BD34A43C1990BA9F0058C22A /* OSMElementsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD34A42F1990BA9F0058C22A /* OSMElementsParser.swift */; };
+		BD34A43D1990BA9F0058C22A /* OSMNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD34A4301990BA9F0058C22A /* OSMNode.swift */; };
+		BD34A43E1990BA9F0058C22A /* OSMTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD34A4311990BA9F0058C22A /* OSMTile.swift */; };
+		BD34A43F1990BA9F0058C22A /* OSMTilesDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD34A4321990BA9F0058C22A /* OSMTilesDownloader.swift */; };
+		BD34A4401990BA9F0058C22A /* OSMWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD34A4331990BA9F0058C22A /* OSMWay.swift */; };
+		BD34A4411990BA9F0058C22A /* SQLAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD34A4341990BA9F0058C22A /* SQLAccess.swift */; };
+		BD34A4421990BA9F0058C22A /* ClosestPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD34A4371990BA9F0058C22A /* ClosestPlaceViewController.m */; };
 		BD536AAB196A7E1B0017345D /* OSMBoundingBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */; };
 		BDB58981195888670090E178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB58980195888670090E178 /* AppDelegate.swift */; };
 		BDB58986195888670090E178 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDB58984195888670090E178 /* Main.storyboard */; };
 		BDB58988195888670090E178 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB58987195888670090E178 /* Images.xcassets */; };
-		BDB68427196C3BBF005AA31F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB6841D196C33D1005AA31F /* libz.dylib */; };
-		BDBEAC4D19641372000EC6ED /* OSMTilesDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBEAC4C19641372000EC6ED /* OSMTilesDownloader.swift */; };
-		BDBEAC4F19641405000EC6ED /* OSMBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBEAC4E19641405000EC6ED /* OSMBoundingBox.swift */; };
-		BDBFD5B0197527B60088F1CB /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBFD5AF197527B60088F1CB /* Calculations.swift */; };
 		BDBFD5B21975325B0088F1CB /* CalculationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBFD5B11975325B0088F1CB /* CalculationsTests.swift */; };
 		BDD89B85195B095F0020ACA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD89B84195B095F0020ACA7 /* AVFoundation.framework */; };
+		BDFB7460198FCDD700D1E113 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = BDFB745E198FCDD700D1E113 /* settings.png */; };
+		BDFB7461198FCDD700D1E113 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BDFB745F198FCDD700D1E113 /* settings@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,14 +184,17 @@
 		BD293FEF1976D26000E91B2F /* empty.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = empty.osm; path = "Talking Companion/Resources/empty.osm"; sourceTree = SOURCE_ROOT; };
 		BD293FF01976D26000E91B2F /* map.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = map.osm; path = "Talking Companion/Resources/map.osm"; sourceTree = SOURCE_ROOT; };
 		BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		BD2EB9B91966EC1200C8DEDD /* SQLAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLAccess.swift; sourceTree = "<group>"; };
 		BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		BD4FBD141963174400D8F725 /* OSMElementsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMElementsParser.swift; sourceTree = "<group>"; };
-		BD4FBD151963174400D8F725 /* OSMNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMNode.swift; sourceTree = "<group>"; };
-		BD4FBD161963174400D8F725 /* OSMWay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMWay.swift; sourceTree = "<group>"; };
-		BD4FBD1F1963179200D8F725 /* ClosestPlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClosestPlaceViewController.h; sourceTree = "<group>"; };
-		BD4FBD201963179200D8F725 /* ClosestPlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClosestPlaceViewController.m; sourceTree = "<group>"; };
-		BD4FBD261963187900D8F725 /* OSMTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMTile.swift; sourceTree = "<group>"; };
+		BD34A42D1990BA9F0058C22A /* Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
+		BD34A42E1990BA9F0058C22A /* OSMBoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMBoundingBox.swift; sourceTree = "<group>"; };
+		BD34A42F1990BA9F0058C22A /* OSMElementsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMElementsParser.swift; sourceTree = "<group>"; };
+		BD34A4301990BA9F0058C22A /* OSMNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMNode.swift; sourceTree = "<group>"; };
+		BD34A4311990BA9F0058C22A /* OSMTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMTile.swift; sourceTree = "<group>"; };
+		BD34A4321990BA9F0058C22A /* OSMTilesDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMTilesDownloader.swift; sourceTree = "<group>"; };
+		BD34A4331990BA9F0058C22A /* OSMWay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMWay.swift; sourceTree = "<group>"; };
+		BD34A4341990BA9F0058C22A /* SQLAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLAccess.swift; sourceTree = "<group>"; };
+		BD34A4361990BA9F0058C22A /* ClosestPlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClosestPlaceViewController.h; sourceTree = "<group>"; };
+		BD34A4371990BA9F0058C22A /* ClosestPlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClosestPlaceViewController.m; sourceTree = "<group>"; };
 		BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMBoundingBoxTests.swift; sourceTree = "<group>"; };
 		BDB5897B195888670090E178 /* Talking Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Talking Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB5897F195888670090E178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -199,13 +203,10 @@
 		BDB58987195888670090E178 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BDB5898D195888670090E178 /* Talking CompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Talking CompanionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB58992195888670090E178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BDB6841D196C33D1005AA31F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		BDB6841F196C38A4005AA31F /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
-		BDBEAC4C19641372000EC6ED /* OSMTilesDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMTilesDownloader.swift; sourceTree = "<group>"; };
-		BDBEAC4E19641405000EC6ED /* OSMBoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMBoundingBox.swift; sourceTree = "<group>"; };
-		BDBFD5AF197527B60088F1CB /* Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
 		BDBFD5B11975325B0088F1CB /* CalculationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculationsTests.swift; sourceTree = "<group>"; };
 		BDD89B84195B095F0020ACA7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BDFB745E198FCDD700D1E113 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		BDFB745F198FCDD700D1E113 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,7 +214,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDB68427196C3BBF005AA31F /* libz.dylib in Frameworks */,
 				BD2EB9BC1966F0E600C8DEDD /* libsqlite3.dylib in Frameworks */,
 				BDD89B85195B095F0020ACA7 /* AVFoundation.framework in Frameworks */,
 				BD2E7C80195AEAFB00D57518 /* CoreLocation.framework in Frameworks */,
@@ -234,6 +234,7 @@
 		BD0C9F101967388A003A88AC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BDFB745D198FCDD700D1E113 /* Images */,
 				BD0C9F111967388A003A88AC /* AFNetworking */,
 				BD0C9F251967388A003A88AC /* fmdb */,
 				BD0C9F321967388A003A88AC /* SMXMLDocument */,
@@ -319,17 +320,17 @@
 			path = "UIKit+AFNetworking";
 			sourceTree = "<group>";
 		};
-		BD4FBD131963174400D8F725 /* Custom classes */ = {
+		BD34A42C1990BA9F0058C22A /* Custom classes */ = {
 			isa = PBXGroup;
 			children = (
-				BDBEAC4E19641405000EC6ED /* OSMBoundingBox.swift */,
-				BD4FBD141963174400D8F725 /* OSMElementsParser.swift */,
-				BD4FBD151963174400D8F725 /* OSMNode.swift */,
-				BD4FBD261963187900D8F725 /* OSMTile.swift */,
-				BDBEAC4C19641372000EC6ED /* OSMTilesDownloader.swift */,
-				BD4FBD161963174400D8F725 /* OSMWay.swift */,
-				BD2EB9B91966EC1200C8DEDD /* SQLAccess.swift */,
-				BDBFD5AF197527B60088F1CB /* Calculations.swift */,
+				BD34A42D1990BA9F0058C22A /* Calculations.swift */,
+				BD34A42E1990BA9F0058C22A /* OSMBoundingBox.swift */,
+				BD34A42F1990BA9F0058C22A /* OSMElementsParser.swift */,
+				BD34A4301990BA9F0058C22A /* OSMNode.swift */,
+				BD34A4311990BA9F0058C22A /* OSMTile.swift */,
+				BD34A4321990BA9F0058C22A /* OSMTilesDownloader.swift */,
+				BD34A4331990BA9F0058C22A /* OSMWay.swift */,
+				BD34A4341990BA9F0058C22A /* SQLAccess.swift */,
 			);
 			path = "Custom classes";
 			sourceTree = "<group>";
@@ -338,8 +339,8 @@
 			isa = PBXGroup;
 			children = (
 				BDB58984195888670090E178 /* Main.storyboard */,
-				BD4FBD1F1963179200D8F725 /* ClosestPlaceViewController.h */,
-				BD4FBD201963179200D8F725 /* ClosestPlaceViewController.m */,
+				BD34A4361990BA9F0058C22A /* ClosestPlaceViewController.h */,
+				BD34A4371990BA9F0058C22A /* ClosestPlaceViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -367,7 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				BD0C9F101967388A003A88AC /* Resources */,
-				BD4FBD131963174400D8F725 /* Custom classes */,
+				BD34A42C1990BA9F0058C22A /* Custom classes */,
 				BD4FBD1A1963179200D8F725 /* View Controllers */,
 				BDB58980195888670090E178 /* AppDelegate.swift */,
 				BD0C9F0F19673863003A88AC /* Talking_Companion-Bridging-Header.h */,
@@ -409,11 +410,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BDFB745D198FCDD700D1E113 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BDFB745E198FCDD700D1E113 /* settings.png */,
+				BDFB745F198FCDD700D1E113 /* settings@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		BDFFA009195C367700288E6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BDB6841F196C38A4005AA31F /* libz.1.2.5.dylib */,
-				BDB6841D196C33D1005AA31F /* libz.dylib */,
 				BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */,
 				BDD89B84195B095F0020ACA7 /* AVFoundation.framework */,
 				BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */,
@@ -512,6 +520,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDFB7460198FCDD700D1E113 /* settings.png in Resources */,
+				BDFB7461198FCDD700D1E113 /* settings@2x.png in Resources */,
 				BDB58986195888670090E178 /* Main.storyboard in Resources */,
 				BDB58988195888670090E178 /* Images.xcassets in Resources */,
 			);
@@ -536,34 +546,34 @@
 				BD0C9F4F1967388A003A88AC /* AFSecurityPolicy.m in Sources */,
 				BD0C9F591967388A003A88AC /* FMDatabase.m in Sources */,
 				BD0C9F6D1967388A003A88AC /* UIButton+AFNetworking.m in Sources */,
-				BD4FBD171963174400D8F725 /* OSMElementsParser.swift in Sources */,
 				BD0C9F751967388A003A88AC /* UIWebView+AFNetworking.m in Sources */,
 				BD0C9F711967388A003A88AC /* UIProgressView+AFNetworking.m in Sources */,
+				BD34A4411990BA9F0058C22A /* SQLAccess.swift in Sources */,
 				BD0C9F4D1967388A003A88AC /* AFNetworkReachabilityManager.m in Sources */,
+				BD34A43D1990BA9F0058C22A /* OSMNode.swift in Sources */,
+				BD34A4421990BA9F0058C22A /* ClosestPlaceViewController.m in Sources */,
+				BD34A4401990BA9F0058C22A /* OSMWay.swift in Sources */,
 				BD0C9F5D1967388A003A88AC /* FMDatabasePool.m in Sources */,
 				BD0C9F6F1967388A003A88AC /* UIImageView+AFNetworking.m in Sources */,
-				BD4FBD251963179200D8F725 /* ClosestPlaceViewController.m in Sources */,
+				BD34A43F1990BA9F0058C22A /* OSMTilesDownloader.swift in Sources */,
 				BD0C9F511967388A003A88AC /* AFURLConnectionOperation.m in Sources */,
+				BD34A43E1990BA9F0058C22A /* OSMTile.swift in Sources */,
 				BD0C9F471967388A003A88AC /* AFHTTPRequestOperation.m in Sources */,
 				BD0C9F4B1967388A003A88AC /* AFHTTPSessionManager.m in Sources */,
 				BD0C9F531967388A003A88AC /* AFURLRequestSerialization.m in Sources */,
 				BD0C9F651967388A003A88AC /* SMXMLDocument.m in Sources */,
-				BD2EB9BA1966EC1200C8DEDD /* SQLAccess.swift in Sources */,
-				BDBFD5B0197527B60088F1CB /* Calculations.swift in Sources */,
 				BD0C9F691967388A003A88AC /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				BD34A43C1990BA9F0058C22A /* OSMElementsParser.swift in Sources */,
 				BD0C9F571967388A003A88AC /* AFURLSessionManager.m in Sources */,
-				BDBEAC4D19641372000EC6ED /* OSMTilesDownloader.swift in Sources */,
+				BD34A43B1990BA9F0058C22A /* OSMBoundingBox.swift in Sources */,
 				BD0C9F491967388A003A88AC /* AFHTTPRequestOperationManager.m in Sources */,
 				BDB58981195888670090E178 /* AppDelegate.swift in Sources */,
 				BD0C9F551967388A003A88AC /* AFURLResponseSerialization.m in Sources */,
-				BD4FBD181963174400D8F725 /* OSMNode.swift in Sources */,
 				BD0C9F611967388A003A88AC /* FMResultSet.m in Sources */,
-				BD4FBD191963174400D8F725 /* OSMWay.swift in Sources */,
 				BD0C9F731967388A003A88AC /* UIRefreshControl+AFNetworking.m in Sources */,
+				BD34A43A1990BA9F0058C22A /* Calculations.swift in Sources */,
 				BD0C9F6B1967388A003A88AC /* UIAlertView+AFNetworking.m in Sources */,
-				BDBEAC4F19641405000EC6ED /* OSMBoundingBox.swift in Sources */,
 				BD0C9F5F1967388A003A88AC /* FMDatabaseQueue.m in Sources */,
-				BD4FBD271963187900D8F725 /* OSMTile.swift in Sources */,
 				BD0C9F5B1967388A003A88AC /* FMDatabaseAdditions.m in Sources */,
 				BD0C9F671967388A003A88AC /* AFNetworkActivityIndicatorManager.m in Sources */,
 			);
@@ -720,6 +730,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -732,6 +743,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Talking Companion/Talking Companion-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

@@ -47,9 +47,8 @@ class OSMElementsParser {
         var nodes = [OSMNode]()
         var nodesXML = parser.childrenNamed("node")
         
-        if nodesXML? == nil {
-            return [OSMNode]()
-        }
+        if let _ = nodesXML {}
+        else { return [OSMNode]() }
     
         println("start parsing with count of nodes: \(nodesXML.count)")
         
@@ -96,9 +95,8 @@ class OSMElementsParser {
         var waysXML = parser.childrenNamed("way");
         
         
-        if waysXML? == nil {
-            return [OSMWay]()
-        }
+        if let _ = waysXML{}
+        else { return [OSMWay]() }
         
         for wayXML:AnyObject in waysXML {
             var element:SMXMLElement = wayXML as SMXMLElement

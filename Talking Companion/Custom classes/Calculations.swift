@@ -41,16 +41,17 @@ class Calculations: NSObject {
     
     class func directionForAngle(angle:Double) -> Direction {
         var direction = Direction.front
-        switch angle {
-            case 0.0 ..< 45.0:
+        var angleInt = Int(angle)
+        switch angleInt {
+            case 0 ..< 45:
                 direction = .front
-            case 45.0 ..< 135.0:
+            case 45 ..< 135:
                 direction = .right
-            case 135.0 ..< 225.0:
+            case 135 ..< 225:
                 direction = .back
-            case 225.0 ..< 315.0:
+            case 225 ..< 315:
                 direction = .left
-            case 315.0 ..< 360.0:
+            case 315 ..< 360:
                 direction = .front
             default:
                 direction = .front
