@@ -35,7 +35,7 @@ class OSMNode: NSObject {
     
     var amenity:String?
     var name:String?
-    var operator:String?
+    var operatorName:String?
     var shop:String?
     
     var type:String {
@@ -44,8 +44,8 @@ class OSMNode: NSObject {
         if let amenity = self.amenity {
             type += "\(amenity) "
         }
-        if let operator = self.operator {
-            type += "\(operator) "
+        if let operatorName = self.operatorName {
+            type += "\(operatorName) "
         }
         if let shop = self.shop {
             type += "\(shop) "

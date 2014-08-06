@@ -31,7 +31,7 @@ class SQLAccess: NSObject {
         db.beginTransaction()
         for node in nodes {
             var name = ""
-            var amenity = "", shop = "", operator = ""
+            var amenity = "", shop = "", operatorName = ""
             
             if let nodeName = node.name? {
                 name = nodeName
@@ -47,13 +47,13 @@ class SQLAccess: NSObject {
                 shop = nodeShop
             }
 
-            if let nodeOperator = node.operator? {
-                operator = nodeOperator
+            if let nodeOperator = node.operatorName? {
+                operatorName = nodeOperator
             }
 
             
             
-            db.executeUpdate("INSERT OR IGNORE INTO nodes (uid, tile_id, latitude, longitude, user, name, amenity, shop, operator) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", withArgumentsInArray: [node.uid, tileId, node.location.coordinate.latitude, node.location.coordinate.longitude, node.user, name, amenity, shop, operator])
+            db.executeUpdate("INSERT OR IGNORE INTO nodes (uid, tile_id, latitude, longitude, user, name, amenity, shop, operator) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", withArgumentsInArray: [node.uid, tileId, node.location.coordinate.latitude, node.location.coordinate.longitude, node.user, name, amenity, shop, operatorName])
         }
         db.commit()
         db.close()
@@ -69,7 +69,7 @@ class SQLAccess: NSObject {
         
         var result = db.executeQuery("SELECT * FROM nodes", withArgumentsInArray: [])
         while result.next() {
-            nodes += SQLAccess.nodeFromResult(result)
+            nodes.append(SQLAccess.nodeFromResult(result))
         }
         
         db.close()
@@ -86,7 +86,7 @@ class SQLAccess: NSObject {
 
         var result = db.executeQuery("SELECT * FROM ((SELECT id AS tileid FROM tiles WHERE x = ? AND y = ? AND zoom = ?) JOIN nodes) WHERE name <> '' AND nodes.tile_id = tileid", withArgumentsInArray:[tile.x, tile.y, tile.zoom])
         while result.next() {
-            nodes += SQLAccess.nodeFromResult(result)
+            nodes.append(SQLAccess.nodeFromResult(result))
         }
         
         db.close()
@@ -114,7 +114,7 @@ class SQLAccess: NSObject {
         node.announcedDate = announcedDate
         node.amenity = result.stringForColumn("amenity")
         node.shop = result.stringForColumn("shop")
-        node.operator = result.stringForColumn("operator")
+        node.operatorName = result.stringForColumn("operator")
         
         return node;
     }
@@ -172,7 +172,7 @@ class SQLAccess: NSObject {
         
             var tile = OSMTile(x: x, y: y, zoom: zoom)
             tile.uid = uid
-            tiles += tile
+            tiles.append(tile)
         }
         
         db.close()

@@ -74,7 +74,7 @@ class OSMElementsParser {
                         node.name = tagElement.attributeNamed("v")
                     }
                     if tagElement.attributeNamed("k") == "operator" {
-                        node.operator = tagElement.attributeNamed("v")
+                        node.operatorName = tagElement.attributeNamed("v")
                     }
                     if tagElement.attributeNamed("k") == "shop" {
                         node.shop = tagElement.attributeNamed("v")
