@@ -11,7 +11,6 @@
 #import <AVFoundation/AVFoundation.h>
 
 static const NSTimeInterval pronounceSpeedTimeInterval = 15;
-static const NSTimeInterval announceDirectionTimeInterval = 10;
 static const double kKilometersPerHour = 3.6; // 60 * 60 / 1000
 
 static const NSTimeInterval downloadTilesTimeInterval = 60;
@@ -26,6 +25,7 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
     CLLocation *currentLocation;
     NSArray *nodes;
     OSMTilesDownloader *tilesDownloader;
+    NSTimeInterval announceDirectionTimeInterval;
     
     AVSpeechSynthesizer *synth;
     NSTimer *speechTimer;
@@ -54,7 +54,21 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
     tilesDownloader = [[OSMTilesDownloader alloc] init];
     tilesDownloader.delegate = self;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updatingIntervalChanged) name:@"UpdatingIntervalNotification" object:nil];
+    
     NSLog(@"path to documents: %@", NSHomeDirectory());
+}
+
+- (void)updatingIntervalChanged
+{
+    if ([announceDirectionTimer isValid]) {
+        [announceDirectionTimer invalidate];
+    }
+    
+    NSInteger index = [[NSUserDefaults standardUserDefaults] integerForKey:@"UpdatingInterval"];
+    NSDictionary *settings = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Settings" ofType:@"plist"]];
+    announceDirectionTimeInterval = [settings[@"Durations"][index] doubleValue];
+    announceDirectionTimer = [NSTimer scheduledTimerWithTimeInterval:announceDirectionTimeInterval target:self selector:@selector(announceDirection) userInfo:nil repeats:YES];
 }
 
 #pragma mark -
@@ -65,7 +79,7 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
     if (isLocationEnabled) {
         speechTimer = [NSTimer scheduledTimerWithTimeInterval:pronounceSpeedTimeInterval target:self selector:@selector(speakSpeed) userInfo:nil repeats:YES];
         tilesTimer = [NSTimer scheduledTimerWithTimeInterval:downloadTilesTimeInterval target:self selector:@selector(downloadTiles) userInfo:nil repeats:YES];
-        announceDirectionTimer = [NSTimer scheduledTimerWithTimeInterval:announceDirectionTimeInterval target:self selector:@selector(announceDirection) userInfo:nil repeats:YES];
+        [self updatingIntervalChanged];
     }
     else {
         if ([speechTimer isValid]) {

@@ -72,10 +72,13 @@
 		BD34A4411990BA9F0058C22A /* SQLAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD34A4341990BA9F0058C22A /* SQLAccess.swift */; };
 		BD34A4421990BA9F0058C22A /* ClosestPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD34A4371990BA9F0058C22A /* ClosestPlaceViewController.m */; };
 		BD536AAB196A7E1B0017345D /* OSMBoundingBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */; };
+		BD9EEF441992492C00BC8A02 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9EEF431992492C00BC8A02 /* Constants.swift */; };
+		BD9EEF4619924A9200BC8A02 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD9EEF4519924A9200BC8A02 /* Settings.plist */; };
 		BDB58981195888670090E178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB58980195888670090E178 /* AppDelegate.swift */; };
 		BDB58986195888670090E178 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDB58984195888670090E178 /* Main.storyboard */; };
 		BDB58988195888670090E178 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB58987195888670090E178 /* Images.xcassets */; };
 		BDBFD5B21975325B0088F1CB /* CalculationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBFD5B11975325B0088F1CB /* CalculationsTests.swift */; };
+		BDC820FA199243F60055ABBE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC820F9199243F60055ABBE /* SettingsViewController.swift */; };
 		BDD89B85195B095F0020ACA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD89B84195B095F0020ACA7 /* AVFoundation.framework */; };
 		BDFB7460198FCDD700D1E113 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = BDFB745E198FCDD700D1E113 /* settings.png */; };
 		BDFB7461198FCDD700D1E113 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BDFB745F198FCDD700D1E113 /* settings@2x.png */; };
@@ -196,6 +199,8 @@
 		BD34A4361990BA9F0058C22A /* ClosestPlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClosestPlaceViewController.h; sourceTree = "<group>"; };
 		BD34A4371990BA9F0058C22A /* ClosestPlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClosestPlaceViewController.m; sourceTree = "<group>"; };
 		BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMBoundingBoxTests.swift; sourceTree = "<group>"; };
+		BD9EEF431992492C00BC8A02 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BD9EEF4519924A9200BC8A02 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Settings.plist; path = "View Controllers/Settings.plist"; sourceTree = "<group>"; };
 		BDB5897B195888670090E178 /* Talking Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Talking Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB5897F195888670090E178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDB58980195888670090E178 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -204,6 +209,7 @@
 		BDB5898D195888670090E178 /* Talking CompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Talking CompanionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB58992195888670090E178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDBFD5B11975325B0088F1CB /* CalculationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculationsTests.swift; sourceTree = "<group>"; };
+		BDC820F9199243F60055ABBE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BDD89B84195B095F0020ACA7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BDFB745E198FCDD700D1E113 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		BDFB745F198FCDD700D1E113 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
@@ -323,6 +329,7 @@
 		BD34A42C1990BA9F0058C22A /* Custom classes */ = {
 			isa = PBXGroup;
 			children = (
+				BD9EEF431992492C00BC8A02 /* Constants.swift */,
 				BD34A42D1990BA9F0058C22A /* Calculations.swift */,
 				BD34A42E1990BA9F0058C22A /* OSMBoundingBox.swift */,
 				BD34A42F1990BA9F0058C22A /* OSMElementsParser.swift */,
@@ -341,6 +348,7 @@
 				BDB58984195888670090E178 /* Main.storyboard */,
 				BD34A4361990BA9F0058C22A /* ClosestPlaceViewController.h */,
 				BD34A4371990BA9F0058C22A /* ClosestPlaceViewController.m */,
+				BDC820F9199243F60055ABBE /* SettingsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -371,8 +379,6 @@
 				BD34A42C1990BA9F0058C22A /* Custom classes */,
 				BD4FBD1A1963179200D8F725 /* View Controllers */,
 				BDB58980195888670090E178 /* AppDelegate.swift */,
-				BD0C9F0F19673863003A88AC /* Talking_Companion-Bridging-Header.h */,
-				BDB58987195888670090E178 /* Images.xcassets */,
 				BDB5897E195888670090E178 /* Supporting Files */,
 			);
 			path = "Talking Companion";
@@ -381,7 +387,10 @@
 		BDB5897E195888670090E178 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BD9EEF4519924A9200BC8A02 /* Settings.plist */,
 				BDB5897F195888670090E178 /* Info.plist */,
+				BD0C9F0F19673863003A88AC /* Talking_Companion-Bridging-Header.h */,
+				BDB58987195888670090E178 /* Images.xcassets */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -524,6 +533,7 @@
 				BDFB7461198FCDD700D1E113 /* settings@2x.png in Resources */,
 				BDB58986195888670090E178 /* Main.storyboard in Resources */,
 				BDB58988195888670090E178 /* Images.xcassets in Resources */,
+				BD9EEF4619924A9200BC8A02 /* Settings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,10 +578,12 @@
 				BD34A43B1990BA9F0058C22A /* OSMBoundingBox.swift in Sources */,
 				BD0C9F491967388A003A88AC /* AFHTTPRequestOperationManager.m in Sources */,
 				BDB58981195888670090E178 /* AppDelegate.swift in Sources */,
+				BD9EEF441992492C00BC8A02 /* Constants.swift in Sources */,
 				BD0C9F551967388A003A88AC /* AFURLResponseSerialization.m in Sources */,
 				BD0C9F611967388A003A88AC /* FMResultSet.m in Sources */,
 				BD0C9F731967388A003A88AC /* UIRefreshControl+AFNetworking.m in Sources */,
 				BD34A43A1990BA9F0058C22A /* Calculations.swift in Sources */,
+				BDC820FA199243F60055ABBE /* SettingsViewController.swift in Sources */,
 				BD0C9F6B1967388A003A88AC /* UIAlertView+AFNetworking.m in Sources */,
 				BD0C9F5F1967388A003A88AC /* FMDatabaseQueue.m in Sources */,
 				BD0C9F5B1967388A003A88AC /* FMDatabaseAdditions.m in Sources */,
