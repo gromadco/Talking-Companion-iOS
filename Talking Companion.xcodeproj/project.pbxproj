@@ -776,6 +776,7 @@
 				PRODUCT_NAME = "Talking Companion";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Talking Companion/Talking_Companion-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -795,6 +796,7 @@
 				PRODUCT_NAME = "Talking Companion";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Talking Companion/Talking_Companion-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
