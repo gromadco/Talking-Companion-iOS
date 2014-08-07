@@ -58,6 +58,11 @@
 		BD0C9F7D1967505B003A88AC /* OSMTileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F7C1967505B003A88AC /* OSMTileTests.swift */; };
 		BD0C9F7F196750D5003A88AC /* OSMElementsParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F7E196750D5003A88AC /* OSMElementsParserTests.swift */; };
 		BD0C9F8119675336003A88AC /* OSMWayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F8019675336003A88AC /* OSMWayTests.swift */; };
+		BD11497C1993D406001A07A4 /* libbz2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD11497B1993D406001A07A4 /* libbz2.1.0.dylib */; };
+		BD11497E1993D456001A07A4 /* odessa.osm.bz2 in Resources */ = {isa = PBXBuildFile; fileRef = BD11497D1993D456001A07A4 /* odessa.osm.bz2 */; };
+		BD11497F1993D456001A07A4 /* odessa.osm.bz2 in Resources */ = {isa = PBXBuildFile; fileRef = BD11497D1993D456001A07A4 /* odessa.osm.bz2 */; };
+		BD1149851993D651001A07A4 /* NSData+bz2.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1149841993D651001A07A4 /* NSData+bz2.m */; };
+		BD1149861993D651001A07A4 /* NSData+bz2.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1149841993D651001A07A4 /* NSData+bz2.m */; };
 		BD293FF11976D26000E91B2F /* empty.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD293FEF1976D26000E91B2F /* empty.osm */; };
 		BD293FF21976D26000E91B2F /* map.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD293FF01976D26000E91B2F /* map.osm */; };
 		BD2E7C80195AEAFB00D57518 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */; };
@@ -184,6 +189,10 @@
 		BD0C9F7C1967505B003A88AC /* OSMTileTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMTileTests.swift; sourceTree = "<group>"; };
 		BD0C9F7E196750D5003A88AC /* OSMElementsParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMElementsParserTests.swift; sourceTree = "<group>"; };
 		BD0C9F8019675336003A88AC /* OSMWayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMWayTests.swift; sourceTree = "<group>"; };
+		BD11497B1993D406001A07A4 /* libbz2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libbz2.1.0.dylib; path = usr/lib/libbz2.1.0.dylib; sourceTree = SDKROOT; };
+		BD11497D1993D456001A07A4 /* odessa.osm.bz2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = odessa.osm.bz2; sourceTree = "<group>"; };
+		BD1149831993D651001A07A4 /* NSData+bz2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+bz2.h"; sourceTree = "<group>"; };
+		BD1149841993D651001A07A4 /* NSData+bz2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+bz2.m"; sourceTree = "<group>"; };
 		BD293FEF1976D26000E91B2F /* empty.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = empty.osm; path = "Talking Companion/Resources/empty.osm"; sourceTree = SOURCE_ROOT; };
 		BD293FF01976D26000E91B2F /* map.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = map.osm; path = "Talking Companion/Resources/map.osm"; sourceTree = SOURCE_ROOT; };
 		BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -220,6 +229,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD11497C1993D406001A07A4 /* libbz2.1.0.dylib in Frameworks */,
 				BD2EB9BC1966F0E600C8DEDD /* libsqlite3.dylib in Frameworks */,
 				BDD89B85195B095F0020ACA7 /* AVFoundation.framework in Frameworks */,
 				BD2E7C80195AEAFB00D57518 /* CoreLocation.framework in Frameworks */,
@@ -240,6 +250,7 @@
 		BD0C9F101967388A003A88AC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BD11497D1993D456001A07A4 /* odessa.osm.bz2 */,
 				BDFB745D198FCDD700D1E113 /* Images */,
 				BD0C9F111967388A003A88AC /* AFNetworking */,
 				BD0C9F251967388A003A88AC /* fmdb */,
@@ -338,6 +349,8 @@
 				BD34A4321990BA9F0058C22A /* OSMTilesDownloader.swift */,
 				BD34A4331990BA9F0058C22A /* OSMWay.swift */,
 				BD34A4341990BA9F0058C22A /* SQLAccess.swift */,
+				BD1149831993D651001A07A4 /* NSData+bz2.h */,
+				BD1149841993D651001A07A4 /* NSData+bz2.m */,
 			);
 			path = "Custom classes";
 			sourceTree = "<group>";
@@ -431,6 +444,7 @@
 		BDFFA009195C367700288E6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD11497B1993D406001A07A4 /* libbz2.1.0.dylib */,
 				BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */,
 				BDD89B84195B095F0020ACA7 /* AVFoundation.framework */,
 				BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */,
@@ -533,6 +547,7 @@
 				BDFB7461198FCDD700D1E113 /* settings@2x.png in Resources */,
 				BDB58986195888670090E178 /* Main.storyboard in Resources */,
 				BDB58988195888670090E178 /* Images.xcassets in Resources */,
+				BD11497E1993D456001A07A4 /* odessa.osm.bz2 in Resources */,
 				BD9EEF4619924A9200BC8A02 /* Settings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -542,6 +557,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD293FF21976D26000E91B2F /* map.osm in Resources */,
+				BD11497F1993D456001A07A4 /* odessa.osm.bz2 in Resources */,
 				BD293FF11976D26000E91B2F /* empty.osm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -584,6 +600,7 @@
 				BD0C9F731967388A003A88AC /* UIRefreshControl+AFNetworking.m in Sources */,
 				BD34A43A1990BA9F0058C22A /* Calculations.swift in Sources */,
 				BDC820FA199243F60055ABBE /* SettingsViewController.swift in Sources */,
+				BD1149851993D651001A07A4 /* NSData+bz2.m in Sources */,
 				BD0C9F6B1967388A003A88AC /* UIAlertView+AFNetworking.m in Sources */,
 				BD0C9F5F1967388A003A88AC /* FMDatabaseQueue.m in Sources */,
 				BD0C9F5B1967388A003A88AC /* FMDatabaseAdditions.m in Sources */,
@@ -614,6 +631,7 @@
 				BD0C9F6A1967388A003A88AC /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				BD0C9F681967388A003A88AC /* AFNetworkActivityIndicatorManager.m in Sources */,
 				BD0C9F8119675336003A88AC /* OSMWayTests.swift in Sources */,
+				BD1149861993D651001A07A4 /* NSData+bz2.m in Sources */,
 				BD0C9F561967388A003A88AC /* AFURLResponseSerialization.m in Sources */,
 				BD0C9F7F196750D5003A88AC /* OSMElementsParserTests.swift in Sources */,
 				BD0C9F661967388A003A88AC /* SMXMLDocument.m in Sources */,
