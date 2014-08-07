@@ -71,6 +71,16 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
     announceDirectionTimer = [NSTimer scheduledTimerWithTimeInterval:announceDirectionTimeInterval target:self selector:@selector(announceDirection) userInfo:nil repeats:YES];
 }
 
+- (IBAction)showSettings:(id)sender
+{
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
+        [self performSegueWithIdentifier:@"Popover Settings" sender:sender];
+    }
+    else {
+        [self performSegueWithIdentifier:@"Push Settings" sender:sender];
+    }
+}
+
 #pragma mark -
 
 // start or stop downloading

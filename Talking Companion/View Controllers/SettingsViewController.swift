@@ -37,7 +37,12 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         NSNotificationCenter.defaultCenter().postNotificationName(kUpdatingIntervalNotification, object: self.selectedRow)
         
-        self.navigationController.popToRootViewControllerAnimated(true)
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad  {
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        else {
+            self.navigationController.popToRootViewControllerAnimated(true)
+        }
     }
     
     // MARK: - UIPickerView delegate

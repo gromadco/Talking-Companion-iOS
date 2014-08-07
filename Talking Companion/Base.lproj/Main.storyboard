@@ -145,7 +145,7 @@
                     <navigationItem key="navigationItem" title="Closest place" id="iSQ-jU-4GQ">
                         <barButtonItem key="rightBarButtonItem" image="settings.png" id="Vat-2u-Fez">
                             <connections>
-                                <segue destination="Qm4-5I-d3X" kind="show" id="8L2-se-GWq"/>
+                                <action selector="showSettings:" destination="I51-cH-MMB" id="nhF-Dp-FKO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -156,6 +156,10 @@
                         <outlet property="distanceLabel" destination="yTZ-2r-SL3" id="ioh-WF-jZK"/>
                         <outlet property="nameLabel" destination="IjF-NS-KER" id="5Zf-3m-Etz"/>
                         <outlet property="typeLabel" destination="Xb4-f1-WCi" id="5NJ-u9-y69"/>
+                        <segue destination="Qm4-5I-d3X" kind="show" identifier="Push Settings" id="hvo-yB-YHD"/>
+                        <segue destination="Qm4-5I-d3X" kind="popoverPresentation" identifier="Popover Settings" popoverAnchorBarButtonItem="Vat-2u-Fez" id="6P2-sf-3Uk">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F1p-Az-nyt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -165,7 +169,7 @@
         <!--Settings View Controller-->
         <scene sceneID="Sof-fh-cII">
             <objects>
-                <viewController id="Qm4-5I-d3X" customClass="SettingsViewController" customModule="Talking_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="Qm4-5I-d3X" customClass="SettingsViewController" customModule="Talking_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W0U-4d-By5"/>
                         <viewControllerLayoutGuide type="bottom" id="bWo-0v-ahq"/>
@@ -276,4 +280,7 @@
     <resources>
         <image name="settings.png" width="22" height="22"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="hvo-yB-YHD"/>
+    </inferredMetricsTieBreakers>
 </document>
