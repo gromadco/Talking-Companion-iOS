@@ -99,6 +99,6 @@ class OSMTile: NSObject {
     }
     
     func hash() -> Int {
-        return (x << 16) + (y << 8) + (zoom << 4)
+        return "\(x):\(y):\(zoom)".hash
     }
 }
