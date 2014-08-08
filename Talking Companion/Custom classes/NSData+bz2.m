@@ -16,7 +16,7 @@
     int bzret;
     bz_stream stream = { 0 };
     stream.next_in = (char*)[data bytes];
-    stream.avail_in = [data length];
+    stream.avail_in = (int)[data length];
     
     const int buffer_size = 10000;
     NSMutableData * buffer = [NSMutableData dataWithLength:buffer_size];
@@ -42,6 +42,11 @@
     }
     
     return decompressed;
+}
+
+- (NSData *)bunzip2
+{
+    return [NSData bunzip2:self];
 }
 
 @end

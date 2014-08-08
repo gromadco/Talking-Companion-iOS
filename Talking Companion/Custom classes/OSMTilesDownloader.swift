@@ -25,30 +25,32 @@ class OSMTilesDownloader: NSObject {
                 continue
             }
             
-            var box = OSMBoundingBox(tile: tile)
+            let box = OSMBoundingBox(tile: tile)
             
             // downloading .osm
-            var request = NSURLRequest(URL: NSURL(string: box.url))
-            var operation = AFHTTPRequestOperation(request: request)
+            let request = NSURLRequest(URL: NSURL(string: box.url))
+            let operation = AFHTTPRequestOperation(request: request)
             var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
             path += "/map\(index).osm"
             operation.outputStream = NSOutputStream(toFileAtPath: path, append: false)
 
             operation.setCompletionBlockWithSuccess({ (_, responseObject) in
-                println("tile \(tile) downloaded")
-                var parser = OSMElementsParser(filePath: path)
-                var tileId = SQLAccess.saveTile(tile)
-                SQLAccess.saveNodes(parser.nodes, forTileId: tileId)
+                NSLog("tile \(tile) downloaded")
+                
+                let tileId = SQLAccess.saveTile(tile)
+                let parser = OSMElementsParser(filePath: path)
+                parser.parseWithComplitionHandler() { nodes, _ in
+                    SQLAccess.saveNodes(parser.nodes, forTileId: tileId)
+                };
                 
                 self.leftDownloading--;
                 if self.leftDownloading == 0 {
                     self.delegate?.tilesDownloaded()
                 }
+            },
+            failure: { [unowned self] (_, error) in })
             
-                },
-                failure: { [unowned self] (_, error) in })
-            
-            println("start downloading @ \(box.url)")
+            NSLog("start downloading @ \(box.url)")
             operation.start()
             leftDownloading++;
         }

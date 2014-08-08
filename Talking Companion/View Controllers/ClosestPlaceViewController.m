@@ -21,7 +21,6 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
 @interface ClosestPlaceViewController ()
 {
     BOOL isLocationEnabled;
-    CLLocationManager *locationManager;
     CLLocationSpeed currentSpeed;
     CLLocation *currentLocation;
     NSArray *nodes;
@@ -46,14 +45,6 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
 
 #pragma mark - unzip a bz2 archive
 
-- (void)unzipArchive
-{
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"odessa" ofType:@"osm.bz2"];
-    NSData *compressedData = [NSData dataWithContentsOfFile:path];
-    NSData *uncompressedData = [NSData bunzip2:compressedData];
-    //NSString *odessa = [NSString stringWithUTF8String:[uncompressedData bytes]];
-}
-
 #pragma mark - View Methonds
 
 - (void)viewWillAppear:(BOOL)animated
@@ -72,14 +63,6 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updatingIntervalChanged) name:@"UpdatingIntervalNotification" object:nil];
     
     NSLog(@"path to documents: %@", NSHomeDirectory());
-    
-    // demo unzip
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0) ,^{
-//        [self unzipArchive];
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [[[UIAlertView alloc] initWithTitle:@"done" message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil] show];
-//        });
-//    });
 }
 
 - (void)updatingIntervalChanged

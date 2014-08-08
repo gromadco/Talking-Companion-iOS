@@ -59,8 +59,6 @@
 		BD0C9F7F196750D5003A88AC /* OSMElementsParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F7E196750D5003A88AC /* OSMElementsParserTests.swift */; };
 		BD0C9F8119675336003A88AC /* OSMWayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F8019675336003A88AC /* OSMWayTests.swift */; };
 		BD11497C1993D406001A07A4 /* libbz2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD11497B1993D406001A07A4 /* libbz2.1.0.dylib */; };
-		BD11497E1993D456001A07A4 /* odessa.osm.bz2 in Resources */ = {isa = PBXBuildFile; fileRef = BD11497D1993D456001A07A4 /* odessa.osm.bz2 */; };
-		BD11497F1993D456001A07A4 /* odessa.osm.bz2 in Resources */ = {isa = PBXBuildFile; fileRef = BD11497D1993D456001A07A4 /* odessa.osm.bz2 */; };
 		BD1149851993D651001A07A4 /* NSData+bz2.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1149841993D651001A07A4 /* NSData+bz2.m */; };
 		BD1149861993D651001A07A4 /* NSData+bz2.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1149841993D651001A07A4 /* NSData+bz2.m */; };
 		BD293FF11976D26000E91B2F /* empty.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD293FEF1976D26000E91B2F /* empty.osm */; };
@@ -77,6 +75,8 @@
 		BD34A4411990BA9F0058C22A /* SQLAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD34A4341990BA9F0058C22A /* SQLAccess.swift */; };
 		BD34A4421990BA9F0058C22A /* ClosestPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD34A4371990BA9F0058C22A /* ClosestPlaceViewController.m */; };
 		BD536AAB196A7E1B0017345D /* OSMBoundingBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */; };
+		BD7CC66D1994A8490068ABDB /* ExtractDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7CC66C1994A8490068ABDB /* ExtractDownloader.swift */; };
+		BD7CC66F1994D9740068ABDB /* odessa.osm.bz2 in Resources */ = {isa = PBXBuildFile; fileRef = BD7CC66E1994D9740068ABDB /* odessa.osm.bz2 */; };
 		BD9EEF441992492C00BC8A02 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9EEF431992492C00BC8A02 /* Constants.swift */; };
 		BD9EEF4619924A9200BC8A02 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD9EEF4519924A9200BC8A02 /* Settings.plist */; };
 		BDB58981195888670090E178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB58980195888670090E178 /* AppDelegate.swift */; };
@@ -190,7 +190,6 @@
 		BD0C9F7E196750D5003A88AC /* OSMElementsParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMElementsParserTests.swift; sourceTree = "<group>"; };
 		BD0C9F8019675336003A88AC /* OSMWayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMWayTests.swift; sourceTree = "<group>"; };
 		BD11497B1993D406001A07A4 /* libbz2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libbz2.1.0.dylib; path = usr/lib/libbz2.1.0.dylib; sourceTree = SDKROOT; };
-		BD11497D1993D456001A07A4 /* odessa.osm.bz2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = odessa.osm.bz2; sourceTree = "<group>"; };
 		BD1149831993D651001A07A4 /* NSData+bz2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+bz2.h"; sourceTree = "<group>"; };
 		BD1149841993D651001A07A4 /* NSData+bz2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+bz2.m"; sourceTree = "<group>"; };
 		BD293FEF1976D26000E91B2F /* empty.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = empty.osm; path = "Talking Companion/Resources/empty.osm"; sourceTree = SOURCE_ROOT; };
@@ -208,6 +207,8 @@
 		BD34A4361990BA9F0058C22A /* ClosestPlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClosestPlaceViewController.h; sourceTree = "<group>"; };
 		BD34A4371990BA9F0058C22A /* ClosestPlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClosestPlaceViewController.m; sourceTree = "<group>"; };
 		BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMBoundingBoxTests.swift; sourceTree = "<group>"; };
+		BD7CC66C1994A8490068ABDB /* ExtractDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtractDownloader.swift; sourceTree = "<group>"; };
+		BD7CC66E1994D9740068ABDB /* odessa.osm.bz2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = odessa.osm.bz2; sourceTree = "<group>"; };
 		BD9EEF431992492C00BC8A02 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BD9EEF4519924A9200BC8A02 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Settings.plist; path = "View Controllers/Settings.plist"; sourceTree = "<group>"; };
 		BDB5897B195888670090E178 /* Talking Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Talking Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,7 +251,7 @@
 		BD0C9F101967388A003A88AC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BD11497D1993D456001A07A4 /* odessa.osm.bz2 */,
+				BD7CC66E1994D9740068ABDB /* odessa.osm.bz2 */,
 				BDFB745D198FCDD700D1E113 /* Images */,
 				BD0C9F111967388A003A88AC /* AFNetworking */,
 				BD0C9F251967388A003A88AC /* fmdb */,
@@ -351,6 +352,7 @@
 				BD34A4341990BA9F0058C22A /* SQLAccess.swift */,
 				BD1149831993D651001A07A4 /* NSData+bz2.h */,
 				BD1149841993D651001A07A4 /* NSData+bz2.m */,
+				BD7CC66C1994A8490068ABDB /* ExtractDownloader.swift */,
 			);
 			path = "Custom classes";
 			sourceTree = "<group>";
@@ -550,7 +552,7 @@
 				BDFB7461198FCDD700D1E113 /* settings@2x.png in Resources */,
 				BDB58986195888670090E178 /* Main.storyboard in Resources */,
 				BDB58988195888670090E178 /* Images.xcassets in Resources */,
-				BD11497E1993D456001A07A4 /* odessa.osm.bz2 in Resources */,
+				BD7CC66F1994D9740068ABDB /* odessa.osm.bz2 in Resources */,
 				BD9EEF4619924A9200BC8A02 /* Settings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,7 +562,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD293FF21976D26000E91B2F /* map.osm in Resources */,
-				BD11497F1993D456001A07A4 /* odessa.osm.bz2 in Resources */,
 				BD293FF11976D26000E91B2F /* empty.osm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -597,6 +598,7 @@
 				BD34A43B1990BA9F0058C22A /* OSMBoundingBox.swift in Sources */,
 				BD0C9F491967388A003A88AC /* AFHTTPRequestOperationManager.m in Sources */,
 				BDB58981195888670090E178 /* AppDelegate.swift in Sources */,
+				BD7CC66D1994A8490068ABDB /* ExtractDownloader.swift in Sources */,
 				BD9EEF441992492C00BC8A02 /* Constants.swift in Sources */,
 				BD0C9F551967388A003A88AC /* AFURLResponseSerialization.m in Sources */,
 				BD0C9F611967388A003A88AC /* FMResultSet.m in Sources */,

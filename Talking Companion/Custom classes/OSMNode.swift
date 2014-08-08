@@ -79,7 +79,7 @@ class OSMNode: NSObject {
     }
     
     func announce() {
-        println("announced node")
+        NSLog("announced node")
         self.announcedDate = NSDate.date()
         SQLAccess.updateNode(self)
     }

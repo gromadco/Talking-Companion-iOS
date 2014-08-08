@@ -11,5 +11,6 @@
 @interface NSData (bz2)
 
 + (NSData *)bunzip2:(NSData*)data;
+- (NSData *)bunzip2;
 
 @end

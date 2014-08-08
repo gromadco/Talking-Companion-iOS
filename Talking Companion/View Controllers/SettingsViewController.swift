@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, ExtractDownloaderDelegate {
 
     @IBOutlet var updatingIntervalPickerView: UIPickerView
     
@@ -43,6 +43,17 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         else {
             self.navigationController.popToRootViewControllerAnimated(true)
         }
+    }
+    
+    @IBAction func downloadExtractButtonPressed() {
+        let downloader = ExtractDownloader(delegate: self)
+        downloader.downloadCity("odessa")
+    }
+    
+    // MARK - ExtractDownloader delegate
+    
+    func extractDownloaderFinished(nodes:[OSMNode]) {
+        NSLog("odessa nodes: \(nodes.count)")
     }
     
     // MARK: - UIPickerView delegate

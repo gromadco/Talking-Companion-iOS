@@ -9,3 +9,4 @@
 #import "SMXMLDocument.h"
 #import "AFNetworking.h"
 #import "FMDB.h"
+#import "NSData+bz2.h"

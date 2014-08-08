@@ -20,52 +20,67 @@ class OSMElementsParser {
     
     var nodes = [OSMNode]()
     var ways = [OSMWay]()
-    var filePath:String
+    let xmlData:NSData?
     
     // MARK: - Initializing
     
     init(filePath:String)  {
-        self.filePath = filePath
-        nodes = parseNodes()
-        ways = parseWays()
+        self.xmlData = NSData(contentsOfFile:filePath)
+        //self.initializingElements()
     }
-        
+    
+    init(xmlData:NSData) {
+        self.xmlData = xmlData
+        //self.initializingElements()
+    }
+    
+    func initializingElements() {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+            self.nodes = self.parseNodes()
+            //ways = parseWays()
+        }
+    }
+    
+    func parseWithComplitionHandler(handler:(nodes:[OSMNode], ways:[OSMWay]) -> Void) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+            self.nodes = self.parseNodes()
+            self.ways = self.parseWays()
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+                handler(nodes:self.nodes, ways:self.ways)
+            }
+        }
+    }
+    
     // MARK: - Parsing
     
     func parser() -> AnyObject {
-        var data = NSData(contentsOfFile:filePath)
-        var xml = NSString(data: data, encoding: NSUTF8StringEncoding)
-        var parser = SMXMLDocument(data: data, error: nil)
-        
-        return parser
+        return SMXMLDocument(data: xmlData, error: nil)
     }
     
     func parseNodes() -> [OSMNode] {
         let parser:SMXMLDocument = self.parser() as SMXMLDocument
-        
-        var node:OSMNode
         var nodes = [OSMNode]()
-        var nodesXML = parser.childrenNamed("node")
         
+        let nodesXML = parser.childrenNamed("node")
         if let _ = nodesXML {}
         else { return [OSMNode]() }
     
-        println("start parsing with count of nodes: \(nodesXML.count)")
+        NSLog("start parsing with count of nodes: \(nodesXML.count)")
         
         for nodeXML:AnyObject in nodesXML {
-            var element:SMXMLElement = nodeXML as SMXMLElement
+            let element:SMXMLElement = nodeXML as SMXMLElement
             
             // required properties
-            var uid:Int = element.attributeNamed("uid").toInt()!
-            var lat = element.attributeNamed("lat").doubleValue
-            var lon = element.attributeNamed("lon").doubleValue
-            var user = element.attributeNamed("user")
-            node = OSMNode(uid:uid, latitude: lat, longitude: lon, user:user)
+            let uid:Int = element.attributeNamed("uid").toInt()!
+            let lat = element.attributeNamed("lat").doubleValue
+            let lon = element.attributeNamed("lon").doubleValue
+            let user = element.attributeNamed("user")
+            var node = OSMNode(uid:uid, latitude: lat, longitude: lon, user:user)
         
             // check tags
             if let tagsXML = element.childrenNamed("tag") {
                 for tagXML:AnyObject in tagsXML {
-                    var tagElement = tagXML as SMXMLElement
+                    let tagElement = tagXML as SMXMLElement
                     
                     if tagElement.attributeNamed("k") == "amenity" {
                         node.amenity = tagElement.attributeNamed("v")
@@ -89,22 +104,19 @@ class OSMElementsParser {
     
     func parseWays() -> [OSMWay] {
         let parser:SMXMLDocument = self.parser() as SMXMLDocument
-        
-        var way:OSMWay
         var ways = [OSMWay]()
-        var waysXML = parser.childrenNamed("way");
         
-        
+        let waysXML = parser.childrenNamed("way");
         if let _ = waysXML{}
         else { return [OSMWay]() }
         
         for wayXML:AnyObject in waysXML {
-            var element:SMXMLElement = wayXML as SMXMLElement
+            let element:SMXMLElement = wayXML as SMXMLElement
             
             // required properties
-            var wayId = element.attributeNamed("id")
-            var user = element.attributeNamed("user")
-            way = OSMWay(wayId: wayId, user: user)
+            let wayId = element.attributeNamed("id")
+            let user = element.attributeNamed("user")
+            var way = OSMWay(wayId: wayId, user: user)
             
             // check nodes of way
             if let nodesXML = element.childrenNamed("nd") {
