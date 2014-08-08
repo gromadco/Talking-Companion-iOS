@@ -28,7 +28,7 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
     OSMTilesDownloader *tilesDownloader;
     NSTimeInterval announceDirectionTimeInterval;
     
-    AVSpeechSynthesizer *synth;
+    
     NSTimer *speechTimer;
     NSTimer *tilesTimer;
     
@@ -36,6 +36,10 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
     CLLocation *previousLocation;
     CLLocation *closestPlaceLocation;
 }
+
+@property (nonatomic) AVSpeechSynthesizer *synth;
+@property (nonatomic) CLLocationManager *locationManager;
+
 @end
 
 @implementation ClosestPlaceViewController
@@ -55,7 +59,7 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
 - (void)viewWillAppear:(BOOL)animated
 {
     previousLocation = nil;
-    [self loadLocationManager];
+    [self.locationManager startUpdatingLocation];
     [super viewWillAppear:animated];
 }
 
@@ -70,12 +74,12 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
     NSLog(@"path to documents: %@", NSHomeDirectory());
     
     // demo unzip
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0) ,^{
-        [self unzipArchive];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [[[UIAlertView alloc] initWithTitle:@"done" message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil] show];
-        });
-    });
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0) ,^{
+//        [self unzipArchive];
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [[[UIAlertView alloc] initWithTitle:@"done" message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil] show];
+//        });
+//    });
 }
 
 - (void)updatingIntervalChanged
@@ -98,6 +102,27 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
     else {
         [self performSegueWithIdentifier:@"Push Settings" sender:sender];
     }
+}
+
+#pragma mark - Lazy instantiation
+
+- (AVSpeechSynthesizer *)synth
+{
+    if (!_synth) {
+        _synth = [[AVSpeechSynthesizer alloc] init];
+    }
+    return _synth;
+}
+
+- (CLLocationManager *)locationManager
+{
+    if (!_locationManager) {
+        _locationManager = [[CLLocationManager alloc] init];
+        _locationManager.delegate = self;
+        _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        //[_locationManager requestAlwaysAuthorization];
+    }
+    return _locationManager;
 }
 
 #pragma mark -
@@ -161,7 +186,7 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
     if (currentSpeed > 0) {
         NSString *speedString = [NSString stringWithFormat:@"%i km per hour", (int)currentSpeed];
         AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:speedString];
-        [synth speakUtterance:utterance];
+        [self.synth speakUtterance:utterance];
         
         NSLog(@"speak speed: %@", speedString);
     }
@@ -177,7 +202,7 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
     if (distance > 0) {
         NSString *placeString = [NSString stringWithFormat:@"Closest place is %@, %@ with distance %li m", place.name, place.type, (long)distance];
         AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:placeString];
-        [synth speakUtterance:utterance];
+        [self.synth speakUtterance:utterance];
         [place announce];
         
          NSLog(@"announce place \"%@\"", placeString);
@@ -241,15 +266,6 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
 }
 
 #pragma mark - CLLocationManager Delegate
-
-- (void)loadLocationManager
-{
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    //[manager requestAlwaysAuthorization];
-    [locationManager startUpdatingLocation];
-}
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {

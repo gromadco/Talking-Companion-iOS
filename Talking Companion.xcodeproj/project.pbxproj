@@ -508,6 +508,9 @@
 					BDB5897A195888670090E178 = {
 						CreatedOnToolsVersion = 6.0;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Maps.iOS = {
 								enabled = 0;
 							};
