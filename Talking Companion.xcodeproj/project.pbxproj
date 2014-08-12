@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD0918331998F38E00087B1F /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0918311998F38E00087B1F /* SwiftyJSON.swift */; };
 		BD0C9F071967332A003A88AC /* OSMNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F061967332A003A88AC /* OSMNodeTests.swift */; };
 		BD0C9F471967388A003A88AC /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F131967388A003A88AC /* AFHTTPRequestOperation.m */; };
 		BD0C9F481967388A003A88AC /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F131967388A003A88AC /* AFHTTPRequestOperation.m */; };
@@ -75,6 +76,8 @@
 		BD34A4411990BA9F0058C22A /* SQLAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD34A4341990BA9F0058C22A /* SQLAccess.swift */; };
 		BD34A4421990BA9F0058C22A /* ClosestPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD34A4371990BA9F0058C22A /* ClosestPlaceViewController.m */; };
 		BD536AAB196A7E1B0017345D /* OSMBoundingBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */; };
+		BD7595331998ED9100E3232D /* poi.json in Resources */ = {isa = PBXBuildFile; fileRef = BD7595321998ED9100E3232D /* poi.json */; };
+		BD7595351998EDAC00E3232D /* GEOJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7595341998EDAC00E3232D /* GEOJSONParser.swift */; };
 		BD7CC66D1994A8490068ABDB /* ExtractDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7CC66C1994A8490068ABDB /* ExtractDownloader.swift */; };
 		BD7CC66F1994D9740068ABDB /* odessa.osm.bz2 in Resources */ = {isa = PBXBuildFile; fileRef = BD7CC66E1994D9740068ABDB /* odessa.osm.bz2 */; };
 		BD9EEF441992492C00BC8A02 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9EEF431992492C00BC8A02 /* Constants.swift */; };
@@ -135,6 +138,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD0918311998F38E00087B1F /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		BD0C9F061967332A003A88AC /* OSMNodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMNodeTests.swift; sourceTree = "<group>"; };
 		BD0C9F0F19673863003A88AC /* Talking_Companion-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Talking_Companion-Bridging-Header.h"; sourceTree = "<group>"; };
 		BD0C9F121967388A003A88AC /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -207,6 +211,8 @@
 		BD34A4361990BA9F0058C22A /* ClosestPlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClosestPlaceViewController.h; sourceTree = "<group>"; };
 		BD34A4371990BA9F0058C22A /* ClosestPlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClosestPlaceViewController.m; sourceTree = "<group>"; };
 		BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMBoundingBoxTests.swift; sourceTree = "<group>"; };
+		BD7595321998ED9100E3232D /* poi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = poi.json; sourceTree = "<group>"; };
+		BD7595341998EDAC00E3232D /* GEOJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GEOJSONParser.swift; sourceTree = "<group>"; };
 		BD7CC66C1994A8490068ABDB /* ExtractDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtractDownloader.swift; sourceTree = "<group>"; };
 		BD7CC66E1994D9740068ABDB /* odessa.osm.bz2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = odessa.osm.bz2; sourceTree = "<group>"; };
 		BD9EEF431992492C00BC8A02 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -248,9 +254,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD09182E1998F38E00087B1F /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				BD0918311998F38E00087B1F /* SwiftyJSON.swift */,
+			);
+			path = SwiftyJSON;
+			sourceTree = "<group>";
+		};
 		BD0C9F101967388A003A88AC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BD09182E1998F38E00087B1F /* SwiftyJSON */,
+				BD7595321998ED9100E3232D /* poi.json */,
 				BD7CC66E1994D9740068ABDB /* odessa.osm.bz2 */,
 				BDFB745D198FCDD700D1E113 /* Images */,
 				BD0C9F111967388A003A88AC /* AFNetworking */,
@@ -353,6 +369,7 @@
 				BD1149831993D651001A07A4 /* NSData+bz2.h */,
 				BD1149841993D651001A07A4 /* NSData+bz2.m */,
 				BD7CC66C1994A8490068ABDB /* ExtractDownloader.swift */,
+				BD7595341998EDAC00E3232D /* GEOJSONParser.swift */,
 			);
 			path = "Custom classes";
 			sourceTree = "<group>";
@@ -549,6 +566,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDFB7460198FCDD700D1E113 /* settings.png in Resources */,
+				BD7595331998ED9100E3232D /* poi.json in Resources */,
 				BDFB7461198FCDD700D1E113 /* settings@2x.png in Resources */,
 				BDB58986195888670090E178 /* Main.storyboard in Resources */,
 				BDB58988195888670090E178 /* Images.xcassets in Resources */,
@@ -581,6 +599,7 @@
 				BD34A4411990BA9F0058C22A /* SQLAccess.swift in Sources */,
 				BD0C9F4D1967388A003A88AC /* AFNetworkReachabilityManager.m in Sources */,
 				BD34A43D1990BA9F0058C22A /* OSMNode.swift in Sources */,
+				BD7595351998EDAC00E3232D /* GEOJSONParser.swift in Sources */,
 				BD34A4421990BA9F0058C22A /* ClosestPlaceViewController.m in Sources */,
 				BD34A4401990BA9F0058C22A /* OSMWay.swift in Sources */,
 				BD0C9F5D1967388A003A88AC /* FMDatabasePool.m in Sources */,
@@ -596,6 +615,7 @@
 				BD34A43C1990BA9F0058C22A /* OSMElementsParser.swift in Sources */,
 				BD0C9F571967388A003A88AC /* AFURLSessionManager.m in Sources */,
 				BD34A43B1990BA9F0058C22A /* OSMBoundingBox.swift in Sources */,
+				BD0918331998F38E00087B1F /* SwiftyJSON.swift in Sources */,
 				BD0C9F491967388A003A88AC /* AFHTTPRequestOperationManager.m in Sources */,
 				BDB58981195888670090E178 /* AppDelegate.swift in Sources */,
 				BD7CC66D1994A8490068ABDB /* ExtractDownloader.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, ExtractDownloaderDelegate {
 
-    @IBOutlet var updatingIntervalPickerView: UIPickerView
+    @IBOutlet var updatingIntervalPickerView: UIPickerView?
     
     var intervalsLabels = [String]()
     var intervalsDutation = [Int]()
@@ -24,11 +24,23 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         self.intervalsLabels = settings.objectForKey("Labels") as [String]
         
         self.loadDefaults()
+        
+        let path = NSBundle.mainBundle().pathForResource("po1i", ofType: "json")
+        let data = NSData(contentsOfFile: path)
+        let jsonParser = GEOJSONParser(jsonData: data)
+        jsonParser.parseWithComplitionHandler() { nodes, error in
+            if error != nil {
+                NSLog("geo json parsing error: \(error!)")
+            }
+            else {
+                NSLog("finished with count: \(nodes.count)")
+            }
+        }
     }
     
     func loadDefaults() {
         self.selectedRow = NSUserDefaults.standardUserDefaults().integerForKey(kUpdatingInterval)
-        self.updatingIntervalPickerView.selectRow(selectedRow, inComponent: 0, animated: false)
+        self.updatingIntervalPickerView?.selectRow(selectedRow, inComponent: 0, animated: false)
     }
     
     @IBAction func saveButtonPressed() {

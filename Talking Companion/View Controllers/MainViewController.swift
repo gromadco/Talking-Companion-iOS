@@ -12,7 +12,7 @@ import AVFoundation
 
 class MainViewController: UIViewController, CLLocationManagerDelegate {
 
-    @IBOutlet var currentSpeedLabel: UILabel
+    @IBOutlet var currentSpeedLabel: UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!)
     {
         let speed = newLocation.speed * 3600.0/1000.0;
-        currentSpeedLabel.text = "\(speed)"
+        //currentSpeedLabel?.text = "\(speed)"
     }
     
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus)
@@ -49,7 +49,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: AnyObject[]!)
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!)
     {
         
     }
