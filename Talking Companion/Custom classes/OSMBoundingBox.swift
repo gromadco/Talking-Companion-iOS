@@ -10,10 +10,10 @@ import UIKit
 
 // bounding box for downloading contains OSM elements
 class OSMBoundingBox: NSObject {
-    var north:Double
-    var south:Double
-    var east:Double
-    var west:Double
+    let north:Double
+    let south:Double
+    let east:Double
+    let west:Double
     
     var url:String {
         return "http://api.openstreetmap.org/api/0.6/map?bbox=\(west),\(south),\(east),\(north)"

@@ -18,7 +18,7 @@ class OSMTilesDownloader: NSObject {
     var delegate:OSMTilesDownloaderDelegate?
     
     func downloadNeighboringTilesFor(tile centerTile:OSMTile) {
-        var tiles:Array<OSMTile> = centerTile.neighboringTiles()
+        let tiles:Array<OSMTile> = centerTile.neighboringTiles()
         
         for (index, tile) in enumerate(tiles) {
             if SQLAccess.hasTile(tile) {

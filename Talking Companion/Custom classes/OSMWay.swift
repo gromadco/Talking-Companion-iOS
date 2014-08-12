@@ -12,7 +12,7 @@ class OSMWay: NSObject {
    
     // MARK: - Properties
     
-    var wayId:String
+    let wayId:String
     var nodes:Array<String> = Array()
     
     var amenity:String?

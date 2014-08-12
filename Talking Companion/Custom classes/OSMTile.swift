@@ -12,9 +12,9 @@ import ObjectiveC
 
 class OSMTile: NSObject {
     var uid:Int?
-    var x:Int
-    var y:Int
-    var zoom:Int = NSBundle.mainBundle().objectForInfoDictionaryKey("OSMDefaultZoom") as Int
+    let x:Int
+    let y:Int
+    let zoom:Int
     var url:String { return "http://tile.openstreetmap.org/\(zoom)/\(x)/\(y).png" }
    
     init(x:Int, y:Int, zoom:Int) {
@@ -25,24 +25,23 @@ class OSMTile: NSObject {
     
     init(latitude:Double, longitude:Double, zoom:Int) {
         self.zoom = zoom
-        
-        self.x = Int(((longitude + 180.0) / 360.0 * pow(2.0, CDouble(zoom))))
-        self.y = Int(floor((1.0 - log( tan(latitude * M_PI/180.0) + 1.0 / cos(latitude * M_PI/180.0)) / M_PI) / 2.0 * pow(2.0, CDouble(zoom))))
+        self.x = Int(((longitude + 180.0) / 360.0 * pow(2.0, CDouble(self.zoom))))
+        self.y = Int(floor((1.0 - log( tan(latitude * M_PI/180.0) + 1.0 / cos(latitude * M_PI/180.0)) / M_PI) / 2.0 * pow(2.0, CDouble(self.zoom))))
     }
     
     func toCoordinates() -> CLLocationCoordinate2D {
-        var latitude = OSMTile.tiley2latitude(y: y, zoom: zoom)
-        var longitude = OSMTile.tilex2longitude(x: x, zoom: zoom)
+        let latitude = OSMTile.tiley2latitude(y: y, zoom: zoom)
+        let longitude = OSMTile.tilex2longitude(x: x, zoom: zoom)
+        
         return CLLocationCoordinate2DMake(latitude, longitude)
     }
     
     // width and height of OSMTile
     func deltas() -> CLLocationCoordinate2D {
-        var neighboring = OSMTile(x: self.x+1, y: self.y+1, zoom: zoom)
-        
-        var neighboringCoordinates = neighboring.toCoordinates()
-        var deltaLatitude:Double = abs(neighboringCoordinates.latitude - self.toCoordinates().latitude)
-        var deltaLongitude:Double = abs(neighboringCoordinates.longitude - self.toCoordinates().longitude)
+        let neighboringTile = OSMTile(x: self.x+1, y: self.y+1, zoom: zoom)
+        let neighboringCoordinates = neighboringTile.toCoordinates()
+        let deltaLatitude:Double = abs(neighboringCoordinates.latitude - self.toCoordinates().latitude)
+        let deltaLongitude:Double = abs(neighboringCoordinates.longitude - self.toCoordinates().longitude)
         
         return CLLocationCoordinate2DMake(deltaLatitude, deltaLongitude)
     }
@@ -63,8 +62,8 @@ class OSMTile: NSObject {
         let rightMiddle = OSMTile(latitude: center.latitude, longitude: center.longitude + deltas.longitude/4, zoom: zoom)
         let rightBottom = OSMTile(latitude: center.latitude + deltas.latitude/4, longitude: center.longitude - deltas.longitude/4, zoom: zoom)
         
-        var set = NSMutableSet(array: [self, leftTop, leftMiddle, leftBottom, centerTop, centerBottom, rightTop, rightMiddle, rightBottom])
-        var tiles:[OSMTile] = set.allObjects as [OSMTile]
+        let set = NSMutableSet(array: [self, leftTop, leftMiddle, leftBottom, centerTop, centerBottom, rightTop, rightMiddle, rightBottom])
+        let tiles:[OSMTile] = set.allObjects as [OSMTile]
         return tiles
     }
     
@@ -75,12 +74,12 @@ class OSMTile: NSObject {
     // MARK: - Converting
     
     class func tiley2latitude(#y:Int, zoom:Int) -> Double {
-        var n = M_PI - Double(y) * 2.0 * M_PI / pow(2.0, CDouble(zoom))
-        var latitude = 180.0 / M_PI * atan(0.5 * (exp(n) - exp(-n)))
+        let n = M_PI - Double(y) * 2.0 * M_PI / pow(2.0, CDouble(zoom))
+        let latitude = 180.0 / M_PI * atan(0.5 * (exp(n) - exp(-n)))
         return latitude
     }
     class func tilex2longitude(#x:Int, zoom:Int) -> Double {
-        var longitude = Double(x) / pow(2.0, CDouble(zoom)) * 360.0 - 180.0
+        let longitude = Double(x) / pow(2.0, CDouble(zoom)) * 360.0 - 180.0
         return longitude
     }
     

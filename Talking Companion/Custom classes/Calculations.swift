@@ -17,20 +17,17 @@ enum Direction:Int {
 }
 
 class Calculations: NSObject {
-    
     class func thetaForCurrentLocation(currentLocation:CLLocation, previousLocation:CLLocation, placeLocation:CLLocation) -> Double {
         
         let y1:Double = sin(currentLocation.coordinate.longitude - previousLocation.coordinate.longitude) * cos(currentLocation.coordinate.latitude);
         let x1:Double = cos(previousLocation.coordinate.latitude) * sin(currentLocation.coordinate.latitude) - sin(previousLocation.coordinate.latitude)*cos(currentLocation.coordinate.latitude)*cos(currentLocation.coordinate.longitude - previousLocation.coordinate.longitude);
-        var phi1 = atan2(y1, x1)
-        phi1 = radiansToDegrees(phi1)
+        let phi1 = radiansToDegrees(atan2(y1, x1))
         
         let y2 = sin(placeLocation.coordinate.longitude - currentLocation.coordinate.longitude) * cos(placeLocation.coordinate.latitude);
         let x2 = cos(currentLocation.coordinate.latitude) * sin(placeLocation.coordinate.latitude) - sin(currentLocation.coordinate.latitude)*cos(placeLocation.coordinate.latitude)*cos(placeLocation.coordinate.longitude - currentLocation.coordinate.longitude);
-        var phi2 = atan2(y2, x2);
-        phi2 = radiansToDegrees(phi2)
+        let phi2 = radiansToDegrees(atan2(y2, x2))
         
-        var theta = Double(abs((phi2 - phi1) % 360))
+        let theta = Double(abs((phi2 - phi1) % 360))
         
         return theta;
     }
@@ -41,7 +38,7 @@ class Calculations: NSObject {
     
     class func directionForAngle(angle:Double) -> Direction {
         var direction = Direction.front
-        var angleInt = Int(angle)
+        let angleInt = Int(angle)
         switch angleInt {
             case 0 ..< 45:
                 direction = .front
@@ -58,5 +55,4 @@ class Calculations: NSObject {
         }
         return direction
     }
-    
 }
