@@ -218,12 +218,21 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5m-J8-ERk">
-                                <rect key="frame" x="20" y="334" width="201" height="30"/>
-                                <state key="normal" title="Download extract for Odessa">
+                                <rect key="frame" x="20" y="334" width="234" height="30"/>
+                                <state key="normal" title="Download osm extract for Odessa">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="downloadExtractButtonPressed" destination="Qm4-5I-d3X" eventType="touchUpInside" id="0sS-ut-Zsj"/>
+                                    <action selector="downloadOSMExtractButtonPressed" destination="Qm4-5I-d3X" eventType="touchUpInside" id="2oa-RT-f7f"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Db3-Rf-Kvx">
+                                <rect key="frame" x="20" y="372" width="233" height="30"/>
+                                <state key="normal" title="Download json extract for Odessa">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="downloadJSONExtractButtonPressed:" destination="Qm4-5I-d3X" eventType="touchUpInside" id="ytL-fw-ZbL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -233,6 +242,8 @@
                             <constraint firstItem="wld-pq-Qnn" firstAttribute="top" secondItem="W0U-4d-By5" secondAttribute="bottom" constant="18" id="1eQ-5M-dyh"/>
                             <constraint firstAttribute="trailing" secondItem="HHf-i8-Fd5" secondAttribute="trailing" constant="20" symbolic="YES" id="2ne-ix-pJ5"/>
                             <constraint firstItem="OCC-h3-wfG" firstAttribute="centerX" secondItem="HHf-i8-Fd5" secondAttribute="centerX" id="9ZE-eq-SKB"/>
+                            <constraint firstItem="Db3-Rf-Kvx" firstAttribute="top" secondItem="P5m-J8-ERk" secondAttribute="bottom" constant="8" symbolic="YES" id="VXf-cb-JWY"/>
+                            <constraint firstItem="Db3-Rf-Kvx" firstAttribute="leading" secondItem="P5m-J8-ERk" secondAttribute="leading" id="YdY-AH-K8v"/>
                             <constraint firstItem="P5m-J8-ERk" firstAttribute="leading" secondItem="HHf-i8-Fd5" secondAttribute="leading" id="a2V-er-NOc"/>
                             <constraint firstItem="wld-pq-Qnn" firstAttribute="centerX" secondItem="OCC-h3-wfG" secondAttribute="centerX" id="hLO-Pe-I7Z"/>
                             <constraint firstItem="OCC-h3-wfG" firstAttribute="leading" secondItem="82M-KM-CGW" secondAttribute="leading" id="pAw-z8-9g2"/>

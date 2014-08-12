@@ -21,33 +21,34 @@ class GEOJSONParser: NSObject {
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
             let json = JSONValue(self.jsonData)
-        
             var nodes = [OSMNode]()
             
             if let features = json["features"].array {
-                NSLog("total: \(features.count)")
                 for feature in features {
+                    // required properties
                     let coordinates = feature["geometry"]["coordinates"]
-                    let latitude = coordinates[0].double
-                    let longitude = coordinates[1].double
-                    //NSLog("coordinates: \(coordinates)")
-                    
+                    let latitude = coordinates[0].double!
+                    let longitude = coordinates[1].double!
                     let elementDetails:[String]! = feature["id"].string?.componentsSeparatedByString("/")
                     let type = elementDetails[0]
-                    let uid = elementDetails[1]
-                    //NSLog("type: \(type), id: \(uid)")
+                    let uid:Int = elementDetails[1].toInt() ?? -1
                     
-                    let name = feature["properties"]["name"].string
+                    var node = OSMNode(uid: uid, latitude: latitude, longitude: longitude)
+                    node.name = feature["properties"]["name"].string
+                    node.detailType = type
                     
+                    // optional properties
                     if let amenity = feature["properties"]["tags"]["amenity"].string {
-                        NSLog("node has amenity: \(amenity)")
+                        node.amenity = amenity
                     }
                     if let operatorName = feature["properties"]["tags"]["operator"].string {
-                        NSLog("node has operator: \(operatorName)")
+                        node.operatorName = operatorName
                     }
                     if let shop = feature["properties"]["tags"]["shop"].string {
-                        NSLog("node has shop: \(shop)")
+                        node.shop = shop
                     }
+                    
+                    nodes.append(node)
                 }
             }
             else {

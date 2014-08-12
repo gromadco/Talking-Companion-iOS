@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-var oneDay:NSTimeInterval = 60*60*24
+let oneDay:NSTimeInterval = 60*60*24
 
 class OSMNode: NSObject {
     
@@ -17,6 +17,7 @@ class OSMNode: NSObject {
     
     var uid:Int
     var location:CLLocation
+    var detailType:String?
     var announcedDate:NSDate?
     var isAnnounced:Bool {
         get {
