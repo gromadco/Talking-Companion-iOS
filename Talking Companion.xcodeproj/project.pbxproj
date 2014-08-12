@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BD0918331998F38E00087B1F /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0918311998F38E00087B1F /* SwiftyJSON.swift */; };
 		BD0C9F071967332A003A88AC /* OSMNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F061967332A003A88AC /* OSMNodeTests.swift */; };
 		BD0C9F471967388A003A88AC /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F131967388A003A88AC /* AFHTTPRequestOperation.m */; };
 		BD0C9F481967388A003A88AC /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F131967388A003A88AC /* AFHTTPRequestOperation.m */; };
@@ -60,27 +59,43 @@
 		BD0C9F7F196750D5003A88AC /* OSMElementsParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F7E196750D5003A88AC /* OSMElementsParserTests.swift */; };
 		BD0C9F8119675336003A88AC /* OSMWayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F8019675336003A88AC /* OSMWayTests.swift */; };
 		BD11497C1993D406001A07A4 /* libbz2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD11497B1993D406001A07A4 /* libbz2.1.0.dylib */; };
-		BD1149851993D651001A07A4 /* NSData+bz2.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1149841993D651001A07A4 /* NSData+bz2.m */; };
-		BD1149861993D651001A07A4 /* NSData+bz2.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1149841993D651001A07A4 /* NSData+bz2.m */; };
-		BD293FF11976D26000E91B2F /* empty.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD293FEF1976D26000E91B2F /* empty.osm */; };
-		BD293FF21976D26000E91B2F /* map.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD293FF01976D26000E91B2F /* map.osm */; };
 		BD2E7C80195AEAFB00D57518 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */; };
 		BD2EB9BC1966F0E600C8DEDD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */; };
-		BD34A43A1990BA9F0058C22A /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD34A42D1990BA9F0058C22A /* Calculations.swift */; };
-		BD34A43B1990BA9F0058C22A /* OSMBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD34A42E1990BA9F0058C22A /* OSMBoundingBox.swift */; };
-		BD34A43C1990BA9F0058C22A /* OSMElementsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD34A42F1990BA9F0058C22A /* OSMElementsParser.swift */; };
-		BD34A43D1990BA9F0058C22A /* OSMNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD34A4301990BA9F0058C22A /* OSMNode.swift */; };
-		BD34A43E1990BA9F0058C22A /* OSMTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD34A4311990BA9F0058C22A /* OSMTile.swift */; };
-		BD34A43F1990BA9F0058C22A /* OSMTilesDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD34A4321990BA9F0058C22A /* OSMTilesDownloader.swift */; };
-		BD34A4401990BA9F0058C22A /* OSMWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD34A4331990BA9F0058C22A /* OSMWay.swift */; };
-		BD34A4411990BA9F0058C22A /* SQLAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD34A4341990BA9F0058C22A /* SQLAccess.swift */; };
 		BD34A4421990BA9F0058C22A /* ClosestPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD34A4371990BA9F0058C22A /* ClosestPlaceViewController.m */; };
 		BD536AAB196A7E1B0017345D /* OSMBoundingBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */; };
 		BD7595331998ED9100E3232D /* poi.json in Resources */ = {isa = PBXBuildFile; fileRef = BD7595321998ED9100E3232D /* poi.json */; };
-		BD7595351998EDAC00E3232D /* GEOJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7595341998EDAC00E3232D /* GEOJSONParser.swift */; };
-		BD7CC66D1994A8490068ABDB /* ExtractDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7CC66C1994A8490068ABDB /* ExtractDownloader.swift */; };
 		BD7CC66F1994D9740068ABDB /* odessa.osm.bz2 in Resources */ = {isa = PBXBuildFile; fileRef = BD7CC66E1994D9740068ABDB /* odessa.osm.bz2 */; };
-		BD9EEF441992492C00BC8A02 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9EEF431992492C00BC8A02 /* Constants.swift */; };
+		BD7D7FE2199A4D690069A19D /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD5199A4D690069A19D /* Calculations.swift */; };
+		BD7D7FE3199A4D690069A19D /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD5199A4D690069A19D /* Calculations.swift */; };
+		BD7D7FE4199A4D690069A19D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD6199A4D690069A19D /* Constants.swift */; };
+		BD7D7FE5199A4D690069A19D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD6199A4D690069A19D /* Constants.swift */; };
+		BD7D7FE6199A4D690069A19D /* ExtractDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD7199A4D690069A19D /* ExtractDownloader.swift */; };
+		BD7D7FE7199A4D690069A19D /* ExtractDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD7199A4D690069A19D /* ExtractDownloader.swift */; };
+		BD7D7FE8199A4D690069A19D /* GEOJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD8199A4D690069A19D /* GEOJSONParser.swift */; };
+		BD7D7FE9199A4D690069A19D /* GEOJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD8199A4D690069A19D /* GEOJSONParser.swift */; };
+		BD7D7FEA199A4D690069A19D /* NSData+bz2.m in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FDA199A4D690069A19D /* NSData+bz2.m */; };
+		BD7D7FEB199A4D690069A19D /* NSData+bz2.m in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FDA199A4D690069A19D /* NSData+bz2.m */; };
+		BD7D7FEC199A4D690069A19D /* OSMBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FDB199A4D690069A19D /* OSMBoundingBox.swift */; };
+		BD7D7FED199A4D690069A19D /* OSMBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FDB199A4D690069A19D /* OSMBoundingBox.swift */; };
+		BD7D7FEE199A4D690069A19D /* OSMElementsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FDC199A4D690069A19D /* OSMElementsParser.swift */; };
+		BD7D7FEF199A4D690069A19D /* OSMElementsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FDC199A4D690069A19D /* OSMElementsParser.swift */; };
+		BD7D7FF0199A4D690069A19D /* OSMNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FDD199A4D690069A19D /* OSMNode.swift */; };
+		BD7D7FF1199A4D690069A19D /* OSMNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FDD199A4D690069A19D /* OSMNode.swift */; };
+		BD7D7FF2199A4D690069A19D /* OSMTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FDE199A4D690069A19D /* OSMTile.swift */; };
+		BD7D7FF3199A4D690069A19D /* OSMTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FDE199A4D690069A19D /* OSMTile.swift */; };
+		BD7D7FF4199A4D690069A19D /* OSMTilesDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FDF199A4D690069A19D /* OSMTilesDownloader.swift */; };
+		BD7D7FF5199A4D690069A19D /* OSMTilesDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FDF199A4D690069A19D /* OSMTilesDownloader.swift */; };
+		BD7D7FF6199A4D690069A19D /* OSMWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FE0199A4D690069A19D /* OSMWay.swift */; };
+		BD7D7FF7199A4D690069A19D /* OSMWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FE0199A4D690069A19D /* OSMWay.swift */; };
+		BD7D7FF8199A4D690069A19D /* SQLAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FE1199A4D690069A19D /* SQLAccess.swift */; };
+		BD7D7FF9199A4D690069A19D /* SQLAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FE1199A4D690069A19D /* SQLAccess.swift */; };
+		BD7D7FFC199A4DCD0069A19D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FFB199A4DCD0069A19D /* SwiftyJSON.swift */; };
+		BD7D7FFD199A4DCD0069A19D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FFB199A4DCD0069A19D /* SwiftyJSON.swift */; };
+		BD7D8000199A4E730069A19D /* libbz2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD11497B1993D406001A07A4 /* libbz2.1.0.dylib */; };
+		BD7D8009199A504D0069A19D /* empty.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD7D8007199A504D0069A19D /* empty.osm */; };
+		BD7D800A199A504D0069A19D /* empty.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD7D8007199A504D0069A19D /* empty.osm */; };
+		BD7D800B199A504D0069A19D /* map.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD7D8008199A504D0069A19D /* map.osm */; };
+		BD7D800C199A504D0069A19D /* map.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD7D8008199A504D0069A19D /* map.osm */; };
 		BD9EEF4619924A9200BC8A02 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD9EEF4519924A9200BC8A02 /* Settings.plist */; };
 		BDB58981195888670090E178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB58980195888670090E178 /* AppDelegate.swift */; };
 		BDB58986195888670090E178 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDB58984195888670090E178 /* Main.storyboard */; };
@@ -138,7 +153,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BD0918311998F38E00087B1F /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		BD0C9F061967332A003A88AC /* OSMNodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMNodeTests.swift; sourceTree = "<group>"; };
 		BD0C9F0F19673863003A88AC /* Talking_Companion-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Talking_Companion-Bridging-Header.h"; sourceTree = "<group>"; };
 		BD0C9F121967388A003A88AC /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -194,28 +208,30 @@
 		BD0C9F7E196750D5003A88AC /* OSMElementsParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMElementsParserTests.swift; sourceTree = "<group>"; };
 		BD0C9F8019675336003A88AC /* OSMWayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMWayTests.swift; sourceTree = "<group>"; };
 		BD11497B1993D406001A07A4 /* libbz2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libbz2.1.0.dylib; path = usr/lib/libbz2.1.0.dylib; sourceTree = SDKROOT; };
-		BD1149831993D651001A07A4 /* NSData+bz2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+bz2.h"; sourceTree = "<group>"; };
-		BD1149841993D651001A07A4 /* NSData+bz2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+bz2.m"; sourceTree = "<group>"; };
-		BD293FEF1976D26000E91B2F /* empty.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = empty.osm; path = "Talking Companion/Resources/empty.osm"; sourceTree = SOURCE_ROOT; };
-		BD293FF01976D26000E91B2F /* map.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = map.osm; path = "Talking Companion/Resources/map.osm"; sourceTree = SOURCE_ROOT; };
 		BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		BD34A42D1990BA9F0058C22A /* Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
-		BD34A42E1990BA9F0058C22A /* OSMBoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMBoundingBox.swift; sourceTree = "<group>"; };
-		BD34A42F1990BA9F0058C22A /* OSMElementsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMElementsParser.swift; sourceTree = "<group>"; };
-		BD34A4301990BA9F0058C22A /* OSMNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMNode.swift; sourceTree = "<group>"; };
-		BD34A4311990BA9F0058C22A /* OSMTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMTile.swift; sourceTree = "<group>"; };
-		BD34A4321990BA9F0058C22A /* OSMTilesDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMTilesDownloader.swift; sourceTree = "<group>"; };
-		BD34A4331990BA9F0058C22A /* OSMWay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMWay.swift; sourceTree = "<group>"; };
-		BD34A4341990BA9F0058C22A /* SQLAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLAccess.swift; sourceTree = "<group>"; };
 		BD34A4361990BA9F0058C22A /* ClosestPlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClosestPlaceViewController.h; sourceTree = "<group>"; };
 		BD34A4371990BA9F0058C22A /* ClosestPlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClosestPlaceViewController.m; sourceTree = "<group>"; };
 		BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMBoundingBoxTests.swift; sourceTree = "<group>"; };
 		BD7595321998ED9100E3232D /* poi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = poi.json; sourceTree = "<group>"; };
-		BD7595341998EDAC00E3232D /* GEOJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GEOJSONParser.swift; sourceTree = "<group>"; };
-		BD7CC66C1994A8490068ABDB /* ExtractDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtractDownloader.swift; sourceTree = "<group>"; };
 		BD7CC66E1994D9740068ABDB /* odessa.osm.bz2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = odessa.osm.bz2; sourceTree = "<group>"; };
-		BD9EEF431992492C00BC8A02 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BD7D7FD5199A4D690069A19D /* Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
+		BD7D7FD6199A4D690069A19D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BD7D7FD7199A4D690069A19D /* ExtractDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtractDownloader.swift; sourceTree = "<group>"; };
+		BD7D7FD8199A4D690069A19D /* GEOJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GEOJSONParser.swift; sourceTree = "<group>"; };
+		BD7D7FD9199A4D690069A19D /* NSData+bz2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+bz2.h"; sourceTree = "<group>"; };
+		BD7D7FDA199A4D690069A19D /* NSData+bz2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+bz2.m"; sourceTree = "<group>"; };
+		BD7D7FDB199A4D690069A19D /* OSMBoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMBoundingBox.swift; sourceTree = "<group>"; };
+		BD7D7FDC199A4D690069A19D /* OSMElementsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMElementsParser.swift; sourceTree = "<group>"; };
+		BD7D7FDD199A4D690069A19D /* OSMNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMNode.swift; sourceTree = "<group>"; };
+		BD7D7FDE199A4D690069A19D /* OSMTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMTile.swift; sourceTree = "<group>"; };
+		BD7D7FDF199A4D690069A19D /* OSMTilesDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMTilesDownloader.swift; sourceTree = "<group>"; };
+		BD7D7FE0199A4D690069A19D /* OSMWay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMWay.swift; sourceTree = "<group>"; };
+		BD7D7FE1199A4D690069A19D /* SQLAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLAccess.swift; sourceTree = "<group>"; };
+		BD7D7FFB199A4DCD0069A19D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		BD7D7FFE199A4E530069A19D /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		BD7D8007199A504D0069A19D /* empty.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = empty.osm; sourceTree = "<group>"; };
+		BD7D8008199A504D0069A19D /* map.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.osm; sourceTree = "<group>"; };
 		BD9EEF4519924A9200BC8A02 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Settings.plist; path = "View Controllers/Settings.plist"; sourceTree = "<group>"; };
 		BDB5897B195888670090E178 /* Talking Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Talking Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB5897F195888670090E178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -247,6 +263,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD7D8000199A4E730069A19D /* libbz2.1.0.dylib in Frameworks */,
 				BD0C9F7B196738C0003A88AC /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,18 +271,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BD09182E1998F38E00087B1F /* SwiftyJSON */ = {
-			isa = PBXGroup;
-			children = (
-				BD0918311998F38E00087B1F /* SwiftyJSON.swift */,
-			);
-			path = SwiftyJSON;
-			sourceTree = "<group>";
-		};
 		BD0C9F101967388A003A88AC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BD09182E1998F38E00087B1F /* SwiftyJSON */,
+				BD7D8007199A504D0069A19D /* empty.osm */,
+				BD7D8008199A504D0069A19D /* map.osm */,
+				BD7D7FFA199A4DCD0069A19D /* SwiftyJSON */,
 				BD7595321998ED9100E3232D /* poi.json */,
 				BD7CC66E1994D9740068ABDB /* odessa.osm.bz2 */,
 				BDFB745D198FCDD700D1E113 /* Images */,
@@ -357,19 +368,19 @@
 		BD34A42C1990BA9F0058C22A /* Custom classes */ = {
 			isa = PBXGroup;
 			children = (
-				BD9EEF431992492C00BC8A02 /* Constants.swift */,
-				BD34A42D1990BA9F0058C22A /* Calculations.swift */,
-				BD34A42E1990BA9F0058C22A /* OSMBoundingBox.swift */,
-				BD34A42F1990BA9F0058C22A /* OSMElementsParser.swift */,
-				BD34A4301990BA9F0058C22A /* OSMNode.swift */,
-				BD34A4311990BA9F0058C22A /* OSMTile.swift */,
-				BD34A4321990BA9F0058C22A /* OSMTilesDownloader.swift */,
-				BD34A4331990BA9F0058C22A /* OSMWay.swift */,
-				BD34A4341990BA9F0058C22A /* SQLAccess.swift */,
-				BD1149831993D651001A07A4 /* NSData+bz2.h */,
-				BD1149841993D651001A07A4 /* NSData+bz2.m */,
-				BD7CC66C1994A8490068ABDB /* ExtractDownloader.swift */,
-				BD7595341998EDAC00E3232D /* GEOJSONParser.swift */,
+				BD7D7FD5199A4D690069A19D /* Calculations.swift */,
+				BD7D7FD6199A4D690069A19D /* Constants.swift */,
+				BD7D7FD7199A4D690069A19D /* ExtractDownloader.swift */,
+				BD7D7FD8199A4D690069A19D /* GEOJSONParser.swift */,
+				BD7D7FD9199A4D690069A19D /* NSData+bz2.h */,
+				BD7D7FDA199A4D690069A19D /* NSData+bz2.m */,
+				BD7D7FDB199A4D690069A19D /* OSMBoundingBox.swift */,
+				BD7D7FDC199A4D690069A19D /* OSMElementsParser.swift */,
+				BD7D7FDD199A4D690069A19D /* OSMNode.swift */,
+				BD7D7FDE199A4D690069A19D /* OSMTile.swift */,
+				BD7D7FDF199A4D690069A19D /* OSMTilesDownloader.swift */,
+				BD7D7FE0199A4D690069A19D /* OSMWay.swift */,
+				BD7D7FE1199A4D690069A19D /* SQLAccess.swift */,
 			);
 			path = "Custom classes";
 			sourceTree = "<group>";
@@ -383,6 +394,14 @@
 				BDC820F9199243F60055ABBE /* SettingsViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		BD7D7FFA199A4DCD0069A19D /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				BD7D7FFB199A4DCD0069A19D /* SwiftyJSON.swift */,
+			);
+			path = SwiftyJSON;
 			sourceTree = "<group>";
 		};
 		BDB58972195888670090E178 = {
@@ -430,14 +449,12 @@
 		BDB58990195888670090E178 /* Talking CompanionTests */ = {
 			isa = PBXGroup;
 			children = (
-				BD293FEF1976D26000E91B2F /* empty.osm */,
-				BD293FF01976D26000E91B2F /* map.osm */,
+				BDBFD5B11975325B0088F1CB /* CalculationsTests.swift */,
 				BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */,
 				BD0C9F7E196750D5003A88AC /* OSMElementsParserTests.swift */,
 				BD0C9F061967332A003A88AC /* OSMNodeTests.swift */,
 				BD0C9F7C1967505B003A88AC /* OSMTileTests.swift */,
 				BD0C9F8019675336003A88AC /* OSMWayTests.swift */,
-				BDBFD5B11975325B0088F1CB /* CalculationsTests.swift */,
 				BDB58991195888670090E178 /* Supporting Files */,
 			);
 			path = "Talking CompanionTests";
@@ -463,6 +480,7 @@
 		BDFFA009195C367700288E6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD7D7FFE199A4E530069A19D /* libz.1.2.5.dylib */,
 				BD11497B1993D406001A07A4 /* libbz2.1.0.dylib */,
 				BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */,
 				BDD89B84195B095F0020ACA7 /* AVFoundation.framework */,
@@ -565,11 +583,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD7D800B199A504D0069A19D /* map.osm in Resources */,
 				BDFB7460198FCDD700D1E113 /* settings.png in Resources */,
 				BD7595331998ED9100E3232D /* poi.json in Resources */,
 				BDFB7461198FCDD700D1E113 /* settings@2x.png in Resources */,
 				BDB58986195888670090E178 /* Main.storyboard in Resources */,
 				BDB58988195888670090E178 /* Images.xcassets in Resources */,
+				BD7D8009199A504D0069A19D /* empty.osm in Resources */,
 				BD7CC66F1994D9740068ABDB /* odessa.osm.bz2 in Resources */,
 				BD9EEF4619924A9200BC8A02 /* Settings.plist in Resources */,
 			);
@@ -579,8 +599,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD293FF21976D26000E91B2F /* map.osm in Resources */,
-				BD293FF11976D26000E91B2F /* empty.osm in Resources */,
+				BD7D800C199A504D0069A19D /* map.osm in Resources */,
+				BD7D800A199A504D0069A19D /* empty.osm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,40 +616,40 @@
 				BD0C9F6D1967388A003A88AC /* UIButton+AFNetworking.m in Sources */,
 				BD0C9F751967388A003A88AC /* UIWebView+AFNetworking.m in Sources */,
 				BD0C9F711967388A003A88AC /* UIProgressView+AFNetworking.m in Sources */,
-				BD34A4411990BA9F0058C22A /* SQLAccess.swift in Sources */,
+				BD7D7FF2199A4D690069A19D /* OSMTile.swift in Sources */,
+				BD7D7FE4199A4D690069A19D /* Constants.swift in Sources */,
+				BD7D7FF6199A4D690069A19D /* OSMWay.swift in Sources */,
+				BD7D7FF0199A4D690069A19D /* OSMNode.swift in Sources */,
 				BD0C9F4D1967388A003A88AC /* AFNetworkReachabilityManager.m in Sources */,
-				BD34A43D1990BA9F0058C22A /* OSMNode.swift in Sources */,
-				BD7595351998EDAC00E3232D /* GEOJSONParser.swift in Sources */,
 				BD34A4421990BA9F0058C22A /* ClosestPlaceViewController.m in Sources */,
-				BD34A4401990BA9F0058C22A /* OSMWay.swift in Sources */,
+				BD7D7FF4199A4D690069A19D /* OSMTilesDownloader.swift in Sources */,
 				BD0C9F5D1967388A003A88AC /* FMDatabasePool.m in Sources */,
 				BD0C9F6F1967388A003A88AC /* UIImageView+AFNetworking.m in Sources */,
-				BD34A43F1990BA9F0058C22A /* OSMTilesDownloader.swift in Sources */,
+				BD7D7FF8199A4D690069A19D /* SQLAccess.swift in Sources */,
 				BD0C9F511967388A003A88AC /* AFURLConnectionOperation.m in Sources */,
-				BD34A43E1990BA9F0058C22A /* OSMTile.swift in Sources */,
 				BD0C9F471967388A003A88AC /* AFHTTPRequestOperation.m in Sources */,
 				BD0C9F4B1967388A003A88AC /* AFHTTPSessionManager.m in Sources */,
 				BD0C9F531967388A003A88AC /* AFURLRequestSerialization.m in Sources */,
 				BD0C9F651967388A003A88AC /* SMXMLDocument.m in Sources */,
 				BD0C9F691967388A003A88AC /* UIActivityIndicatorView+AFNetworking.m in Sources */,
-				BD34A43C1990BA9F0058C22A /* OSMElementsParser.swift in Sources */,
+				BD7D7FEC199A4D690069A19D /* OSMBoundingBox.swift in Sources */,
 				BD0C9F571967388A003A88AC /* AFURLSessionManager.m in Sources */,
-				BD34A43B1990BA9F0058C22A /* OSMBoundingBox.swift in Sources */,
-				BD0918331998F38E00087B1F /* SwiftyJSON.swift in Sources */,
 				BD0C9F491967388A003A88AC /* AFHTTPRequestOperationManager.m in Sources */,
+				BD7D7FFC199A4DCD0069A19D /* SwiftyJSON.swift in Sources */,
 				BDB58981195888670090E178 /* AppDelegate.swift in Sources */,
-				BD7CC66D1994A8490068ABDB /* ExtractDownloader.swift in Sources */,
-				BD9EEF441992492C00BC8A02 /* Constants.swift in Sources */,
+				BD7D7FE2199A4D690069A19D /* Calculations.swift in Sources */,
 				BD0C9F551967388A003A88AC /* AFURLResponseSerialization.m in Sources */,
 				BD0C9F611967388A003A88AC /* FMResultSet.m in Sources */,
 				BD0C9F731967388A003A88AC /* UIRefreshControl+AFNetworking.m in Sources */,
-				BD34A43A1990BA9F0058C22A /* Calculations.swift in Sources */,
 				BDC820FA199243F60055ABBE /* SettingsViewController.swift in Sources */,
-				BD1149851993D651001A07A4 /* NSData+bz2.m in Sources */,
 				BD0C9F6B1967388A003A88AC /* UIAlertView+AFNetworking.m in Sources */,
+				BD7D7FEE199A4D690069A19D /* OSMElementsParser.swift in Sources */,
 				BD0C9F5F1967388A003A88AC /* FMDatabaseQueue.m in Sources */,
+				BD7D7FEA199A4D690069A19D /* NSData+bz2.m in Sources */,
 				BD0C9F5B1967388A003A88AC /* FMDatabaseAdditions.m in Sources */,
+				BD7D7FE6199A4D690069A19D /* ExtractDownloader.swift in Sources */,
 				BD0C9F671967388A003A88AC /* AFNetworkActivityIndicatorManager.m in Sources */,
+				BD7D7FE8199A4D690069A19D /* GEOJSONParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,32 +659,44 @@
 			files = (
 				BD0C9F541967388A003A88AC /* AFURLRequestSerialization.m in Sources */,
 				BD0C9F521967388A003A88AC /* AFURLConnectionOperation.m in Sources */,
+				BD7D7FF5199A4D690069A19D /* OSMTilesDownloader.swift in Sources */,
 				BD0C9F741967388A003A88AC /* UIRefreshControl+AFNetworking.m in Sources */,
 				BD0C9F6E1967388A003A88AC /* UIButton+AFNetworking.m in Sources */,
 				BD0C9F721967388A003A88AC /* UIProgressView+AFNetworking.m in Sources */,
 				BD0C9F501967388A003A88AC /* AFSecurityPolicy.m in Sources */,
+				BD7D7FF7199A4D690069A19D /* OSMWay.swift in Sources */,
 				BD0C9F5A1967388A003A88AC /* FMDatabase.m in Sources */,
 				BDBFD5B21975325B0088F1CB /* CalculationsTests.swift in Sources */,
 				BD0C9F7D1967505B003A88AC /* OSMTileTests.swift in Sources */,
+				BD7D7FE5199A4D690069A19D /* Constants.swift in Sources */,
 				BD0C9F6C1967388A003A88AC /* UIAlertView+AFNetworking.m in Sources */,
+				BD7D7FF9199A4D690069A19D /* SQLAccess.swift in Sources */,
 				BD0C9F481967388A003A88AC /* AFHTTPRequestOperation.m in Sources */,
 				BD0C9F601967388A003A88AC /* FMDatabaseQueue.m in Sources */,
 				BD0C9F621967388A003A88AC /* FMResultSet.m in Sources */,
+				BD7D7FE3199A4D690069A19D /* Calculations.swift in Sources */,
 				BD0C9F701967388A003A88AC /* UIImageView+AFNetworking.m in Sources */,
 				BD536AAB196A7E1B0017345D /* OSMBoundingBoxTests.swift in Sources */,
 				BD0C9F581967388A003A88AC /* AFURLSessionManager.m in Sources */,
 				BD0C9F6A1967388A003A88AC /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				BD0C9F681967388A003A88AC /* AFNetworkActivityIndicatorManager.m in Sources */,
+				BD7D7FE9199A4D690069A19D /* GEOJSONParser.swift in Sources */,
 				BD0C9F8119675336003A88AC /* OSMWayTests.swift in Sources */,
-				BD1149861993D651001A07A4 /* NSData+bz2.m in Sources */,
 				BD0C9F561967388A003A88AC /* AFURLResponseSerialization.m in Sources */,
+				BD7D7FEF199A4D690069A19D /* OSMElementsParser.swift in Sources */,
 				BD0C9F7F196750D5003A88AC /* OSMElementsParserTests.swift in Sources */,
+				BD7D7FF3199A4D690069A19D /* OSMTile.swift in Sources */,
+				BD7D7FED199A4D690069A19D /* OSMBoundingBox.swift in Sources */,
 				BD0C9F661967388A003A88AC /* SMXMLDocument.m in Sources */,
+				BD7D7FF1199A4D690069A19D /* OSMNode.swift in Sources */,
 				BD0C9F5C1967388A003A88AC /* FMDatabaseAdditions.m in Sources */,
+				BD7D7FFD199A4DCD0069A19D /* SwiftyJSON.swift in Sources */,
 				BD0C9F4C1967388A003A88AC /* AFHTTPSessionManager.m in Sources */,
 				BD0C9F4A1967388A003A88AC /* AFHTTPRequestOperationManager.m in Sources */,
 				BD0C9F5E1967388A003A88AC /* FMDatabasePool.m in Sources */,
+				BD7D7FE7199A4D690069A19D /* ExtractDownloader.swift in Sources */,
 				BD0C9F761967388A003A88AC /* UIWebView+AFNetworking.m in Sources */,
+				BD7D7FEB199A4D690069A19D /* NSData+bz2.m in Sources */,
 				BD0C9F4E1967388A003A88AC /* AFNetworkReachabilityManager.m in Sources */,
 				BD0C9F071967332A003A88AC /* OSMNodeTests.swift in Sources */,
 			);

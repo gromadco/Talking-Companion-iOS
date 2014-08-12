@@ -9,7 +9,6 @@
 import XCTest
 import Talking_Companion
 
-
 class OSMBoundingBoxTests: XCTestCase {
     
     func testInit() {

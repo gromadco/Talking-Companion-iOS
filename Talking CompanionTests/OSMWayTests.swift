@@ -12,10 +12,9 @@ import Talking_Companion
 class OSMWayTests: XCTestCase {
 
     func testWayInit() {
-        let way = OSMWay(wayId: "my_id", user: "serejahh")
+        let way = OSMWay(wayId: "my_id")
         
         XCTAssertEqual(way.wayId, "my_id")
-        XCTAssertEqual(way.user, "serejahh")
         XCTAssertEqual(way.nodes.count, 0)
         XCTAssertEqual(way.isClosedWay(), false)
         
@@ -26,7 +25,7 @@ class OSMWayTests: XCTestCase {
     }
     
     func testClosedWay() {
-        let way = OSMWay(wayId: "my_id", user: "serejahh")
+        let way = OSMWay(wayId: "my_id")
         
         way.nodes.append("node1")
         way.nodes.append("node2")
@@ -35,7 +34,7 @@ class OSMWayTests: XCTestCase {
     }
     
     func testOpenWay() {
-        let way = OSMWay(wayId: "my_id", user: "serejahh")
+        let way = OSMWay(wayId: "my_id")
         
         way.nodes.append("node1")
         way.nodes.append("node2")
@@ -44,7 +43,7 @@ class OSMWayTests: XCTestCase {
     }
     
     func testAllProperties() {
-        let way = OSMWay(wayId: "my_id", user: "serejahh")
+        let way = OSMWay(wayId: "my_id")
         
         way.amenity = "some amenity"
         way.building = "building1"

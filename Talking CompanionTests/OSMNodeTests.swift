@@ -11,12 +11,11 @@ import Talking_Companion
 
 class OSMNodeTests: XCTestCase {
     
-    let node = OSMNode(uid:1, latitude: 7.0, longitude: 13.0, user: "serejahh")
+    let node = OSMNode(uid:1, latitude: 7.0, longitude: 13.0)
     
     func testNodeInit() {
         XCTAssertEqual(node.location.coordinate.latitude, 7.0)
         XCTAssertEqual(node.location.coordinate.longitude, 13.0)
-        XCTAssertEqual(node.user, "serejahh")
     }
     
     func testNodeInfoAmenity() {

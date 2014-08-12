@@ -50,11 +50,12 @@ class OSMTileTests: XCTestCase {
     func testNeighboringTiles() {
         let tile = OSMTile(x: 39584, y: 25406, zoom: 16)
         let neighboringTiles = tile.neighboringTiles()
+        let neighboringTilesSet = NSSet(array: neighboringTiles)
 
-        XCTAssertEqual(neighboringTiles[0], OSMTile(x: 39583, y: 25406, zoom: 16))
-        XCTAssertEqual(neighboringTiles[1], OSMTile(x: 39584, y: 25406, zoom: 16))
-        XCTAssertEqual(neighboringTiles[2], OSMTile(x: 39583, y: 25405, zoom: 16))
-        XCTAssertEqual(neighboringTiles[3], OSMTile(x: 39584, y: 25405, zoom: 16))
+        XCTAssert(neighboringTilesSet.containsObject(OSMTile(x: 39583, y: 25406, zoom: 16)))
+        XCTAssert(neighboringTilesSet.containsObject(OSMTile(x: 39584, y: 25406, zoom: 16)))
+        XCTAssert(neighboringTilesSet.containsObject(OSMTile(x: 39583, y: 25405, zoom: 16)))
+        XCTAssert(neighboringTilesSet.containsObject(OSMTile(x: 39584, y: 25405, zoom: 16)))
     }
     
     func testBoundingBox() {

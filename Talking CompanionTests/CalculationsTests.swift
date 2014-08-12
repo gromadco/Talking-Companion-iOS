@@ -21,7 +21,7 @@ class CalculationsTests: XCTestCase {
         let angle = Calculations.thetaForCurrentLocation(current, previousLocation: previous, placeLocation: place)
         let direction = Calculations.directionForAngle(angle)
         
-        XCTAssert(direction == .right)
+        XCTAssert(direction == Direction.right)
     }
     
     func testDirectionLeft1() {
