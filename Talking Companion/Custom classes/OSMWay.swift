@@ -13,7 +13,6 @@ class OSMWay: NSObject {
     // MARK: - Properties
     
     var wayId:String
-    var user:String
     var nodes:Array<String> = Array()
     
     var amenity:String?
@@ -23,9 +22,8 @@ class OSMWay: NSObject {
     
     // MARK: - Initializing
     
-    init(wayId:String, user:String) {
+    init(wayId:String) {
         self.wayId = wayId
-        self.user = user
     }
     
     // MARK: - Other
@@ -33,7 +31,6 @@ class OSMWay: NSObject {
     func description() -> String {
         var description = isClosedWay() ? "closed" : "open"
         description += " way[\(wayId)]"
-        description += " by user '\(user)'"
         description += " nodes = \(nodes.count)"
 
         if let amenity = self.amenity {

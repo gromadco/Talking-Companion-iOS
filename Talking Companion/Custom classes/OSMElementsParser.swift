@@ -74,8 +74,7 @@ class OSMElementsParser {
             let uid:Int = element.attributeNamed("uid").toInt()!
             let lat = element.attributeNamed("lat").doubleValue
             let lon = element.attributeNamed("lon").doubleValue
-            let user = element.attributeNamed("user")
-            var node = OSMNode(uid:uid, latitude: lat, longitude: lon, user:user)
+            var node = OSMNode(uid:uid, latitude: lat, longitude: lon)
         
             // check tags
             if let tagsXML = element.childrenNamed("tag") {
@@ -115,8 +114,7 @@ class OSMElementsParser {
             
             // required properties
             let wayId = element.attributeNamed("id")
-            let user = element.attributeNamed("user")
-            var way = OSMWay(wayId: wayId, user: user)
+            var way = OSMWay(wayId: wayId)
             
             // check nodes of way
             if let nodesXML = element.childrenNamed("nd") {
