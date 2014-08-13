@@ -63,7 +63,17 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
                 NSLog("geo json parsing error: \(error!)")
             }
             else {
-                NSLog("json parsing finished with count of nodes: \(nodes.count)")
+                NSLog("json parsing. finished with count of nodes: \(nodes.count)")
+                
+                for node in nodes {
+                    let tile = OSMTile(latitude: node.location.coordinate.latitude, longitude: node.location.coordinate.longitude, zoom: 16)
+                    var tileId = SQLAccess.saveTile(tile)
+                    if tileId == 0 {
+                        tileId = SQLAccess.idOfTile(tile)
+                    }
+                    SQLAccess.saveNodes([node], forTileId: tileId)
+                }
+                NSLog("json parsing. nodes saved in db")
             }
         }
     }

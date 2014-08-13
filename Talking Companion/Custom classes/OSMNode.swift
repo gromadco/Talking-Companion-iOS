@@ -15,9 +15,8 @@ class OSMNode: NSObject {
     
     // MARK: - Properties
     
-    var uid:Int
+    var uid:String
     var location:CLLocation
-    var detailType:String?
     var announcedDate:NSDate?
     var isAnnounced:Bool {
         get {
@@ -56,7 +55,7 @@ class OSMNode: NSObject {
     
     // MARK: - Initializing
 
-    init(uid:Int, latitude:Double, longitude:Double) {
+    init(uid:String, latitude:Double, longitude:Double) {
         self.uid = uid
         self.location = CLLocation(latitude: latitude, longitude: longitude)
     }

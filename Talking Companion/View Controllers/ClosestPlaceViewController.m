@@ -14,7 +14,8 @@
 static const NSTimeInterval pronounceSpeedTimeInterval = 15;
 static const double kKilometersPerHour = 3.6; // 60 * 60 / 1000
 
-static const NSTimeInterval downloadTilesTimeInterval = 60;
+#warning set default
+static const NSTimeInterval downloadTilesTimeInterval = 5; // 60
 static const NSInteger kDefaultZoom = 16;
 static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
 

@@ -71,10 +71,10 @@ class OSMElementsParser {
             let element:SMXMLElement = nodeXML as SMXMLElement
             
             // required properties
-            let uid:Int = element.attributeNamed("uid").toInt()!
+            let uid:String = element.attributeNamed("uid")
             let lat = element.attributeNamed("lat").doubleValue
             let lon = element.attributeNamed("lon").doubleValue
-            var node = OSMNode(uid:uid, latitude: lat, longitude: lon)
+            var node = OSMNode(uid:"node/\(uid)", latitude: lat, longitude: lon)
         
             // check tags
             if let tagsXML = element.childrenNamed("tag") {

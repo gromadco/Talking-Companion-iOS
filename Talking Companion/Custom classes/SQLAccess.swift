@@ -17,7 +17,7 @@ class SQLAccess: NSObject {
     class func createTableNodes() {
         let db = FMDatabase(path: pathToDB)
         if db.open() {
-            db.executeUpdate("CREATE TABLE IF NOT EXISTS nodes (uid INTEGER UNIQUE, type TEXT, tile_id INTEGER, announced_date DOUBLE, latitude DOUBLE, longitude DOUBLE, name TEXT, amenity TEXT, shop TEXT, operator TEXT)", withArgumentsInArray: [])
+            db.executeUpdate("CREATE TABLE IF NOT EXISTS nodes (uid TEXT UNIQUE, tile_id INTEGER, announced_date DOUBLE, latitude DOUBLE, longitude DOUBLE, name TEXT, amenity TEXT, shop TEXT, operator TEXT)", withArgumentsInArray: [])
             db.close()
         }
     }
@@ -51,7 +51,7 @@ class SQLAccess: NSObject {
                 operatorName = nodeOperator
             }
             
-            db.executeUpdate("INSERT OR IGNORE INTO nodes (uid, type, tile_id, latitude, longitude, name, amenity, shop, operator) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", withArgumentsInArray: [node.uid, "node", tileId, node.location.coordinate.latitude, node.location.coordinate.longitude, name, amenity, shop, operatorName])
+            db.executeUpdate("INSERT OR IGNORE INTO nodes (uid, tile_id, latitude, longitude, name, amenity, shop, operator) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", withArgumentsInArray: [node.uid, tileId, node.location.coordinate.latitude, node.location.coordinate.longitude, name, amenity, shop, operatorName])
         }
         db.commit()
         db.close()
@@ -100,7 +100,7 @@ class SQLAccess: NSObject {
     }
     
     class func nodeFromResult(result:FMResultSet) -> OSMNode {
-        let uid = Int(result.intForColumn("uid"))
+        let uid = result.stringForColumn("uid")
         let announcedDate = result.dateForColumn("announced_date")
         let latitude = result.doubleForColumn("latitude")
         let longitude = result.doubleForColumn("longitude")
@@ -120,7 +120,7 @@ class SQLAccess: NSObject {
     class func createTableTiles() {
         let db = FMDatabase(path: pathToDB)
         if db.open() {
-            db.executeUpdate("CREATE TABLE IF NOT EXISTS tiles (id INTEGER PRIMARY KEY, x INTEGER, y INTEGER, zoom INTEGER)", withArgumentsInArray: [])
+            db.executeUpdate("CREATE TABLE IF NOT EXISTS tiles (id INTEGER PRIMARY KEY, x INTEGER, y INTEGER, zoom INTEGER, UNIQUE (x, y, zoom))", withArgumentsInArray: [])
             db.close()
         }
     }
@@ -129,7 +129,7 @@ class SQLAccess: NSObject {
         var lastId:Int = 0
         let db = FMDatabase(path: pathToDB)
         if db.open() {
-            db.executeUpdate("INSERT INTO tiles (x, y, zoom) VALUES (?, ?, ?)", withArgumentsInArray: [tile.x, tile.y, tile.zoom])
+            db.executeUpdate("INSERT OR IGNORE INTO tiles (x, y, zoom) VALUES (?, ?, ?)", withArgumentsInArray: [tile.x, tile.y, tile.zoom])
             lastId = Int(db.lastInsertRowId())
             db.close()
         }
@@ -149,6 +149,19 @@ class SQLAccess: NSObject {
             db.close()
         }
         return has;
+    }
+    
+    class func idOfTile(tile:OSMTile) -> Int {
+        let db = FMDatabase(path: pathToDB)
+        var uid = 0
+        
+        if db.open() {
+            let result = db.executeQuery("SELECT id FROM tiles WHERE x = ? AND y = ? AND zoom = ?", withArgumentsInArray: [tile.x, tile.y, tile.zoom])
+            result.next()
+            uid = Int(result.intForColumn("id"))
+            db.close()
+        }
+        return uid;
     }
     
     class func tiles() -> [OSMTile] {

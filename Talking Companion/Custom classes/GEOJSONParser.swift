@@ -29,13 +29,10 @@ class GEOJSONParser: NSObject {
                     let coordinates = feature["geometry"]["coordinates"]
                     let latitude = coordinates[0].double!
                     let longitude = coordinates[1].double!
-                    let elementDetails:[String]! = feature["id"].string?.componentsSeparatedByString("/")
-                    let type = elementDetails[0]
-                    let uid:Int = elementDetails[1].toInt() ?? -1
+                    let uid = feature["id"].string!
                     
                     var node = OSMNode(uid: uid, latitude: latitude, longitude: longitude)
                     node.name = feature["properties"]["name"].string
-                    node.detailType = type
                     
                     // optional properties
                     if let amenity = feature["properties"]["tags"]["amenity"].string {
@@ -55,7 +52,9 @@ class GEOJSONParser: NSObject {
                 error = NSError(domain: "incorrect json data", code: 1, userInfo: nil)
             }
             
-            handler(nodes: nodes, error: error)
+            dispatch_async(dispatch_get_main_queue()) {
+                handler(nodes: nodes, error: error)
+            }
         }
     }
 }
