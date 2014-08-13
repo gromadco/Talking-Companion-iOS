@@ -28,7 +28,6 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
     OSMTilesDownloader *tilesDownloader;
     NSTimeInterval announceDirectionTimeInterval;
     
-    
     NSTimer *speechTimer;
     NSTimer *tilesTimer;
     

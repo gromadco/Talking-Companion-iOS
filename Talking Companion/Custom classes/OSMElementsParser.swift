@@ -26,26 +26,17 @@ class OSMElementsParser {
     
     init(filePath:String)  {
         self.xmlData = NSData(contentsOfFile:filePath)
-        //self.initializingElements()
     }
     
     init(xmlData:NSData) {
         self.xmlData = xmlData
-        //self.initializingElements()
     }
-    
-    func initializingElements() {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
-            self.nodes = self.parseNodes()
-            //ways = parseWays()
-        }
-    }
-    
+
     func parseWithComplitionHandler(handler:(nodes:[OSMNode], ways:[OSMWay]) -> Void) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
             self.nodes = self.parseNodes()
             self.ways = self.parseWays()
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+            dispatch_async(dispatch_get_main_queue()) {
                 handler(nodes:self.nodes, ways:self.ways)
             }
         }
