@@ -36,19 +36,19 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
     CLLocation *closestPlaceLocation;
 }
 
-@property (nonatomic) AVSpeechSynthesizer *synth;
-@property (nonatomic) CLLocationManager *locationManager;
+@property (nonatomic, strong) AVSpeechSynthesizer *synth;
+@property (nonatomic, strong) CLLocationManager *locationManager;
 
 @end
 
 @implementation ClosestPlaceViewController
 
-#pragma mark - unzip a bz2 archive
-
 #pragma mark - View Methonds
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [self updateNodesFromDB];
+    
     previousLocation = nil;
     [self.locationManager startUpdatingLocation];
     [super viewWillAppear:animated];
@@ -156,7 +156,7 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
 {
     OSMTile *centerTile = [[OSMTile alloc] initWithLatitude:coordinates.latitude longitude:coordinates.longitude zoom:kDefaultZoom];
     
-    NSLog(@"downloading neighboring tiles for tile(%lf; %lf) @ %@", coordinates.latitude, coordinates.longitude, [[OSMBoundingBox alloc] initWithTile:centerTile].url);
+    //NSLog(@"downloading neighboring tiles for tile(%lf; %lf) @ %@", coordinates.latitude, coordinates.longitude, [[OSMBoundingBox alloc] initWithTile:centerTile].url);
     [tilesDownloader downloadNeighboringTilesForTile:centerTile];
 }
 

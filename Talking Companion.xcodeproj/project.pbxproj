@@ -62,8 +62,9 @@
 		BD2E7C80195AEAFB00D57518 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */; };
 		BD2EB9BC1966F0E600C8DEDD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */; };
 		BD34A4421990BA9F0058C22A /* ClosestPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD34A4371990BA9F0058C22A /* ClosestPlaceViewController.m */; };
+		BD3ACD36199BC9E800CF2824 /* OSMElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3ACD35199BC9E800CF2824 /* OSMElement.swift */; };
+		BD3ACD37199BC9E800CF2824 /* OSMElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3ACD35199BC9E800CF2824 /* OSMElement.swift */; };
 		BD536AAB196A7E1B0017345D /* OSMBoundingBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */; };
-		BD7595331998ED9100E3232D /* poi.json in Resources */ = {isa = PBXBuildFile; fileRef = BD7595321998ED9100E3232D /* poi.json */; };
 		BD7CC66F1994D9740068ABDB /* odessa.osm.bz2 in Resources */ = {isa = PBXBuildFile; fileRef = BD7CC66E1994D9740068ABDB /* odessa.osm.bz2 */; };
 		BD7D7FE2199A4D690069A19D /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD5199A4D690069A19D /* Calculations.swift */; };
 		BD7D7FE3199A4D690069A19D /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD5199A4D690069A19D /* Calculations.swift */; };
@@ -100,6 +101,7 @@
 		BDB58981195888670090E178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB58980195888670090E178 /* AppDelegate.swift */; };
 		BDB58986195888670090E178 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDB58984195888670090E178 /* Main.storyboard */; };
 		BDB58988195888670090E178 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB58987195888670090E178 /* Images.xcassets */; };
+		BDBAD836199BC34A00BA69EC /* poi.json in Resources */ = {isa = PBXBuildFile; fileRef = BDBAD834199BC34A00BA69EC /* poi.json */; };
 		BDBFD5B21975325B0088F1CB /* CalculationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBFD5B11975325B0088F1CB /* CalculationsTests.swift */; };
 		BDC820FA199243F60055ABBE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC820F9199243F60055ABBE /* SettingsViewController.swift */; };
 		BDD89B85195B095F0020ACA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD89B84195B095F0020ACA7 /* AVFoundation.framework */; };
@@ -212,8 +214,8 @@
 		BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		BD34A4361990BA9F0058C22A /* ClosestPlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClosestPlaceViewController.h; sourceTree = "<group>"; };
 		BD34A4371990BA9F0058C22A /* ClosestPlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClosestPlaceViewController.m; sourceTree = "<group>"; };
+		BD3ACD35199BC9E800CF2824 /* OSMElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMElement.swift; sourceTree = "<group>"; };
 		BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMBoundingBoxTests.swift; sourceTree = "<group>"; };
-		BD7595321998ED9100E3232D /* poi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = poi.json; sourceTree = "<group>"; };
 		BD7CC66E1994D9740068ABDB /* odessa.osm.bz2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = odessa.osm.bz2; sourceTree = "<group>"; };
 		BD7D7FD5199A4D690069A19D /* Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
 		BD7D7FD6199A4D690069A19D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 		BDB58987195888670090E178 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BDB5898D195888670090E178 /* Talking CompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Talking CompanionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB58992195888670090E178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDBAD834199BC34A00BA69EC /* poi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = poi.json; sourceTree = "<group>"; };
 		BDBFD5B11975325B0088F1CB /* CalculationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculationsTests.swift; sourceTree = "<group>"; };
 		BDC820F9199243F60055ABBE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BDD89B84195B095F0020ACA7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -274,10 +277,10 @@
 		BD0C9F101967388A003A88AC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BDBAD834199BC34A00BA69EC /* poi.json */,
 				BD7D8007199A504D0069A19D /* empty.osm */,
 				BD7D8008199A504D0069A19D /* map.osm */,
 				BD7D7FFA199A4DCD0069A19D /* SwiftyJSON */,
-				BD7595321998ED9100E3232D /* poi.json */,
 				BD7CC66E1994D9740068ABDB /* odessa.osm.bz2 */,
 				BDFB745D198FCDD700D1E113 /* Images */,
 				BD0C9F111967388A003A88AC /* AFNetworking */,
@@ -376,6 +379,7 @@
 				BD7D7FDA199A4D690069A19D /* NSData+bz2.m */,
 				BD7D7FDB199A4D690069A19D /* OSMBoundingBox.swift */,
 				BD7D7FDC199A4D690069A19D /* OSMElementsParser.swift */,
+				BD3ACD35199BC9E800CF2824 /* OSMElement.swift */,
 				BD7D7FDD199A4D690069A19D /* OSMNode.swift */,
 				BD7D7FDE199A4D690069A19D /* OSMTile.swift */,
 				BD7D7FDF199A4D690069A19D /* OSMTilesDownloader.swift */,
@@ -585,7 +589,7 @@
 			files = (
 				BD7D800B199A504D0069A19D /* map.osm in Resources */,
 				BDFB7460198FCDD700D1E113 /* settings.png in Resources */,
-				BD7595331998ED9100E3232D /* poi.json in Resources */,
+				BDBAD836199BC34A00BA69EC /* poi.json in Resources */,
 				BDFB7461198FCDD700D1E113 /* settings@2x.png in Resources */,
 				BDB58986195888670090E178 /* Main.storyboard in Resources */,
 				BDB58988195888670090E178 /* Images.xcassets in Resources */,
@@ -631,6 +635,7 @@
 				BD0C9F4B1967388A003A88AC /* AFHTTPSessionManager.m in Sources */,
 				BD0C9F531967388A003A88AC /* AFURLRequestSerialization.m in Sources */,
 				BD0C9F651967388A003A88AC /* SMXMLDocument.m in Sources */,
+				BD3ACD36199BC9E800CF2824 /* OSMElement.swift in Sources */,
 				BD0C9F691967388A003A88AC /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				BD7D7FEC199A4D690069A19D /* OSMBoundingBox.swift in Sources */,
 				BD0C9F571967388A003A88AC /* AFURLSessionManager.m in Sources */,
@@ -685,6 +690,7 @@
 				BD0C9F561967388A003A88AC /* AFURLResponseSerialization.m in Sources */,
 				BD7D7FEF199A4D690069A19D /* OSMElementsParser.swift in Sources */,
 				BD0C9F7F196750D5003A88AC /* OSMElementsParserTests.swift in Sources */,
+				BD3ACD37199BC9E800CF2824 /* OSMElement.swift in Sources */,
 				BD7D7FF3199A4D690069A19D /* OSMTile.swift in Sources */,
 				BD7D7FED199A4D690069A19D /* OSMBoundingBox.swift in Sources */,
 				BD0C9F661967388A003A88AC /* SMXMLDocument.m in Sources */,

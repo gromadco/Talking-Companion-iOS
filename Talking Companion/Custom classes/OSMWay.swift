@@ -7,7 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
+// FIXME: - inherit from OSMElement
 class OSMWay: NSObject {
    
     // MARK: - Properties
@@ -51,8 +53,32 @@ class OSMWay: NSObject {
     
     func isClosedWay() -> Bool {
         if (nodes.count > 1) {
-            return nodes[0] == nodes[nodes.count-1]
+            return nodes.first == nodes.last
         }
         return false
+    }
+    
+    func centerWithNodes(nodes:[OSMNode]) -> CLLocation {
+        var minLt = 180.0
+        var maxLt = -180.0
+        var minLg = 180.0
+        var maxLg = -180.0
+        
+        for node in nodes {
+            if minLt > node.location.coordinate.latitude {
+                minLt = node.location.coordinate.latitude
+            }
+            if maxLt < node.location.coordinate.latitude {
+                maxLt = node.location.coordinate.latitude
+            }
+            if minLg > node.location.coordinate.longitude {
+                minLt = node.location.coordinate.latitude
+            }
+            if maxLg < node.location.coordinate.longitude {
+                maxLg = node.location.coordinate.latitude
+            }
+        }
+        let center = CLLocation(latitude: (minLt+maxLt)/2, longitude: (minLg+maxLg)/2)
+        return center
     }
 }

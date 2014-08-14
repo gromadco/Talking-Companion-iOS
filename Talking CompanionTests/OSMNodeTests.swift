@@ -30,8 +30,4 @@ class OSMNodeTests: XCTestCase {
         node.announce()
         XCTAssertEqual(node.isAnnounced, true)
     }
-    
-    func testCoordinates() {
-        XCTAssertEqual(node.coordinates(), "(7.0; 13.0)")
-    }
 }
