@@ -58,37 +58,3 @@ class GEOJSONParser: NSObject {
         }
     }
 }
-
-class OSMElementsBuilder {
-    class func elementsFromJSON(json:JSONValue) -> [OSMElement] {
-        let features = json["features"].array!
-        var elements = [OSMElement]()
-        
-        for feature in features {
-            // required properties
-            let coordinates = feature["geometry"]["coordinates"]
-            let latitude = coordinates[1].double!
-            let longitude = coordinates[0].double!
-            let uid = feature["id"].string!
-
-            
-            var element = OSMElement(uid: uid, latitude: latitude, longitude: longitude)
-            element.name = feature["properties"]["name"].string!
-            
-            // optional properties
-            if let amenity = feature["properties"]["tags"]["amenity"].string {
-                element.amenity = amenity
-            }
-            if let operatorName = feature["properties"]["tags"]["operator"].string {
-                element.operatorName = operatorName
-            }
-            if let shop = feature["properties"]["tags"]["shop"].string {
-                element.shop = shop
-            }
-            
-            elements.append(element)
-        }
-
-        return elements
-    }
-}

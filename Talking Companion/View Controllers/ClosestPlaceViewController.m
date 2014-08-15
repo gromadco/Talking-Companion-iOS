@@ -1,5 +1,5 @@
 //
-//  SpeedViewController.m
+//  ClosestPlaceViewController.m
 //  Talking Companion
 //
 //  Created by Sergey Butenko on 25.06.14.
@@ -9,35 +9,35 @@
 #import "ClosestPlaceViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import <AVFoundation/AVFoundation.h>
-#import "NSData+bz2.h"
-
-static const NSTimeInterval pronounceSpeedTimeInterval = 15;
-static const double kKilometersPerHour = 3.6; // 60 * 60 / 1000
+#import "Talking_Companion-Swift.h"
 
 #warning set default
 static const NSTimeInterval downloadTilesTimeInterval = 5; // 60
 static const NSInteger kDefaultZoom = 16;
-static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
+static const int KILOMETER = 1000;
+static const CLLocationDistance maxDistance = 10 * KILOMETER;
 
-@interface ClosestPlaceViewController ()
+@interface ClosestPlaceViewController () <CLLocationManagerDelegate, OSMTilesDownloaderDelegate>
 {
     BOOL isLocationEnabled;
-    CLLocationSpeed currentSpeed;
     CLLocation *currentLocation;
     NSArray *nodes;
     OSMTilesDownloader *tilesDownloader;
-    NSTimeInterval announceDirectionTimeInterval;
-    
-    NSTimer *speechTimer;
     NSTimer *tilesTimer;
     
-    NSTimer *announceDirectionTimer;
+    NSTimeInterval announceDistanceTimeInterval;
+    NSTimer *announceDistanceTimer;
     CLLocation *previousLocation;
     CLLocation *closestPlaceLocation;
 }
 
 @property (nonatomic, strong) AVSpeechSynthesizer *synth;
 @property (nonatomic, strong) CLLocationManager *locationManager;
+
+@property (weak, nonatomic) IBOutlet UILabel *allowAccessLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 
 @end
 
@@ -65,19 +65,7 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
     NSLog(@"path to documents: %@", NSHomeDirectory());
 }
 
-- (void)updatingIntervalChanged
-{
-    if ([announceDirectionTimer isValid]) {
-        [announceDirectionTimer invalidate];
-    }
-    
-    NSInteger index = [[NSUserDefaults standardUserDefaults] integerForKey:@"UpdatingInterval"];
-    NSDictionary *settings = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Settings" ofType:@"plist"]];
-    announceDirectionTimeInterval = [settings[@"Durations"][index] doubleValue];
-    announceDirectionTimer = [NSTimer scheduledTimerWithTimeInterval:announceDirectionTimeInterval target:self selector:@selector(announceDirection) userInfo:nil repeats:YES];
-}
-
-- (IBAction)showSettings:(id)sender
+- (IBAction)showSettingsViewController:(id)sender
 {
     if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
         [self performSegueWithIdentifier:@"Popover Settings" sender:sender];
@@ -87,7 +75,20 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
     }
 }
 
-#pragma mark - Lazy instantiation
+- (void)updatingIntervalChanged
+{
+    if ([announceDistanceTimer isValid]) {
+        [announceDistanceTimer invalidate];
+    }
+    
+    NSInteger index = [[NSUserDefaults standardUserDefaults] integerForKey:@"UpdatingInterval"];
+    NSDictionary *settings = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Settings" ofType:@"plist"]];
+    announceDistanceTimeInterval = [settings[@"Durations"][index] doubleValue];
+    announceDistanceTimer = [NSTimer scheduledTimerWithTimeInterval:announceDistanceTimeInterval target:self selector:@selector(announceClosestPlace) userInfo:nil repeats:YES];
+}
+
+
+#pragma mark - Lazy Instantiation
 
 - (AVSpeechSynthesizer *)synth
 {
@@ -103,35 +104,11 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
         _locationManager = [[CLLocationManager alloc] init];
         _locationManager.delegate = self;
         _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        //[_locationManager requestAlwaysAuthorization];
     }
     return _locationManager;
 }
 
-#pragma mark -
-
-// start or stop downloading
-- (void)checkLocationsPermissions
-{
-    if (isLocationEnabled) {
-        speechTimer = [NSTimer scheduledTimerWithTimeInterval:pronounceSpeedTimeInterval target:self selector:@selector(speakSpeed) userInfo:nil repeats:YES];
-        tilesTimer = [NSTimer scheduledTimerWithTimeInterval:downloadTilesTimeInterval target:self selector:@selector(downloadTiles) userInfo:nil repeats:YES];
-        [self updatingIntervalChanged];
-    }
-    else {
-        if ([speechTimer isValid]) {
-            [speechTimer invalidate];
-        }
-        if ([tilesTimer isValid]) {
-            [tilesTimer invalidate];
-        }
-        if ([announceDirectionTimer isValid]) {
-            [announceDirectionTimer invalidate];
-        }
-    }
-    
-    self.allowAccessLabel.hidden = isLocationEnabled;
-}
+#pragma mark - Fetching Nodes
 
 - (void)updateNodesFromDB
 {
@@ -143,42 +120,80 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
     for (OSMTile *currentTile in neighboringTiles) {
         [tmpNodes addObjectsFromArray:[SQLAccess nodesForTile:currentTile]];
     }
-    nodes = [NSArray arrayWithArray:tmpNodes];
-    NSLog(@"received nodes: %li", nodes.count);
+    nodes = [tmpNodes copy];
+    NSLog(@"received nodes from db: %li", nodes.count);
 }
 
-- (void)downloadTiles
+- (void)downloadNeighboringTiles
 {
-    [self neighboringTilesForCoordinates:currentLocation.coordinate];
-}
-
-- (void)neighboringTilesForCoordinates:(CLLocationCoordinate2D)coordinates
-{
-    OSMTile *centerTile = [[OSMTile alloc] initWithLatitude:coordinates.latitude longitude:coordinates.longitude zoom:kDefaultZoom];
-    
-    //NSLog(@"downloading neighboring tiles for tile(%lf; %lf) @ %@", coordinates.latitude, coordinates.longitude, [[OSMBoundingBox alloc] initWithTile:centerTile].url);
+    OSMTile *centerTile = [[OSMTile alloc] initWithLatitude:currentLocation.coordinate.latitude longitude:currentLocation.coordinate.longitude zoom:kDefaultZoom];
     [tilesDownloader downloadNeighboringTilesForTile:centerTile];
+    //NSLog(@"downloading neighboring tiles for tile(%lf; %lf) @ %@", coordinates.latitude, coordinates.longitude, [[OSMBoundingBox alloc] initWithTile:centerTile].url);
+}
+
+#pragma mark - OSMTileDownloader Delegate
+
+- (void)tilesDownloaded
+{
+    [self updateNodesFromDB];
 }
 
 #pragma mark - Place details
 
-#pragma mark Speed
-
-- (void)speakSpeed
+- (void)announceClosestPlace
 {
-    if (currentSpeed > 0) {
-        NSString *speedString = [NSString stringWithFormat:@"%i km per hour", (int)currentSpeed];
-        AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:speedString];
-        [self.synth speakUtterance:utterance];
-        
-        NSLog(@"speak speed: %@", speedString);
+    double angle = [Calculations thetaForCurrentLocation:currentLocation previousLocation:previousLocation placeLocation:closestPlaceLocation];
+    previousLocation = currentLocation;
+    
+    OSMNode *closestPlace;
+    CLLocationDistance distanceToClosestPlace = INT_MAX;
+    
+    for (OSMNode *node in nodes) {
+        CLLocationDistance distance = [currentLocation distanceFromLocation:node.location];
+        if (distanceToClosestPlace > distance) {
+            distanceToClosestPlace = distance;
+            closestPlace = node;
+        }
+    }
+    if (distanceToClosestPlace > maxDistance) {
+        _distanceLabel.text = [NSString stringWithFormat:@"over %i km", (int)maxDistance / KILOMETER];
+        return;
+    }
+
+    if (!closestPlace.isAnnounced) {
+        [self speakPlace:closestPlace distance:distanceToClosestPlace];
+    }
+    
+    NSString *distance;
+    if (distanceToClosestPlace > KILOMETER) {
+        distance = [NSString stringWithFormat:@"%.1lf km", distanceToClosestPlace / KILOMETER];
     }
     else {
-        NSLog(@"try to speak speed");
+        distance = [NSString stringWithFormat:@"%i m", (int)distanceToClosestPlace];
     }
+    
+    NSString *direction = @"";
+    if (angle >=0 && angle < 45) {
+        direction = @"in front";
+    }
+    else if (angle >=45 && angle < 135) {
+        direction = @"in the right";
+    }
+    else if (angle >=135 && angle < 225) {
+        direction = @"back";
+    }
+    else if (angle >=225 && angle < 315) {
+        direction = @"in the left";
+    }
+    else if (angle >=315 && angle <= 360) {
+        direction = @"in front";
+    }
+    
+    _nameLabel.text = closestPlace.name;
+    _distanceLabel.text = [NSString stringWithFormat:@"%@ %@", distance, direction];
+    _typeLabel.text = closestPlace.type;
+    closestPlaceLocation = closestPlace.location;
 }
-
-#pragma mark Closest place
 
 - (void)speakPlace:(OSMNode*)place distance:(CLLocationDistance)distance
 {
@@ -188,74 +203,14 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
         [self.synth speakUtterance:utterance];
         [place announce];
         
-         NSLog(@"announce place \"%@\"", placeString);
+        NSLog(@"announce place \"%@\"", placeString);
     }
-}
-
-- (void)announceClosestPlaceWithAngle:(double)angle
-{
-    OSMNode *closestPlace;
-    CLLocationDistance minDistance = INT_MAX;
-    
-    for (OSMNode *node in nodes) {
-        CLLocationDistance distance = [currentLocation distanceFromLocation:node.location];
-
-        if (minDistance > distance) {
-            minDistance = distance;
-            closestPlace = node;
-        }
-    }
-    
-    if (minDistance > maxDistance) {
-        _distanceLabel.text = @"can't detect";
-        return;
-    }
-
-    if (!closestPlace.isAnnounced) {
-        [self speakPlace:closestPlace distance:minDistance];
-    }
-    
-    NSString *direction = @"can't detect";
-    if (angle >=0 && angle < 45) {
-        direction = @"in front";
-    }
-    else if (angle >=45 && angle < 135) {
-        direction = @"right";
-    }
-    else if (angle >=135 && angle < 225) {
-        direction = @"back";
-    }
-    else if (angle >=225 && angle < 315) {
-        direction = @"left";
-    }
-    else if (angle >=315 && angle <= 360) {
-        direction = @"in front";
-    }
-    
-    _nameLabel.text = closestPlace.name;
-    _distanceLabel.text = [NSString stringWithFormat:@"%li m.", (long)minDistance];
-    _typeLabel.text = closestPlace.type;
-    _directionLabel.text = [NSString stringWithFormat:@"%@ (%i degree)", direction, (int)angle];
-    closestPlaceLocation = closestPlace.location;
-}
-
-#pragma mark Direction
-
-- (void)announceDirection
-{
-    double theta = [Calculations thetaForCurrentLocation:currentLocation previousLocation:previousLocation placeLocation:closestPlaceLocation];
-    [self announceClosestPlaceWithAngle:theta];
-    previousLocation = currentLocation;
 }
 
 #pragma mark - CLLocationManager Delegate
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    currentSpeed = newLocation.speed * kKilometersPerHour;
-    currentSpeed = currentSpeed > 0 ? currentSpeed : 0;
-    _currentSpeedLabel.text = [NSString stringWithFormat:@"%.2lf km/h", currentSpeed];
-    
     currentLocation = newLocation;
     
     if (previousLocation == nil) {
@@ -263,8 +218,8 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
         previousLocation = newLocation;
         
         [self updateNodesFromDB];
-        [self downloadTiles];
-        [self announceDirection];
+        [self downloadNeighboringTiles];
+        [self announceClosestPlace];
     }
 }
 
@@ -282,14 +237,27 @@ static const CLLocationDistance maxDistance = 10 * 1000; // 10 km
     else {
         isLocationEnabled = YES;
     }
+
     [self checkLocationsPermissions];
 }
 
-#pragma mark - OSMTileDownloader Delegate
-
-- (void)tilesDownloaded
+// start or stop downloading
+- (void)checkLocationsPermissions
 {
-    [self updateNodesFromDB];
+    if (isLocationEnabled) {
+        tilesTimer = [NSTimer scheduledTimerWithTimeInterval:downloadTilesTimeInterval target:self selector:@selector(downloadNeighboringTiles) userInfo:nil repeats:YES];
+        [self updatingIntervalChanged];
+    }
+    else {
+        if ([tilesTimer isValid]) {
+            [tilesTimer invalidate];
+        }
+        if ([announceDistanceTimer isValid]) {
+            [announceDistanceTimer invalidate];
+        }
+    }
+    
+    self.allowAccessLabel.hidden = isLocationEnabled;
 }
 
 @end

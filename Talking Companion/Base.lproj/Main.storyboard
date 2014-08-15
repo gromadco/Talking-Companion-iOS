@@ -144,14 +144,12 @@
                     <navigationItem key="navigationItem" title="Closest place" id="iSQ-jU-4GQ">
                         <barButtonItem key="rightBarButtonItem" image="settings.png" id="Vat-2u-Fez">
                             <connections>
-                                <action selector="showSettings:" destination="I51-cH-MMB" id="nhF-Dp-FKO"/>
+                                <action selector="showSettingsViewController:" destination="I51-cH-MMB" id="4Ep-wa-E59"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="allowAccessLabel" destination="iZU-ER-2xA" id="ddj-Sw-dFy"/>
-                        <outlet property="currentSpeedLabel" destination="0U4-Zf-lF3" id="2tA-2R-nFi"/>
-                        <outlet property="directionLabel" destination="4ON-Ce-3gt" id="0le-yQ-Uwl"/>
                         <outlet property="distanceLabel" destination="yTZ-2r-SL3" id="ioh-WF-jZK"/>
                         <outlet property="nameLabel" destination="IjF-NS-KER" id="5Zf-3m-Etz"/>
                         <outlet property="typeLabel" destination="Xb4-f1-WCi" id="5NJ-u9-y69"/>

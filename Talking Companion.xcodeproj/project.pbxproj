@@ -62,8 +62,6 @@
 		BD2E7C80195AEAFB00D57518 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */; };
 		BD2EB9BC1966F0E600C8DEDD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */; };
 		BD34A4421990BA9F0058C22A /* ClosestPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD34A4371990BA9F0058C22A /* ClosestPlaceViewController.m */; };
-		BD3ACD36199BC9E800CF2824 /* OSMElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3ACD35199BC9E800CF2824 /* OSMElement.swift */; };
-		BD3ACD37199BC9E800CF2824 /* OSMElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3ACD35199BC9E800CF2824 /* OSMElement.swift */; };
 		BD536AAB196A7E1B0017345D /* OSMBoundingBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */; };
 		BD7CC66F1994D9740068ABDB /* odessa.osm.bz2 in Resources */ = {isa = PBXBuildFile; fileRef = BD7CC66E1994D9740068ABDB /* odessa.osm.bz2 */; };
 		BD7D7FE2199A4D690069A19D /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD5199A4D690069A19D /* Calculations.swift */; };
@@ -214,7 +212,6 @@
 		BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		BD34A4361990BA9F0058C22A /* ClosestPlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClosestPlaceViewController.h; sourceTree = "<group>"; };
 		BD34A4371990BA9F0058C22A /* ClosestPlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClosestPlaceViewController.m; sourceTree = "<group>"; };
-		BD3ACD35199BC9E800CF2824 /* OSMElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMElement.swift; sourceTree = "<group>"; };
 		BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMBoundingBoxTests.swift; sourceTree = "<group>"; };
 		BD7CC66E1994D9740068ABDB /* odessa.osm.bz2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = odessa.osm.bz2; sourceTree = "<group>"; };
 		BD7D7FD5199A4D690069A19D /* Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
@@ -379,7 +376,6 @@
 				BD7D7FDA199A4D690069A19D /* NSData+bz2.m */,
 				BD7D7FDB199A4D690069A19D /* OSMBoundingBox.swift */,
 				BD7D7FDC199A4D690069A19D /* OSMElementsParser.swift */,
-				BD3ACD35199BC9E800CF2824 /* OSMElement.swift */,
 				BD7D7FDD199A4D690069A19D /* OSMNode.swift */,
 				BD7D7FDE199A4D690069A19D /* OSMTile.swift */,
 				BD7D7FDF199A4D690069A19D /* OSMTilesDownloader.swift */,
@@ -635,7 +631,6 @@
 				BD0C9F4B1967388A003A88AC /* AFHTTPSessionManager.m in Sources */,
 				BD0C9F531967388A003A88AC /* AFURLRequestSerialization.m in Sources */,
 				BD0C9F651967388A003A88AC /* SMXMLDocument.m in Sources */,
-				BD3ACD36199BC9E800CF2824 /* OSMElement.swift in Sources */,
 				BD0C9F691967388A003A88AC /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				BD7D7FEC199A4D690069A19D /* OSMBoundingBox.swift in Sources */,
 				BD0C9F571967388A003A88AC /* AFURLSessionManager.m in Sources */,
@@ -690,7 +685,6 @@
 				BD0C9F561967388A003A88AC /* AFURLResponseSerialization.m in Sources */,
 				BD7D7FEF199A4D690069A19D /* OSMElementsParser.swift in Sources */,
 				BD0C9F7F196750D5003A88AC /* OSMElementsParserTests.swift in Sources */,
-				BD3ACD37199BC9E800CF2824 /* OSMElement.swift in Sources */,
 				BD7D7FF3199A4D690069A19D /* OSMTile.swift in Sources */,
 				BD7D7FED199A4D690069A19D /* OSMBoundingBox.swift in Sources */,
 				BD0C9F661967388A003A88AC /* SMXMLDocument.m in Sources */,
