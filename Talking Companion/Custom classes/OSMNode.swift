@@ -24,7 +24,7 @@ class OSMNode: NSObject {
                 return false
             }
             
-            var announcedInterval = NSDate.date().timeIntervalSinceDate(announcedDate)
+            var announcedInterval = NSDate.date().timeIntervalSinceDate(announcedDate!)
             if announcedInterval > oneDay {
                 return false;
             }

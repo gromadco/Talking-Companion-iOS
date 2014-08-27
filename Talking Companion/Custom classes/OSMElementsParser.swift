@@ -147,7 +147,7 @@ class OSMElementsParser {
         var tmpNodes = [OSMNode]()
         
         for node in nodes {
-            if node.valueForKey(property) {
+            if let _ = node.valueForKey(property)  {
                 tmpNodes.append(node)
             }
         }
@@ -173,7 +173,7 @@ class OSMElementsParser {
         var tmpWays = [OSMWay]()
         
         for way in ways {
-            if way.valueForKey(property) {
+            if let _ = way.valueForKey(property) {
                 tmpWays.append(way)
             }
         }

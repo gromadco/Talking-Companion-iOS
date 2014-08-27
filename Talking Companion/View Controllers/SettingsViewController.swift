@@ -19,7 +19,7 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let settings = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Settings", ofType: "plist"))
+        let settings = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Settings", ofType: "plist")!)
         self.intervalsDutation = settings.objectForKey("Durations") as [Int]
         self.intervalsLabels = settings.objectForKey("Labels") as [String]
         
@@ -54,7 +54,7 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     @IBAction func downloadJSONExtractButtonPressed(sender: AnyObject) {
         let path = NSBundle.mainBundle().pathForResource("poi", ofType: "json")
-        let data = NSData(contentsOfFile: path)
+        let data = NSData(contentsOfFile: path!)
         let jsonParser = GEOJSONParser(jsonData: data)
         
         NSLog("start parsing json")
