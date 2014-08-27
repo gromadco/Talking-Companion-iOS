@@ -22,7 +22,6 @@ static const CLLocationDistance maxDistance = 10 * KILOMETER;
     BOOL isLocationEnabled;
     CLLocation *currentLocation;
     NSArray *nodes;
-    OSMTilesDownloader *tilesDownloader;
     NSTimer *tilesTimer;
     
     NSTimeInterval announceDistanceTimeInterval;
@@ -31,13 +30,17 @@ static const CLLocationDistance maxDistance = 10 * KILOMETER;
     CLLocation *closestPlaceLocation;
 }
 
+@property (nonatomic, strong) OSMTilesDownloader *tilesDownloader;
 @property (nonatomic, strong) AVSpeechSynthesizer *synth;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 
-@property (weak, nonatomic) IBOutlet UILabel *allowAccessLabel;
+@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
+- (IBAction)showSettingsViewController:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
 @end
 
@@ -47,22 +50,28 @@ static const CLLocationDistance maxDistance = 10 * KILOMETER;
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self updateNodesFromDB];
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     
+    [self updateNodesFromDB];
     previousLocation = nil;
     [self.locationManager startUpdatingLocation];
-    [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [super viewWillDisappear:animated];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    tilesDownloader = [[OSMTilesDownloader alloc] init];
-    tilesDownloader.delegate = self;
-    
+    //NSLog(@"path to documents: %@", NSHomeDirectory());
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updatingIntervalChanged) name:@"UpdatingIntervalNotification" object:nil];
+    [self.settingsButton setTitle:@"\u2699" forState:UIControlStateNormal];
     
-    NSLog(@"path to documents: %@", NSHomeDirectory());
+    [self updateNodesFromDB];
 }
 
 - (IBAction)showSettingsViewController:(id)sender
@@ -87,7 +96,6 @@ static const CLLocationDistance maxDistance = 10 * KILOMETER;
     announceDistanceTimer = [NSTimer scheduledTimerWithTimeInterval:announceDistanceTimeInterval target:self selector:@selector(announceClosestPlace) userInfo:nil repeats:YES];
 }
 
-
 #pragma mark - Lazy Instantiation
 
 - (AVSpeechSynthesizer *)synth
@@ -108,6 +116,17 @@ static const CLLocationDistance maxDistance = 10 * KILOMETER;
     return _locationManager;
 }
 
+- (OSMTilesDownloader *)tilesDownloader
+{
+    if (!_tilesDownloader) {
+        _tilesDownloader = [[OSMTilesDownloader alloc] init];
+        _tilesDownloader.delegate = self;
+        
+    }
+    return _tilesDownloader;
+}
+
+
 #pragma mark - Fetching Nodes
 
 - (void)updateNodesFromDB
@@ -121,13 +140,14 @@ static const CLLocationDistance maxDistance = 10 * KILOMETER;
         [tmpNodes addObjectsFromArray:[SQLAccess nodesForTile:currentTile]];
     }
     nodes = [tmpNodes copy];
-    NSLog(@"received nodes from db: %li", nodes.count);
+    self.statusLabel.text = [NSString stringWithFormat:@"Start moving\n%i poins around", (int)nodes.count];
+    //NSLog(@"received nodes from db: %li", nodes.count);
 }
 
 - (void)downloadNeighboringTiles
 {
     OSMTile *centerTile = [[OSMTile alloc] initWithLatitude:currentLocation.coordinate.latitude longitude:currentLocation.coordinate.longitude zoom:kDefaultZoom];
-    [tilesDownloader downloadNeighboringTilesForTile:centerTile];
+    [self.tilesDownloader downloadNeighboringTilesForTile:centerTile];
     //NSLog(@"downloading neighboring tiles for tile(%lf; %lf) @ %@", coordinates.latitude, coordinates.longitude, [[OSMBoundingBox alloc] initWithTile:centerTile].url);
 }
 
@@ -155,21 +175,26 @@ static const CLLocationDistance maxDistance = 10 * KILOMETER;
             closestPlace = node;
         }
     }
-    if (distanceToClosestPlace > maxDistance) {
-        _distanceLabel.text = [NSString stringWithFormat:@"over %i km", (int)maxDistance / KILOMETER];
+    
+    if (!closestPlace) {
         return;
+    }
+    
+    NSString *distance;
+    if (distanceToClosestPlace > maxDistance) {
+        distance = [NSString stringWithFormat:@"over %i km", (int)maxDistance / KILOMETER];
+    }
+    else {
+        if (distanceToClosestPlace > KILOMETER) {
+            distance = [NSString stringWithFormat:@"%.1lf km", distanceToClosestPlace / KILOMETER];
+        }
+        else {
+            distance = [NSString stringWithFormat:@"%i m", (int)distanceToClosestPlace];
+        }
     }
 
     if (!closestPlace.isAnnounced) {
         [self speakPlace:closestPlace distance:distanceToClosestPlace];
-    }
-    
-    NSString *distance;
-    if (distanceToClosestPlace > KILOMETER) {
-        distance = [NSString stringWithFormat:@"%.1lf km", distanceToClosestPlace / KILOMETER];
-    }
-    else {
-        distance = [NSString stringWithFormat:@"%i m", (int)distanceToClosestPlace];
     }
     
     NSString *direction = @"";
@@ -198,7 +223,7 @@ static const CLLocationDistance maxDistance = 10 * KILOMETER;
 - (void)speakPlace:(OSMNode*)place distance:(CLLocationDistance)distance
 {
     if (distance > 0) {
-        NSString *placeString = [NSString stringWithFormat:@"Closest place is %@, %@ with distance %li m", place.name, place.type, (long)distance];
+        NSString *placeString = [NSString stringWithFormat:@"Closest place is %@, %@with distance %li m", place.name, place.type, (long)distance];
         AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:placeString];
         [self.synth speakUtterance:utterance];
         [place announce];
@@ -256,8 +281,8 @@ static const CLLocationDistance maxDistance = 10 * KILOMETER;
             [announceDistanceTimer invalidate];
         }
     }
-    
-    self.allowAccessLabel.hidden = isLocationEnabled;
+#warning change status label
+    //self.allowAccessLabel.hidden = isLocationEnabled;
 }
 
 @end
