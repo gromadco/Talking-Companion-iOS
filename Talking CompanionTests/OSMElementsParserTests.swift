@@ -17,21 +17,21 @@ class OSMElementsParserTests: XCTestCase {
     // MARK: - Nodes
     
     func testParsingNodes() {
-        let parser = OSMElementsParser(filePath: donetskFile)
+        let parser = OSMElementsParser(filePath: donetskFile!)
         parser.parseWithComplitionHandler { nodes, ways in
             XCTAssertEqual(nodes.count, 886)
         }
     }
     
     func testNodesWithProperty() {
-        let parser = OSMElementsParser(filePath: donetskFile)
+        let parser = OSMElementsParser(filePath: donetskFile!)
         parser.parseWithComplitionHandler { nodes, ways in
             XCTAssertEqual(parser.nodesWithProperty("amenity").count, 8)
         }
     }
     
     func testNodeWithCurrentProperty() {
-        let parser = OSMElementsParser(filePath: donetskFile)
+        let parser = OSMElementsParser(filePath: donetskFile!)
         parser.parseWithComplitionHandler { nodes, ways in
             XCTAssertEqual(parser.nodesWithProperty("amenity", equal: "cinema").count, 1)
         }
@@ -40,14 +40,14 @@ class OSMElementsParserTests: XCTestCase {
     // MARK: - Ways
     
     func testParsingWays() {
-        let parser = OSMElementsParser(filePath: donetskFile)
+        let parser = OSMElementsParser(filePath: donetskFile!)
         parser.parseWithComplitionHandler { nodes, ways in
              XCTAssertEqual(ways.count, 108)
         }
     }
     
     func testWaysWithProperty() {
-        let parser = OSMElementsParser(filePath: donetskFile)
+        let parser = OSMElementsParser(filePath: donetskFile!)
         
         parser.parseWithComplitionHandler { nodes, ways in
             let ways = parser.waysWithProperty("name")
