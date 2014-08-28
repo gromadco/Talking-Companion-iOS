@@ -13,6 +13,7 @@
 
 #warning set default
 static const NSTimeInterval downloadTilesTimeInterval = 5; // 60
+static const NSTimeInterval hideSettingsButtonInterval = 10;
 static const NSInteger kDefaultZoom = 16;
 static const int KILOMETER = 1000;
 static const CLLocationDistance maxDistance = 10 * KILOMETER;
@@ -28,6 +29,8 @@ static const CLLocationDistance maxDistance = 10 * KILOMETER;
     NSTimer *announceDistanceTimer;
     CLLocation *previousLocation;
     CLLocation *closestPlaceLocation;
+    
+    NSTimer *hideSettingsButtonTimer;
 }
 
 @property (nonatomic, strong) OSMTilesDownloader *tilesDownloader;
@@ -72,6 +75,34 @@ static const CLLocationDistance maxDistance = 10 * KILOMETER;
     [self.settingsButton setTitle:@"\u2699" forState:UIControlStateNormal];
     
     [self updateNodesFromDB];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showSettingsButton:)];
+    [self.view addGestureRecognizer:tap];
+    [self startHideButtonTimer];
+}
+
+- (void)showSettingsButton:(UIGestureRecognizer*)recognizer
+{
+    self.settingsButton.hidden = !self.settingsButton.isHidden;
+    
+    if (self.settingsButton.hidden == NO) {
+        [self startHideButtonTimer];
+    }
+    else {
+        if ([hideSettingsButtonTimer isValid]) {
+             [hideSettingsButtonTimer invalidate];
+        }
+    }
+}
+
+- (void)startHideButtonTimer
+{
+    hideSettingsButtonTimer = [NSTimer scheduledTimerWithTimeInterval:hideSettingsButtonInterval target:self selector:@selector(hideSettingsButton) userInfo:nil repeats:NO];
+}
+
+- (void)hideSettingsButton
+{
+    self.settingsButton.hidden = YES;
 }
 
 - (IBAction)showSettingsViewController:(id)sender

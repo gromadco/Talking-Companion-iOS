@@ -45,7 +45,7 @@
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" alpha="0.19999999999999968" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ww-Hb-2od">
+                            <button opaque="NO" alpha="0.19999999999999968" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ww-Hb-2od">
                                 <rect key="frame" x="526" y="30" width="54" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8Ww-Hb-2od" secondAttribute="height" multiplier="1:1" id="Rcb-XO-bs7"/>
@@ -164,7 +164,7 @@
             </objects>
             <point key="canvasLocation" x="192" y="347"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="Sof-fh-cII">
             <objects>
                 <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="Qm4-5I-d3X" customClass="SettingsViewController" customModule="Talking_Companion" customModuleProvider="target" sceneMemberID="viewController">
@@ -176,7 +176,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OCC-h3-wfG">
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OCC-h3-wfG">
                                 <rect key="frame" x="0.0" y="112" width="600" height="162"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
@@ -187,7 +187,7 @@
                                     <outlet property="delegate" destination="Qm4-5I-d3X" id="zAE-fy-qnu"/>
                                 </connections>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHf-i8-Fd5">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHf-i8-Fd5">
                                 <rect key="frame" x="20" y="282" width="560" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Eh4-8k-CdY"/>
@@ -202,7 +202,7 @@
                                     <action selector="saveButtonPressed" destination="Qm4-5I-d3X" eventType="touchUpInside" id="URQ-Hs-cni"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updating interval:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wld-pq-Qnn">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Updating interval:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wld-pq-Qnn">
                                 <rect key="frame" x="231" y="82" width="139" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="139" id="Eti-oa-ByD"/>
@@ -215,7 +215,7 @@
                                     <rect key="frame" x="251" y="38" width="139" height="22"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5m-J8-ERk">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5m-J8-ERk">
                                 <rect key="frame" x="20" y="334" width="234" height="30"/>
                                 <state key="normal" title="Download osm extract for Odessa">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -224,7 +224,7 @@
                                     <action selector="downloadOSMExtractButtonPressed" destination="Qm4-5I-d3X" eventType="touchUpInside" id="2oa-RT-f7f"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Db3-Rf-Kvx">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Db3-Rf-Kvx">
                                 <rect key="frame" x="20" y="372" width="233" height="30"/>
                                 <state key="normal" title="Download json extract for Odessa">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -250,14 +250,14 @@
                             <constraint firstItem="HHf-i8-Fd5" firstAttribute="leading" secondItem="82M-KM-CGW" secondAttribute="leading" constant="20" symbolic="YES" id="xNC-Y1-Tle"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="SPc-If-aAW"/>
+                    <navigationItem key="navigationItem" title="Settings" id="SPc-If-aAW"/>
                     <connections>
                         <outlet property="updatingIntervalPickerView" destination="OCC-h3-wfG" id="MhP-Ld-r3y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f3e-Bg-BV2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="957" y="347"/>
+            <point key="canvasLocation" x="1269" y="347"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="0hm-0L-Mgc">
@@ -294,7 +294,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tRG-JB-Rt5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-586" y="347"/>
+            <point key="canvasLocation" x="-679.5" y="347"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
