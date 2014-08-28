@@ -20,7 +20,6 @@ static const CLLocationDistance maxDistance = 10 * KILOMETER;
 
 @interface ClosestPlaceViewController () <CLLocationManagerDelegate, OSMTilesDownloaderDelegate>
 {
-    BOOL isLocationEnabled;
     CLLocation *currentLocation;
     NSArray *nodes;
     NSTimer *tilesTimer;
@@ -56,7 +55,6 @@ static const CLLocationDistance maxDistance = 10 * KILOMETER;
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
-    [self updateNodesFromDB];
     previousLocation = nil;
     [self.locationManager startUpdatingLocation];
 }
@@ -80,6 +78,20 @@ static const CLLocationDistance maxDistance = 10 * KILOMETER;
     [self.view addGestureRecognizer:tap];
     [self startHideButtonTimer];
 }
+
+- (void)updatingIntervalChanged
+{
+    if ([announceDistanceTimer isValid]) {
+        [announceDistanceTimer invalidate];
+    }
+    
+    NSInteger index = [[NSUserDefaults standardUserDefaults] integerForKey:@"UpdatingInterval"];
+    NSDictionary *settings = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Settings" ofType:@"plist"]];
+    announceDistanceTimeInterval = [settings[@"Durations"][index] doubleValue];
+    announceDistanceTimer = [NSTimer scheduledTimerWithTimeInterval:announceDistanceTimeInterval target:self selector:@selector(announceClosestPlace) userInfo:nil repeats:YES];
+}
+
+#pragma mark - Settings Button
 
 - (void)showSettingsButton:(UIGestureRecognizer*)recognizer
 {
@@ -115,18 +127,6 @@ static const CLLocationDistance maxDistance = 10 * KILOMETER;
     }
 }
 
-- (void)updatingIntervalChanged
-{
-    if ([announceDistanceTimer isValid]) {
-        [announceDistanceTimer invalidate];
-    }
-    
-    NSInteger index = [[NSUserDefaults standardUserDefaults] integerForKey:@"UpdatingInterval"];
-    NSDictionary *settings = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Settings" ofType:@"plist"]];
-    announceDistanceTimeInterval = [settings[@"Durations"][index] doubleValue];
-    announceDistanceTimer = [NSTimer scheduledTimerWithTimeInterval:announceDistanceTimeInterval target:self selector:@selector(announceClosestPlace) userInfo:nil repeats:YES];
-}
-
 #pragma mark - Lazy Instantiation
 
 - (AVSpeechSynthesizer *)synth
@@ -157,7 +157,6 @@ static const CLLocationDistance maxDistance = 10 * KILOMETER;
     return _tilesDownloader;
 }
 
-
 #pragma mark - Fetching Nodes
 
 - (void)updateNodesFromDB
@@ -171,12 +170,19 @@ static const CLLocationDistance maxDistance = 10 * KILOMETER;
         [tmpNodes addObjectsFromArray:[SQLAccess nodesForTile:currentTile]];
     }
     nodes = [tmpNodes copy];
-    self.statusLabel.text = [NSString stringWithFormat:@"Start moving\n%i poins around", (int)nodes.count];
+    
+    if (currentLocation.speed > 0) {
+        self.statusLabel.text = @"";
+    }
+    else {
+        self.statusLabel.text = [NSString stringWithFormat:@"Start moving\n%i poins around", (int)nodes.count];
+    }
     //NSLog(@"received nodes from db: %li", nodes.count);
 }
 
 - (void)downloadNeighboringTiles
 {
+    self.statusLabel.text = @"Loading...";
     OSMTile *centerTile = [[OSMTile alloc] initWithLatitude:currentLocation.coordinate.latitude longitude:currentLocation.coordinate.longitude zoom:kDefaultZoom];
     [self.tilesDownloader downloadNeighboringTilesForTile:centerTile];
     //NSLog(@"downloading neighboring tiles for tile(%lf; %lf) @ %@", coordinates.latitude, coordinates.longitude, [[OSMBoundingBox alloc] initWithTile:centerTile].url);
@@ -287,18 +293,20 @@ static const CLLocationDistance maxDistance = 10 * KILOMETER;
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 {
     NSLog(@"location manager status: %i", status);
+    
+    BOOL locationEnabled;
     if (status == kCLAuthorizationStatusDenied || status == kCLAuthorizationStatusNotDetermined) {
-        isLocationEnabled = NO;
+        locationEnabled = NO;
     }
     else {
-        isLocationEnabled = YES;
+        locationEnabled = YES;
     }
 
-    [self checkLocationsPermissions];
+    [self checkLocationsPermissions:locationEnabled];
 }
 
 // start or stop downloading
-- (void)checkLocationsPermissions
+- (void)checkLocationsPermissions:(BOOL)isLocationEnabled
 {
     if (isLocationEnabled) {
         tilesTimer = [NSTimer scheduledTimerWithTimeInterval:downloadTilesTimeInterval target:self selector:@selector(downloadNeighboringTiles) userInfo:nil repeats:YES];
@@ -312,8 +320,8 @@ static const CLLocationDistance maxDistance = 10 * KILOMETER;
             [announceDistanceTimer invalidate];
         }
     }
-#warning change status label
-    //self.allowAccessLabel.hidden = isLocationEnabled;
+
+    self.statusLabel.text = isLocationEnabled ? @"" : @"Allow location access";
 }
 
 @end
