@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
+        UIApplication.sharedApplication().idleTimerDisabled = true
+        
         SQLAccess.createTableNodes()
         SQLAccess.createTableTiles()
         
