@@ -38,22 +38,6 @@
 		BD0C9F621967388A003A88AC /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F301967388A003A88AC /* FMResultSet.m */; };
 		BD0C9F651967388A003A88AC /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F341967388A003A88AC /* SMXMLDocument.m */; };
 		BD0C9F661967388A003A88AC /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F341967388A003A88AC /* SMXMLDocument.m */; };
-		BD0C9F671967388A003A88AC /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F371967388A003A88AC /* AFNetworkActivityIndicatorManager.m */; };
-		BD0C9F681967388A003A88AC /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F371967388A003A88AC /* AFNetworkActivityIndicatorManager.m */; };
-		BD0C9F691967388A003A88AC /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F391967388A003A88AC /* UIActivityIndicatorView+AFNetworking.m */; };
-		BD0C9F6A1967388A003A88AC /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F391967388A003A88AC /* UIActivityIndicatorView+AFNetworking.m */; };
-		BD0C9F6B1967388A003A88AC /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F3B1967388A003A88AC /* UIAlertView+AFNetworking.m */; };
-		BD0C9F6C1967388A003A88AC /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F3B1967388A003A88AC /* UIAlertView+AFNetworking.m */; };
-		BD0C9F6D1967388A003A88AC /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F3D1967388A003A88AC /* UIButton+AFNetworking.m */; };
-		BD0C9F6E1967388A003A88AC /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F3D1967388A003A88AC /* UIButton+AFNetworking.m */; };
-		BD0C9F6F1967388A003A88AC /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F3F1967388A003A88AC /* UIImageView+AFNetworking.m */; };
-		BD0C9F701967388A003A88AC /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F3F1967388A003A88AC /* UIImageView+AFNetworking.m */; };
-		BD0C9F711967388A003A88AC /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F421967388A003A88AC /* UIProgressView+AFNetworking.m */; };
-		BD0C9F721967388A003A88AC /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F421967388A003A88AC /* UIProgressView+AFNetworking.m */; };
-		BD0C9F731967388A003A88AC /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F441967388A003A88AC /* UIRefreshControl+AFNetworking.m */; };
-		BD0C9F741967388A003A88AC /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F441967388A003A88AC /* UIRefreshControl+AFNetworking.m */; };
-		BD0C9F751967388A003A88AC /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F461967388A003A88AC /* UIWebView+AFNetworking.m */; };
-		BD0C9F761967388A003A88AC /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F461967388A003A88AC /* UIWebView+AFNetworking.m */; };
 		BD0C9F7B196738C0003A88AC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */; };
 		BD0C9F7D1967505B003A88AC /* OSMTileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F7C1967505B003A88AC /* OSMTileTests.swift */; };
 		BD0C9F7F196750D5003A88AC /* OSMElementsParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F7E196750D5003A88AC /* OSMElementsParserTests.swift */; };
@@ -63,7 +47,6 @@
 		BD2EB9BC1966F0E600C8DEDD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */; };
 		BD536AAB196A7E1B0017345D /* OSMBoundingBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */; };
 		BD66797E19B4A6BA00DFB53F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD66797D19B4A6BA00DFB53F /* MainViewController.swift */; };
-		BD7CC66F1994D9740068ABDB /* odessa.osm.bz2 in Resources */ = {isa = PBXBuildFile; fileRef = BD7CC66E1994D9740068ABDB /* odessa.osm.bz2 */; };
 		BD7D7FE2199A4D690069A19D /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD5199A4D690069A19D /* Calculations.swift */; };
 		BD7D7FE3199A4D690069A19D /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD5199A4D690069A19D /* Calculations.swift */; };
 		BD7D7FE4199A4D690069A19D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD6199A4D690069A19D /* Constants.swift */; };
@@ -103,8 +86,6 @@
 		BDBFD5B21975325B0088F1CB /* CalculationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBFD5B11975325B0088F1CB /* CalculationsTests.swift */; };
 		BDC820FA199243F60055ABBE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC820F9199243F60055ABBE /* SettingsViewController.swift */; };
 		BDD89B85195B095F0020ACA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD89B84195B095F0020ACA7 /* AVFoundation.framework */; };
-		BDFB7460198FCDD700D1E113 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = BDFB745E198FCDD700D1E113 /* settings.png */; };
-		BDFB7461198FCDD700D1E113 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BDFB745F198FCDD700D1E113 /* settings@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,23 +168,6 @@
 		BD0C9F301967388A003A88AC /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		BD0C9F331967388A003A88AC /* SMXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMXMLDocument.h; sourceTree = "<group>"; };
 		BD0C9F341967388A003A88AC /* SMXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMXMLDocument.m; sourceTree = "<group>"; };
-		BD0C9F361967388A003A88AC /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
-		BD0C9F371967388A003A88AC /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
-		BD0C9F381967388A003A88AC /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
-		BD0C9F391967388A003A88AC /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
-		BD0C9F3A1967388A003A88AC /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
-		BD0C9F3B1967388A003A88AC /* UIAlertView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+AFNetworking.m"; sourceTree = "<group>"; };
-		BD0C9F3C1967388A003A88AC /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AFNetworking.h"; sourceTree = "<group>"; };
-		BD0C9F3D1967388A003A88AC /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AFNetworking.m"; sourceTree = "<group>"; };
-		BD0C9F3E1967388A003A88AC /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
-		BD0C9F3F1967388A003A88AC /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		BD0C9F401967388A003A88AC /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+AFNetworking.h"; sourceTree = "<group>"; };
-		BD0C9F411967388A003A88AC /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
-		BD0C9F421967388A003A88AC /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
-		BD0C9F431967388A003A88AC /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
-		BD0C9F441967388A003A88AC /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
-		BD0C9F451967388A003A88AC /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
-		BD0C9F461967388A003A88AC /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		BD0C9F7C1967505B003A88AC /* OSMTileTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMTileTests.swift; sourceTree = "<group>"; };
 		BD0C9F7E196750D5003A88AC /* OSMElementsParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMElementsParserTests.swift; sourceTree = "<group>"; };
 		BD0C9F8019675336003A88AC /* OSMWayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMWayTests.swift; sourceTree = "<group>"; };
@@ -212,7 +176,6 @@
 		BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMBoundingBoxTests.swift; sourceTree = "<group>"; };
 		BD66797D19B4A6BA00DFB53F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		BD7CC66E1994D9740068ABDB /* odessa.osm.bz2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = odessa.osm.bz2; sourceTree = "<group>"; };
 		BD7D7FD5199A4D690069A19D /* Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
 		BD7D7FD6199A4D690069A19D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BD7D7FD7199A4D690069A19D /* ExtractDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtractDownloader.swift; sourceTree = "<group>"; };
@@ -242,8 +205,6 @@
 		BDBFD5B11975325B0088F1CB /* CalculationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculationsTests.swift; sourceTree = "<group>"; };
 		BDC820F9199243F60055ABBE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BDD89B84195B095F0020ACA7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		BDFB745E198FCDD700D1E113 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
-		BDFB745F198FCDD700D1E113 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,12 +238,9 @@
 				BD7D8007199A504D0069A19D /* empty.osm */,
 				BD7D8008199A504D0069A19D /* map.osm */,
 				BD7D7FFA199A4DCD0069A19D /* SwiftyJSON */,
-				BD7CC66E1994D9740068ABDB /* odessa.osm.bz2 */,
-				BDFB745D198FCDD700D1E113 /* Images */,
 				BD0C9F111967388A003A88AC /* AFNetworking */,
 				BD0C9F251967388A003A88AC /* fmdb */,
 				BD0C9F321967388A003A88AC /* SMXMLDocument */,
-				BD0C9F351967388A003A88AC /* UIKit+AFNetworking */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -338,30 +296,6 @@
 				BD0C9F341967388A003A88AC /* SMXMLDocument.m */,
 			);
 			path = SMXMLDocument;
-			sourceTree = "<group>";
-		};
-		BD0C9F351967388A003A88AC /* UIKit+AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				BD0C9F361967388A003A88AC /* AFNetworkActivityIndicatorManager.h */,
-				BD0C9F371967388A003A88AC /* AFNetworkActivityIndicatorManager.m */,
-				BD0C9F381967388A003A88AC /* UIActivityIndicatorView+AFNetworking.h */,
-				BD0C9F391967388A003A88AC /* UIActivityIndicatorView+AFNetworking.m */,
-				BD0C9F3A1967388A003A88AC /* UIAlertView+AFNetworking.h */,
-				BD0C9F3B1967388A003A88AC /* UIAlertView+AFNetworking.m */,
-				BD0C9F3C1967388A003A88AC /* UIButton+AFNetworking.h */,
-				BD0C9F3D1967388A003A88AC /* UIButton+AFNetworking.m */,
-				BD0C9F3E1967388A003A88AC /* UIImageView+AFNetworking.h */,
-				BD0C9F3F1967388A003A88AC /* UIImageView+AFNetworking.m */,
-				BD0C9F401967388A003A88AC /* UIKit+AFNetworking.h */,
-				BD0C9F411967388A003A88AC /* UIProgressView+AFNetworking.h */,
-				BD0C9F421967388A003A88AC /* UIProgressView+AFNetworking.m */,
-				BD0C9F431967388A003A88AC /* UIRefreshControl+AFNetworking.h */,
-				BD0C9F441967388A003A88AC /* UIRefreshControl+AFNetworking.m */,
-				BD0C9F451967388A003A88AC /* UIWebView+AFNetworking.h */,
-				BD0C9F461967388A003A88AC /* UIWebView+AFNetworking.m */,
-			);
-			path = "UIKit+AFNetworking";
 			sourceTree = "<group>";
 		};
 		BD34A42C1990BA9F0058C22A /* Custom classes */ = {
@@ -464,15 +398,6 @@
 				BDB58992195888670090E178 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		BDFB745D198FCDD700D1E113 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				BDFB745E198FCDD700D1E113 /* settings.png */,
-				BDFB745F198FCDD700D1E113 /* settings@2x.png */,
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 		BDFFA009195C367700288E6D /* Frameworks */ = {
@@ -582,13 +507,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD7D800B199A504D0069A19D /* map.osm in Resources */,
-				BDFB7460198FCDD700D1E113 /* settings.png in Resources */,
 				BDBAD836199BC34A00BA69EC /* poi.json in Resources */,
-				BDFB7461198FCDD700D1E113 /* settings@2x.png in Resources */,
 				BDB58986195888670090E178 /* Main.storyboard in Resources */,
 				BDB58988195888670090E178 /* Images.xcassets in Resources */,
 				BD7D8009199A504D0069A19D /* empty.osm in Resources */,
-				BD7CC66F1994D9740068ABDB /* odessa.osm.bz2 in Resources */,
 				BD9EEF4619924A9200BC8A02 /* Settings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -611,9 +533,6 @@
 			files = (
 				BD0C9F4F1967388A003A88AC /* AFSecurityPolicy.m in Sources */,
 				BD0C9F591967388A003A88AC /* FMDatabase.m in Sources */,
-				BD0C9F6D1967388A003A88AC /* UIButton+AFNetworking.m in Sources */,
-				BD0C9F751967388A003A88AC /* UIWebView+AFNetworking.m in Sources */,
-				BD0C9F711967388A003A88AC /* UIProgressView+AFNetworking.m in Sources */,
 				BD7D7FF2199A4D690069A19D /* OSMTile.swift in Sources */,
 				BD7D7FE4199A4D690069A19D /* Constants.swift in Sources */,
 				BD7D7FF6199A4D690069A19D /* OSMWay.swift in Sources */,
@@ -621,14 +540,12 @@
 				BD0C9F4D1967388A003A88AC /* AFNetworkReachabilityManager.m in Sources */,
 				BD7D7FF4199A4D690069A19D /* OSMTilesDownloader.swift in Sources */,
 				BD0C9F5D1967388A003A88AC /* FMDatabasePool.m in Sources */,
-				BD0C9F6F1967388A003A88AC /* UIImageView+AFNetworking.m in Sources */,
 				BD7D7FF8199A4D690069A19D /* SQLAccess.swift in Sources */,
 				BD0C9F511967388A003A88AC /* AFURLConnectionOperation.m in Sources */,
 				BD0C9F471967388A003A88AC /* AFHTTPRequestOperation.m in Sources */,
 				BD0C9F4B1967388A003A88AC /* AFHTTPSessionManager.m in Sources */,
 				BD0C9F531967388A003A88AC /* AFURLRequestSerialization.m in Sources */,
 				BD0C9F651967388A003A88AC /* SMXMLDocument.m in Sources */,
-				BD0C9F691967388A003A88AC /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				BD7D7FEC199A4D690069A19D /* OSMBoundingBox.swift in Sources */,
 				BD0C9F571967388A003A88AC /* AFURLSessionManager.m in Sources */,
 				BD0C9F491967388A003A88AC /* AFHTTPRequestOperationManager.m in Sources */,
@@ -637,15 +554,12 @@
 				BD7D7FE2199A4D690069A19D /* Calculations.swift in Sources */,
 				BD0C9F551967388A003A88AC /* AFURLResponseSerialization.m in Sources */,
 				BD0C9F611967388A003A88AC /* FMResultSet.m in Sources */,
-				BD0C9F731967388A003A88AC /* UIRefreshControl+AFNetworking.m in Sources */,
 				BDC820FA199243F60055ABBE /* SettingsViewController.swift in Sources */,
-				BD0C9F6B1967388A003A88AC /* UIAlertView+AFNetworking.m in Sources */,
 				BD7D7FEE199A4D690069A19D /* OSMElementsParser.swift in Sources */,
 				BD0C9F5F1967388A003A88AC /* FMDatabaseQueue.m in Sources */,
 				BD7D7FEA199A4D690069A19D /* NSData+bz2.m in Sources */,
 				BD0C9F5B1967388A003A88AC /* FMDatabaseAdditions.m in Sources */,
 				BD7D7FE6199A4D690069A19D /* ExtractDownloader.swift in Sources */,
-				BD0C9F671967388A003A88AC /* AFNetworkActivityIndicatorManager.m in Sources */,
 				BD7D7FE8199A4D690069A19D /* GEOJSONParser.swift in Sources */,
 				BD66797E19B4A6BA00DFB53F /* MainViewController.swift in Sources */,
 			);
@@ -658,26 +572,19 @@
 				BD0C9F541967388A003A88AC /* AFURLRequestSerialization.m in Sources */,
 				BD0C9F521967388A003A88AC /* AFURLConnectionOperation.m in Sources */,
 				BD7D7FF5199A4D690069A19D /* OSMTilesDownloader.swift in Sources */,
-				BD0C9F741967388A003A88AC /* UIRefreshControl+AFNetworking.m in Sources */,
-				BD0C9F6E1967388A003A88AC /* UIButton+AFNetworking.m in Sources */,
-				BD0C9F721967388A003A88AC /* UIProgressView+AFNetworking.m in Sources */,
 				BD0C9F501967388A003A88AC /* AFSecurityPolicy.m in Sources */,
 				BD7D7FF7199A4D690069A19D /* OSMWay.swift in Sources */,
 				BD0C9F5A1967388A003A88AC /* FMDatabase.m in Sources */,
 				BDBFD5B21975325B0088F1CB /* CalculationsTests.swift in Sources */,
 				BD0C9F7D1967505B003A88AC /* OSMTileTests.swift in Sources */,
 				BD7D7FE5199A4D690069A19D /* Constants.swift in Sources */,
-				BD0C9F6C1967388A003A88AC /* UIAlertView+AFNetworking.m in Sources */,
 				BD7D7FF9199A4D690069A19D /* SQLAccess.swift in Sources */,
 				BD0C9F481967388A003A88AC /* AFHTTPRequestOperation.m in Sources */,
 				BD0C9F601967388A003A88AC /* FMDatabaseQueue.m in Sources */,
 				BD0C9F621967388A003A88AC /* FMResultSet.m in Sources */,
 				BD7D7FE3199A4D690069A19D /* Calculations.swift in Sources */,
-				BD0C9F701967388A003A88AC /* UIImageView+AFNetworking.m in Sources */,
 				BD536AAB196A7E1B0017345D /* OSMBoundingBoxTests.swift in Sources */,
 				BD0C9F581967388A003A88AC /* AFURLSessionManager.m in Sources */,
-				BD0C9F6A1967388A003A88AC /* UIActivityIndicatorView+AFNetworking.m in Sources */,
-				BD0C9F681967388A003A88AC /* AFNetworkActivityIndicatorManager.m in Sources */,
 				BD7D7FE9199A4D690069A19D /* GEOJSONParser.swift in Sources */,
 				BD0C9F8119675336003A88AC /* OSMWayTests.swift in Sources */,
 				BD0C9F561967388A003A88AC /* AFURLResponseSerialization.m in Sources */,
@@ -693,7 +600,6 @@
 				BD0C9F4A1967388A003A88AC /* AFHTTPRequestOperationManager.m in Sources */,
 				BD0C9F5E1967388A003A88AC /* FMDatabasePool.m in Sources */,
 				BD7D7FE7199A4D690069A19D /* ExtractDownloader.swift in Sources */,
-				BD0C9F761967388A003A88AC /* UIWebView+AFNetworking.m in Sources */,
 				BD7D7FEB199A4D690069A19D /* NSData+bz2.m in Sources */,
 				BD0C9F4E1967388A003A88AC /* AFNetworkReachabilityManager.m in Sources */,
 				BD0C9F071967332A003A88AC /* OSMNodeTests.swift in Sources */,
