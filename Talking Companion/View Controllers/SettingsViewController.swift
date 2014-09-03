@@ -12,12 +12,17 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
 
     @IBOutlet var updatingIntervalPickerView: UIPickerView?
     
-    var intervalsLabels = [String]()
-    var intervalsDutation = [Int]()
-    var selectedRow = 0
+    //private let downloader = ExtractDownloader(delegate: self)
+    private var downloader:ExtractDownloader?
+    
+    private var intervalsLabels = [String]()
+    private var intervalsDutation = [Int]()
+    private var selectedRow = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        downloader = ExtractDownloader(delegate: self)
         
         let settings = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Settings", ofType: "plist")!)
         self.intervalsDutation = settings.objectForKey("Durations") as [Int]
@@ -47,41 +52,61 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         }
     }
     
-    @IBAction func downloadOSMExtractButtonPressed() {
-        let downloader = ExtractDownloader(delegate: self)
-        downloader.downloadCity("odessa")
+    @IBAction func downloadExtractBerdyansk() {
+        downloader?.downloadExtractForCity("berdyansk")
     }
     
-    @IBAction func downloadJSONExtractButtonPressed(sender: AnyObject) {
-        let path = NSBundle.mainBundle().pathForResource("poi", ofType: "json")
-        let data = NSData(contentsOfFile: path!)
-        let jsonParser = GEOJSONParser(jsonData: data)
-        
-        NSLog("start parsing json")
-        jsonParser.parseWithComplitionHandler() { nodes, error in
-            if error != nil {
-                NSLog("geo json parsing error: \(error!)")
-            }
-            else {
-                NSLog("json parsing. finished with count of nodes: \(nodes.count)")
-                
-                for node in nodes {
-                    let tile = OSMTile(latitude: node.location.coordinate.latitude, longitude: node.location.coordinate.longitude, zoom: 16)
-                    var tileId = SQLAccess.saveTile(tile)
-                    if tileId == 0 {
-                        tileId = SQLAccess.idOfTile(tile)
-                    }
-                    SQLAccess.saveNodes([node], forTileId: tileId)
-                }
-                NSLog("json parsing. nodes saved in db")
-            }
-        }
+    @IBAction func downloadExtractPoltava() {
+        downloader?.downloadExtractForCity("poltava")
     }
+    
+    @IBAction func downloadExtractZaporizhia() {
+        downloader?.downloadExtractForCity("zaporizhia")
+        
+        
+    }
+    
+//    @IBAction func downloadJSONExtractButtonPressed(sender: AnyObject) {
+//        let path = NSBundle.mainBundle().pathForResource("poi", ofType: "json")
+//        let data = NSData(contentsOfFile: path!)
+//        let jsonParser = GEOJSONParser(jsonData: data)
+//        
+//        NSLog("start parsing json")
+//        jsonParser.parseWithComplitionHandler() { nodes, error in
+//            if error != nil {
+//                NSLog("geo json parsing error: \(error!)")
+//            }
+//            else {
+//                NSLog("json parsing. finished with count of nodes: \(nodes.count)")
+//                
+//                for node in nodes {
+//                    let tile = OSMTile(latitude: node.location.coordinate.latitude, longitude: node.location.coordinate.longitude, zoom: 16)
+//                    var tileId = SQLAccess.saveTile(tile)
+//                    if tileId == 0 {
+//                        tileId = SQLAccess.idOfTile(tile)
+//                    }
+//                    SQLAccess.saveNodes([node], forTileId: tileId)
+//                }
+//                NSLog("json parsing. nodes saved in db")
+//            }
+//        }
+//    }
     
     // MARK: - ExtractDownloader delegate
     
     func extractDownloaderFinished(nodes:[OSMNode]) {
         NSLog("osm extract odessa nodes: \(nodes.count)")
+    }
+    
+    func extractDownloaderFailed(error:NSError) {
+        var msg = "Something has gone wrong"
+        if error.code == 404 {
+            msg = "Extract for this city not found"
+        }
+        
+        let alert = UIAlertController(title: "Error", message: msg, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     // MARK: - UIPickerView delegate

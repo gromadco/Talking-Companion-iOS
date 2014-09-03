@@ -9,10 +9,15 @@
 import UIKit
 
 let OSMExtractURL = "https://s3.amazonaws.com/metro-extracts.mapzen.com/"
-let OSMExtractFormat = "osm.bz2"
+let OSMExtractFormat = ".osm.bz2"
+
+let JSONExtractURL = "download.locograph.com/city/"
+let JSONExtractFormat = ".json.bz2"
+
 
 @objc protocol ExtractDownloaderDelegate:NSObjectProtocol {
     func extractDownloaderFinished(nodes:[OSMNode])
+    func extractDownloaderFailed(error:NSError)
 }
 
 class ExtractDownloader: NSObject {
@@ -24,7 +29,10 @@ class ExtractDownloader: NSObject {
     }
     
     func downloadCity(city:String) {
-        let urlString = "\(OSMExtractURL)\(city).\(OSMExtractFormat)"
+        let urlString = "\(OSMExtractURL)\(city)\(OSMExtractFormat)"
+        
+        //[client.parameterEncoding = AFJSONParameterEncoding;
+        //[client setDefaultHeader:@"Accept" value:@"text/json"];
         
         // downloading extract
         let request = NSURLRequest(URL: NSURL(string: urlString))
@@ -45,5 +53,20 @@ class ExtractDownloader: NSObject {
         parser.parseWithComplitionHandler() { nodes, _ in
             self.delegate.extractDownloaderFinished(nodes)
         };
+    }
+    
+    func downloadExtractForCity(city:String) {
+        let urlString = "\(JSONExtractURL)\(city)\(JSONExtractFormat)"
+        
+        // downloading extract
+        let request = NSURLRequest(URL: NSURL(string: urlString))
+        var operation = AFHTTPRequestOperation(request: request)
+        operation.setCompletionBlockWithSuccess({ (_, responseObject) in
+
+            },
+            failure: { [unowned self] (operation, error) in
+                self.delegate.extractDownloaderFailed(error)
+            })
+        operation.start()
     }
 }

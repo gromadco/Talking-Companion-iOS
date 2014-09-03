@@ -216,20 +216,42 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5m-J8-ERk">
                                 <rect key="frame" x="20" y="334" width="234" height="30"/>
-                                <state key="normal" title="Download osm extract for Odessa">
+                                <state key="normal" title="Download extract for Berdyansk">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="downloadOSMExtractButtonPressed" destination="Qm4-5I-d3X" eventType="touchUpInside" id="2oa-RT-f7f"/>
+                                    <action selector="downloadExtractBerdyansk" destination="Qm4-5I-d3X" eventType="touchUpInside" id="gmz-oU-WDU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Db3-Rf-Kvx">
                                 <rect key="frame" x="20" y="372" width="233" height="30"/>
-                                <state key="normal" title="Download json extract for Odessa">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="4gs-Zr-jYw"/>
+                                </constraints>
+                                <state key="normal" title="Download extract for Poltava">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="4gs-Zr-jYw"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="4gs-Zr-jYw"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="downloadExtractPoltava" destination="Qm4-5I-d3X" eventType="touchUpInside" id="yhc-pg-YPb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4o-JC-VoP">
+                                <rect key="frame" x="20" y="372" width="233" height="30"/>
+                                <state key="normal" title="Download extract for Zaporizhia">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="downloadJSONExtractButtonPressed:" destination="Qm4-5I-d3X" eventType="touchUpInside" id="ytL-fw-ZbL"/>
+                                    <action selector="downloadExtractZaporizhia" destination="Qm4-5I-d3X" eventType="touchUpInside" id="le5-SK-BRc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -239,15 +261,41 @@
                             <constraint firstItem="wld-pq-Qnn" firstAttribute="top" secondItem="W0U-4d-By5" secondAttribute="bottom" constant="18" id="1eQ-5M-dyh"/>
                             <constraint firstAttribute="trailing" secondItem="HHf-i8-Fd5" secondAttribute="trailing" constant="20" symbolic="YES" id="2ne-ix-pJ5"/>
                             <constraint firstItem="OCC-h3-wfG" firstAttribute="centerX" secondItem="HHf-i8-Fd5" secondAttribute="centerX" id="9ZE-eq-SKB"/>
+                            <constraint firstItem="X4o-JC-VoP" firstAttribute="top" secondItem="Db3-Rf-Kvx" secondAttribute="bottom" constant="8" symbolic="YES" id="PRe-o6-MtU"/>
+                            <constraint firstItem="P5m-J8-ERk" firstAttribute="height" secondItem="X4o-JC-VoP" secondAttribute="height" id="Pw2-1i-KAE"/>
                             <constraint firstItem="Db3-Rf-Kvx" firstAttribute="top" secondItem="P5m-J8-ERk" secondAttribute="bottom" constant="8" symbolic="YES" id="VXf-cb-JWY"/>
+                            <constraint firstItem="Db3-Rf-Kvx" firstAttribute="height" secondItem="P5m-J8-ERk" secondAttribute="height" id="WGg-MI-HqV"/>
                             <constraint firstItem="Db3-Rf-Kvx" firstAttribute="leading" secondItem="P5m-J8-ERk" secondAttribute="leading" id="YdY-AH-K8v"/>
                             <constraint firstItem="P5m-J8-ERk" firstAttribute="leading" secondItem="HHf-i8-Fd5" secondAttribute="leading" id="a2V-er-NOc"/>
+                            <constraint firstItem="X4o-JC-VoP" firstAttribute="leading" secondItem="Db3-Rf-Kvx" secondAttribute="leading" id="egJ-d1-oeh"/>
                             <constraint firstItem="wld-pq-Qnn" firstAttribute="centerX" secondItem="OCC-h3-wfG" secondAttribute="centerX" id="hLO-Pe-I7Z"/>
                             <constraint firstItem="OCC-h3-wfG" firstAttribute="leading" secondItem="82M-KM-CGW" secondAttribute="leading" id="pAw-z8-9g2"/>
                             <constraint firstItem="OCC-h3-wfG" firstAttribute="top" secondItem="wld-pq-Qnn" secondAttribute="bottom" constant="8" symbolic="YES" id="uF1-TG-46a"/>
                             <constraint firstItem="HHf-i8-Fd5" firstAttribute="top" secondItem="OCC-h3-wfG" secondAttribute="bottom" constant="8" symbolic="YES" id="wgG-yJ-bNo"/>
                             <constraint firstItem="HHf-i8-Fd5" firstAttribute="leading" secondItem="82M-KM-CGW" secondAttribute="leading" constant="20" symbolic="YES" id="xNC-Y1-Tle"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="X4o-JC-VoP"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Pw2-1i-KAE"/>
+                                <exclude reference="WGg-MI-HqV"/>
+                                <exclude reference="PRe-o6-MtU"/>
+                                <exclude reference="egJ-d1-oeh"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="X4o-JC-VoP"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Pw2-1i-KAE"/>
+                                <include reference="WGg-MI-HqV"/>
+                                <include reference="PRe-o6-MtU"/>
+                                <include reference="egJ-d1-oeh"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="SPc-If-aAW"/>
                     <connections>

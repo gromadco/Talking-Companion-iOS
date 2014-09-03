@@ -75,8 +75,6 @@ class OSMNode: NSObject {
             
             let rangeRemove = Range<String.Index>(start: advance(type.startIndex, countElements(type)-2), end: type.endIndex)
             type.removeRange(rangeRemove)
-            
-            
         }
         
         return type
