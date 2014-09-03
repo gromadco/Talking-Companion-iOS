@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sEB-TI-qu4">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Closest Place View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="BmU-Cv-VVq">
             <objects>
-                <viewController id="AGt-OD-fCN" customClass="ClosestPlaceViewController" sceneMemberID="viewController">
+                <viewController id="AGt-OD-fCN" customClass="MainViewController" customModule="Talking_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VKJ-Qj-cpM"/>
                         <viewControllerLayoutGuide type="bottom" id="doB-fJ-8JC"/>
@@ -18,22 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="Oyg-zd-hJt" userLabel="Label - Name">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="Oyg-zd-hJt" userLabel="Label - Name">
                                 <rect key="frame" x="20" y="289" width="560" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=regular">
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="24"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="Iln-3L-Nkn" userLabel="Label - type">
-                                <rect key="frame" x="20" y="252" width="560" height="20"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=regular">
-                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="3hK-p1-cHN" userLabel="Label - distance">
@@ -68,6 +58,15 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="ERf-Of-axi">
                                 <rect key="frame" x="20" y="560" width="560" height="20"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="Iln-3L-Nkn" userLabel="Label - type">
+                                <rect key="frame" x="20" y="252" width="560" height="20"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -149,11 +148,11 @@
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="x1D-8D-03N"/>
                     <connections>
-                        <outlet property="distanceLabel" destination="3hK-p1-cHN" id="TSI-FO-Irm"/>
-                        <outlet property="nameLabel" destination="Oyg-zd-hJt" id="S9I-CM-foQ"/>
-                        <outlet property="settingsButton" destination="8Ww-Hb-2od" id="5sN-G3-HAa"/>
-                        <outlet property="statusLabel" destination="ERf-Of-axi" id="Gdb-aR-ERB"/>
-                        <outlet property="typeLabel" destination="Iln-3L-Nkn" id="UWL-nI-lMd"/>
+                        <outlet property="distanceLabel" destination="3hK-p1-cHN" id="8y4-D5-LcL"/>
+                        <outlet property="nameLabel" destination="Oyg-zd-hJt" id="FGC-wK-nTC"/>
+                        <outlet property="settingsButton" destination="8Ww-Hb-2od" id="uwv-qB-GjR"/>
+                        <outlet property="statusLabel" destination="ERf-Of-axi" id="OAP-Cf-nj3"/>
+                        <outlet property="typeLabel" destination="Iln-3L-Nkn" id="hGo-r4-yan"/>
                         <segue destination="Qm4-5I-d3X" kind="show" identifier="Push Settings" id="EiZ-ai-cyc"/>
                         <segue destination="Qm4-5I-d3X" kind="popoverPresentation" identifier="Popover Settings" popoverAnchorView="8Ww-Hb-2od" id="pGS-cc-dEk">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>

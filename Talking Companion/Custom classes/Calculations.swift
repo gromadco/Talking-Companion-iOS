@@ -9,12 +9,34 @@
 import UIKit
 import CoreLocation
 
+
 enum Direction:Int {
-    case front
-    case right
-    case back
-    case left
+    case Front
+    case Right
+    case Back
+    case Left
+    
+    init(angle:Double) {
+        switch angle {
+            case 0 ..< 45: self = .Front
+            case 45 ..< 135: self = .Right
+            case 135 ..< 225: self = .Back
+            case 225 ..< 360: self = .Left
+            default: self = .Front
+        }
+    }
+    
+    var description:String {
+        switch self {
+            case Front: return "in front"
+            case Back:  return "back"
+            case Left:  return "to the left"
+            case Right: return "to the right"
+        }
+    }
 }
+
+// TODO: impelement an OptionType in arguments
 
 class Calculations: NSObject {
     class func thetaForCurrentLocation(currentLocation:CLLocation, previousLocation:CLLocation, placeLocation:CLLocation) -> Double {
@@ -34,25 +56,5 @@ class Calculations: NSObject {
     
     class func radiansToDegrees(radians:Double) -> Double {
         return radians * 180 / M_PI
-    }
-    
-    class func directionForAngle(angle:Double) -> Direction {
-        var direction = Direction.front
-        let angleInt = Int(angle)
-        switch angleInt {
-            case 0 ..< 45:
-                direction = .front
-            case 45 ..< 135:
-                direction = .right
-            case 135 ..< 225:
-                direction = .back
-            case 225 ..< 315:
-                direction = .left
-            case 315 ..< 360:
-                direction = .front
-            default:
-                direction = .front
-        }
-        return direction
     }
 }

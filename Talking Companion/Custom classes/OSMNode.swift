@@ -48,20 +48,38 @@ class OSMNode: NSObject {
     
     // MARK: - Other
     
+    // TODO: check an empty strings
     var type:String {
         var type:String = ""
             
-            if let amenity = self.amenity {
-                type += "\(amenity) "
+        if let amenity = self.amenity {
+            if countElements(amenity) > 0 {
+                type += "\(amenity), "
             }
-            if let operatorName = self.operatorName {
-                type += "\(operatorName) "
+        }
+        if let operatorName = self.operatorName {
+            if countElements(operatorName) > 0 {
+                type += "\(operatorName), "
             }
-            if let shop = self.shop {
-                type += "\(shop) "
+        }
+        if let shop = self.shop {
+            if countElements(shop) > 0 {
+                type += "\(shop), "
             }
+        }
             
-            return type
+        // FIXME: rewrite
+        if countElements(type) > 0 {
+            let rangeReplace = Range<String.Index>(start: type.startIndex, end: type.endIndex)
+            type = type.stringByReplacingOccurrencesOfString("_", withString: " ", options: .CaseInsensitiveSearch, range:rangeReplace)
+            
+            let rangeRemove = Range<String.Index>(start: advance(type.startIndex, countElements(type)-2), end: type.endIndex)
+            type.removeRange(rangeRemove)
+            
+            
+        }
+        
+        return type
     }
     
     func description() -> String {

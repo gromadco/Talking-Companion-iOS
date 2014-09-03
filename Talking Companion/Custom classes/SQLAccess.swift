@@ -8,6 +8,9 @@
 
 import UIKit
 
+// TODO: rename class
+// TODO: insert in table a nil string instead an empty string
+
 let pathToDB = NSHomeDirectory().stringByAppendingPathComponent("Documents").stringByAppendingPathComponent("db.sqlite")
 
 class SQLAccess: NSObject {

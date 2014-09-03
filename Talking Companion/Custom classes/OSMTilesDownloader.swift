@@ -17,6 +17,10 @@ class OSMTilesDownloader: NSObject {
     var leftDownloading = 0
     var delegate:OSMTilesDownloaderDelegate?
     
+    init(delegate:OSMTilesDownloaderDelegate?) {
+        self.delegate = delegate
+    }
+    
     func downloadNeighboringTilesFor(tile centerTile:OSMTile) {
         let tiles:Array<OSMTile> = centerTile.neighboringTiles()
         

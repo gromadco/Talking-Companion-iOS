@@ -48,7 +48,7 @@ static const CLLocationDistance maxDistance = 10 * KILOMETER;
 
 @implementation ClosestPlaceViewController
 
-#pragma mark - View Methonds
+#pragma mark - View Methods
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -197,6 +197,7 @@ static const CLLocationDistance maxDistance = 10 * KILOMETER;
 
 #pragma mark - Place details
 
+// part
 - (void)announceClosestPlace
 {
     double angle = [Calculations thetaForCurrentLocation:currentLocation previousLocation:previousLocation placeLocation:closestPlaceLocation];
@@ -239,13 +240,13 @@ static const CLLocationDistance maxDistance = 10 * KILOMETER;
         direction = @"in front";
     }
     else if (angle >=45 && angle < 135) {
-        direction = @"in the right";
+        direction = @"to the right";
     }
     else if (angle >=135 && angle < 225) {
         direction = @"back";
     }
     else if (angle >=225 && angle < 315) {
-        direction = @"in the left";
+        direction = @"to the left";
     }
     else if (angle >=315 && angle <= 360) {
         direction = @"in front";
