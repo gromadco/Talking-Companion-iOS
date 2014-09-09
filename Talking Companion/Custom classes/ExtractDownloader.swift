@@ -11,7 +11,7 @@ import UIKit
 let OSMExtractURL = "https://s3.amazonaws.com/metro-extracts.mapzen.com/"
 let OSMExtractFormat = ".osm.bz2"
 
-let JSONExtractURL = "download.locograph.com/city/"
+let JSONExtractURL = "http://download.locograph.com/city/"
 let JSONExtractFormat = ".json.bz2"
 
 
@@ -30,10 +30,7 @@ class ExtractDownloader: NSObject {
     
     func downloadCity(city:String) {
         let urlString = "\(OSMExtractURL)\(city)\(OSMExtractFormat)"
-        
-        //[client.parameterEncoding = AFJSONParameterEncoding;
-        //[client setDefaultHeader:@"Accept" value:@"text/json"];
-        
+    
         // downloading extract
         let request = NSURLRequest(URL: NSURL(string: urlString))
         var operation = AFHTTPRequestOperation(request: request)
@@ -48,13 +45,6 @@ class ExtractDownloader: NSObject {
         operation.start()
     }
     
-    func parseXMLFromString(xmlData:NSData) {
-        let parser = OSMElementsParser(xmlData: xmlData)
-        parser.parseWithComplitionHandler() { nodes, _ in
-            self.delegate.extractDownloaderFinished(nodes)
-        };
-    }
-    
     func downloadExtractForCity(city:String) {
         let urlString = "\(JSONExtractURL)\(city)\(JSONExtractFormat)"
         
@@ -62,11 +52,45 @@ class ExtractDownloader: NSObject {
         let request = NSURLRequest(URL: NSURL(string: urlString))
         var operation = AFHTTPRequestOperation(request: request)
         operation.setCompletionBlockWithSuccess({ (_, responseObject) in
-
-            },
-            failure: { [unowned self] (operation, error) in
-                self.delegate.extractDownloaderFailed(error)
-            })
+            NSLog("JSON Extract: extract downloaded")
+            let compressedData = responseObject as NSData
+            let uncompressedData = compressedData.bunzip2()
+            self.parseJSONFromString(uncompressedData)
+        },
+        failure: { [unowned self] (_, error) in
+            NSLog("JSON Extract: \(error)")
+        })
         operation.start()
+    }
+    
+    func parseXMLFromString(xmlData:NSData) {
+        let parser = OSMElementsParser(xmlData: xmlData)
+        parser.parseWithComplitionHandler() { nodes, _ in
+            self.delegate.extractDownloaderFinished(nodes)
+        };
+    }
+    
+    func parseJSONFromString(jsonData:NSData) {
+        NSLog("JSON Extract: parsing started")
+        
+        let jsonParser = GEOJSONParser(jsonData: jsonData)
+        jsonParser.parseWithComplitionHandler() { nodes, error in
+            if error != nil {
+                NSLog("JSON Extract: parsing failed \(error)")
+                self.delegate.extractDownloaderFailed(error!)
+                return
+            }
+            
+            for node in nodes {
+                let tile = OSMTile(latitude: node.location.coordinate.latitude, longitude: node.location.coordinate.longitude, zoom: 16)
+                var tileId = SQLAccess.saveTile(tile)
+                if tileId == 0 {
+                    tileId = SQLAccess.idOfTile(tile)
+                }
+                SQLAccess.saveNodes([node], forTileId: tileId)
+            }
+            NSLog("JSON Extract: parsing finished - \(nodes.count) nodes")
+            self.delegate.extractDownloaderFinished(nodes)
+        }
     }
 }

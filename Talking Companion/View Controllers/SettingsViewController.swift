@@ -12,7 +12,6 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
 
     @IBOutlet var updatingIntervalPickerView: UIPickerView?
     
-    //private let downloader = ExtractDownloader(delegate: self)
     private var downloader:ExtractDownloader?
     
     private var intervalsLabels = [String]()
@@ -53,17 +52,21 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     @IBAction func downloadExtractBerdyansk() {
-        downloader?.downloadExtractForCity("berdyansk")
+        self.downloadCity("berdyansk")
     }
     
     @IBAction func downloadExtractPoltava() {
-        downloader?.downloadExtractForCity("poltava")
+        self.downloadCity("poltava")
     }
     
     @IBAction func downloadExtractZaporizhia() {
-        downloader?.downloadExtractForCity("zaporizhia")
-        
-        
+        self.downloadCity("zaporizhia")
+    }
+    
+    private func downloadCity(city:String) {
+        HUDController.sharedController.contentView = HUDContentView.ProgressView();
+        HUDController.sharedController.show()
+        downloader?.downloadExtractForCity(city)
     }
     
 //    @IBAction func downloadJSONExtractButtonPressed(sender: AnyObject) {
@@ -95,10 +98,11 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     // MARK: - ExtractDownloader delegate
     
     func extractDownloaderFinished(nodes:[OSMNode]) {
-        NSLog("osm extract odessa nodes: \(nodes.count)")
+        HUDController.sharedController.hide(animated: true)
     }
     
     func extractDownloaderFailed(error:NSError) {
+        HUDController.sharedController.hide(animated: true)
         var msg = "Something has gone wrong"
         if error.code == 404 {
             msg = "Extract for this city not found"

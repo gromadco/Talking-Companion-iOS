@@ -10,17 +10,18 @@ import UIKit
 
 class GEOJSONParser: NSObject {
     
-    var jsonData:NSData
+    private let jsonData:NSData
     
     init (jsonData:NSData) {
         self.jsonData = jsonData
+        
     }
     
     func parseWithComplitionHandler(handler:(nodes:[OSMNode], error:NSError?) -> Void) {
         var error:NSError?
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
-            let json = JSONValue(self.jsonData)
+            let json = JSONValue(self.jsonData as NSData!)
             var nodes = [OSMNode]()
             
             if let features = json["features"].array {

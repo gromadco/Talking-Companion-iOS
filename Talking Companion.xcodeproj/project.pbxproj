@@ -86,6 +86,14 @@
 		BDBFD5B21975325B0088F1CB /* CalculationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBFD5B11975325B0088F1CB /* CalculationsTests.swift */; };
 		BDC820FA199243F60055ABBE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC820F9199243F60055ABBE /* SettingsViewController.swift */; };
 		BDD89B85195B095F0020ACA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD89B84195B095F0020ACA7 /* AVFoundation.framework */; };
+		BDE410E519B8986900D5FDA0 /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE410DC19B8986900D5FDA0 /* FrameView.swift */; };
+		BDE410E619B8986900D5FDA0 /* HUDAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE410DD19B8986900D5FDA0 /* HUDAssets.swift */; };
+		BDE410E719B8986900D5FDA0 /* HUDContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE410DE19B8986900D5FDA0 /* HUDContentView.swift */; };
+		BDE410E819B8986900D5FDA0 /* HUDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE410DF19B8986900D5FDA0 /* HUDController.swift */; };
+		BDE410E919B8986900D5FDA0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDE410E019B8986900D5FDA0 /* Images.xcassets */; };
+		BDE410EA19B8986900D5FDA0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BDE410E119B8986900D5FDA0 /* Info.plist */; };
+		BDE410EB19B8986900D5FDA0 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE410E319B8986900D5FDA0 /* Window.swift */; };
+		BDE410EC19B8986900D5FDA0 /* WindowRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE410E419B8986900D5FDA0 /* WindowRootViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -205,6 +213,15 @@
 		BDBFD5B11975325B0088F1CB /* CalculationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculationsTests.swift; sourceTree = "<group>"; };
 		BDC820F9199243F60055ABBE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BDD89B84195B095F0020ACA7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BDE410DC19B8986900D5FDA0 /* FrameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
+		BDE410DD19B8986900D5FDA0 /* HUDAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDAssets.swift; sourceTree = "<group>"; };
+		BDE410DE19B8986900D5FDA0 /* HUDContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDContentView.swift; sourceTree = "<group>"; };
+		BDE410DF19B8986900D5FDA0 /* HUDController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDController.swift; sourceTree = "<group>"; };
+		BDE410E019B8986900D5FDA0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BDE410E119B8986900D5FDA0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDE410E219B8986900D5FDA0 /* PKHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKHUD.h; sourceTree = "<group>"; };
+		BDE410E319B8986900D5FDA0 /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		BDE410E419B8986900D5FDA0 /* WindowRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowRootViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,13 +251,14 @@
 		BD0C9F101967388A003A88AC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BDE410DB19B8986900D5FDA0 /* PKHUD */,
 				BDBAD834199BC34A00BA69EC /* poi.json */,
 				BD7D8007199A504D0069A19D /* empty.osm */,
 				BD7D8008199A504D0069A19D /* map.osm */,
-				BD7D7FFA199A4DCD0069A19D /* SwiftyJSON */,
 				BD0C9F111967388A003A88AC /* AFNetworking */,
 				BD0C9F251967388A003A88AC /* fmdb */,
 				BD0C9F321967388A003A88AC /* SMXMLDocument */,
+				BD7D7FFA199A4DCD0069A19D /* SwiftyJSON */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -400,6 +418,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BDE410DB19B8986900D5FDA0 /* PKHUD */ = {
+			isa = PBXGroup;
+			children = (
+				BDE410DC19B8986900D5FDA0 /* FrameView.swift */,
+				BDE410DD19B8986900D5FDA0 /* HUDAssets.swift */,
+				BDE410DE19B8986900D5FDA0 /* HUDContentView.swift */,
+				BDE410DF19B8986900D5FDA0 /* HUDController.swift */,
+				BDE410E019B8986900D5FDA0 /* Images.xcassets */,
+				BDE410E119B8986900D5FDA0 /* Info.plist */,
+				BDE410E219B8986900D5FDA0 /* PKHUD.h */,
+				BDE410E319B8986900D5FDA0 /* Window.swift */,
+				BDE410E419B8986900D5FDA0 /* WindowRootViewController.swift */,
+			);
+			path = PKHUD;
+			sourceTree = "<group>";
+		};
 		BDFFA009195C367700288E6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,8 +540,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDE410EA19B8986900D5FDA0 /* Info.plist in Resources */,
 				BD7D800B199A504D0069A19D /* map.osm in Resources */,
 				BDBAD836199BC34A00BA69EC /* poi.json in Resources */,
+				BDE410E919B8986900D5FDA0 /* Images.xcassets in Resources */,
 				BDB58986195888670090E178 /* Main.storyboard in Resources */,
 				BDB58988195888670090E178 /* Images.xcassets in Resources */,
 				BD7D8009199A504D0069A19D /* empty.osm in Resources */,
@@ -533,20 +569,25 @@
 			files = (
 				BD0C9F4F1967388A003A88AC /* AFSecurityPolicy.m in Sources */,
 				BD0C9F591967388A003A88AC /* FMDatabase.m in Sources */,
+				BDE410E619B8986900D5FDA0 /* HUDAssets.swift in Sources */,
 				BD7D7FF2199A4D690069A19D /* OSMTile.swift in Sources */,
 				BD7D7FE4199A4D690069A19D /* Constants.swift in Sources */,
 				BD7D7FF6199A4D690069A19D /* OSMWay.swift in Sources */,
+				BDE410E819B8986900D5FDA0 /* HUDController.swift in Sources */,
 				BD7D7FF0199A4D690069A19D /* OSMNode.swift in Sources */,
 				BD0C9F4D1967388A003A88AC /* AFNetworkReachabilityManager.m in Sources */,
 				BD7D7FF4199A4D690069A19D /* OSMTilesDownloader.swift in Sources */,
 				BD0C9F5D1967388A003A88AC /* FMDatabasePool.m in Sources */,
+				BDE410EB19B8986900D5FDA0 /* Window.swift in Sources */,
 				BD7D7FF8199A4D690069A19D /* SQLAccess.swift in Sources */,
 				BD0C9F511967388A003A88AC /* AFURLConnectionOperation.m in Sources */,
 				BD0C9F471967388A003A88AC /* AFHTTPRequestOperation.m in Sources */,
 				BD0C9F4B1967388A003A88AC /* AFHTTPSessionManager.m in Sources */,
+				BDE410E719B8986900D5FDA0 /* HUDContentView.swift in Sources */,
 				BD0C9F531967388A003A88AC /* AFURLRequestSerialization.m in Sources */,
 				BD0C9F651967388A003A88AC /* SMXMLDocument.m in Sources */,
 				BD7D7FEC199A4D690069A19D /* OSMBoundingBox.swift in Sources */,
+				BDE410E519B8986900D5FDA0 /* FrameView.swift in Sources */,
 				BD0C9F571967388A003A88AC /* AFURLSessionManager.m in Sources */,
 				BD0C9F491967388A003A88AC /* AFHTTPRequestOperationManager.m in Sources */,
 				BD7D7FFC199A4DCD0069A19D /* SwiftyJSON.swift in Sources */,
@@ -562,6 +603,7 @@
 				BD7D7FE6199A4D690069A19D /* ExtractDownloader.swift in Sources */,
 				BD7D7FE8199A4D690069A19D /* GEOJSONParser.swift in Sources */,
 				BD66797E19B4A6BA00DFB53F /* MainViewController.swift in Sources */,
+				BDE410EC19B8986900D5FDA0 /* WindowRootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
