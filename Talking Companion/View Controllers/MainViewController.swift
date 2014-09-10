@@ -48,7 +48,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController.setNavigationBarHidden(true, animated: true)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         
         self.previousLocation = nil
         self.locationManager.startUpdatingLocation()
@@ -72,7 +72,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     }
     
     override func viewWillDisappear(animated: Bool) {
-        self.navigationController.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         super.viewWillDisappear(animated)
     }
     

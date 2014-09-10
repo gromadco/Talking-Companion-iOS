@@ -47,7 +47,7 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
             self.dismissViewControllerAnimated(true, completion: nil)
         }
         else {
-            self.navigationController.popToRootViewControllerAnimated(true)
+            self.navigationController?.popToRootViewControllerAnimated(true)
         }
     }
     
@@ -115,11 +115,11 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     // MARK: - UIPickerView delegate
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int {
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView!, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return self.intervalsLabels.count
     }
     
