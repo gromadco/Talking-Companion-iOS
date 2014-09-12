@@ -16,7 +16,7 @@ class OSMBoundingBox: NSObject {
     let west:Double
     
     var url:String {
-        return "http://api.openstreetmap.org/api/0.6/map?bbox=\(west),\(south),\(east),\(north)"
+        return "\(kOSMBoundingBoxURL)\(west),\(south),\(east),\(north)"
     }
     
     init(tile:OSMTile) {
@@ -30,7 +30,6 @@ class OSMBoundingBox: NSObject {
         if let box = object as? OSMBoundingBox {
             return north == box.north && south == box.south && east == box.east && west == box.west
         }
-        
         return false
     }
 }

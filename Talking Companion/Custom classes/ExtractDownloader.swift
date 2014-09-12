@@ -8,13 +8,6 @@
 
 import UIKit
 
-let OSMExtractURL = "https://s3.amazonaws.com/metro-extracts.mapzen.com/"
-let OSMExtractFormat = ".osm.bz2"
-
-let JSONExtractURL = "http://download.locograph.com/city/"
-let JSONExtractFormat = ".json.bz2"
-
-
 @objc protocol ExtractDownloaderDelegate:NSObjectProtocol {
     func extractDownloaderFinished(nodes:[OSMNode])
     func extractDownloaderFailed(error:NSError)

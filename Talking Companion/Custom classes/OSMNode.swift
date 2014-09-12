@@ -48,7 +48,7 @@ class OSMNode: NSObject {
     
     // MARK: - Other
     
-    // TODO: check an empty strings
+    // TODO: rewrite checking an empty strings
     var type:String {
         var type:String = ""
             

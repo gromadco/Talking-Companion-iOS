@@ -69,32 +69,6 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         downloader?.downloadExtractForCity(city)
     }
     
-//    @IBAction func downloadJSONExtractButtonPressed(sender: AnyObject) {
-//        let path = NSBundle.mainBundle().pathForResource("poi", ofType: "json")
-//        let data = NSData(contentsOfFile: path!)
-//        let jsonParser = GEOJSONParser(jsonData: data)
-//        
-//        NSLog("start parsing json")
-//        jsonParser.parseWithComplitionHandler() { nodes, error in
-//            if error != nil {
-//                NSLog("geo json parsing error: \(error!)")
-//            }
-//            else {
-//                NSLog("json parsing. finished with count of nodes: \(nodes.count)")
-//                
-//                for node in nodes {
-//                    let tile = OSMTile(latitude: node.location.coordinate.latitude, longitude: node.location.coordinate.longitude, zoom: 16)
-//                    var tileId = SQLAccess.saveTile(tile)
-//                    if tileId == 0 {
-//                        tileId = SQLAccess.idOfTile(tile)
-//                    }
-//                    SQLAccess.saveNodes([node], forTileId: tileId)
-//                }
-//                NSLog("json parsing. nodes saved in db")
-//            }
-//        }
-//    }
-    
     // MARK: - ExtractDownloader delegate
     
     func extractDownloaderFinished(nodes:[OSMNode]) {
