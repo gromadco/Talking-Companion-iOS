@@ -11,6 +11,8 @@ import XCTest
 import Talking_Companion
 import CoreLocation
 
+let degreeThreshold = 0.0001
+
 class CalculationsTests: XCTestCase {
     
     func testDirectionRight() {
@@ -19,9 +21,10 @@ class CalculationsTests: XCTestCase {
         let place = CLLocation(latitude: -122.032662, longitude: 37.331556)
 
         let angle = Calculations.thetaForCurrentLocation(current, previousLocation: previous, placeLocation: place)
-        let direction = Calculations.directionForAngle(angle)
+        let direction = Direction(angle: angle)
         
-        XCTAssert(direction == Direction.right)
+        XCTAssert(direction == Direction.Right)
+        XCTAssertTrue(direction.description.rangeOfString("right") != nil)
     }
     
     func testDirectionLeft1() {
@@ -30,9 +33,10 @@ class CalculationsTests: XCTestCase {
         let place = CLLocation(latitude: -122.02902, longitude: 37.332454)
         
         let angle = Calculations.thetaForCurrentLocation(current, previousLocation: previous, placeLocation: place)
-        let direction = Calculations.directionForAngle(angle)
+        let direction = Direction(angle: angle)
         
-        XCTAssert(direction == .left)
+        XCTAssert(direction == .Left)
+        XCTAssertTrue(direction.description.rangeOfString("left") != nil)
     }
     
     func testDirectionLeft2() {
@@ -41,9 +45,9 @@ class CalculationsTests: XCTestCase {
         let place = CLLocation(latitude: -122.08241, longitude: 37.333624)
         
         let angle = Calculations.thetaForCurrentLocation(current, previousLocation: previous, placeLocation: place)
-        let direction = Calculations.directionForAngle(angle)
+        let direction = Direction(angle: angle)
         
-        XCTAssert(direction == .left)
+        XCTAssert(direction == .Left)
     }
 
     func testDirectionBack() {
@@ -52,9 +56,11 @@ class CalculationsTests: XCTestCase {
         let place = CLLocation(latitude: -122.42224216461183, longitude: 37.76813652927959)
         
         let angle = Calculations.thetaForCurrentLocation(current, previousLocation: previous, placeLocation: place)
-        let direction = Calculations.directionForAngle(angle)
+        let direction = Direction(angle: angle)
 
-        XCTAssert(direction == .back)
+        XCTAssert(direction == .Back)
+        XCTAssertTrue(direction.description.rangeOfString("back") != nil)
+
     }
 
     func testDirectionFront() {
@@ -63,9 +69,35 @@ class CalculationsTests: XCTestCase {
         let place = CLLocation(latitude: -122.41745710372925, longitude: 37.76520201072898)
         
         let angle = Calculations.thetaForCurrentLocation(current, previousLocation: previous, placeLocation: place)
-        let direction = Calculations.directionForAngle(angle)
+        let direction = Direction(angle: angle)
         
-        XCTAssert(direction == .front)
+        XCTAssert(direction == .Front)
+        XCTAssertTrue(direction.description.rangeOfString("front") != nil)
+    }
+    
+    func testRadiansToDegrees0() {
+        let degree = Calculations.radiansToDegrees(0)
+        XCTAssertLessThanOrEqual(abs(degree - 0), coordinatesThreshold)
+    }
+    
+    func testRadiansToDegrees45() {
+        let degree = Calculations.radiansToDegrees(0.25 * M_PI)
+        XCTAssertLessThanOrEqual(abs(degree - 45), coordinatesThreshold)
+    }
+    
+    func testRadiansToDegrees90() {
+        let degree = Calculations.radiansToDegrees(0.5 * M_PI)
+        XCTAssertLessThanOrEqual(abs(degree - 90), coordinatesThreshold)
+    }
+    
+    func testRadiansToDegrees180() {
+        let degree = Calculations.radiansToDegrees(1 * M_PI)
+        XCTAssertLessThanOrEqual(abs(degree - 180), coordinatesThreshold)
+    }
+    
+    func testRadiansToDegrees360() {
+        let degree = Calculations.radiansToDegrees(2 * M_PI)
+        XCTAssertLessThanOrEqual(abs(degree - 360), coordinatesThreshold)
     }
 }
  
