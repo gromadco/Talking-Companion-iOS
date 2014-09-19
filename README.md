@@ -1,6 +1,6 @@
 # Talking Companion
 
-An app that describes places nearby. 
+An app that announces places nearby. 
 
 ## How to Build
 
