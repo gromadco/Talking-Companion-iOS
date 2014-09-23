@@ -25,9 +25,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string></string>
+	<string>This will be used to obtain your location.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>This will be used to obtain your location.</string>
 	<key>OSMDefaultZoom</key>
 	<integer>16</integer>
 	<key>UIBackgroundModes</key>

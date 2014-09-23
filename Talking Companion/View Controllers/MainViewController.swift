@@ -79,8 +79,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     func loadLocationManager() {
         self.locationManager.delegate = self;
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        // TODO: detect iOS 8
-        //self.locationManager.requestAlwaysAuthorization()
+        if UIDevice.currentDevice().systemVersion.doubleValue > 7 {
+            self.locationManager.requestAlwaysAuthorization()
+        }
         self.locationManager.startUpdatingLocation()
     }
     
@@ -244,17 +245,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus)
     {
         NSLog("location manager status: \(status.toRaw())");
-        
-        //let locationEnabled = !(status != .Denied && status != .NotDetermined)
-        var locationEnabled = false
-        if status == .Denied || status == .NotDetermined {
-            locationEnabled = false;
-        }
-        else {
-            locationEnabled = true;
-        }
-        
-        self.checkLocationsPermissions(locationEnabled)
+        self.checkLocationsPermissions(CLLocationManager.locationServicesEnabled())
     }
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!)
