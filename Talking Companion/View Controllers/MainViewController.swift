@@ -206,8 +206,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         }
         self.previousLocation = currentLocation
         
-        if closestPlace?.isAnnounced == false {
-            self.speakPlace(closestPlace!, distance: distanceToClosestPlace)
+        if closestPlace!.isAnnounced == false {
+            self.speakPlace(closestPlace!, distance: distance);
         }
         
         self.nameLabel.text = closestPlace!.name
@@ -215,15 +215,13 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         self.typeLabel.text = closestPlace!.type
     }
     
-    func speakPlace(place:OSMNode, distance:CLLocationDistance) {
-        if distance > 0 {
-            let placeString = "Closest place is \(place.name), \(place.type) with distance \(distance) m"
-            let utterance = AVSpeechUtterance(string: placeString)
-            synth.speakUtterance(utterance)
-            place.announce()
-            
-            NSLog("announce place \"\(placeString)\"")
-        }
+    func speakPlace(place:OSMNode, distance:String) {
+        let placeString = "Closest place is \(place.name!), \(place.type) with distance \(distance) "
+        let utterance = AVSpeechUtterance(string: placeString)
+        synth.speakUtterance(utterance)
+        place.announce()
+        
+        NSLog("announce place \"\(placeString)\"")
     }
     
     // MARK: - CLLocationManager Delegate
