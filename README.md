@@ -9,4 +9,6 @@ An app that announces places nearby.
 3. Launch "Talking Companion.xcodeproj".
 4. Run the project (Cmd + R).
 
+## Beta testers
 
+If you want to become a beta tester please get in touch with Artem or Sergey.
