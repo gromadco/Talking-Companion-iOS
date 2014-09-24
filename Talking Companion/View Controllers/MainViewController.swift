@@ -79,7 +79,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     func loadLocationManager() {
         self.locationManager.delegate = self;
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        if UIDevice.currentDevice().systemVersion.doubleValue > 7 {
+        if (self.locationManager.respondsToSelector("requestAlwaysAuthorization")) {
             self.locationManager.requestAlwaysAuthorization()
         }
         self.locationManager.startUpdatingLocation()
