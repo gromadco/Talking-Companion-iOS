@@ -9,12 +9,13 @@
 import Foundation
 
 // MARK: - Notifications
+
 let kUpdatingInterval = "UpdatingInterval"
 let kUpdatingIntervalNotification = "UpdatingIntervalNotification"
 
 // MARK: - Network
 
-let kOSMBoundingBoxURL = "http://api.openstreetmap.org/api/0.6/map?bbox="
+let OSMBoundingBoxURL = "http://api.openstreetmap.org/api/0.6/map?bbox="
 
 let OSMExtractURL = "https://s3.amazonaws.com/metro-extracts.mapzen.com/"
 let OSMExtractFormat = ".osm.bz2"

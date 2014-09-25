@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-let oneDay:NSTimeInterval = 60*60*24
+let kOneDay:NSTimeInterval = 60*60*24
 
 class OSMNode: NSObject {
     
@@ -20,12 +20,12 @@ class OSMNode: NSObject {
     var announcedDate:NSDate?
     var isAnnounced:Bool {
         get {
-            if announcedDate? == nil {
+            if announcedDate == nil {
                 return false
             }
             
-            var announcedInterval = NSDate.date().timeIntervalSinceDate(announcedDate!)
-            if announcedInterval > oneDay {
+            let announcedInterval = NSDate.date().timeIntervalSinceDate(announcedDate!)
+            if announcedInterval > kOneDay {
                 return false;
             }
             return true;
@@ -88,7 +88,6 @@ class OSMNode: NSObject {
     func announce() {
         NSLog("node has been announced")
         self.announcedDate = NSDate.date()
-        // FIXME: - Make the element as base a class for node and way classes
-        //SQLAccess.updateNode(self)
+        SQLAccess.updateNode(self)
     }
 }

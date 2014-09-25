@@ -8,15 +8,15 @@
 
 import UIKit
 
-// bounding box for downloading contains OSM elements
-class OSMBoundingBox: NSObject {
+/// A bounding box for downloading contains OSM elements.
+class OSMBoundingBox: NSObject, Equatable {
     let north:Double
     let south:Double
     let east:Double
     let west:Double
     
     var url:String {
-        return "\(kOSMBoundingBoxURL)\(west),\(south),\(east),\(north)"
+        return "\(OSMBoundingBoxURL)\(west),\(south),\(east),\(north)"
     }
     
     init(tile:OSMTile) {
@@ -28,8 +28,12 @@ class OSMBoundingBox: NSObject {
     
     override func isEqual(object: AnyObject!) -> Bool {
         if let box = object as? OSMBoundingBox {
-            return north == box.north && south == box.south && east == box.east && west == box.west
+            return self == box
         }
         return false
     }
+}
+
+func == (lhs: OSMBoundingBox, rhs: OSMBoundingBox) -> Bool {
+    return lhs.north == rhs.north && lhs.south == rhs.south && lhs.east == rhs.east && lhs.west == rhs.west
 }

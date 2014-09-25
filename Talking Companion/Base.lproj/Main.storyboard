@@ -232,7 +232,6 @@
                                 <state key="normal" title="Download extract for Poltava">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact"/>
                                 <connections>
                                     <action selector="downloadExtractPoltava" destination="Qm4-5I-d3X" eventType="touchUpInside" id="yhc-pg-YPb"/>
                                 </connections>
@@ -266,7 +265,6 @@
                             <constraint firstItem="HHf-i8-Fd5" firstAttribute="top" secondItem="OCC-h3-wfG" secondAttribute="bottom" constant="8" symbolic="YES" id="wgG-yJ-bNo"/>
                             <constraint firstItem="HHf-i8-Fd5" firstAttribute="leading" secondItem="82M-KM-CGW" secondAttribute="leading" constant="20" symbolic="YES" id="xNC-Y1-Tle"/>
                         </constraints>
-                        <variation key="widthClass=compact"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="SPc-If-aAW"/>
                     <connections>

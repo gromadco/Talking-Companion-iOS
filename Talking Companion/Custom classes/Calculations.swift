@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 
+let kMaxAngle = 360.0
 
 enum Direction:Int {
     case Front
@@ -17,7 +18,7 @@ enum Direction:Int {
     case Left
     
     init(angle:Double) {
-        switch angle {
+        switch angle%kMaxAngle {
             case 0 ..< 45: self = .Front
             case 45 ..< 135: self = .Right
             case 135 ..< 225: self = .Back
@@ -36,7 +37,7 @@ enum Direction:Int {
     }
 }
 
-// TODO: impelement an OptionType in arguments
+// TODO: impelement optional values as arguments
 
 class Calculations: NSObject {
     class func thetaForCurrentLocation(currentLocation:CLLocation, previousLocation:CLLocation, placeLocation:CLLocation) -> Double {
