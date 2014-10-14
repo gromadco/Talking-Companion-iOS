@@ -22,7 +22,7 @@ enum Direction:Int {
             case 0 ..< 45: self = .Front
             case 45 ..< 135: self = .Right
             case 135 ..< 225: self = .Back
-            case 225 ..< 360: self = .Left
+            case 225 ..< 315: self = .Left
             default: self = .Front
         }
     }
