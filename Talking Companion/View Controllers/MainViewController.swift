@@ -13,8 +13,8 @@ import AVFoundation
 let kDownloadTilesTimeInterval:NSTimeInterval = 5 // 60
 let kHideSettingsButtonInterval:NSTimeInterval = 10
 let kDefaultZoom = 16
-let KILOMETER = 1000
-let maxDistance:CLLocationDistance = CLLocationDistance(10 * KILOMETER)
+let kKilometer = 1000
+let kMaxDistance:CLLocationDistance = CLLocationDistance(10 * kKilometer)
 
 class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesDownloaderDelegate {
     
@@ -184,11 +184,11 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         closestPlaceLocation = closestPlace!.location
         
         var distance = ""
-        if distanceToClosestPlace > maxDistance {
-            distance = "over \(Int(maxDistance) / KILOMETER) km";
+        if distanceToClosestPlace > kMaxDistance {
+            distance = "over \(Int(kMaxDistance) / kKilometer) km";
         }
-        else if distanceToClosestPlace > Double(KILOMETER) {
-            distance = NSString(format: "%.1lf km", distanceToClosestPlace / Double(KILOMETER))
+        else if distanceToClosestPlace > Double(kKilometer) {
+            distance = NSString(format: "%.1lf km", distanceToClosestPlace / Double(kKilometer))
         }
         else {
             distance = "\(Int(distanceToClosestPlace)) m"
