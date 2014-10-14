@@ -10,15 +10,15 @@ import UIKit
 import CoreLocation
 import AVFoundation
 
-let downloadTilesTimeInterval:NSTimeInterval = 5 // 60
-let hideSettingsButtonInterval:NSTimeInterval = 10
+let kDownloadTilesTimeInterval:NSTimeInterval = 5 // 60
+let kHideSettingsButtonInterval:NSTimeInterval = 10
 let kDefaultZoom = 16
 let KILOMETER = 1000
 let maxDistance:CLLocationDistance = CLLocationDistance(10 * KILOMETER)
 
 class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesDownloaderDelegate {
     
-    // MARK: - Public
+    // MARK: - Outlets
     
     @IBOutlet weak var settingsButton: UIButton!
     
@@ -27,7 +27,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     
-    // MARK: - Private
+    // MARK: - Properties
     
     private let locationManager = CLLocationManager()
     private var currentLocation:CLLocation?
@@ -37,7 +37,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     private var tilesDownloader:OSMTilesDownloader?
     private let synth = AVSpeechSynthesizer()
     
-    private var hideSettingsButtonTimer:NSTimer?
+    private var hideSettingsButtonTimer:NSTimer!
     private var tilesTimer:NSTimer?
     private var announceDistanceTimer:NSTimer?
     private var announceDistanceTimeInterval:NSTimeInterval?
@@ -86,15 +86,14 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     }
     
     func updatingIntervalChanged() {
-        if announceDistanceTimer?.valid == true {
-            announceDistanceTimer?.invalidate()
-        }
+        announceDistanceTimer?.invalidate()
         
         let index = NSUserDefaults.standardUserDefaults().integerForKey("UpdatingInterval")
         let settings = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Settings", ofType: "plist")!)
         let durations = settings["Durations"] as [Double]
         announceDistanceTimeInterval = durations[index]
         announceDistanceTimer = NSTimer.scheduledTimerWithTimeInterval(announceDistanceTimeInterval!, target: self, selector: "announceClosestPlace", userInfo: nil, repeats: true)
+        announceDistanceTimer?.fire()
     }
     
     // MARK: - Settings Button
@@ -103,9 +102,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         self.settingsButton.hidden = !self.settingsButton.hidden
         
         if self.settingsButton.hidden {
-            if hideSettingsButtonTimer?.valid == true {
-                hideSettingsButtonTimer?.invalidate()
-            }
+            hideSettingsButtonTimer.invalidate()
         }
         else {
             self.startHideButtonTimer()
@@ -113,7 +110,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     }
     
     func startHideButtonTimer() {
-        self.hideSettingsButtonTimer = NSTimer.scheduledTimerWithTimeInterval(hideSettingsButtonInterval, target: self, selector: "hideSettingsButton", userInfo: nil, repeats: false)
+        self.hideSettingsButtonTimer = NSTimer.scheduledTimerWithTimeInterval(kHideSettingsButtonInterval, target: self, selector: "hideSettingsButton", userInfo: nil, repeats: false)
     }
     
     func hideSettingsButton() {
@@ -190,13 +187,11 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         if distanceToClosestPlace > maxDistance {
             distance = "over \(Int(maxDistance) / KILOMETER) km";
         }
+        else if distanceToClosestPlace > Double(KILOMETER) {
+            distance = NSString(format: "%.1lf km", distanceToClosestPlace / Double(KILOMETER))
+        }
         else {
-            if distanceToClosestPlace > Double(KILOMETER) {
-                distance = NSString(format: "%.1lf km", distanceToClosestPlace / Double(KILOMETER))
-            }
-            else {
-                distance = "\(Int(distanceToClosestPlace)) m"
-            }
+            distance = "\(Int(distanceToClosestPlace)) m"
         }
         
         if currentLocation != nil && previousLocation != nil {
@@ -206,9 +201,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         }
         self.previousLocation = currentLocation
         
-        if closestPlace!.isAnnounced == false {
-            self.speakPlace(closestPlace!, distance: distance);
-        }
+        self.speakPlace(closestPlace!, distance: distance);
         
         self.nameLabel.text = closestPlace!.name
         self.distanceLabel.text = "\(distance)"
@@ -216,12 +209,14 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     }
     
     func speakPlace(place:OSMNode, distance:String) {
-        let placeString = "Closest place is \(place.name!), \(place.type) with distance \(distance) "
-        let utterance = AVSpeechUtterance(string: placeString)
-        synth.speakUtterance(utterance)
-        place.announce()
-        
-        NSLog("announce place \"\(placeString)\"")
+        if !place.isAnnounced {
+            let placeString = "Closest place is \(place.name!), \(place.type) with distance \(distance) "
+            let utterance = AVSpeechUtterance(string: placeString)
+            utterance.rate = AVSpeechUtteranceMinimumSpeechRate
+            synth.speakUtterance(utterance)
+            place.announce()
+            NSLog("announce place \"\(placeString)\"")
+        }
     }
     
     // MARK: - CLLocationManager Delegate
@@ -254,16 +249,13 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     // start or stop downloading
     func checkLocationsPermissions(isLocationEnabled:Bool) {
         if isLocationEnabled {
-            tilesTimer = NSTimer.scheduledTimerWithTimeInterval(downloadTilesTimeInterval, target: self, selector: "downloadNeighboringTiles", userInfo: nil, repeats: true)
+            tilesTimer = NSTimer.scheduledTimerWithTimeInterval(kDownloadTilesTimeInterval, target: self, selector: "downloadNeighboringTiles", userInfo: nil, repeats: true)
+            tilesTimer?.fire()
             self.updatingIntervalChanged()
         }
         else {
-            if tilesTimer?.valid == true {
-                tilesTimer?.invalidate()
-            }
-            if announceDistanceTimer?.valid == true {
-                announceDistanceTimer?.invalidate()
-            }
+            tilesTimer?.invalidate()
+            announceDistanceTimer?.invalidate()
         }
         
         self.statusLabel.text = isLocationEnabled ? "" : "Allow location access";
