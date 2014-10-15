@@ -3,6 +3,7 @@ Parse OpenStreetMap map features.
 """
 
 from lxml import html
+from lxml.etree import tostring
 import os
 import requests
 
@@ -20,12 +21,24 @@ else:
         text = f.read().decode('utf8')
 
 tree = html.fromstring(text)
-tds = tree.xpath('//td')
+trs = tree.xpath('//tr')
+print len(trs)
 
-for td in tds:
-    print td
-    print td.text
-    print td.items()
-    print td.body
+for tr in trs:
+    tds = tr.xpath('.//td')
+    if len(tds) > 3:
+        key = tds[0]
+        value = tds[1]
+        element = tds[2]
+        comment = tds[3]
+        print 'key=', ''.join(key.xpath('.//text()')).strip()
 
-print dir(td)
+# for tr in trs:
+#     print td
+#     td_text = td.text_content().strip()
+#     if td_text:
+#         print td_text
+#     else:
+#         print td.xpath('//a')[0].text_content()
+
+print dir(tr)
