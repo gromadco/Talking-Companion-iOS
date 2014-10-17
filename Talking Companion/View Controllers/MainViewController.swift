@@ -15,6 +15,7 @@ let kHideSettingsButtonInterval:NSTimeInterval = 10
 let kDefaultZoom = 16
 let kKilometer = 1000
 let kMaxDistance:CLLocationDistance = CLLocationDistance(10 * kKilometer)
+let kSpeachSpeedReduceRate:Float = 2.2 // chosen experimentally by @dudarev
 
 class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesDownloaderDelegate {
     
@@ -210,9 +211,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     
     func speakPlace(place:OSMNode, distance:String) {
         if !place.isAnnounced {
-            let placeString = "Closest place is \(place.name!), \(place.type) with distance \(distance) "
+            let placeString = "\(place.type). \(place.name!), \(distance)"
             let utterance = AVSpeechUtterance(string: placeString)
-            utterance.rate = AVSpeechUtteranceMinimumSpeechRate
+            utterance.rate = AVSpeechUtteranceDefaultSpeechRate / kSpeachSpeedReduceRate
             synth.speakUtterance(utterance)
             place.announce()
             NSLog("announce place \"\(placeString)\"")
