@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sEB-TI-qu4">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
@@ -213,52 +214,14 @@
                                     <rect key="frame" x="251" y="38" width="139" height="22"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5m-J8-ERk">
-                                <rect key="frame" x="20" y="290" width="218" height="20"/>
-                                <state key="normal" title="Скачать архив для Бердянска">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="downloadExtractBerdyansk" destination="Qm4-5I-d3X" eventType="touchUpInside" id="gmz-oU-WDU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Db3-Rf-Kvx">
-                                <rect key="frame" x="20" y="318" width="202" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="4gs-Zr-jYw"/>
-                                </constraints>
-                                <state key="normal" title="Скачать архив для Полтавы">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="downloadExtractPoltava" destination="Qm4-5I-d3X" eventType="touchUpInside" id="yhc-pg-YPb"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4o-JC-VoP">
-                                <rect key="frame" x="20" y="346" width="221" height="20"/>
-                                <state key="normal" title="Скачать архив для Запорожья">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="downloadExtractZaporizhia" destination="Qm4-5I-d3X" eventType="touchUpInside" id="le5-SK-BRc"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="P5m-J8-ERk" firstAttribute="top" secondItem="HHf-i8-Fd5" secondAttribute="bottom" constant="8" symbolic="YES" id="1Se-9a-btR"/>
                             <constraint firstItem="wld-pq-Qnn" firstAttribute="top" secondItem="W0U-4d-By5" secondAttribute="bottom" constant="18" id="1eQ-5M-dyh"/>
                             <constraint firstAttribute="trailing" secondItem="HHf-i8-Fd5" secondAttribute="trailing" constant="20" symbolic="YES" id="2ne-ix-pJ5"/>
                             <constraint firstItem="OCC-h3-wfG" firstAttribute="centerX" secondItem="HHf-i8-Fd5" secondAttribute="centerX" id="9ZE-eq-SKB"/>
-                            <constraint firstItem="X4o-JC-VoP" firstAttribute="top" secondItem="Db3-Rf-Kvx" secondAttribute="bottom" constant="8" symbolic="YES" id="PRe-o6-MtU"/>
-                            <constraint firstItem="Db3-Rf-Kvx" firstAttribute="height" secondItem="P5m-J8-ERk" secondAttribute="height" id="RFo-Fa-kO1"/>
-                            <constraint firstItem="Db3-Rf-Kvx" firstAttribute="top" secondItem="P5m-J8-ERk" secondAttribute="bottom" constant="8" symbolic="YES" id="VXf-cb-JWY"/>
-                            <constraint firstItem="Db3-Rf-Kvx" firstAttribute="leading" secondItem="P5m-J8-ERk" secondAttribute="leading" id="YdY-AH-K8v"/>
-                            <constraint firstItem="P5m-J8-ERk" firstAttribute="leading" secondItem="HHf-i8-Fd5" secondAttribute="leading" id="a2V-er-NOc"/>
-                            <constraint firstItem="X4o-JC-VoP" firstAttribute="leading" secondItem="Db3-Rf-Kvx" secondAttribute="leading" id="egJ-d1-oeh"/>
                             <constraint firstAttribute="centerX" secondItem="wld-pq-Qnn" secondAttribute="centerX" constant="-0.5" id="pAg-oQ-M1R"/>
                             <constraint firstItem="OCC-h3-wfG" firstAttribute="leading" secondItem="82M-KM-CGW" secondAttribute="leading" id="pAw-z8-9g2"/>
-                            <constraint firstItem="P5m-J8-ERk" firstAttribute="height" secondItem="X4o-JC-VoP" secondAttribute="height" id="rNj-gP-Lax"/>
                             <constraint firstItem="OCC-h3-wfG" firstAttribute="top" secondItem="wld-pq-Qnn" secondAttribute="bottom" constant="8" symbolic="YES" id="uF1-TG-46a"/>
                             <constraint firstItem="HHf-i8-Fd5" firstAttribute="top" secondItem="OCC-h3-wfG" secondAttribute="bottom" constant="8" symbolic="YES" id="wgG-yJ-bNo"/>
                             <constraint firstItem="HHf-i8-Fd5" firstAttribute="leading" secondItem="82M-KM-CGW" secondAttribute="leading" constant="20" symbolic="YES" id="xNC-Y1-Tle"/>
