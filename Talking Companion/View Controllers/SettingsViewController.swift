@@ -8,11 +8,9 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, ExtractDownloaderDelegate {
+class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet var updatingIntervalPickerView: UIPickerView?
-    
-    private var downloader:ExtractDownloader?
     
     private var intervalsLabels = [String]()
     private var intervalsDutation = [Int]()
@@ -20,8 +18,6 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        downloader = ExtractDownloader(delegate: self)
         
         let settings = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Settings", ofType: "plist")!)
         self.intervalsDutation = settings.objectForKey("Durations") as [Int]
@@ -49,42 +45,6 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         else {
             self.navigationController?.popToRootViewControllerAnimated(true)
         }
-    }
-    
-    @IBAction func downloadExtractBerdyansk() {
-        self.downloadCity("berdyansk")
-    }
-    
-    @IBAction func downloadExtractPoltava() {
-        self.downloadCity("poltava")
-    }
-    
-    @IBAction func downloadExtractZaporizhia() {
-        self.downloadCity("zaporizhia")
-    }
-    
-    private func downloadCity(city:String) {
-        HUDController.sharedController.contentView = HUDContentView.ProgressView();
-        HUDController.sharedController.show()
-        downloader?.downloadExtractForCity(city)
-    }
-    
-    // MARK: - ExtractDownloader delegate
-    
-    func extractDownloaderFinished(nodes:[OSMNode]) {
-        HUDController.sharedController.hide(animated: true)
-    }
-    
-    func extractDownloaderFailed(error:NSError) {
-        HUDController.sharedController.hide(animated: true)
-        var msg = NSLocalizedString("ExtractDownloadingError", comment: "")
-        if error.code == 404 {
-            msg = NSLocalizedString("ExtractNotFound", comment: "")
-        }
-        
-        let alert = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: msg, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     // MARK: - UIPickerView delegate
