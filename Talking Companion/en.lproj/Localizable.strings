@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  Talking Companion
+
+  Created by Sergey Butenko on 10/17/14.
+  Copyright (c) 2014 serejahh inc. All rights reserved.
+*/
+
+/* Location Access Error */
+"AllowLocationAccess" = "Allow location access";
+
+"10 seconds" = "10 seconds";
+"30 seconds" = "30 seconds";
+"1 minute" = "1 minute";
+"2 minutes" = "2 minutes";
+"5 minutes" = "5 minutes";
+
+"Error" = "Error";
+"ExtractDownloadingError" = "Extract for this city not found.";
+"ExtractNotFound" = "Extract for this city not found.";
+
+"LoadingData" = "Loading...";
+"StartMoving" = "Start moving";
+"PointsAround" = "points around";
+"KilometerShort" = "km";
+"MeterShort" = "m";
+"OverDistance" = "over";
+
+"DirectionFront" = "in front";
+"DirectionRight" = "to the right";
+"DirectionBack" = "back";
+"DirectionLeft" = "to the left";

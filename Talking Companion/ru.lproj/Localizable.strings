@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  Talking Companion
+
+  Created by Sergey Butenko on 10/17/14.
+  Copyright (c) 2014 serejahh inc. All rights reserved.
+*/
+
+/* Location Access Error */
+"AllowLocationAccess" = "Включите геолокацию";
+
+"10 seconds" = "10 секунд";
+"30 seconds" = "30 секунд";
+"1 minute" = "1 минута";
+"2 minutes" = "2 минуты";
+"5 minutes" = "5 минут";
+
+"Error" = "Ошибка";
+"ExtractDownloadingError" = "Произошла ошибка при скачивании архива.";
+"ExtractNotFound" = "Архив для этого города не найден.";
+
+"LoadingData" = "Загрузка...";
+"StartMoving" = "Начните движение";
+"PointsAround" = "мест(о) поблизости";
+"KilometerShort" = "км";
+"MeterShort" = "м";
+"OverDistance" = "более";
+
+"DirectionFront" = "впереди";
+"DirectionRight" = "справа";
+"DirectionBack" = "позади";
+"DirectionLeft" = "слева";

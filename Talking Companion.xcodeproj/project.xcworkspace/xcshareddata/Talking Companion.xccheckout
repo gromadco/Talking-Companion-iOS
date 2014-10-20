@@ -11,17 +11,17 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>1FE776EAF78DABD9335164FB8565361718CC91C0</key>
-		<string>https://github.com/dudarev/Talking-Companion-iOS.git</string>
+		<string>https://github.com/gromadco/Talking-Companion-iOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Talking Companion.xcodeproj/project.xcworkspace</string>
+	<string>Talking Companion.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1FE776EAF78DABD9335164FB8565361718CC91C0</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/dudarev/Talking-Companion-iOS.git</string>
+	<string>https://github.com/gromadco/Talking-Companion-iOS.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>

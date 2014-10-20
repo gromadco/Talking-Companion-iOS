@@ -77,12 +77,12 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     func extractDownloaderFailed(error:NSError) {
         HUDController.sharedController.hide(animated: true)
-        var msg = "Something has gone wrong"
+        var msg = NSLocalizedString("ExtractDownloadingError", comment: "")
         if error.code == 404 {
-            msg = "Extract for this city not found"
+            msg = NSLocalizedString("ExtractNotFound", comment: "")
         }
         
-        let alert = UIAlertController(title: "Error", message: msg, preferredStyle: .Alert)
+        let alert = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: msg, preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
@@ -98,7 +98,7 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     func pickerView(pickerView: UIPickerView!, titleForRow row: Int, forComponent component: Int) -> String! {
-        return self.intervalsLabels[row]
+        return NSLocalizedString(self.intervalsLabels[row], comment: "")
     }
     
     func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int) {

@@ -78,7 +78,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     }
     
     func loadLocationManager() {
-        self.locationManager.delegate = self;
+        self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         if (self.locationManager.respondsToSelector("requestAlwaysAuthorization")) {
             self.locationManager.requestAlwaysAuthorization()
@@ -140,19 +140,23 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
             }
             self.nodes = tmpNodes
             
-            if currentLocation?.speed > 0 {
-                self.statusLabel.text = ""
-            }
-            else {
-                self.statusLabel.text = "Start moving\n\(self.nodes.count) poins around"
-            }
-            self.statusLabel.text = "Start moving\n\(self.nodes.count) poins around"
+//            if currentLocation?.speed > 0 {
+//                self.statusLabel.text = ""
+//            }
+//            else {
+//                self.statusLabel.text = "Start moving\n\(self.nodes.count) points around"
+//            }
+
+            var status = NSLocalizedString("StartMoving", comment: "")
+            status += "\n\(self.nodes.count) "
+            status += NSLocalizedString("PointsAround", comment: "")
+            self.statusLabel.text = status
         }
     }
 
     func downloadNeighboringTiles() {
         if let current = self.currentLocation {
-            self.statusLabel.text = "Loading..."
+            self.statusLabel.text = NSLocalizedString("LoadingData", comment: "")
             let centerTile = OSMTile(latitude: current.coordinate.latitude, longitude: current.coordinate.longitude, zoom: kDefaultZoom)
             self.tilesDownloader?.downloadNeighboringTilesFor(tile: centerTile)
             //NSLog(@"downloading neighboring tiles for tile(%lf; %lf) @ %@", coordinates.latitude, coordinates.longitude, [[OSMBoundingBox alloc] initWithTile:centerTile].url);
@@ -186,13 +190,13 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         
         var distance = ""
         if distanceToClosestPlace > kMaxDistance {
-            distance = "over \(Int(kMaxDistance) / kKilometer) km";
+            distance = NSString(format: "over %d %@", NSLocalizedString("OverDistance", comment: ""), Int(kMaxDistance) / kKilometer, NSLocalizedString("KilometerShort", comment: ""))
         }
         else if distanceToClosestPlace > Double(kKilometer) {
-            distance = NSString(format: "%.1lf km", distanceToClosestPlace / Double(kKilometer))
+            distance = NSString(format: "%.1lf %@", distanceToClosestPlace / Double(kKilometer), NSLocalizedString("KilometerShort", comment: ""))
         }
         else {
-            distance = "\(Int(distanceToClosestPlace)) m"
+            distance = NSString(format: "%d %@", Int(distanceToClosestPlace), NSLocalizedString("MeterShort", comment: ""))
         }
         
         if currentLocation != nil && previousLocation != nil {
@@ -202,7 +206,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         }
         self.previousLocation = currentLocation
         
-        self.speakPlace(closestPlace!, distance: distance);
+        self.speakPlace(closestPlace!, distance: distance)
         
         self.nameLabel.text = closestPlace!.name
         self.distanceLabel.text = "\(distance)"
@@ -224,7 +228,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     
     func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!)
     {
-        self.currentLocation = newLocation;
+        self.currentLocation = newLocation
 
         if self.previousLocation == nil {
             NSLog("initial coordinates: \(currentLocation?.coordinate.latitude); \(currentLocation?.coordinate.longitude)");
@@ -238,7 +242,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus)
     {
-        NSLog("location manager status: \(status.toRaw())");
+        NSLog("location manager status: \(status.toRaw())")
         self.checkLocationsPermissions(CLLocationManager.locationServicesEnabled())
     }
     
@@ -259,6 +263,6 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
             announceDistanceTimer?.invalidate()
         }
         
-        self.statusLabel.text = isLocationEnabled ? "" : "Allow location access";
+        self.statusLabel.text = isLocationEnabled ? "" : NSLocalizedString("AllowLocationAccess", comment: "")
     }
 }

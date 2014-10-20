@@ -29,10 +29,10 @@ enum Direction:Int {
     
     var description:String {
         switch self {
-            case Front: return "in front"
-            case Back:  return "back"
-            case Left:  return "to the left"
-            case Right: return "to the right"
+            case Front: return NSLocalizedString("DirectionFront", comment: "")
+            case Back:  return NSLocalizedString("DirectionBack", comment: "")
+            case Left:  return NSLocalizedString("DirectionLeft", comment: "")
+            case Right: return NSLocalizedString("DirectionRight", comment: "")
         }
     }
 }

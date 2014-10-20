@@ -79,6 +79,7 @@
 		BD7D800B199A504D0069A19D /* map.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD7D8008199A504D0069A19D /* map.osm */; };
 		BD7D800C199A504D0069A19D /* map.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD7D8008199A504D0069A19D /* map.osm */; };
 		BD9EEF4619924A9200BC8A02 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD9EEF4519924A9200BC8A02 /* Settings.plist */; };
+		BDA72E8619F13F3000C7DA25 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BDA72E8819F13F3000C7DA25 /* Localizable.strings */; };
 		BDB58981195888670090E178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB58980195888670090E178 /* AppDelegate.swift */; };
 		BDB58986195888670090E178 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDB58984195888670090E178 /* Main.storyboard */; };
 		BDB58988195888670090E178 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB58987195888670090E178 /* Images.xcassets */; };
@@ -202,6 +203,9 @@
 		BD7D8007199A504D0069A19D /* empty.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = empty.osm; sourceTree = "<group>"; };
 		BD7D8008199A504D0069A19D /* map.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.osm; sourceTree = "<group>"; };
 		BD9EEF4519924A9200BC8A02 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Settings.plist; path = "View Controllers/Settings.plist"; sourceTree = "<group>"; };
+		BDA72E8A19F13F3300C7DA25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BDA72E8B19F141A200C7DA25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BDA72E8C19F1432700C7DA25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BDB5897B195888670090E178 /* Talking Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Talking Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB5897F195888670090E178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDB58980195888670090E178 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -392,6 +396,7 @@
 				BDB5897F195888670090E178 /* Info.plist */,
 				BD0C9F0F19673863003A88AC /* Talking_Companion-Bridging-Header.h */,
 				BDB58987195888670090E178 /* Images.xcassets */,
+				BDA72E8819F13F3000C7DA25 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -524,6 +529,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = BDB58972195888670090E178;
 			productRefGroup = BDB5897C195888670090E178 /* Products */;
@@ -541,6 +547,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDA72E8619F13F3000C7DA25 /* Localizable.strings in Resources */,
 				BDE410EA19B8986900D5FDA0 /* Info.plist in Resources */,
 				BD7D800B199A504D0069A19D /* map.osm in Resources */,
 				BDBAD836199BC34A00BA69EC /* poi.json in Resources */,
@@ -685,10 +692,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		BDA72E8819F13F3000C7DA25 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BDA72E8A19F13F3300C7DA25 /* ru */,
+				BDA72E8B19F141A200C7DA25 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		BDB58984195888670090E178 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BDB58985195888670090E178 /* Base */,
+				BDA72E8C19F1432700C7DA25 /* ru */,
 			);
 			name = Main.storyboard;
 			path = ..;
