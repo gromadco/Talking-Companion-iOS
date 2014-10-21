@@ -24,7 +24,7 @@ class OSMNode: NSObject {
                 return false
             }
             
-            let announcedInterval = NSDate.date().timeIntervalSinceDate(announcedDate!)
+            let announcedInterval = NSDate().timeIntervalSinceDate(announcedDate!)
             if announcedInterval > kOneDay {
                 return false;
             }
@@ -87,7 +87,7 @@ class OSMNode: NSObject {
     
     func announce() {
         NSLog("node has been announced")
-        self.announcedDate = NSDate.date()
+        self.announcedDate = NSDate()
         SQLAccess.updateNode(self)
     }
 }

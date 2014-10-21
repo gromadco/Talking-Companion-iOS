@@ -90,7 +90,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         announceDistanceTimer?.invalidate()
         
         let index = NSUserDefaults.standardUserDefaults().integerForKey("UpdatingInterval")
-        let settings = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Settings", ofType: "plist")!)
+        let settings = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Settings", ofType: "plist")!)!
         let durations = settings["Durations"] as [Double]
         announceDistanceTimeInterval = durations[index]
         announceDistanceTimer = NSTimer.scheduledTimerWithTimeInterval(announceDistanceTimeInterval!, target: self, selector: "announceClosestPlace", userInfo: nil, repeats: true)
@@ -242,7 +242,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus)
     {
-        NSLog("location manager status: \(status.toRaw())")
+        NSLog("location manager status: \(status.rawValue)")
         self.checkLocationsPermissions(CLLocationManager.locationServicesEnabled())
     }
     

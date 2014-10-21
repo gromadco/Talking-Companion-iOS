@@ -32,7 +32,7 @@ class OSMTilesDownloader: NSObject {
             let box = OSMBoundingBox(tile: tile)
             
             // downloading .osm
-            let request = NSURLRequest(URL: NSURL(string: box.url))
+            let request = NSURLRequest(URL: NSURL(string: box.url)!)
             let operation = AFHTTPRequestOperation(request: request)
             var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
             path += "/map\(index).osm"

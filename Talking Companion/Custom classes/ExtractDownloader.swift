@@ -25,7 +25,7 @@ class ExtractDownloader: NSObject {
         let urlString = "\(OSMExtractURL)\(city)\(OSMExtractFormat)"
     
         // downloading extract
-        let request = NSURLRequest(URL: NSURL(string: urlString))
+        let request = NSURLRequest(URL: NSURL(string: urlString)!)
         var operation = AFHTTPRequestOperation(request: request)
         operation.setCompletionBlockWithSuccess({ (_, responseObject) in
             NSLog("extract downloaded")
@@ -42,7 +42,7 @@ class ExtractDownloader: NSObject {
         let urlString = "\(JSONExtractURL)\(city)\(JSONExtractFormat)"
         
         // downloading extract
-        let request = NSURLRequest(URL: NSURL(string: urlString))
+        let request = NSURLRequest(URL: NSURL(string: urlString)!)
         var operation = AFHTTPRequestOperation(request: request)
         operation.setCompletionBlockWithSuccess({ (_, responseObject) in
             NSLog("JSON Extract: extract downloaded")
