@@ -10,12 +10,26 @@ import UIKit
 import CoreLocation
 import AVFoundation
 
-let kDownloadTilesTimeInterval:NSTimeInterval = 5 // 60
+/// for debug using 5s, for release 60s
+let kDownloadTilesTimeInterval:NSTimeInterval = 60
+
+///
 let kHideSettingsButtonInterval:NSTimeInterval = 10
+
+/// zoom for tiles from OpenStreetMap
 let kDefaultZoom = 16
+
+///
 let kKilometer = 1000
+
+///
 let kMaxDistance:CLLocationDistance = CLLocationDistance(10 * kKilometer)
-let kSpeachSpeedReduceRate:Float = 2.2 // chosen experimentally by @dudarev
+
+/// choosen by @dudarev (described in issue #30)
+let kMaxCountClosestPlaces = 10
+
+/// chosen experimentally by @dudarev
+let kSpeachSpeedReduceRate:Float = 2.2
 
 class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesDownloaderDelegate {
     
@@ -174,20 +188,37 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     func announceClosestPlace() {
         var closestPlace:OSMNode?
         var distanceToClosestPlace:CLLocationDistance = Double(INT_MAX)
+        let bound = min(countElements(nodes), kMaxCountClosestPlaces)
         
-        for node in nodes {
+        // choose unannounced
+        for var i = 0; i < bound; i++ {
+            let node = nodes[i]
             let distance = currentLocation!.distanceFromLocation(node.location)
-            if distanceToClosestPlace > distance {
+            if !node.isAnnounced && distanceToClosestPlace > distance {
                 distanceToClosestPlace = distance
                 closestPlace = node
             }
         }
         
+        // if all places were announced, choose a place that was announced longest time ago
+        if closestPlace == nil {
+            var latestDate = NSDate()
+            for var i = 0; i < bound; i++ {
+                let node = nodes[i]
+                if node.announcedDate?.compare(latestDate) == NSComparisonResult.OrderedAscending {
+                    closestPlace = node
+                    latestDate = closestPlace!.announcedDate!
+                }
+            }
+        }
+        
+        // no places nearby
         if closestPlace == nil {
             return
         }
-        closestPlaceLocation = closestPlace!.location
         
+        // have a place for announcing
+        closestPlaceLocation = closestPlace!.location
         var distance = ""
         if distanceToClosestPlace > kMaxDistance {
             distance = NSString(format: "over %d %@", NSLocalizedString("OverDistance", comment: ""), Int(kMaxDistance) / kKilometer, NSLocalizedString("KilometerShort", comment: ""))
@@ -214,14 +245,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     }
     
     func speakPlace(place:OSMNode, distance:String) {
-        if !place.isAnnounced {
-            let placeString = "\(place.type). \(place.name!), \(distance)"
-            let utterance = AVSpeechUtterance(string: placeString)
-            utterance.rate = AVSpeechUtteranceDefaultSpeechRate / kSpeachSpeedReduceRate
-            synth.speakUtterance(utterance)
-            place.announce()
-            NSLog("announce place \"\(placeString)\"")
-        }
+        let placeString = "\(place.type). \(place.name!), \(distance)"
+        let utterance = AVSpeechUtterance(string: placeString)
+        utterance.rate = AVSpeechUtteranceDefaultSpeechRate / kSpeachSpeedReduceRate
+        synth.speakUtterance(utterance)
+        place.announce()
+        NSLog("announce place \"\(placeString)\"")
     }
     
     // MARK: - CLLocationManager Delegate
