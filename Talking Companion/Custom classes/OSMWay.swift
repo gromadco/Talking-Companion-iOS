@@ -9,8 +9,7 @@
 import UIKit
 import CoreLocation
 
-// FIXME: - inherit from OSMElement
-class OSMWay: NSObject {
+class OSMWay : NSObject {
    
     // MARK: - Properties
     

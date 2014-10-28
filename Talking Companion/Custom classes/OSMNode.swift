@@ -50,6 +50,13 @@ class OSMNode: NSObject {
     
     // TODO: rewrite checking an empty strings
     var type:String {
+        
+        if let amenity = self.amenity {
+            return TypeTranslator.sharedInstance.translateAmenity(amenity)
+        }
+        //private let _lang = NSLocale.preferredLanguages().first as String
+        
+        
         var type:String = ""
             
         if let amenity = self.amenity {

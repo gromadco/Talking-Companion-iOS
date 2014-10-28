@@ -47,6 +47,8 @@
 		BD2EB9BC1966F0E600C8DEDD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */; };
 		BD536AAB196A7E1B0017345D /* OSMBoundingBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */; };
 		BD66797E19B4A6BA00DFB53F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD66797D19B4A6BA00DFB53F /* MainViewController.swift */; };
+		BD7A7C8C19FA57D7001F5005 /* translation.json in Resources */ = {isa = PBXBuildFile; fileRef = BD7A7C8B19FA57D7001F5005 /* translation.json */; };
+		BD7A7C8E19FA5822001F5005 /* TypeTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7A7C8D19FA5822001F5005 /* TypeTranslator.swift */; };
 		BD7D7FE2199A4D690069A19D /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD5199A4D690069A19D /* Calculations.swift */; };
 		BD7D7FE3199A4D690069A19D /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD5199A4D690069A19D /* Calculations.swift */; };
 		BD7D7FE4199A4D690069A19D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD6199A4D690069A19D /* Constants.swift */; };
@@ -185,6 +187,8 @@
 		BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMBoundingBoxTests.swift; sourceTree = "<group>"; };
 		BD66797D19B4A6BA00DFB53F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BD7A7C8B19FA57D7001F5005 /* translation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = translation.json; path = scripts/translation.json; sourceTree = SOURCE_ROOT; };
+		BD7A7C8D19FA5822001F5005 /* TypeTranslator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeTranslator.swift; sourceTree = "<group>"; };
 		BD7D7FD5199A4D690069A19D /* Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
 		BD7D7FD6199A4D690069A19D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BD7D7FD7199A4D690069A19D /* ExtractDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtractDownloader.swift; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 		BD0C9F101967388A003A88AC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BD7A7C8B19FA57D7001F5005 /* translation.json */,
 				BDBAD834199BC34A00BA69EC /* poi.json */,
 				BD7D8007199A504D0069A19D /* empty.osm */,
 				BD7D8008199A504D0069A19D /* map.osm */,
@@ -336,6 +341,7 @@
 				BD7D7FDF199A4D690069A19D /* OSMTilesDownloader.swift */,
 				BD7D7FE0199A4D690069A19D /* OSMWay.swift */,
 				BD7D7FE1199A4D690069A19D /* SQLAccess.swift */,
+				BD7A7C8D19FA5822001F5005 /* TypeTranslator.swift */,
 			);
 			path = "Custom classes";
 			sourceTree = "<group>";
@@ -550,6 +556,7 @@
 				BDA72E8619F13F3000C7DA25 /* Localizable.strings in Resources */,
 				BDE410EA19B8986900D5FDA0 /* Info.plist in Resources */,
 				BD7D800B199A504D0069A19D /* map.osm in Resources */,
+				BD7A7C8C19FA57D7001F5005 /* translation.json in Resources */,
 				BDBAD836199BC34A00BA69EC /* poi.json in Resources */,
 				BDE410E919B8986900D5FDA0 /* Images.xcassets in Resources */,
 				BDB58986195888670090E178 /* Main.storyboard in Resources */,
@@ -586,6 +593,7 @@
 				BD0C9F4D1967388A003A88AC /* AFNetworkReachabilityManager.m in Sources */,
 				BD7D7FF4199A4D690069A19D /* OSMTilesDownloader.swift in Sources */,
 				BD0C9F5D1967388A003A88AC /* FMDatabasePool.m in Sources */,
+				BD7A7C8E19FA5822001F5005 /* TypeTranslator.swift in Sources */,
 				BDE410EB19B8986900D5FDA0 /* Window.swift in Sources */,
 				BD7D7FF8199A4D690069A19D /* SQLAccess.swift in Sources */,
 				BD0C9F511967388A003A88AC /* AFURLConnectionOperation.m in Sources */,

@@ -221,7 +221,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         closestPlaceLocation = closestPlace!.location
         var distance = ""
         if distanceToClosestPlace > kMaxDistance {
-            distance = NSString(format: "over %d %@", NSLocalizedString("OverDistance", comment: ""), Int(kMaxDistance) / kKilometer, NSLocalizedString("KilometerShort", comment: ""))
+            distance = NSString(format: "%@ %d %@", NSLocalizedString("OverDistance", comment: ""), Int(kMaxDistance) / kKilometer, NSLocalizedString("KilometerShort", comment: ""))
         }
         else if distanceToClosestPlace > Double(kKilometer) {
             distance = NSString(format: "%.1lf %@", distanceToClosestPlace / Double(kKilometer), NSLocalizedString("KilometerShort", comment: ""))

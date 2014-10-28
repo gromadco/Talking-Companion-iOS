@@ -15,7 +15,7 @@ class OSMTile: NSObject {
     let x:Int
     let y:Int
     let zoom:Int
-    var url:String { return "http://tile.openstreetmap.org/\(zoom)/\(x)/\(y).png" }
+    var url:String { return "\(OSMTileURL)\(zoom)/\(x)/\(y).png" }
    
     init(x:Int, y:Int, zoom:Int) {
         self.x = x
