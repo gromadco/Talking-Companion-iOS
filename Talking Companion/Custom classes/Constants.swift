@@ -8,6 +8,8 @@
 
 import Foundation
 
+let kGoogleAnalyticsKey = "UA-56189721-1"
+
 // MARK: - Notifications
 
 let kUpdatingInterval = "UpdatingInterval"

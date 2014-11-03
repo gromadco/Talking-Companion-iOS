@@ -25,7 +25,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         session.setCategory(AVAudioSessionCategoryPlayback, error: nil)
         session.setActive(true, error: nil)
         
+        initializeAnalytics()
+        
         return true
+    }
+    
+    func initializeAnalytics() {
+        GAI.sharedInstance().trackUncaughtExceptions = true
+        GAI.sharedInstance().dispatchInterval = 20
+        GAI.sharedInstance().logger.logLevel = .Verbose
+        GAI.sharedInstance().trackerWithTrackingId(kGoogleAnalyticsKey)
+        
+        let tracker = GAI.sharedInstance().defaultTracker
+        tracker.allowIDFACollection = true
+        tracker.send(GAIDictionaryBuilder.createEventWithCategory("ui_action", action: "app_launched",label:"launch",value:nil).build())
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -40,6 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        GAI.sharedInstance().dispatch()
     }
 
     func applicationDidBecomeActive(application: UIApplication) {

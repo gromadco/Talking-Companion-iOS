@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD0B417E1A0015F400B11A83 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0B417D1A0015F400B11A83 /* CoreData.framework */; };
+		BD0B41801A00160400B11A83 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0B417F1A00160400B11A83 /* AdSupport.framework */; };
+		BD0B41821A00160F00B11A83 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0B41811A00160F00B11A83 /* libz.dylib */; };
+		BD0B41841A00161700B11A83 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0B41831A00161700B11A83 /* SystemConfiguration.framework */; };
 		BD0C9F071967332A003A88AC /* OSMNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F061967332A003A88AC /* OSMNodeTests.swift */; };
 		BD0C9F471967388A003A88AC /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F131967388A003A88AC /* AFHTTPRequestOperation.m */; };
 		BD0C9F481967388A003A88AC /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F131967388A003A88AC /* AFHTTPRequestOperation.m */; };
@@ -47,6 +51,7 @@
 		BD2EB9BC1966F0E600C8DEDD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */; };
 		BD536AAB196A7E1B0017345D /* OSMBoundingBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */; };
 		BD66797E19B4A6BA00DFB53F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD66797D19B4A6BA00DFB53F /* MainViewController.swift */; };
+		BD71880E1A029F0300FBB2EE /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD71880D1A029F0300FBB2EE /* libGoogleAnalyticsServices.a */; };
 		BD7A7C8C19FA57D7001F5005 /* translation.json in Resources */ = {isa = PBXBuildFile; fileRef = BD7A7C8B19FA57D7001F5005 /* translation.json */; };
 		BD7A7C8E19FA5822001F5005 /* TypeTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7A7C8D19FA5822001F5005 /* TypeTranslator.swift */; };
 		BD7D7FE2199A4D690069A19D /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD5199A4D690069A19D /* Calculations.swift */; };
@@ -145,6 +150,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD0B417D1A0015F400B11A83 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BD0B417F1A00160400B11A83 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		BD0B41811A00160F00B11A83 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		BD0B41831A00161700B11A83 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		BD0C9F061967332A003A88AC /* OSMNodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMNodeTests.swift; sourceTree = "<group>"; };
 		BD0C9F0F19673863003A88AC /* Talking_Companion-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Talking_Companion-Bridging-Header.h"; sourceTree = "<group>"; };
 		BD0C9F121967388A003A88AC /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -187,6 +196,17 @@
 		BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMBoundingBoxTests.swift; sourceTree = "<group>"; };
 		BD66797D19B4A6BA00DFB53F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BD7188031A029F0300FBB2EE /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		BD7188041A029F0300FBB2EE /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		BD7188051A029F0300FBB2EE /* GAIEcommerceFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
+		BD7188061A029F0300FBB2EE /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		BD7188071A029F0300FBB2EE /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		BD7188081A029F0300FBB2EE /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		BD7188091A029F0300FBB2EE /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		BD71880A1A029F0300FBB2EE /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		BD71880B1A029F0300FBB2EE /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		BD71880C1A029F0300FBB2EE /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		BD71880D1A029F0300FBB2EE /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		BD7A7C8B19FA57D7001F5005 /* translation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = translation.json; path = scripts/translation.json; sourceTree = SOURCE_ROOT; };
 		BD7A7C8D19FA5822001F5005 /* TypeTranslator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeTranslator.swift; sourceTree = "<group>"; };
 		BD7D7FD5199A4D690069A19D /* Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
@@ -237,6 +257,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD0B41841A00161700B11A83 /* SystemConfiguration.framework in Frameworks */,
+				BD0B41821A00160F00B11A83 /* libz.dylib in Frameworks */,
+				BD71880E1A029F0300FBB2EE /* libGoogleAnalyticsServices.a in Frameworks */,
+				BD0B41801A00160400B11A83 /* AdSupport.framework in Frameworks */,
+				BD0B417E1A0015F400B11A83 /* CoreData.framework in Frameworks */,
 				BD11497C1993D406001A07A4 /* libbz2.1.0.dylib in Frameworks */,
 				BD2EB9BC1966F0E600C8DEDD /* libsqlite3.dylib in Frameworks */,
 				BDD89B85195B095F0020ACA7 /* AVFoundation.framework in Frameworks */,
@@ -259,6 +284,7 @@
 		BD0C9F101967388A003A88AC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BD7188021A029F0300FBB2EE /* GAI */,
 				BD7A7C8B19FA57D7001F5005 /* translation.json */,
 				BDBAD834199BC34A00BA69EC /* poi.json */,
 				BD7D8007199A504D0069A19D /* empty.osm */,
@@ -356,6 +382,24 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		BD7188021A029F0300FBB2EE /* GAI */ = {
+			isa = PBXGroup;
+			children = (
+				BD7188031A029F0300FBB2EE /* GAI.h */,
+				BD7188041A029F0300FBB2EE /* GAIDictionaryBuilder.h */,
+				BD7188051A029F0300FBB2EE /* GAIEcommerceFields.h */,
+				BD7188061A029F0300FBB2EE /* GAIEcommerceProduct.h */,
+				BD7188071A029F0300FBB2EE /* GAIEcommerceProductAction.h */,
+				BD7188081A029F0300FBB2EE /* GAIEcommercePromotion.h */,
+				BD7188091A029F0300FBB2EE /* GAIFields.h */,
+				BD71880A1A029F0300FBB2EE /* GAILogger.h */,
+				BD71880B1A029F0300FBB2EE /* GAITrackedViewController.h */,
+				BD71880C1A029F0300FBB2EE /* GAITracker.h */,
+				BD71880D1A029F0300FBB2EE /* libGoogleAnalyticsServices.a */,
+			);
+			path = GAI;
+			sourceTree = "<group>";
+		};
 		BD7D7FFA199A4DCD0069A19D /* SwiftyJSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +492,10 @@
 		BDFFA009195C367700288E6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD0B41831A00161700B11A83 /* SystemConfiguration.framework */,
+				BD0B41811A00160F00B11A83 /* libz.dylib */,
+				BD0B417F1A00160400B11A83 /* AdSupport.framework */,
+				BD0B417D1A0015F400B11A83 /* CoreData.framework */,
 				BD7D7FFE199A4E530069A19D /* libz.1.2.5.dylib */,
 				BD11497B1993D406001A07A4 /* libbz2.1.0.dylib */,
 				BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */,
@@ -817,7 +865,16 @@
 				INFOPLIST_FILE = "Talking Companion/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Talking",
+					Companion/Resources/GAI,
+					"$(PROJECT_DIR)/Talking",
+					Companion/Resources/YMM,
+					"$(PROJECT_DIR)/Talking",
+					Companion/Resources/GAI,
+					"$(PROJECT_DIR)/Talking",
+					Companion/Resources/GAI,
+				);
 				PRODUCT_NAME = "Talking Companion";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Talking Companion/Talking_Companion-Bridging-Header.h";
@@ -835,7 +892,16 @@
 				INFOPLIST_FILE = "Talking Companion/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Talking",
+					Companion/Resources/GAI,
+					"$(PROJECT_DIR)/Talking",
+					Companion/Resources/YMM,
+					"$(PROJECT_DIR)/Talking",
+					Companion/Resources/GAI,
+					"$(PROJECT_DIR)/Talking",
+					Companion/Resources/GAI,
+				);
 				PRODUCT_NAME = "Talking Companion";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Talking Companion/Talking_Companion-Bridging-Header.h";
