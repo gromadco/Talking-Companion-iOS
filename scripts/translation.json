@@ -1,1 +1,2842 @@
-{"amenity": {"taxi": {"translation": {"ru": "стоянка такси", "en": "taxi"}}, "dojo": {"translation": {"ru": "дожо", "en": "dojo"}}, "social_facility": {"translation": {"ru": "учреждение оказывающее социальные услуги", "en": "social facility"}}, "clinic": {"translation": {"ru": "больница", "en": "clinic"}}, "embassy": {"translation": {"ru": "посольство", "en": "embassy"}}, "grit_bin": {"translation": {"ru": "ящик с противогололедным материалом", "en": "grit bin"}}, "bureau_de_change": {"translation": {"ru": "пункт обмена валют", "en": "currency exchange"}}, "toilets": {"translation": {"ru": "туалет", "en": "toilets"}}, "police": {"translation": {"ru": "полицейский участок", "en": "police"}}, "baby_hatch": {"translation": {"ru": "место, где можно оставить ребенка", "en": "baby hatch"}}, "community_centre": {"translation": {"ru": "общественный центр", "en": "community centre"}}, "bench": {"translation": {"ru": "скамейка для отдыха", "en": "bench"}}, "kindergarten": {"translation": {"ru": "детский сад", "en": "kindergarten"}}, "prison": {"translation": {"ru": "тюрьма", "en": "prison"}}, "fuel": {"translation": {"ru": "АЗС", "en": "gas station"}}, "bank": {"translation": {"ru": "банк", "en": "bank"}}, "place_of_worship": {"translation": {"ru": "культовое сооружение", "en": "place of worship"}}, "school": {"translation": {"ru": "школа", "en": "school"}}, "bar": {"translation": {"ru": "бар", "en": "bar"}}, "parking_entrance": {"translation": {"ru": "въезд в парковку", "en": "parking entrance"}}, "university": {"translation": {"ru": "университет", "en": "university"}}, "crematorium": {"translation": {"ru": "крематорий", "en": "crematorium"}}, "brothel": {"translation": {"ru": "публичный дом", "en": "brothel"}}, "water_point": {"translation": {"ru": "место с питьевой водой", "en": "water point"}}, "waste_disposal": {"translation": {"ru": "мусорка", "en": "waste disposal"}}, "grave_yard": {"translation": {"ru": "погост", "en": "grave yard"}}, "car_sharing": {"translation": {"ru": "каршаринг", "en": "car sharing"}}, "library": {"translation": {"ru": "библиотека", "en": "library"}}, "stripclub": {"translation": {"ru": "стрипклуб", "en": "stripclub"}}, "college": {"translation": {"ru": "колледж", "en": "college"}}, "parking": {"translation": {"ru": "парковка", "en": "parking"}}, "post_office": {"translation": {"ru": "почтовое отделение", "en": "post office"}}, "charging_station": {"translation": {"ru": "место зарядки электромобилей", "en": "charging station"}}, "food_court": {"translation": {"ru": "фудкорт", "en": "food court"}}, "clock": {"translation": {"ru": "часы", "en": "clock"}}, "veterinary": {"translation": {"ru": "ветеринарный пункт", "en": "veterinary"}}, "fountain": {"translation": {"ru": "фонтан", "en": "fountain"}}, "fast_food": {"translation": {"ru": "фастфуд", "en": "fast food"}}, "post_box": {"translation": {"ru": "почтовый ящик", "en": "post box"}}, "townhall": {"translation": {"ru": "городская администрация", "en": "townhall"}}, "pub": {"translation": {"ru": "паб", "en": "pub"}}, "rescue_station": {"translation": {"ru": "спасательная станция", "en": "rescue station"}}, "ev_charging": {"translation": {"ru": "место зарядки электромобилей", "en": "electric vehicle charging"}}, "biergarten": {"translation": {"ru": "биргарден", "en": "biergarten"}}, "bicycle_rental": {"translation": {"ru": "аренда велосипедов", "en": "bicycle rental"}}, "courthouse": {"translation": {"ru": "суд", "en": "courthouse"}}, "social_centre": {"translation": {"ru": "социальный центр", "en": "social centre"}}, "restaurant": {"translation": {"ru": "ресторан", "en": "restaurant"}}, "ferry_terminal": {"translation": {"ru": "паромный причал", "en": "ferry terminal"}}, "casino": {"translation": {"ru": "казино", "en": "casino"}}, "nightclub": {"translation": {"ru": "ночной клуб", "en": "nightclub"}}, "bus_station": {"translation": {"ru": "автостанция", "en": "bus station"}}, "studio": {"translation": {"ru": "студия", "en": "studio"}}, "recycling": {"translation": {"ru": "место сбора отходов", "en": "recycling"}}, "animal_shelter": {"translation": {"ru": "приют для животных", "en": "animal shelter"}}, "nursing_home": {"translation": {"ru": "дом пожилых людей", "en": "nursing home"}}, "pharmacy": {"translation": {"ru": "аптека", "en": "pharmacy"}}, "watering_place": {"translation": {"ru": "поилка для животных", "en": "watering place"}}, "hospital": {"translation": {"ru": "больница", "en": "hospital"}}, "car_rental": {"translation": {"ru": "аренда автомобилей", "en": "car rental"}}, "ranger_station": {"translation": {"ru": "станция рейнджера", "en": "ranger station"}}, "bicycle_parking": {"translation": {"ru": "парковка для велосипедов", "en": "bicycle parking"}}, "bbq": {"translation": {"ru": "барбекью", "en": "barbecue"}}, "drinking_water": {"translation": {"ru": "питьевая вода", "en": "drinking water"}}, "gym": {"translation": {"ru": "спортзал", "en": "gym"}}, "dentist": {"translation": {"ru": "стоматологическая клиника", "en": "dentist"}}, "doctors": {"translation": {"ru": "поликлиника", "en": "doctors"}}, "hunting_stand": {"translation": {"ru": "охотничья вышка", "en": "hunting stand"}}, "swingerclub": {"translation": {"ru": "свингер-клуб", "en": "swingerclub"}}, "shower": {"translation": {"ru": "душ", "en": "shower"}}, "parking_space": {"translation": {"ru": "парковочное место", "en": "parking space"}}, "register_office": {"translation": {"ru": "офис регистратора", "en": "register office"}}, "marketplace": {"translation": {"ru": "рынок", "en": "marketplace"}}, "atm": {"translation": {"ru": "банкомат", "en": "atm"}}, "public_building": {"translation": {"ru": "публичное здание", "en": "public building"}}, "cinema": {"translation": {"ru": "кинотеатр", "en": "cinema"}}, "car_wash": {"translation": {"ru": "автомойка", "en": "car wash"}}, "telephone": {"translation": {"ru": "телефон", "en": "telephone"}}, "planetarium": {"translation": {"ru": "планетарий", "en": "planetarium"}}, "cafe": {"translation": {"ru": "кафе", "en": "cafe"}}, "crypt": {"translation": {"ru": "склеп", "en": "crypt"}}, "coworking_space": {"translation": {"ru": "коворкинг", "en": "coworking space"}}, "arts_centre": {"translation": {"ru": "дом творчества", "en": "arts centre"}}, "gambling": {"translation": {"ru": "казино", "en": "gambling"}}, "fire_station": {"translation": {"ru": "пожарная станция", "en": "fire station"}}, "theatre": {"translation": {"ru": "театр", "en": "theatre"}}, "shelter": {"translation": {"ru": "навесы", "en": "shelter"}}, "firepit": {"translation": {"ru": "кострище", "en": "firepit"}}, "sauna": {"translation": {"ru": "сауна", "en": "sauna"}}, "boat_sharing": {"translation": {"ru": "аренда лодок", "en": "boat sharing"}}, "ice_cream": {"translation": {"ru": "магазин мороженого", "en": "ice cream shop"}}, "animal_boarding": {"translation": {"ru": "место, где можно оставить домашних животных", "en": "animal boarding"}}, "vending_machine": {"translation": {"ru": "торговый автомат", "en": "vending machine"}}, "photo_booth": {"translation": {"ru": "фотобудка", "en": "photo booth"}}}, "historic": {"memorial": {"translation": {"en": "memorial"}}, "monument": {"translation": {"en": "monument"}}}}
+{
+  "amenity": {
+    "animal_boarding": {
+      "translation": {
+        "en": "animal boarding", 
+        "ru": "место, где можно оставить домашних животных"
+      }
+    }, 
+    "animal_shelter": {
+      "translation": {
+        "en": "animal shelter", 
+        "ru": "приют для животных"
+      }
+    }, 
+    "arts_centre": {
+      "translation": {
+        "en": "arts centre", 
+        "ru": "дом творчества"
+      }
+    }, 
+    "atm": {
+      "translation": {
+        "en": "atm", 
+        "ru": "банкомат"
+      }
+    }, 
+    "baby_hatch": {
+      "translation": {
+        "en": "baby hatch", 
+        "ru": "место, где можно оставить ребенка"
+      }
+    }, 
+    "bank": {
+      "translation": {
+        "en": "bank", 
+        "ru": "банк"
+      }
+    }, 
+    "bar": {
+      "translation": {
+        "en": "bar", 
+        "ru": "бар"
+      }
+    }, 
+    "bbq": {
+      "translation": {
+        "en": "barbecue", 
+        "ru": "барбекью"
+      }
+    }, 
+    "bench": {
+      "translation": {
+        "en": "bench", 
+        "ru": "скамейка для отдыха"
+      }
+    }, 
+    "bicycle_parking": {
+      "translation": {
+        "en": "bicycle parking", 
+        "ru": "парковка для велосипедов"
+      }
+    }, 
+    "bicycle_rental": {
+      "translation": {
+        "en": "bicycle rental", 
+        "ru": "аренда велосипедов"
+      }
+    }, 
+    "biergarten": {
+      "translation": {
+        "en": "biergarten", 
+        "ru": "биргарден"
+      }
+    }, 
+    "boat_sharing": {
+      "translation": {
+        "en": "boat sharing", 
+        "ru": "аренда лодок"
+      }
+    }, 
+    "brothel": {
+      "translation": {
+        "en": "brothel", 
+        "ru": "публичный дом"
+      }
+    }, 
+    "bureau_de_change": {
+      "translation": {
+        "en": "currency exchange", 
+        "ru": "пункт обмена валют"
+      }
+    }, 
+    "bus_station": {
+      "translation": {
+        "en": "bus station", 
+        "ru": "автостанция"
+      }
+    }, 
+    "cafe": {
+      "translation": {
+        "en": "cafe", 
+        "ru": "кафе"
+      }
+    }, 
+    "car_rental": {
+      "translation": {
+        "en": "car rental", 
+        "ru": "аренда автомобилей"
+      }
+    }, 
+    "car_sharing": {
+      "translation": {
+        "en": "car sharing", 
+        "ru": "каршаринг"
+      }
+    }, 
+    "car_wash": {
+      "translation": {
+        "en": "car wash", 
+        "ru": "автомойка"
+      }
+    }, 
+    "casino": {
+      "translation": {
+        "en": "casino", 
+        "ru": "казино"
+      }
+    }, 
+    "charging_station": {
+      "translation": {
+        "en": "charging station", 
+        "ru": "место зарядки электромобилей"
+      }
+    }, 
+    "cinema": {
+      "translation": {
+        "en": "cinema", 
+        "ru": "кинотеатр"
+      }
+    }, 
+    "clinic": {
+      "translation": {
+        "en": "clinic", 
+        "ru": "больница"
+      }
+    }, 
+    "clock": {
+      "translation": {
+        "en": "clock", 
+        "ru": "часы"
+      }
+    }, 
+    "college": {
+      "translation": {
+        "en": "college", 
+        "ru": "колледж"
+      }
+    }, 
+    "community_centre": {
+      "translation": {
+        "en": "community centre", 
+        "ru": "общественный центр"
+      }
+    }, 
+    "courthouse": {
+      "translation": {
+        "en": "courthouse", 
+        "ru": "суд"
+      }
+    }, 
+    "coworking_space": {
+      "translation": {
+        "en": "coworking space", 
+        "ru": "коворкинг"
+      }
+    }, 
+    "crematorium": {
+      "translation": {
+        "en": "crematorium", 
+        "ru": "крематорий"
+      }
+    }, 
+    "crypt": {
+      "translation": {
+        "en": "crypt", 
+        "ru": "склеп"
+      }
+    }, 
+    "dentist": {
+      "translation": {
+        "en": "dentist", 
+        "ru": "стоматологическая клиника"
+      }
+    }, 
+    "doctors": {
+      "translation": {
+        "en": "doctors", 
+        "ru": "поликлиника"
+      }
+    }, 
+    "dojo": {
+      "translation": {
+        "en": "dojo", 
+        "ru": "дожо"
+      }
+    }, 
+    "drinking_water": {
+      "translation": {
+        "en": "drinking water", 
+        "ru": "питьевая вода"
+      }
+    }, 
+    "embassy": {
+      "translation": {
+        "en": "embassy", 
+        "ru": "посольство"
+      }
+    }, 
+    "ev_charging": {
+      "translation": {
+        "en": "electric vehicle charging", 
+        "ru": "место зарядки электромобилей"
+      }
+    }, 
+    "fast_food": {
+      "translation": {
+        "en": "fast food", 
+        "ru": "фастфуд"
+      }
+    }, 
+    "ferry_terminal": {
+      "translation": {
+        "en": "ferry terminal", 
+        "ru": "паромный причал"
+      }
+    }, 
+    "fire_station": {
+      "translation": {
+        "en": "fire station", 
+        "ru": "пожарная станция"
+      }
+    }, 
+    "firepit": {
+      "translation": {
+        "en": "firepit", 
+        "ru": "кострище"
+      }
+    }, 
+    "food_court": {
+      "translation": {
+        "en": "food court", 
+        "ru": "фудкорт"
+      }
+    }, 
+    "fountain": {
+      "translation": {
+        "en": "fountain", 
+        "ru": "фонтан"
+      }
+    }, 
+    "fuel": {
+      "translation": {
+        "en": "gas station", 
+        "ru": "АЗС"
+      }
+    }, 
+    "gambling": {
+      "translation": {
+        "en": "gambling", 
+        "ru": "казино"
+      }
+    }, 
+    "grave_yard": {
+      "translation": {
+        "en": "grave yard", 
+        "ru": "погост"
+      }
+    }, 
+    "grit_bin": {
+      "translation": {
+        "en": "grit bin", 
+        "ru": "ящик с противогололедным материалом"
+      }
+    }, 
+    "gym": {
+      "translation": {
+        "en": "gym", 
+        "ru": "спортзал"
+      }
+    }, 
+    "hospital": {
+      "translation": {
+        "en": "hospital", 
+        "ru": "больница"
+      }
+    }, 
+    "hunting_stand": {
+      "translation": {
+        "en": "hunting stand", 
+        "ru": "охотничья вышка"
+      }
+    }, 
+    "ice_cream": {
+      "translation": {
+        "en": "ice cream shop", 
+        "ru": "магазин мороженого"
+      }
+    }, 
+    "kindergarten": {
+      "translation": {
+        "en": "kindergarten", 
+        "ru": "детский сад"
+      }
+    }, 
+    "library": {
+      "translation": {
+        "en": "library", 
+        "ru": "библиотека"
+      }
+    }, 
+    "marketplace": {
+      "translation": {
+        "en": "marketplace", 
+        "ru": "рынок"
+      }
+    }, 
+    "nightclub": {
+      "translation": {
+        "en": "nightclub", 
+        "ru": "ночной клуб"
+      }
+    }, 
+    "nursing_home": {
+      "translation": {
+        "en": "nursing home", 
+        "ru": "дом пожилых людей"
+      }
+    }, 
+    "parking": {
+      "translation": {
+        "en": "parking", 
+        "ru": "парковка"
+      }
+    }, 
+    "parking_entrance": {
+      "translation": {
+        "en": "parking entrance", 
+        "ru": "въезд в парковку"
+      }
+    }, 
+    "parking_space": {
+      "translation": {
+        "en": "parking space", 
+        "ru": "парковочное место"
+      }
+    }, 
+    "pharmacy": {
+      "translation": {
+        "en": "pharmacy", 
+        "ru": "аптека"
+      }
+    }, 
+    "photo_booth": {
+      "translation": {
+        "en": "photo booth", 
+        "ru": "фотобудка"
+      }
+    }, 
+    "place_of_worship": {
+      "translation": {
+        "en": "place of worship", 
+        "ru": "культовое сооружение"
+      }
+    }, 
+    "planetarium": {
+      "translation": {
+        "en": "planetarium", 
+        "ru": "планетарий"
+      }
+    }, 
+    "police": {
+      "translation": {
+        "en": "police", 
+        "ru": "полицейский участок"
+      }
+    }, 
+    "post_box": {
+      "translation": {
+        "en": "post box", 
+        "ru": "почтовый ящик"
+      }
+    }, 
+    "post_office": {
+      "translation": {
+        "en": "post office", 
+        "ru": "почтовое отделение"
+      }
+    }, 
+    "prison": {
+      "translation": {
+        "en": "prison", 
+        "ru": "тюрьма"
+      }
+    }, 
+    "pub": {
+      "translation": {
+        "en": "pub", 
+        "ru": "паб"
+      }
+    }, 
+    "public_building": {
+      "translation": {
+        "en": "public building", 
+        "ru": "публичное здание"
+      }
+    }, 
+    "ranger_station": {
+      "translation": {
+        "en": "ranger station", 
+        "ru": "станция рейнджера"
+      }
+    }, 
+    "recycling": {
+      "translation": {
+        "en": "recycling", 
+        "ru": "место сбора отходов"
+      }
+    }, 
+    "register_office": {
+      "translation": {
+        "en": "register office", 
+        "ru": "офис регистратора"
+      }
+    }, 
+    "rescue_station": {
+      "translation": {
+        "en": "rescue station", 
+        "ru": "спасательная станция"
+      }
+    }, 
+    "restaurant": {
+      "translation": {
+        "en": "restaurant", 
+        "ru": "ресторан"
+      }
+    }, 
+    "sauna": {
+      "translation": {
+        "en": "sauna", 
+        "ru": "сауна"
+      }
+    }, 
+    "school": {
+      "translation": {
+        "en": "school", 
+        "ru": "школа"
+      }
+    }, 
+    "shelter": {
+      "translation": {
+        "en": "shelter", 
+        "ru": "навесы"
+      }
+    }, 
+    "shower": {
+      "translation": {
+        "en": "shower", 
+        "ru": "душ"
+      }
+    }, 
+    "social_centre": {
+      "translation": {
+        "en": "social centre", 
+        "ru": "социальный центр"
+      }
+    }, 
+    "social_facility": {
+      "translation": {
+        "en": "social facility", 
+        "ru": "учреждение оказывающее социальные услуги"
+      }
+    }, 
+    "stripclub": {
+      "translation": {
+        "en": "stripclub", 
+        "ru": "стрипклуб"
+      }
+    }, 
+    "studio": {
+      "translation": {
+        "en": "studio", 
+        "ru": "студия"
+      }
+    }, 
+    "swingerclub": {
+      "translation": {
+        "en": "swingerclub", 
+        "ru": "свингер-клуб"
+      }
+    }, 
+    "taxi": {
+      "translation": {
+        "en": "taxi", 
+        "ru": "стоянка такси"
+      }
+    }, 
+    "telephone": {
+      "translation": {
+        "en": "telephone", 
+        "ru": "телефон"
+      }
+    }, 
+    "theatre": {
+      "translation": {
+        "en": "theatre", 
+        "ru": "театр"
+      }
+    }, 
+    "toilets": {
+      "translation": {
+        "en": "toilets", 
+        "ru": "туалет"
+      }
+    }, 
+    "townhall": {
+      "translation": {
+        "en": "townhall", 
+        "ru": "городская администрация"
+      }
+    }, 
+    "university": {
+      "translation": {
+        "en": "university", 
+        "ru": "университет"
+      }
+    }, 
+    "vending_machine": {
+      "translation": {
+        "en": "vending machine", 
+        "ru": "торговый автомат"
+      }
+    }, 
+    "veterinary": {
+      "translation": {
+        "en": "veterinary", 
+        "ru": "ветеринарный пункт"
+      }
+    }, 
+    "waste_disposal": {
+      "translation": {
+        "en": "waste disposal", 
+        "ru": "мусорка"
+      }
+    }, 
+    "water_point": {
+      "translation": {
+        "en": "water point", 
+        "ru": "место с питьевой водой"
+      }
+    }, 
+    "watering_place": {
+      "translation": {
+        "en": "watering place", 
+        "ru": "поилка для животных"
+      }
+    }
+  }, 
+  "bridge": {
+    "yes": {
+      "translation": {
+        "en": "bridge", 
+        "ru": "мост"
+      }
+    }
+  }, 
+  "building": {
+    "apartments": {
+      "translation": {
+        "en": "apartments", 
+        "ru": "дом"
+      }
+    }, 
+    "barn": {
+      "translation": {
+        "en": "barn", 
+        "ru": "сарай"
+      }
+    }, 
+    "bridge": {
+      "translation": {
+        "en": "bridge", 
+        "ru": "мост"
+      }
+    }, 
+    "bunker": {
+      "translation": {
+        "en": "bunker", 
+        "ru": "бункер"
+      }
+    }, 
+    "cabin": {
+      "translation": {
+        "en": "cabin", 
+        "ru": "будка"
+      }
+    }, 
+    "cathedral": {
+      "translation": {
+        "en": "cathedral", 
+        "ru": "собор"
+      }
+    }, 
+    "chapel": {
+      "translation": {
+        "en": "chapel", 
+        "ru": "часовня"
+      }
+    }, 
+    "church": {
+      "translation": {
+        "en": "church", 
+        "ru": "храм"
+      }
+    }, 
+    "civic": {
+      "translation": {
+        "en": "civic", 
+        "ru": "гражданское здание"
+      }
+    }, 
+    "commercial": {
+      "translation": {
+        "en": "commercial", 
+        "ru": "коммерческое здание"
+      }
+    }, 
+    "construction": {
+      "translation": {
+        "en": "construction", 
+        "ru": "строящееся здание"
+      }
+    }, 
+    "cowshed": {
+      "translation": {
+        "en": "cowshed", 
+        "ru": "коровник"
+      }
+    }, 
+    "detached": {
+      "translation": {
+        "en": "detached", 
+        "ru": "дом"
+      }
+    }, 
+    "dormitory": {
+      "translation": {
+        "en": "dormitory", 
+        "ru": "общежитие"
+      }
+    }, 
+    "farm": {
+      "translation": {
+        "en": "farm", 
+        "ru": "ферма"
+      }
+    }, 
+    "farm_auxiliary": {
+      "translation": {
+        "en": "farm auxiliary", 
+        "ru": "ферма"
+      }
+    }, 
+    "garage": {
+      "translation": {
+        "en": "garage", 
+        "ru": "гараж"
+      }
+    }, 
+    "garages": {
+      "translation": {
+        "en": "garages", 
+        "ru": "гараж"
+      }
+    }, 
+    "greenhouse": {
+      "translation": {
+        "en": "greenhouse", 
+        "ru": "теплица"
+      }
+    }, 
+    "hangar": {
+      "translation": {
+        "en": "hangar", 
+        "ru": "ангар"
+      }
+    }, 
+    "hospital": {
+      "translation": {
+        "en": "hospital", 
+        "ru": "госпиталь"
+      }
+    }, 
+    "hotel": {
+      "translation": {
+        "en": "hotel", 
+        "ru": "гостиница"
+      }
+    }, 
+    "house": {
+      "translation": {
+        "en": "house", 
+        "ru": "дом"
+      }
+    }, 
+    "houseboat": {
+      "translation": {
+        "en": "houseboat", 
+        "ru": "лодка"
+      }
+    }, 
+    "hut": {
+      "translation": {
+        "en": "hut", 
+        "ru": "хижина"
+      }
+    }, 
+    "industrial": {
+      "translation": {
+        "en": "industrial", 
+        "ru": "промышленное строение"
+      }
+    }, 
+    "mosque": {
+      "translation": {
+        "en": "mosque", 
+        "ru": "мечеть"
+      }
+    }, 
+    "public": {
+      "translation": {
+        "en": "public", 
+        "ru": "общественное здание"
+      }
+    }, 
+    "residential": {
+      "translation": {
+        "en": "residential", 
+        "ru": "дома"
+      }
+    }, 
+    "retail": {
+      "translation": {
+        "en": "retail", 
+        "ru": "торговое здание"
+      }
+    }, 
+    "roof": {
+      "translation": {
+        "en": "roof", 
+        "ru": "крыша"
+      }
+    }, 
+    "school": {
+      "translation": {
+        "en": "school", 
+        "ru": "школа"
+      }
+    }, 
+    "shed": {
+      "translation": {
+        "en": "shed", 
+        "ru": "сарай"
+      }
+    }, 
+    "stable": {
+      "translation": {
+        "en": "stable", 
+        "ru": "конюшня"
+      }
+    }, 
+    "static_caravan": {
+      "translation": {
+        "en": "static caravan", 
+        "ru": "караван"
+      }
+    }, 
+    "sty": {
+      "translation": {
+        "en": "sty", 
+        "ru": "свинарник"
+      }
+    }, 
+    "terrace": {
+      "translation": {
+        "en": "terrace", 
+        "ru": "дома"
+      }
+    }, 
+    "train_station": {
+      "translation": {
+        "en": "train station", 
+        "ru": "вокзал"
+      }
+    }, 
+    "transformer_tower": {
+      "translation": {
+        "en": "transformer tower", 
+        "ru": "трансформаторная башня"
+      }
+    }, 
+    "transportation": {
+      "translation": {
+        "en": "transportation", 
+        "ru": "грузоперевозки"
+      }
+    }, 
+    "university": {
+      "translation": {
+        "en": "university", 
+        "ru": "университет"
+      }
+    }, 
+    "warehouse": {
+      "translation": {
+        "en": "warehouse", 
+        "ru": "склад"
+      }
+    }
+  }, 
+  "historic": {
+    "aircraft": {
+      "translation": {
+        "en": "aircraft", 
+        "ru": "самолет"
+      }
+    }, 
+    "archaeological_site": {
+      "translation": {
+        "en": "archaeological site", 
+        "ru": "места раскопок"
+      }
+    }, 
+    "battlefield": {
+      "translation": {
+        "en": "battlefield", 
+        "ru": "место сражения"
+      }
+    }, 
+    "boundary_stone": {
+      "translation": {
+        "en": "boundary stone", 
+        "ru": "камень исторической границы"
+      }
+    }, 
+    "building": {
+      "translation": {
+        "en": "building", 
+        "ru": "здание"
+      }
+    }, 
+    "cannon": {
+      "translation": {
+        "en": "cannon", 
+        "ru": "пушка"
+      }
+    }, 
+    "castle": {
+      "translation": {
+        "en": "castle", 
+        "ru": "замок"
+      }
+    }, 
+    "city_gate": {
+      "translation": {
+        "en": "city gate", 
+        "ru": "городские ворота"
+      }
+    }, 
+    "citywalls": {
+      "translation": {
+        "en": "citywalls", 
+        "ru": "городские стены"
+      }
+    }, 
+    "farm": {
+      "translation": {
+        "en": "farm", 
+        "ru": "ферма"
+      }
+    }, 
+    "fort": {
+      "translation": {
+        "en": "fort", 
+        "ru": "форт"
+      }
+    }, 
+    "manor": {
+      "translation": {
+        "en": "manor", 
+        "ru": "усадьба"
+      }
+    }, 
+    "memorial": {
+      "translation": {
+        "en": "memorial", 
+        "ru": "памятник"
+      }
+    }, 
+    "monument": {
+      "translation": {
+        "en": "monument", 
+        "ru": "монумент"
+      }
+    }, 
+    "ruins": {
+      "translation": {
+        "en": "ruins", 
+        "ru": "развалины"
+      }
+    }, 
+    "rune_stone": {
+      "translation": {
+        "en": "rune stone", 
+        "ru": "рунические камни"
+      }
+    }, 
+    "ship": {
+      "translation": {
+        "en": "ship", 
+        "ru": "судно"
+      }
+    }, 
+    "tomb": {
+      "translation": {
+        "en": "tomb", 
+        "ru": "могила"
+      }
+    }, 
+    "tree_shrine": {
+      "translation": {
+        "en": "tree shrine", 
+        "ru": "дерево"
+      }
+    }, 
+    "wayside_cross": {
+      "translation": {
+        "en": "wayside cross", 
+        "ru": "крест"
+      }
+    }, 
+    "wayside_shrine": {
+      "translation": {
+        "en": "wayside shrine", 
+        "ru": "религиозная святыня"
+      }
+    }, 
+    "wreck": {
+      "translation": {
+        "en": "wreck", 
+        "ru": "остатки крушения"
+      }
+    }
+  }, 
+  "landuse": {
+    "allotments": {
+      "translation": {
+        "en": "allotments", 
+        "ru": "земельные участки"
+      }
+    }, 
+    "basin": {
+      "translation": {
+        "en": "basin", 
+        "ru": "бассейн стока"
+      }
+    }, 
+    "brownfield": {
+      "translation": {
+        "en": "brownfield", 
+        "ru": "новая застройка"
+      }
+    }, 
+    "cemetery": {
+      "translation": {
+        "en": "cemetery", 
+        "ru": "кладбище"
+      }
+    }, 
+    "commercial": {
+      "translation": {
+        "en": "commercial area", 
+        "ru": "деловой район"
+      }
+    }, 
+    "conservation": {
+      "translation": {
+        "en": "conservation", 
+        "ru": "защищенная область"
+      }
+    }, 
+    "construction": {
+      "translation": {
+        "en": "construction", 
+        "ru": "стройка"
+      }
+    }, 
+    "farm": {
+      "translation": {
+        "en": "farm", 
+        "ru": "сельский район"
+      }
+    }, 
+    "farmland": {
+      "translation": {
+        "en": "farmland", 
+        "ru": "ферма"
+      }
+    }, 
+    "farmyard": {
+      "translation": {
+        "en": "farmyard", 
+        "ru": "сельскохозяйственные дворы"
+      }
+    }, 
+    "forest": {
+      "translation": {
+        "en": "forest", 
+        "ru": "лес"
+      }
+    }, 
+    "garages": {
+      "translation": {
+        "en": "garages", 
+        "ru": "гаражи"
+      }
+    }, 
+    "grass": {
+      "translation": {
+        "en": "grass", 
+        "ru": "луг"
+      }
+    }, 
+    "greenfield": {
+      "translation": {
+        "en": "greenfield", 
+        "ru": "застройка"
+      }
+    }, 
+    "greenhouse_horticulture": {
+      "translation": {
+        "en": "greenhouse horticulture", 
+        "ru": "теплица"
+      }
+    }, 
+    "industrial": {
+      "translation": {
+        "en": "industrial", 
+        "ru": "промышленная территория"
+      }
+    }, 
+    "landfill": {
+      "translation": {
+        "en": "landfill", 
+        "ru": "свалка"
+      }
+    }, 
+    "meadow": {
+      "translation": {
+        "en": "meadow", 
+        "ru": "луг"
+      }
+    }, 
+    "military": {
+      "translation": {
+        "en": "military area", 
+        "ru": "военная зона"
+      }
+    }, 
+    "orchard": {
+      "translation": {
+        "en": "orchard", 
+        "ru": "сад"
+      }
+    }, 
+    "pasture": {
+      "translation": {
+        "en": "pasture", 
+        "ru": "пастбище"
+      }
+    }, 
+    "plant_nursery": {
+      "translation": {
+        "en": "plant nursery", 
+        "ru": "питомник растений"
+      }
+    }, 
+    "quarry": {
+      "translation": {
+        "en": "quarry", 
+        "ru": "карьер"
+      }
+    }, 
+    "railway": {
+      "translation": {
+        "en": "railway", 
+        "ru": "железная дорога"
+      }
+    }, 
+    "recreation_ground": {
+      "translation": {
+        "en": "recreation ground", 
+        "ru": "зона отдыха"
+      }
+    }, 
+    "reservoir": {
+      "translation": {
+        "en": "reservoir", 
+        "ru": "резервуар"
+      }
+    }, 
+    "residential": {
+      "translation": {
+        "en": "residential area", 
+        "ru": "жилой район"
+      }
+    }, 
+    "retail": {
+      "translation": {
+        "en": "retail area", 
+        "ru": "торговая територия"
+      }
+    }, 
+    "salt_pond": {
+      "translation": {
+        "en": "salt pond", 
+        "ru": "соляная разработка"
+      }
+    }, 
+    "village_green": {
+      "translation": {
+        "en": "village green", 
+        "ru": "общественная территория"
+      }
+    }, 
+    "vineyard": {
+      "translation": {
+        "en": "vineyard", 
+        "ru": "виноградник"
+      }
+    }
+  }, 
+  "leisure": {
+    "adult_gaming_centre": {
+      "translation": {
+        "en": "gaming centre", 
+        "ru": "игровой центр"
+      }
+    }, 
+    "amusement_arcade": {
+      "translation": {
+        "en": "amusement arcade", 
+        "ru": "аркада"
+      }
+    }, 
+    "beach_resort": {
+      "translation": {
+        "en": "beach resort", 
+        "ru": "пляж"
+      }
+    }, 
+    "bird_hide": {
+      "translation": {
+        "en": "bird hide", 
+        "ru": "укрытие для наблюдения за птицами"
+      }
+    }, 
+    "dance": {
+      "translation": {
+        "en": "dance", 
+        "ru": "танцевальная площадка"
+      }
+    }, 
+    "dog_park": {
+      "translation": {
+        "en": "dog park", 
+        "ru": "место для выгула собак"
+      }
+    }, 
+    "firepit": {
+      "translation": {
+        "en": "firepit", 
+        "ru": "место для костров"
+      }
+    }, 
+    "fishing": {
+      "translation": {
+        "en": "fishing", 
+        "ru": "место для рыбалки"
+      }
+    }, 
+    "garden": {
+      "translation": {
+        "en": "garden", 
+        "ru": "сад"
+      }
+    }, 
+    "golf_course": {
+      "translation": {
+        "en": "golf course", 
+        "ru": "поле для гольфа"
+      }
+    }, 
+    "hackerspace": {
+      "translation": {
+        "en": "hackerspace", 
+        "ru": "хакерспейс"
+      }
+    }, 
+    "ice_rink": {
+      "translation": {
+        "en": "ice rink", 
+        "ru": "каток"
+      }
+    }, 
+    "marina": {
+      "translation": {
+        "en": "marina", 
+        "ru": "пристань"
+      }
+    }, 
+    "miniature_golf": {
+      "translation": {
+        "en": "miniature golf", 
+        "ru": "поле для минигольфа"
+      }
+    }, 
+    "nature_reserve": {
+      "translation": {
+        "en": "nature reserve", 
+        "ru": "заповедник"
+      }
+    }, 
+    "park": {
+      "translation": {
+        "en": "park", 
+        "ru": "парк"
+      }
+    }, 
+    "pitch": {
+      "translation": {
+        "en": "pitch", 
+        "ru": "спортивная площадка"
+      }
+    }, 
+    "playground": {
+      "translation": {
+        "en": "playground", 
+        "ru": "детская площадка"
+      }
+    }, 
+    "slipway": {
+      "translation": {
+        "en": "slipway", 
+        "ru": "место для спуска яхт"
+      }
+    }, 
+    "sports_centre": {
+      "translation": {
+        "en": "sports centre", 
+        "ru": "спортивный центр"
+      }
+    }, 
+    "stadium": {
+      "translation": {
+        "en": "stadium", 
+        "ru": "стадион"
+      }
+    }, 
+    "swimming_pool": {
+      "translation": {
+        "en": "swimming pool", 
+        "ru": "бассейн"
+      }
+    }, 
+    "track": {
+      "translation": {
+        "en": "track", 
+        "ru": "спортивная дорожка"
+      }
+    }, 
+    "water_park": {
+      "translation": {
+        "en": "water park", 
+        "ru": "аквапарк"
+      }
+    }, 
+    "wildlife_hide": {
+      "translation": {
+        "en": "wildlife hide", 
+        "ru": "место для наблюдения за дикой природой"
+      }
+    }
+  }, 
+  "man_made": {
+    "adit": {
+      "translation": {
+        "en": "adit", 
+        "ru": "штольня"
+      }
+    }, 
+    "beacon": {
+      "translation": {
+        "en": "beacon", 
+        "ru": "буй"
+      }
+    }, 
+    "breakwater": {
+      "translation": {
+        "en": "breakwater", 
+        "ru": "волнорез"
+      }
+    }, 
+    "bunker_silo": {
+      "translation": {
+        "en": "bunker silo", 
+        "ru": "бункер"
+      }
+    }, 
+    "campanile": {
+      "translation": {
+        "en": "campanile", 
+        "ru": "колокольня"
+      }
+    }, 
+    "chimney": {
+      "translation": {
+        "en": "chimney", 
+        "ru": "дымовая труба"
+      }
+    }, 
+    "clearcut": {
+      "translation": {
+        "en": "clearcut", 
+        "ru": "площадка"
+      }
+    }, 
+    "crane": {
+      "translation": {
+        "en": "crane", 
+        "ru": "подъемный кран"
+      }
+    }, 
+    "cross": {
+      "translation": {
+        "en": "cross", 
+        "ru": "крест"
+      }
+    }, 
+    "cutline": {
+      "translation": {
+        "en": "cutline", 
+        "ru": "просека"
+      }
+    }, 
+    "dyke": {
+      "translation": {
+        "en": "dyke", 
+        "ru": "дамба"
+      }
+    }, 
+    "embankment": {
+      "translation": {
+        "en": "embankment", 
+        "ru": "земляная насыпь"
+      }
+    }, 
+    "flagpole": {
+      "translation": {
+        "en": "flagpole", 
+        "ru": "флагшток"
+      }
+    }, 
+    "gasometer": {
+      "translation": {
+        "en": "gasometer", 
+        "ru": "газгольдер"
+      }
+    }, 
+    "groyne": {
+      "translation": {
+        "en": "groyne", 
+        "ru": "буна"
+      }
+    }, 
+    "kiln": {
+      "translation": {
+        "en": "kiln", 
+        "ru": "печь"
+      }
+    }, 
+    "lighthouse": {
+      "translation": {
+        "en": "lighthouse", 
+        "ru": "маяк"
+      }
+    }, 
+    "mast": {
+      "translation": {
+        "en": "mast", 
+        "ru": "мачта"
+      }
+    }, 
+    "mineshaft": {
+      "translation": {
+        "en": "mineshaft", 
+        "ru": "ствол шахты"
+      }
+    }, 
+    "monitoring_station": {
+      "translation": {
+        "en": "monitoring station", 
+        "ru": "мониторинговая станция"
+      }
+    }, 
+    "offshore_platform": {
+      "translation": {
+        "en": "offshore platform", 
+        "ru": "морская платформа"
+      }
+    }, 
+    "petroleum_well": {
+      "translation": {
+        "en": "petroleum well", 
+        "ru": "буровая"
+      }
+    }, 
+    "pier": {
+      "translation": {
+        "en": "pier", 
+        "ru": "пирс"
+      }
+    }, 
+    "pipeline": {
+      "translation": {
+        "en": "pipeline", 
+        "ru": "трубопровод"
+      }
+    }, 
+    "reservoir_covered": {
+      "translation": {
+        "en": "reservoir covered", 
+        "ru": "крытый резервуар"
+      }
+    }, 
+    "silo": {
+      "translation": {
+        "en": "silo", 
+        "ru": "сило"
+      }
+    }, 
+    "snow_fence": {
+      "translation": {
+        "en": "snow fence", 
+        "ru": "забор от снега"
+      }
+    }, 
+    "snow_net": {
+      "translation": {
+        "en": "snow net", 
+        "ru": "сетка от снега"
+      }
+    }, 
+    "storage_tank": {
+      "translation": {
+        "en": "storage tank", 
+        "ru": "бак"
+      }
+    }, 
+    "surveillance": {
+      "translation": {
+        "en": "surveillance", 
+        "ru": "камера наблюдения"
+      }
+    }, 
+    "survey_point": {
+      "translation": {
+        "en": "survey point", 
+        "ru": "геодезический пункт"
+      }
+    }, 
+    "tower": {
+      "translation": {
+        "en": "tower", 
+        "ru": "башня"
+      }
+    }, 
+    "wastewater_plant": {
+      "translation": {
+        "en": "wastewater plant", 
+        "ru": "станция очистки сточных вод"
+      }
+    }, 
+    "water_tower": {
+      "translation": {
+        "en": "water tower", 
+        "ru": "водонапорная башня"
+      }
+    }, 
+    "water_well": {
+      "translation": {
+        "en": "water well", 
+        "ru": "колодец"
+      }
+    }, 
+    "water_works": {
+      "translation": {
+        "en": "water works", 
+        "ru": "станция очистки воды"
+      }
+    }, 
+    "watermill": {
+      "translation": {
+        "en": "watermill", 
+        "ru": "водяная мельница"
+      }
+    }, 
+    "windmill": {
+      "translation": {
+        "en": "windmill", 
+        "ru": "ветряная мельница"
+      }
+    }, 
+    "works": {
+      "translation": {
+        "en": "works", 
+        "ru": "промышленное строение"
+      }
+    }
+  }, 
+  "natural": {
+    "arete": {
+      "translation": {
+        "en": "arete", 
+        "ru": "гребень горы"
+      }
+    }, 
+    "bare_rock": {
+      "translation": {
+        "en": "bare rock", 
+        "ru": "редкая растительность"
+      }
+    }, 
+    "bay": {
+      "translation": {
+        "en": "bay", 
+        "ru": "залив"
+      }
+    }, 
+    "beach": {
+      "translation": {
+        "en": "beach", 
+        "ru": "пляж"
+      }
+    }, 
+    "cave_entrance": {
+      "translation": {
+        "en": "cave entrance", 
+        "ru": "вход в пещеру"
+      }
+    }, 
+    "cliff": {
+      "translation": {
+        "en": "cliff", 
+        "ru": "утес"
+      }
+    }, 
+    "coastline": {
+      "translation": {
+        "en": "coastline", 
+        "ru": "берег"
+      }
+    }, 
+    "fell": {
+      "translation": {
+        "en": "fell", 
+        "ru": "пустырь"
+      }
+    }, 
+    "glacier": {
+      "translation": {
+        "en": "glacier", 
+        "ru": "ледник"
+      }
+    }, 
+    "grassland": {
+      "translation": {
+        "en": "grassland", 
+        "ru": "трава"
+      }
+    }, 
+    "heath": {
+      "translation": {
+        "en": "heath", 
+        "ru": "пустошь"
+      }
+    }, 
+    "moor": {
+      "translation": {
+        "en": "moor", 
+        "ru": "болото"
+      }
+    }, 
+    "mud": {
+      "translation": {
+        "en": "mud", 
+        "ru": "ил"
+      }
+    }, 
+    "peak": {
+      "translation": {
+        "en": "peak", 
+        "ru": "пик"
+      }
+    }, 
+    "ridge": {
+      "translation": {
+        "en": "ridge", 
+        "ru": "пик"
+      }
+    }, 
+    "rock": {
+      "translation": {
+        "en": "rock", 
+        "ru": "скала"
+      }
+    }, 
+    "saddle": {
+      "translation": {
+        "en": "saddle", 
+        "ru": "седловина"
+      }
+    }, 
+    "sand": {
+      "translation": {
+        "en": "sand", 
+        "ru": "песок"
+      }
+    }, 
+    "scree": {
+      "translation": {
+        "en": "scree", 
+        "ru": "осыпь"
+      }
+    }, 
+    "scrub": {
+      "translation": {
+        "en": "scrub", 
+        "ru": "кустарник"
+      }
+    }, 
+    "sinkhole": {
+      "translation": {
+        "en": "sinkhole", 
+        "ru": "впадина"
+      }
+    }, 
+    "spring": {
+      "translation": {
+        "en": "spring", 
+        "ru": "родник"
+      }
+    }, 
+    "stone": {
+      "translation": {
+        "en": "stone", 
+        "ru": "камни"
+      }
+    }, 
+    "tree": {
+      "translation": {
+        "en": "tree", 
+        "ru": "деревья"
+      }
+    }, 
+    "tree_row": {
+      "translation": {
+        "en": "tree row", 
+        "ru": "линия деревьев"
+      }
+    }, 
+    "volcano": {
+      "translation": {
+        "en": "volcano", 
+        "ru": "вулкан"
+      }
+    }, 
+    "water": {
+      "translation": {
+        "en": "water", 
+        "ru": "вода"
+      }
+    }, 
+    "wetland": {
+      "translation": {
+        "en": "wetland", 
+        "ru": "болото"
+      }
+    }, 
+    "wood": {
+      "translation": {
+        "en": "wood", 
+        "ru": "лес"
+      }
+    }
+  }, 
+  "place": {
+    "allotments": {
+      "translation": {
+        "en": "allotments", 
+        "ru": "дачи"
+      }
+    }, 
+    "archipelago": {
+      "translation": {
+        "en": "archipelago", 
+        "ru": "архипелаг"
+      }
+    }, 
+    "borough": {
+      "translation": {
+        "en": "borough", 
+        "ru": "район"
+      }
+    }, 
+    "city": {
+      "translation": {
+        "en": "city", 
+        "ru": "город"
+      }
+    }, 
+    "city_block": {
+      "translation": {
+        "en": "city block", 
+        "ru": "квартал"
+      }
+    }, 
+    "continent": {
+      "translation": {
+        "en": "continent", 
+        "ru": "континент"
+      }
+    }, 
+    "country": {
+      "translation": {
+        "en": "country", 
+        "ru": "страна"
+      }
+    }, 
+    "county": {
+      "translation": {
+        "en": "county", 
+        "ru": "графство"
+      }
+    }, 
+    "district": {
+      "translation": {
+        "en": "district", 
+        "ru": "район"
+      }
+    }, 
+    "farm": {
+      "translation": {
+        "en": "farm", 
+        "ru": "ферма"
+      }
+    }, 
+    "hamlet": {
+      "translation": {
+        "en": "hamlet", 
+        "ru": "деревня"
+      }
+    }, 
+    "island": {
+      "translation": {
+        "en": "island", 
+        "ru": "остров"
+      }
+    }, 
+    "islet": {
+      "translation": {
+        "en": "islet", 
+        "ru": "островок"
+      }
+    }, 
+    "isolated_dwelling": {
+      "translation": {
+        "en": "isolated dwelling", 
+        "ru": "хутор"
+      }
+    }, 
+    "locality": {
+      "translation": {
+        "en": "locality", 
+        "ru": "местность"
+      }
+    }, 
+    "municipality": {
+      "translation": {
+        "en": "municipality", 
+        "ru": "муниципалитет"
+      }
+    }, 
+    "neighbourhood": {
+      "translation": {
+        "en": "neighbourhood", 
+        "ru": "район"
+      }
+    }, 
+    "province": {
+      "translation": {
+        "en": "province", 
+        "ru": "провинция"
+      }
+    }, 
+    "quarter": {
+      "translation": {
+        "en": "quarter", 
+        "ru": "квартал"
+      }
+    }, 
+    "region": {
+      "translation": {
+        "en": "region", 
+        "ru": "регион"
+      }
+    }, 
+    "state": {
+      "translation": {
+        "en": "state", 
+        "ru": "область"
+      }
+    }, 
+    "suburb": {
+      "translation": {
+        "en": "suburb", 
+        "ru": "район"
+      }
+    }, 
+    "town": {
+      "translation": {
+        "en": "town", 
+        "ru": "город"
+      }
+    }, 
+    "village": {
+      "translation": {
+        "en": "village", 
+        "ru": "деревня"
+      }
+    }
+  }, 
+  "public_transport": {
+    "platform": {
+      "translation": {
+        "en": "platform", 
+        "ru": "платформа"
+      }
+    }, 
+    "station": {
+      "translation": {
+        "en": "station", 
+        "ru": "станция"
+      }
+    }
+  }, 
+  "railway": {
+    "abandoned": {
+      "translation": {
+        "en": "abandoned", 
+        "ru": "заброшеная железная дорога"
+      }
+    }, 
+    "buffer_stop": {
+      "translation": {
+        "en": "buffer stop", 
+        "ru": "конец железнодорожного пути"
+      }
+    }, 
+    "construction": {
+      "translation": {
+        "en": "construction", 
+        "ru": "стройка железной дороги"
+      }
+    }, 
+    "crossing": {
+      "translation": {
+        "en": "crossing", 
+        "ru": "пешеходный переход"
+      }
+    }, 
+    "diamond": {
+      "translation": {
+        "en": "diamond", 
+        "ru": "пересечение железнодорожных путей"
+      }
+    }, 
+    "disused": {
+      "translation": {
+        "en": "disused", 
+        "ru": "не используемая железная дорога"
+      }
+    }, 
+    "funicular": {
+      "translation": {
+        "en": "funicular", 
+        "ru": "фуникулёр"
+      }
+    }, 
+    "halt": {
+      "translation": {
+        "en": "halt", 
+        "ru": "остановка"
+      }
+    }, 
+    "level_crossing": {
+      "translation": {
+        "en": "level crossing", 
+        "ru": "переезд через железнодорожные пути"
+      }
+    }, 
+    "light_rail": {
+      "translation": {
+        "en": "light rail", 
+        "ru": "лёгкая железная дорога"
+      }
+    }, 
+    "miniature": {
+      "translation": {
+        "en": "miniature", 
+        "ru": "миниатюрная железная дорога"
+      }
+    }, 
+    "monorail": {
+      "translation": {
+        "en": "monorail", 
+        "ru": "монорельс"
+      }
+    }, 
+    "narrow_gauge": {
+      "translation": {
+        "en": "narrow gauge", 
+        "ru": "узкоколейка"
+      }
+    }, 
+    "preserved": {
+      "translation": {
+        "en": "preserved", 
+        "ru": "историческая часть железнодорожных путей"
+      }
+    }, 
+    "rail": {
+      "translation": {
+        "en": "rail", 
+        "ru": "железнодорожная линия"
+      }
+    }, 
+    "station": {
+      "translation": {
+        "en": "station", 
+        "ru": "железнодорожная станция"
+      }
+    }, 
+    "subway": {
+      "translation": {
+        "en": "subway", 
+        "ru": "линия метро"
+      }
+    }, 
+    "subway_entrance": {
+      "translation": {
+        "en": "subway entrance", 
+        "ru": "вход в метро"
+      }
+    }, 
+    "switch": {
+      "translation": {
+        "en": "switch", 
+        "ru": "стрелка"
+      }
+    }, 
+    "tram": {
+      "translation": {
+        "en": "tram", 
+        "ru": "трамвайная линия"
+      }
+    }, 
+    "tram_stop": {
+      "translation": {
+        "en": "tram stop", 
+        "ru": "трамвайная остановка"
+      }
+    }, 
+    "turntable": {
+      "translation": {
+        "en": "turntable", 
+        "ru": "поворотная платформа"
+      }
+    }
+  }, 
+  "shop": {
+    "alcohol": {
+      "translation": {
+        "en": "liquor store", 
+        "ru": "алкогольные напитки"
+      }
+    }, 
+    "anime": {
+      "translation": {
+        "en": "anime shop", 
+        "ru": "магазин аниме"
+      }
+    }, 
+    "antiques": {
+      "translation": {
+        "en": "antiques", 
+        "ru": "антикварный магазин"
+      }
+    }, 
+    "art": {
+      "translation": {
+        "en": "art gallery", 
+        "ru": "артгалерея"
+      }
+    }, 
+    "baby_goods": {
+      "translation": {
+        "en": "baby goods", 
+        "ru": "магазин детских товаров"
+      }
+    }, 
+    "bag": {
+      "translation": {
+        "en": "bag shop", 
+        "ru": "магазин сумок"
+      }
+    }, 
+    "bakery": {
+      "translation": {
+        "en": "bakery", 
+        "ru": "булочная"
+      }
+    }, 
+    "bathroom_furnishing": {
+      "translation": {
+        "en": "bathroom furnishing shop", 
+        "ru": "сантехника"
+      }
+    }, 
+    "beauty": {
+      "translation": {
+        "en": "beauty shop", 
+        "ru": "салон красоты"
+      }
+    }, 
+    "bed": {
+      "translation": {
+        "en": "bed shop", 
+        "ru": "магазин матрасов"
+      }
+    }, 
+    "beverages": {
+      "translation": {
+        "en": "beverages", 
+        "ru": "напитки"
+      }
+    }, 
+    "bicycle": {
+      "translation": {
+        "en": "bicycle shop", 
+        "ru": "веломагазин"
+      }
+    }, 
+    "books": {
+      "translation": {
+        "en": "book shop", 
+        "ru": "книжный магазин"
+      }
+    }, 
+    "boutique": {
+      "translation": {
+        "en": "boutique", 
+        "ru": "бутик"
+      }
+    }, 
+    "butcher": {
+      "translation": {
+        "en": "butcher", 
+        "ru": "мясные изделия"
+      }
+    }, 
+    "candles": {
+      "translation": {
+        "en": "candles shop", 
+        "ru": "магазин свечей"
+      }
+    }, 
+    "car": {
+      "translation": {
+        "en": "car store", 
+        "ru": "автосалон"
+      }
+    }, 
+    "car_parts": {
+      "translation": {
+        "en": "car parts shop", 
+        "ru": "магазин автозапчастей"
+      }
+    }, 
+    "car_repair": {
+      "translation": {
+        "en": "car repair shop", 
+        "ru": "автомастерская"
+      }
+    }, 
+    "carpet": {
+      "translation": {
+        "en": "carpet shop", 
+        "ru": "ковровый магазин"
+      }
+    }, 
+    "charity": {
+      "translation": {
+        "en": "charity", 
+        "ru": "благотворительный магазин"
+      }
+    }, 
+    "cheese": {
+      "translation": {
+        "en": "cheese shop", 
+        "ru": "магазин сыров"
+      }
+    }, 
+    "chemist": {
+      "translation": {
+        "en": "chemist", 
+        "ru": "бытовая химия"
+      }
+    }, 
+    "chocolate": {
+      "translation": {
+        "en": "chocolate shop", 
+        "ru": "магазин шоколада"
+      }
+    }, 
+    "clothes": {
+      "translation": {
+        "en": "clothes shop", 
+        "ru": "магазин одежды"
+      }
+    }, 
+    "coffee": {
+      "translation": {
+        "en": "coffee", 
+        "ru": "магазин кофе"
+      }
+    }, 
+    "computer": {
+      "translation": {
+        "en": "computer store", 
+        "ru": "компьютерный магазин"
+      }
+    }, 
+    "confectionery": {
+      "translation": {
+        "en": "confectionery", 
+        "ru": "кондитерская"
+      }
+    }, 
+    "convenience": {
+      "translation": {
+        "en": "convenience store", 
+        "ru": "магазин"
+      }
+    }, 
+    "copyshop": {
+      "translation": {
+        "en": "copyshop", 
+        "ru": "ксерокс"
+      }
+    }, 
+    "cosmetics": {
+      "translation": {
+        "en": "cosmetics", 
+        "ru": "косметика"
+      }
+    }, 
+    "craft": {
+      "translation": {
+        "en": "craft shop", 
+        "ru": "магазин искусств"
+      }
+    }, 
+    "curtain": {
+      "translation": {
+        "en": "curtain shop", 
+        "ru": "магазин штор"
+      }
+    }, 
+    "dairy": {
+      "translation": {
+        "en": "dairy", 
+        "ru": "молочный магазин"
+      }
+    }, 
+    "deli": {
+      "translation": {
+        "en": "deli", 
+        "ru": "деликатесы"
+      }
+    }, 
+    "department_store": {
+      "translation": {
+        "en": "department store", 
+        "ru": "универсам"
+      }
+    }, 
+    "doityourself": {
+      "translation": {
+        "en": "do-it-yourself shop", 
+        "ru": "хозяйственный магазин"
+      }
+    }, 
+    "drugstore": {
+      "translation": {
+        "en": "drugstore", 
+        "ru": "аптека"
+      }
+    }, 
+    "dry_cleaning": {
+      "translation": {
+        "en": "dry cleaning", 
+        "ru": "химчистка"
+      }
+    }, 
+    "electronics": {
+      "translation": {
+        "en": "electronics store", 
+        "ru": "магазин бытовой техники"
+      }
+    }, 
+    "energy": {
+      "translation": {
+        "en": "energy shop", 
+        "ru": "магазин для энергетики"
+      }
+    }, 
+    "erotic": {
+      "translation": {
+        "en": "erotic shop", 
+        "ru": "магазин эротических товаров"
+      }
+    }, 
+    "fabric": {
+      "translation": {
+        "en": "fabric shop", 
+        "ru": "магазин тканей"
+      }
+    }, 
+    "farm": {
+      "translation": {
+        "en": "farm", 
+        "ru": "ферма"
+      }
+    }, 
+    "fashion": {
+      "translation": {
+        "en": "fashion shop", 
+        "ru": "магазин моды"
+      }
+    }, 
+    "fishing": {
+      "translation": {
+        "en": "fishing shop", 
+        "ru": "магазин рыболовных принадлежностей"
+      }
+    }, 
+    "florist": {
+      "translation": {
+        "en": "florist", 
+        "ru": "магазин цветов"
+      }
+    }, 
+    "frame": {
+      "translation": {
+        "en": "frame shop", 
+        "ru": "магазин рамок"
+      }
+    }, 
+    "free_flying": {
+      "translation": {
+        "en": "free flying shop", 
+        "ru": "магазин для фрифлайинга"
+      }
+    }, 
+    "funeral_directors": {
+      "translation": {
+        "en": "funeral directors", 
+        "ru": "ритуальные услуги"
+      }
+    }, 
+    "furnace": {
+      "translation": {
+        "en": "furnace shop", 
+        "ru": "магазин систем отопления"
+      }
+    }, 
+    "furniture": {
+      "translation": {
+        "en": "furniture shop", 
+        "ru": "мебельный магазин"
+      }
+    }, 
+    "games": {
+      "translation": {
+        "en": "games shop", 
+        "ru": "магазин игр"
+      }
+    }, 
+    "garden_centre": {
+      "translation": {
+        "en": "garden centre", 
+        "ru": "садовый магазин"
+      }
+    }, 
+    "gas": {
+      "translation": {
+        "en": "gas shop", 
+        "ru": "магазин газа в балонах"
+      }
+    }, 
+    "general": {
+      "translation": {
+        "en": "shop", 
+        "ru": "магазин"
+      }
+    }, 
+    "gift": {
+      "translation": {
+        "en": "gift shop", 
+        "ru": "магазин подарков"
+      }
+    }, 
+    "glaziery": {
+      "translation": {
+        "en": "glaziery shop", 
+        "ru": "магазин окон"
+      }
+    }, 
+    "greengrocer": {
+      "translation": {
+        "en": "greengrocer", 
+        "ru": "овощи и фрукты"
+      }
+    }, 
+    "grocery": {
+      "translation": {
+        "en": "grocery", 
+        "ru": "продуктовый магазин"
+      }
+    }, 
+    "hairdresser": {
+      "translation": {
+        "en": "hairdresser", 
+        "ru": "парикмахерская"
+      }
+    }, 
+    "hardware": {
+      "translation": {
+        "en": "hardware store", 
+        "ru": "хозяйственный магазин"
+      }
+    }, 
+    "hearing_aids": {
+      "translation": {
+        "en": "hearing aids shop", 
+        "ru": "магазин слуховых аппаратов"
+      }
+    }, 
+    "herbalist": {
+      "translation": {
+        "en": "herbalist", 
+        "ru": "магазин трав"
+      }
+    }, 
+    "hifi": {
+      "translation": {
+        "en": "hifi shop", 
+        "ru": "магазин аудио и видео"
+      }
+    }, 
+    "houseware": {
+      "translation": {
+        "en": "houseware", 
+        "ru": "хозяйственный магазин"
+      }
+    }, 
+    "hunting": {
+      "translation": {
+        "en": "hunting shop", 
+        "ru": "охотничий магазин"
+      }
+    }, 
+    "interior_decoration": {
+      "translation": {
+        "en": "interior decoration shop", 
+        "ru": "магазин декора"
+      }
+    }, 
+    "jewelry": {
+      "translation": {
+        "en": "jewelry", 
+        "ru": "ювелирный магазин"
+      }
+    }, 
+    "kiosk": {
+      "translation": {
+        "en": "kiosk", 
+        "ru": "киоск"
+      }
+    }, 
+    "kitchen": {
+      "translation": {
+        "en": "kitchen store", 
+        "ru": "магазин кухонь"
+      }
+    }, 
+    "laundry": {
+      "translation": {
+        "en": "laundry", 
+        "ru": "прачечная"
+      }
+    }, 
+    "leather": {
+      "translation": {
+        "en": "leather shop", 
+        "ru": "магазин кожаных изделий"
+      }
+    }, 
+    "locksmith": {
+      "translation": {
+        "en": "locksmith", 
+        "ru": "магазин замков"
+      }
+    }, 
+    "mall": {
+      "translation": {
+        "en": "mall", 
+        "ru": "торговый центр"
+      }
+    }, 
+    "massage": {
+      "translation": {
+        "en": "massage", 
+        "ru": "массажный салон"
+      }
+    }, 
+    "medical_supply": {
+      "translation": {
+        "en": "medical supply shop", 
+        "ru": "магазин медицинских изделий"
+      }
+    }, 
+    "mobile_phone": {
+      "translation": {
+        "en": "mobile phone shop", 
+        "ru": "магазин телефонов"
+      }
+    }, 
+    "money_lender": {
+      "translation": {
+        "en": "money lender", 
+        "ru": "кредитор"
+      }
+    }, 
+    "motorcycle": {
+      "translation": {
+        "en": "motorcycle shop", 
+        "ru": "магазин мототехники"
+      }
+    }, 
+    "music": {
+      "translation": {
+        "en": "music shop", 
+        "ru": "музыкальный магазин"
+      }
+    }, 
+    "musical_instrument": {
+      "translation": {
+        "en": "musical instrument shop", 
+        "ru": "магазин музыкальных инструментов"
+      }
+    }, 
+    "newsagent": {
+      "translation": {
+        "en": "newsagent", 
+        "ru": "магазин газет и журналов"
+      }
+    }, 
+    "optician": {
+      "translation": {
+        "en": "optician", 
+        "ru": "оптика"
+      }
+    }, 
+    "organic": {
+      "translation": {
+        "en": "organic shop", 
+        "ru": "натуральные продукты"
+      }
+    }, 
+    "outdoor": {
+      "translation": {
+        "en": "outdoor shop", 
+        "ru": "магазин для туризма"
+      }
+    }, 
+    "paint": {
+      "translation": {
+        "en": "paint shop", 
+        "ru": "магазин красок"
+      }
+    }, 
+    "pasta": {
+      "translation": {
+        "en": "pasta shop", 
+        "ru": "магазин паст"
+      }
+    }, 
+    "pawnbroker": {
+      "translation": {
+        "en": "pawnbroker", 
+        "ru": "ломбард"
+      }
+    }, 
+    "pet": {
+      "translation": {
+        "en": "pet shop", 
+        "ru": "зоомагазин"
+      }
+    }, 
+    "photo": {
+      "translation": {
+        "en": "photo shop", 
+        "ru": "магазин фототоваров"
+      }
+    }, 
+    "pyrotechnics": {
+      "translation": {
+        "en": "pyrotechnics", 
+        "ru": "магазин пиротехники"
+      }
+    }, 
+    "radiotechnics": {
+      "translation": {
+        "en": "radiotechnics shop", 
+        "ru": "магазин радиодеталей"
+      }
+    }, 
+    "religion": {
+      "translation": {
+        "en": "religion", 
+        "ru": "религиозные товары"
+      }
+    }, 
+    "scuba_diving": {
+      "translation": {
+        "en": "scuba diving shop", 
+        "ru": "магазин для дайвинга"
+      }
+    }, 
+    "seafood": {
+      "translation": {
+        "en": "seafood", 
+        "ru": "магазин морепродуктов"
+      }
+    }, 
+    "second_hand": {
+      "translation": {
+        "en": "second hand shop", 
+        "ru": "секонд-хенд"
+      }
+    }, 
+    "shoes": {
+      "translation": {
+        "en": "shoe shop", 
+        "ru": "обувной магазин"
+      }
+    }, 
+    "sports": {
+      "translation": {
+        "en": "sports shop", 
+        "ru": "магазин спортивных товаров"
+      }
+    }, 
+    "stationery": {
+      "translation": {
+        "en": "stationery", 
+        "ru": "магазин канцелярских товаров"
+      }
+    }, 
+    "supermarket": {
+      "translation": {
+        "en": "supermarket", 
+        "ru": "супермаркет"
+      }
+    }, 
+    "tailor": {
+      "translation": {
+        "en": "tailor", 
+        "ru": "портной"
+      }
+    }, 
+    "tattoo": {
+      "translation": {
+        "en": "tattoo parlour", 
+        "ru": "салон татуировок"
+      }
+    }, 
+    "tea": {
+      "translation": {
+        "en": "tea shop", 
+        "ru": "магазин чая"
+      }
+    }, 
+    "ticket": {
+      "translation": {
+        "en": "ticket shop", 
+        "ru": "магазин билетов"
+      }
+    }, 
+    "tobacco": {
+      "translation": {
+        "en": "tobacco", 
+        "ru": "магазин табака"
+      }
+    }, 
+    "toys": {
+      "translation": {
+        "en": "toys", 
+        "ru": "магазин игрушек"
+      }
+    }, 
+    "trade": {
+      "translation": {
+        "en": "trade shop", 
+        "ru": "склад"
+      }
+    }, 
+    "travel_agency": {
+      "translation": {
+        "en": "travel agency", 
+        "ru": "туристическое агенство"
+      }
+    }, 
+    "tyres": {
+      "translation": {
+        "en": "tyres shop", 
+        "ru": "магазин шин"
+      }
+    }, 
+    "vacant": {
+      "translation": {
+        "en": "vacant shop", 
+        "ru": "свободное место"
+      }
+    }, 
+    "vacuum_cleaner": {
+      "translation": {
+        "en": "vacuum cleaner shop", 
+        "ru": "магазин пылесосов"
+      }
+    }, 
+    "variety_store": {
+      "translation": {
+        "en": "variety store", 
+        "ru": "магазин"
+      }
+    }, 
+    "video": {
+      "translation": {
+        "en": "video shop", 
+        "ru": "магазин видео"
+      }
+    }, 
+    "video_games": {
+      "translation": {
+        "en": "video games shop", 
+        "ru": "магазин видеоигр"
+      }
+    }, 
+    "water_sports": {
+      "translation": {
+        "en": "water sports shop", 
+        "ru": "магазин товаров для водных видов спорта"
+      }
+    }, 
+    "weapons": {
+      "translation": {
+        "en": "weapons", 
+        "ru": "магазин оружия"
+      }
+    }, 
+    "window_blind": {
+      "translation": {
+        "en": "window blind shop", 
+        "ru": "магазин штор"
+      }
+    }, 
+    "wine": {
+      "translation": {
+        "en": "wine store", 
+        "ru": "магазин вина"
+      }
+    }
+  }, 
+  "tourism": {
+    "alpine_hut": {
+      "translation": {
+        "en": "alpine hut", 
+        "ru": "домик для альпинистов"
+      }
+    }, 
+    "apartment": {
+      "translation": {
+        "en": "apartment", 
+        "ru": "квартира"
+      }
+    }, 
+    "artwork": {
+      "translation": {
+        "en": "artwork", 
+        "ru": "скульптура"
+      }
+    }, 
+    "attraction": {
+      "translation": {
+        "en": "attraction", 
+        "ru": "туристическая достопримечательность"
+      }
+    }, 
+    "camp_site": {
+      "translation": {
+        "en": "camp site", 
+        "ru": "кемпинг"
+      }
+    }, 
+    "caravan_site": {
+      "translation": {
+        "en": "caravan site", 
+        "ru": "палаточный лагерь"
+      }
+    }, 
+    "chalet": {
+      "translation": {
+        "en": "chalet", 
+        "ru": "съемный дом"
+      }
+    }, 
+    "gallery": {
+      "translation": {
+        "en": "gallery", 
+        "ru": "артгалерея"
+      }
+    }, 
+    "guest_house": {
+      "translation": {
+        "en": "guest house", 
+        "ru": "гостевой дом"
+      }
+    }, 
+    "hostel": {
+      "translation": {
+        "en": "hostel", 
+        "ru": "хостел"
+      }
+    }, 
+    "hotel": {
+      "translation": {
+        "en": "hotel", 
+        "ru": "гостиница"
+      }
+    }, 
+    "information": {
+      "translation": {
+        "en": "information", 
+        "ru": "информационный киоск"
+      }
+    }, 
+    "motel": {
+      "translation": {
+        "en": "motel", 
+        "ru": "мотель"
+      }
+    }, 
+    "museum": {
+      "translation": {
+        "en": "museum", 
+        "ru": "музей"
+      }
+    }, 
+    "picnic_site": {
+      "translation": {
+        "en": "picnic site", 
+        "ru": "место для пикника"
+      }
+    }, 
+    "theme_park": {
+      "translation": {
+        "en": "theme park", 
+        "ru": "парк атракционов"
+      }
+    }, 
+    "viewpoint": {
+      "translation": {
+        "en": "viewpoint", 
+        "ru": "место с хорошим обзором"
+      }
+    }, 
+    "wilderness_hut": {
+      "translation": {
+        "en": "wilderness hut", 
+        "ru": "избушка"
+      }
+    }, 
+    "zoo": {
+      "translation": {
+        "en": "zoo", 
+        "ru": "зоопарк"
+      }
+    }
+  }
+}
