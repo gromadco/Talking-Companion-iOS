@@ -44,12 +44,12 @@ class OSMElementsParser {
     
     // MARK: - Parsing
     
-    func parser() -> AnyObject {
+    func parser() -> SMXMLDocument {
         return SMXMLDocument(data: xmlData, error: nil)
     }
     
     func parseNodes() -> [OSMNode] {
-        let parser:SMXMLDocument = self.parser() as SMXMLDocument
+        let parser:SMXMLDocument = self.parser()
         var nodes = [OSMNode]()
         
         let nodesXML = parser.childrenNamed("node")
@@ -68,30 +68,42 @@ class OSMElementsParser {
             var node = OSMNode(uid:"node/\(uid)", latitude: lat, longitude: lon)
         
             // check tags
-            if let tagsXML = element.childrenNamed("tag") {
-                for tagXML:AnyObject in tagsXML {
-                    let tagElement = tagXML as SMXMLElement
-                    
-                    if tagElement.attributeNamed("k") == "amenity" {
-                        node.amenity = tagElement.attributeNamed("v")
-                    }
-                    if tagElement.attributeNamed("k") == "name" {
-                        node.name = tagElement.attributeNamed("v")
-                    }
-                    if tagElement.attributeNamed("k") == "operator" {
-                        node.operatorName = tagElement.attributeNamed("v")
-                    }
-                    if tagElement.attributeNamed("k") == "shop" {
-                        node.shop = tagElement.attributeNamed("v")
-                    }
+            if let tags = element.childrenNamed("tag") as? [SMXMLElement] {
+                if !hasName(tags) {
+                    continue
                 }
+                
+                for tag in tags {
+                    let key = tag.attributeNamed("k")
+                    let value = tag.attributeNamed("v")
+                    if key == "name" {
+                        node.name = value
+                    }
+                    else {
+                        node.types[key] = value
+                    }
+                    
+                    NSLog("found: \(key)=\(value)")
+                }
+                nodes.append(node)
             }
-            
-            nodes.append(node)
         }
         return nodes;
     }
     
+    private func hasName(tags:[SMXMLElement]) -> Bool {
+        for tag in tags {
+            let key = tag.attributeNamed("k")
+            let value = tag.attributeNamed("v")
+            if key == "name" {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    // TODO: - Change parsing like in node
     func parseWays() -> [OSMWay] {
         let parser:SMXMLDocument = self.parser() as SMXMLDocument
         var ways = [OSMWay]()
@@ -141,7 +153,7 @@ class OSMElementsParser {
         return ways;
     }
     
-    // MARK: -
+    // MARK: - !!! DEPRECATED !!!
     
     func nodesWithProperty(property:String) -> [OSMNode] {
         var tmpNodes = [OSMNode]()

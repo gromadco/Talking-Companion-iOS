@@ -58,8 +58,6 @@
 		BD7D7FE3199A4D690069A19D /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD5199A4D690069A19D /* Calculations.swift */; };
 		BD7D7FE4199A4D690069A19D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD6199A4D690069A19D /* Constants.swift */; };
 		BD7D7FE5199A4D690069A19D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD6199A4D690069A19D /* Constants.swift */; };
-		BD7D7FE6199A4D690069A19D /* ExtractDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD7199A4D690069A19D /* ExtractDownloader.swift */; };
-		BD7D7FE7199A4D690069A19D /* ExtractDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD7199A4D690069A19D /* ExtractDownloader.swift */; };
 		BD7D7FE8199A4D690069A19D /* GEOJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD8199A4D690069A19D /* GEOJSONParser.swift */; };
 		BD7D7FE9199A4D690069A19D /* GEOJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FD8199A4D690069A19D /* GEOJSONParser.swift */; };
 		BD7D7FEA199A4D690069A19D /* NSData+bz2.m in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FDA199A4D690069A19D /* NSData+bz2.m */; };
@@ -206,12 +204,11 @@
 		BD71880A1A029F0300FBB2EE /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
 		BD71880B1A029F0300FBB2EE /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
 		BD71880C1A029F0300FBB2EE /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
-		BD71880D1A029F0300FBB2EE /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		BD71880D1A029F0300FBB2EE /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		BD7A7C8B19FA57D7001F5005 /* translation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = translation.json; path = scripts/translation.json; sourceTree = SOURCE_ROOT; };
 		BD7A7C8D19FA5822001F5005 /* TypeTranslator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeTranslator.swift; sourceTree = "<group>"; };
 		BD7D7FD5199A4D690069A19D /* Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
 		BD7D7FD6199A4D690069A19D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		BD7D7FD7199A4D690069A19D /* ExtractDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtractDownloader.swift; sourceTree = "<group>"; };
 		BD7D7FD8199A4D690069A19D /* GEOJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GEOJSONParser.swift; sourceTree = "<group>"; };
 		BD7D7FD9199A4D690069A19D /* NSData+bz2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+bz2.h"; sourceTree = "<group>"; };
 		BD7D7FDA199A4D690069A19D /* NSData+bz2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+bz2.m"; sourceTree = "<group>"; };
@@ -356,7 +353,6 @@
 			children = (
 				BD7D7FD5199A4D690069A19D /* Calculations.swift */,
 				BD7D7FD6199A4D690069A19D /* Constants.swift */,
-				BD7D7FD7199A4D690069A19D /* ExtractDownloader.swift */,
 				BD7D7FD8199A4D690069A19D /* GEOJSONParser.swift */,
 				BD7D7FD9199A4D690069A19D /* NSData+bz2.h */,
 				BD7D7FDA199A4D690069A19D /* NSData+bz2.m */,
@@ -664,7 +660,6 @@
 				BD0C9F5F1967388A003A88AC /* FMDatabaseQueue.m in Sources */,
 				BD7D7FEA199A4D690069A19D /* NSData+bz2.m in Sources */,
 				BD0C9F5B1967388A003A88AC /* FMDatabaseAdditions.m in Sources */,
-				BD7D7FE6199A4D690069A19D /* ExtractDownloader.swift in Sources */,
 				BD7D7FE8199A4D690069A19D /* GEOJSONParser.swift in Sources */,
 				BD66797E19B4A6BA00DFB53F /* MainViewController.swift in Sources */,
 				BDE410EC19B8986900D5FDA0 /* WindowRootViewController.swift in Sources */,
@@ -705,7 +700,6 @@
 				BD0C9F4C1967388A003A88AC /* AFHTTPSessionManager.m in Sources */,
 				BD0C9F4A1967388A003A88AC /* AFHTTPRequestOperationManager.m in Sources */,
 				BD0C9F5E1967388A003A88AC /* FMDatabasePool.m in Sources */,
-				BD7D7FE7199A4D690069A19D /* ExtractDownloader.swift in Sources */,
 				BD7D7FEB199A4D690069A19D /* NSData+bz2.m in Sources */,
 				BD0C9F4E1967388A003A88AC /* AFNetworkReachabilityManager.m in Sources */,
 				BD0C9F071967332A003A88AC /* OSMNodeTests.swift in Sources */,

@@ -52,7 +52,9 @@ class OSMTilesDownloader: NSObject {
                     self.delegate?.tilesDownloaded()
                 }
             },
-            failure: { [unowned self] (_, error) in })
+            failure: { [unowned self] (_, error) in
+                NSLog("tile downloading failed")
+            })
             
             NSLog("start downloading @ \(box.url)")
             operation.start()

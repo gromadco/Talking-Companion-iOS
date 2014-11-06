@@ -11,6 +11,8 @@ import CoreLocation
 
 let kOneDay:NSTimeInterval = 60*60*24
 
+// TODO: name is a required property
+
 class OSMNode: NSObject {
     
     // MARK: - Properties
@@ -18,6 +20,9 @@ class OSMNode: NSObject {
     var uid:String
     var location:CLLocation
     var announcedDate:NSDate?
+    lazy var types = [String:String]()
+    var name:String?
+    
     var isAnnounced:Bool {
         get {
             if announcedDate == nil {
@@ -32,9 +37,8 @@ class OSMNode: NSObject {
         }
     }
     
-    // MARK: Element details
+    // MARK: Element details. DEPRECATED
     
-    var name:String?
     var amenity:String?
     var operatorName:String?
     var shop:String?
@@ -50,39 +54,51 @@ class OSMNode: NSObject {
     
     // TODO: rewrite checking an empty strings
     var type:String {
+        var type:String = ""
         
-        if let amenity = self.amenity {
-            return TypeTranslator.sharedInstance.translateAmenity(amenity)
-        }
+//        let details = TypeTranslator.sharedInstance.translatedTypeForTypes(types)
+//        NSLog("node details: \(details)")
+        
+//        let types = ["name", "amenity", "operatorName", "shop"]
+//        for currentType in types {
+//            if let value:String = self.valueForKey(currentType) as String! {
+//                if let typeDetails = TypeTranslator.sharedInstance.translate(type:currentType, name:value) {
+//                    type += "\(typeDetails), "
+//                }
+//            }
+//        }
+        
+//        if let amenity = self.amenity {
+//            return TypeTranslator.sharedInstance.translateAmenity(amenity)
+//        }
         //private let _lang = NSLocale.preferredLanguages().first as String
         
         
-        var type:String = ""
-            
-        if let amenity = self.amenity {
-            if countElements(amenity) > 0 {
-                type += "\(amenity), "
-            }
-        }
-        if let operatorName = self.operatorName {
-            if countElements(operatorName) > 0 {
-                type += "\(operatorName), "
-            }
-        }
-        if let shop = self.shop {
-            if countElements(shop) > 0 {
-                type += "\(shop), "
-            }
-        }
-            
-        // FIXME: rewrite
-        if countElements(type) > 0 {
-            let rangeReplace = Range<String.Index>(start: type.startIndex, end: type.endIndex)
-            type = type.stringByReplacingOccurrencesOfString("_", withString: " ", options: .CaseInsensitiveSearch, range:rangeReplace)
-            
-            let rangeRemove = Range<String.Index>(start: advance(type.startIndex, countElements(type)-2), end: type.endIndex)
-            type.removeRange(rangeRemove)
-        }
+        
+//        if let amenity = self.amenity {
+//            if countElements(amenity) > 0 {
+//                type += "\(amenity), "
+//            }
+//        }
+//        if let operatorName = self.operatorName {
+//            if countElements(operatorName) > 0 {
+//                type += "\(operatorName), "
+//            }
+//        }
+//        if let shop = self.shop {
+//            if countElements(shop) > 0 {
+//                type += "\(shop), "
+//            }
+//        }
+        
+//        // FIXME: rewrite
+//        if countElements(type) > 0 {
+//            let rangeReplace = Range<String.Index>(start: type.startIndex, end: type.endIndex)
+//            type = type.stringByReplacingOccurrencesOfString("_", withString: " ", options: .CaseInsensitiveSearch, range:rangeReplace)
+//            
+//            let rangeRemove = Range<String.Index>(start: advance(type.startIndex, countElements(type)-2), end: type.endIndex)
+//            type.removeRange(rangeRemove)
+//        }
         
         return type
     }

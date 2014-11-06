@@ -17,6 +17,7 @@ class TypeTranslator {
     
     private let lang:String
     private let json:JSONValue
+    private let existsTypes:[String]
     
     class var sharedInstance : TypeTranslator {
         return _SingletonSharedInstance
@@ -33,6 +34,7 @@ class TypeTranslator {
         let jsonPath = NSBundle.mainBundle().pathForResource("translation", ofType: "json")!
         let jsonData = NSData(contentsOfFile: jsonPath)
         self.json = JSONValue(jsonData as NSData!)
+        self.existsTypes = ["amenity", "place", "building", "shop", "natural", "bridge", "landuse", "tourism", "railway", "public_transport", "leisure"]
     }
 
     func translateAmenity(amenity:String) -> String {
@@ -40,5 +42,22 @@ class TypeTranslator {
             return type
         }
         return ""
+    }
+    
+    func translate(#type:String, name:String) -> String? {
+        if let type = self.json[type][name]["translation"][self.lang].string {
+            return type
+        }
+        return nil
+    }
+    
+    func translatedTypeForTypes(types:[String:String]) -> String? {
+        for mayType in self.existsTypes {
+            if let valueForType = types[mayType] {
+                return self.json[mayType][valueForType]["translation"][self.lang].string
+            }
+        }
+        
+        return nil
     }
 }

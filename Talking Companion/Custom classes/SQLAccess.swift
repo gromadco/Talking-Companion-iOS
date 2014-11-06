@@ -9,9 +9,10 @@
 import UIKit
 
 // TODO: rename class
-// TODO: insert in table a nil string instead an empty string
 
 let pathToDB = NSHomeDirectory().stringByAppendingPathComponent("Documents").stringByAppendingPathComponent("db.sqlite")
+let typesSeparator = ", "
+let keyValueSeparator = "="
 
 class SQLAccess: NSObject {
 
@@ -20,7 +21,7 @@ class SQLAccess: NSObject {
     class func createTableNodes() {
         let db = FMDatabase(path: pathToDB)
         if db.open() {
-            db.executeUpdate("CREATE TABLE IF NOT EXISTS nodes (uid TEXT UNIQUE, tile_id INTEGER, announced_date DOUBLE, latitude DOUBLE, longitude DOUBLE, name TEXT, amenity TEXT, shop TEXT, operator TEXT)", withArgumentsInArray: [])
+            db.executeUpdate("CREATE TABLE IF NOT EXISTS nodes (uid TEXT UNIQUE, tile_id INTEGER, announced_date DOUBLE, latitude DOUBLE, longitude DOUBLE, name TEXT, types TEXT)", withArgumentsInArray: [])
             db.close()
         }
     }
@@ -33,48 +34,16 @@ class SQLAccess: NSObject {
         
         db.beginTransaction()
         for node in nodes {
-            var name = ""
-            var amenity = "", shop = "", operatorName = ""
-            
-            if let nodeName = node.name? {
-                name = nodeName
-            }
-            else {
-                continue
+            // convert types to string
+            var typesString = ""
+            for (key, value) in node.types {
+                typesString += "\(key)=\(value)\(typesSeparator)"
             }
             
-            if let nodeAmenity = node.amenity? {
-                amenity = nodeAmenity
-            }
-            if let nodeShop = node.shop? {
-                shop = nodeShop
-            }
-
-            if let nodeOperator = node.operatorName? {
-                operatorName = nodeOperator
-            }
-            
-            db.executeUpdate("INSERT OR IGNORE INTO nodes (uid, tile_id, latitude, longitude, name, amenity, shop, operator) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", withArgumentsInArray: [node.uid, tileId, node.location.coordinate.latitude, node.location.coordinate.longitude, name, amenity, shop, operatorName])
+            db.executeUpdate("INSERT OR IGNORE INTO nodes (uid, tile_id, latitude, longitude, name, types) VALUES (?, ?, ?, ?, ?, ?)", withArgumentsInArray: [node.uid, tileId, node.location.coordinate.latitude, node.location.coordinate.longitude, node.name!, typesString])
         }
         db.commit()
         db.close()
-    }
-
-    class func nodes() -> [OSMNode] {
-        var nodes = [OSMNode]()
-        
-        let db = FMDatabase(path: pathToDB)
-        if !db.open() {
-            return nodes
-        }
-        
-        let result = db.executeQuery("SELECT * FROM nodes", withArgumentsInArray: [])
-        while result.next() {
-            nodes.append(SQLAccess.nodeFromResult(result))
-        }
-        
-        db.close()
-        return nodes
     }
     
     class func nodesForTile(tile:OSMTile) -> [OSMNode]  {
@@ -89,6 +58,7 @@ class SQLAccess: NSObject {
         while result.next() {
             nodes.append(SQLAccess.nodeFromResult(result))
         }
+        NSLog("gotten \(countElements(nodes)) nodes from db")
         
         db.close()
         return nodes;
@@ -103,17 +73,27 @@ class SQLAccess: NSObject {
     }
     
     class func nodeFromResult(result:FMResultSet) -> OSMNode {
+        // required properties
         let uid = result.stringForColumn("uid")
         let announcedDate = result.dateForColumn("announced_date")
         let latitude = result.doubleForColumn("latitude")
         let longitude = result.doubleForColumn("longitude")
+        
+        // types
+        var types = [String:String]()
+        let typesString = result.stringForColumn("types")
+        let components = typesString.componentsSeparatedByString(typesSeparator)
+        for component in components {
+            let type = component.componentsSeparatedByString("=")
+            let key = type.first!
+            let value = type.last!
+            types[key] = value
+        }
 
         var node = OSMNode(uid:uid, latitude: latitude, longitude: longitude)
         node.name = result.stringForColumn("name")
         node.announcedDate = announcedDate
-        node.amenity = result.stringForColumn("amenity")
-        node.shop = result.stringForColumn("shop")
-        node.operatorName = result.stringForColumn("operator")
+        node.types = types
         
         return node;
     }
