@@ -24,8 +24,9 @@ class OSMElementsParser {
     
     // MARK: - Initializing
     
-    init(filePath:String)  {
-        self.xmlData = NSData(contentsOfFile:filePath)
+    convenience init(filePath:String)  {
+        let data = NSData(contentsOfFile:filePath)!
+        self.init(xmlData:data)
     }
     
     init(xmlData:NSData) {
@@ -56,7 +57,7 @@ class OSMElementsParser {
         if let _ = nodesXML {}
         else { return [OSMNode]() }
     
-        NSLog("start parsing with count of nodes: \(nodesXML.count)")
+        NSLog("start parsing nodes: \(nodesXML.count)")
         
         for nodeXML:AnyObject in nodesXML {
             let element:SMXMLElement = nodeXML as SMXMLElement
@@ -78,12 +79,11 @@ class OSMElementsParser {
                     let value = tag.attributeNamed("v")
                     if key == "name" {
                         node.name = value
+                        NSLog ("found: \(value)")
                     }
                     else {
                         node.types[key] = value
                     }
-                    
-                    NSLog("found: \(key)=\(value)")
                 }
                 nodes.append(node)
             }
@@ -151,45 +151,5 @@ class OSMElementsParser {
             ways.append(way)
         }
         return ways;
-    }
-    
-    // MARK: - !!! DEPRECATED !!!
-    
-    func nodesWithProperty(property:String) -> [OSMNode] {
-        var tmpNodes = [OSMNode]()
-        
-        for node in nodes {
-            if let _ = node.valueForKey(property)  {
-                tmpNodes.append(node)
-            }
-        }
-        
-        return tmpNodes
-    }
-    
-    func nodesWithProperty(property:String, equal:String) -> [OSMNode] {
-        var tmpNodes = [OSMNode]()
-        
-        for node in nodes {
-            if let value : AnyObject = node.valueForKey(property)  {
-                if value as NSString == equal {
-                    tmpNodes.append(node)
-                }
-            }
-        }
-        
-        return tmpNodes
-    }
-    
-    func waysWithProperty(property:String) -> [OSMWay] {
-        var tmpWays = [OSMWay]()
-        
-        for way in ways {
-            if let _ = way.valueForKey(property) {
-                tmpWays.append(way)
-            }
-        }
-        
-        return tmpWays
     }
 }

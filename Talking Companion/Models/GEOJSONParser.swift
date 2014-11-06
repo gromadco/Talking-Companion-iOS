@@ -35,16 +35,16 @@ class GEOJSONParser: NSObject {
                     var node = OSMNode(uid: uid, latitude: latitude, longitude: longitude)
                     node.name = feature["properties"]["name"].string
                     
-                    // optional properties
-                    if let amenity = feature["properties"]["tags"]["amenity"].string {
-                        node.amenity = amenity
-                    }
-                    if let operatorName = feature["properties"]["tags"]["operator"].string {
-                        node.operatorName = operatorName
-                    }
-                    if let shop = feature["properties"]["tags"]["shop"].string {
-                        node.shop = shop
-                    }
+//                    // optional properties
+//                    if let amenity = feature["properties"]["tags"]["amenity"].string {
+//                        node.amenity = amenity
+//                    }
+//                    if let operatorName = feature["properties"]["tags"]["operator"].string {
+//                        node.operatorName = operatorName
+//                    }
+//                    if let shop = feature["properties"]["tags"]["shop"].string {
+//                        node.shop = shop
+//                    }
                     
                     nodes.append(node)
                 }

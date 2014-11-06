@@ -25,7 +25,7 @@ class OSMTilesDownloader: NSObject {
         let tiles:Array<OSMTile> = centerTile.neighboringTiles()
         
         for (index, tile) in enumerate(tiles) {
-            if SQLAccess.hasTile(tile) {
+            if Database.hasTile(tile) {
                 continue
             }
             
@@ -41,10 +41,10 @@ class OSMTilesDownloader: NSObject {
             operation.setCompletionBlockWithSuccess({ (_, responseObject) in
                 NSLog("tile \(tile) downloaded")
                 
-                let tileId = SQLAccess.saveTile(tile)
+                let tileId = Database.saveTile(tile)
                 let parser = OSMElementsParser(filePath: path)
                 parser.parseWithComplitionHandler() { nodes, _ in
-                    SQLAccess.saveNodes(parser.nodes, forTileId: tileId)
+                    Database.saveNodes(parser.nodes, forTileId: tileId)
                 };
                 
                 self.leftDownloading--;

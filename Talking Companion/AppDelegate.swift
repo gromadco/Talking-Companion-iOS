@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         UIApplication.sharedApplication().idleTimerDisabled = true
         
-        SQLAccess.createTableNodes()
-        SQLAccess.createTableTiles()
+        Database.createTableNodes()
+        Database.createTableTiles()
 
         let session = AVAudioSession.sharedInstance()
         session.setCategory(AVAudioSessionCategoryPlayback, error: nil)

@@ -150,7 +150,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
             var tmpNodes = [OSMNode]()
             let neighboringTiles = centerTile.neighboringTiles()
             for currentTile in neighboringTiles {
-                tmpNodes += SQLAccess.nodesForTile(currentTile)
+                tmpNodes += Database.nodesForTile(currentTile)
             }
             self.nodes = tmpNodes
             
@@ -241,10 +241,13 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         
         self.nameLabel.text = closestPlace!.name
         self.distanceLabel.text = "\(distance)"
+        
+        // TODO: translate
         self.typeLabel.text = closestPlace!.type
     }
     
     func speakPlace(place:OSMNode, distance:String) {
+        // TODO: translate
         let placeString = "\(place.type). \(place.name!), \(distance)"
         let utterance = AVSpeechUtterance(string: placeString)
         utterance.rate = AVSpeechUtteranceDefaultSpeechRate / kSpeachSpeedReduceRate

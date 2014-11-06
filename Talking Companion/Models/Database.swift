@@ -1,5 +1,5 @@
 //
-//  SQLAccess.swift
+//  Database.swift
 //  Talking Companion
 //
 //  Created by Sergey Butenko on 03.07.14.
@@ -14,7 +14,7 @@ let pathToDB = NSHomeDirectory().stringByAppendingPathComponent("Documents").str
 let typesSeparator = ", "
 let keyValueSeparator = "="
 
-class SQLAccess: NSObject {
+class Database: NSObject {
 
     // MARK: - Nodes
     
@@ -56,7 +56,7 @@ class SQLAccess: NSObject {
 
         let result = db.executeQuery("SELECT * FROM ((SELECT id AS tileid FROM tiles WHERE x = ? AND y = ? AND zoom = ?) JOIN nodes) WHERE name <> '' AND nodes.tile_id = tileid", withArgumentsInArray:[tile.x, tile.y, tile.zoom])
         while result.next() {
-            nodes.append(SQLAccess.nodeFromResult(result))
+            nodes.append(Database.nodeFromResult(result))
         }
         NSLog("gotten \(countElements(nodes)) nodes from db")
         
