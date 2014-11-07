@@ -58,6 +58,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     private var announceDistanceTimeInterval:NSTimeInterval?
     
     private var nodes = [OSMNode]()
+    private var transtalor:TypeTranslator!
     
     // MARK: - ViewController Methods
     
@@ -74,6 +75,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         NSLog("path to documents: \(NSHomeDirectory())")
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updatingIntervalChanged", name: "UpdatingIntervalNotification", object: nil)
         self.settingsButton.setTitle("⚙", forState: .Normal)
+        
+        let language = NSLocale.preferredLanguages().first as String
+        self.transtalor = TypeTranslator(language: language)
         
         self.updateNodesFromDB()
         
@@ -241,14 +245,19 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         
         self.nameLabel.text = closestPlace!.name
         self.distanceLabel.text = "\(distance)"
-        
-        // TODO: translate
-        self.typeLabel.text = closestPlace!.type
+
+        if let type = transtalor.translatedTypeForTypes(types: closestPlace!.types) {
+            self.typeLabel.text = type
+        }
     }
     
     func speakPlace(place:OSMNode, distance:String) {
-        // TODO: translate
-        let placeString = "\(place.type). \(place.name!), \(distance)"
+        var placeString = ""
+        if let type = transtalor.translatedTypeForTypes(types: place.types) {
+            placeString += "\(type). "
+        }
+        placeString += "\(place.name!), \(distance)"
+        
         let utterance = AVSpeechUtterance(string: placeString)
         utterance.rate = AVSpeechUtteranceDefaultSpeechRate / kSpeachSpeedReduceRate
         synth.speakUtterance(utterance)
