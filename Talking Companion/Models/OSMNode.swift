@@ -21,7 +21,7 @@ class OSMNode: NSObject {
     var location:CLLocation
     var announcedDate:NSDate?
     lazy var types = [String:String]()
-    var name:String?
+    var name:String!
     
     var isAnnounced:Bool {
         get {
@@ -48,7 +48,7 @@ class OSMNode: NSObject {
     
     // TODO: impelement
     var type:String {
-        var type:String = "here will be \(countElements(types)) types: \(types)"
+        var type:String = "\(countElements(types)) types: \(types)"
         return type
     }
     

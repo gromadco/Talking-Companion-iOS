@@ -58,7 +58,6 @@ class Database: NSObject {
         while result.next() {
             nodes.append(Database.nodeFromResult(result))
         }
-        NSLog("gotten \(countElements(nodes)) nodes from db")
         
         db.close()
         return nodes;
@@ -83,11 +82,14 @@ class Database: NSObject {
         var types = [String:String]()
         let typesString = result.stringForColumn("types")
         let components = typesString.componentsSeparatedByString(typesSeparator)
+        
         for component in components {
             let type = component.componentsSeparatedByString("=")
             let key = type.first!
             let value = type.last!
-            types[key] = value
+            if countElements(value) > 0 {
+                types[key] = value
+            }
         }
 
         var node = OSMNode(uid:uid, latitude: latitude, longitude: longitude)

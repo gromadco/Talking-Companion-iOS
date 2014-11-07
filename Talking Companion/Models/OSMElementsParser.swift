@@ -63,7 +63,7 @@ class OSMElementsParser {
             let element:SMXMLElement = nodeXML as SMXMLElement
             
             // required properties
-            let uid:String = element.attributeNamed("uid")
+            let uid:String = element.attributeNamed("id")
             let lat = element.attributeNamed("lat").doubleValue
             let lon = element.attributeNamed("lon").doubleValue
             var node = OSMNode(uid:"node/\(uid)", latitude: lat, longitude: lon)
@@ -79,7 +79,6 @@ class OSMElementsParser {
                     let value = tag.attributeNamed("v")
                     if key == "name" {
                         node.name = value
-                        NSLog ("found: \(value)")
                     }
                     else {
                         node.types[key] = value
