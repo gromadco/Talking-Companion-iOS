@@ -202,8 +202,8 @@
                                     <action selector="saveButtonPressed" destination="Qm4-5I-d3X" eventType="touchUpInside" id="URQ-Hs-cni"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Интервал обновления:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wld-pq-Qnn">
-                                <rect key="frame" x="214" y="38" width="173" height="22"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Частота обновлений" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wld-pq-Qnn">
+                                <rect key="frame" x="222" y="38" width="157" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="iKc-pN-ajl"/>
                                 </constraints>

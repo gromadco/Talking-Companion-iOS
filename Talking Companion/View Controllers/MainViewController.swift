@@ -73,8 +73,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     override func viewDidLoad() {
         super.viewDidLoad()
         NSLog("path to documents: \(NSHomeDirectory())")
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updatingIntervalChanged", name: "UpdatingIntervalNotification", object: nil)
-        self.settingsButton.setTitle("⚙", forState: .Normal)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "voiceFrequencyChanged", name: kVoiceFrequencyNotification, object: nil)
+        self.settingsButton.setTitle(kSettingsButtonIcon, forState: .Normal)
         
         let language = NSLocale.preferredLanguages().first as String
         self.transtalor = TypeTranslator(language: language)
@@ -104,15 +104,15 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         self.locationManager.startUpdatingLocation()
     }
     
-    func updatingIntervalChanged() {
+    func voiceFrequencyChanged() {
         announceDistanceTimer?.invalidate()
         
-        let index = NSUserDefaults.standardUserDefaults().integerForKey("UpdatingInterval")
+        let index = NSUserDefaults.standardUserDefaults().integerForKey(kVoiceFrequency)
         let settings = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Settings", ofType: "plist")!)!
         let durations = settings["Durations"] as [Double]
         announceDistanceTimeInterval = durations[index]
         announceDistanceTimer = NSTimer.scheduledTimerWithTimeInterval(announceDistanceTimeInterval!, target: self, selector: "announceClosestPlace", userInfo: nil, repeats: true)
-        announceDistanceTimer?.fire()
+        announceDistanceTimer!.fire()
     }
     
     // MARK: - Settings Button
@@ -297,7 +297,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         if isLocationEnabled {
             tilesTimer = NSTimer.scheduledTimerWithTimeInterval(kDownloadTilesTimeInterval, target: self, selector: "downloadNeighboringTiles", userInfo: nil, repeats: true)
             tilesTimer?.fire()
-            self.updatingIntervalChanged()
+            self.voiceFrequencyChanged()
         }
         else {
             tilesTimer?.invalidate()

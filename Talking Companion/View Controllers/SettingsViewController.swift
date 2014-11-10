@@ -27,17 +27,17 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     func loadDefaults() {
-        self.selectedRow = NSUserDefaults.standardUserDefaults().integerForKey(kUpdatingInterval)
+        self.selectedRow = NSUserDefaults.standardUserDefaults().integerForKey(kVoiceFrequency)
         self.updatingIntervalPickerView?.selectRow(selectedRow, inComponent: 0, animated: false)
     }
     
     // MARK: - Buttons handlers
     
     @IBAction func saveButtonPressed() {
-        NSUserDefaults.standardUserDefaults().setInteger(self.selectedRow, forKey: kUpdatingInterval)
+        NSUserDefaults.standardUserDefaults().setInteger(self.selectedRow, forKey: kVoiceFrequency)
         NSUserDefaults.standardUserDefaults().synchronize()
         
-        NSNotificationCenter.defaultCenter().postNotificationName(kUpdatingIntervalNotification, object: self.selectedRow)
+        NSNotificationCenter.defaultCenter().postNotificationName(kVoiceFrequencyNotification, object: self.selectedRow)
         
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad  {
             self.dismissViewControllerAnimated(true, completion: nil)

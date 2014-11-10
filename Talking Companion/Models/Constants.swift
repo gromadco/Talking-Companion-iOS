@@ -10,10 +10,12 @@ import Foundation
 
 let kGoogleAnalyticsKey = "UA-56189721-1"
 
+let kSettingsButtonIcon = "⚙"
+
 // MARK: - Notifications
 
-let kUpdatingInterval = "UpdatingInterval"
-let kUpdatingIntervalNotification = "UpdatingIntervalNotification"
+let kVoiceFrequency = "VoiceFrequency"
+let kVoiceFrequencyNotification = "VoiceFrequencyNotification"
 
 // MARK: - Network
 

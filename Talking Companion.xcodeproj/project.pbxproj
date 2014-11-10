@@ -791,16 +791,7 @@
 				INFOPLIST_FILE = "Talking Companion/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/Talking",
-					Companion/Resources/GAI,
-					"$(PROJECT_DIR)/Talking",
-					Companion/Resources/YMM,
-					"$(PROJECT_DIR)/Talking",
-					Companion/Resources/GAI,
-					"$(PROJECT_DIR)/Talking",
-					Companion/Resources/GAI,
-				);
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "Talking Companion";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Talking Companion/Talking_Companion-Bridging-Header.h";
@@ -818,16 +809,7 @@
 				INFOPLIST_FILE = "Talking Companion/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/Talking",
-					Companion/Resources/GAI,
-					"$(PROJECT_DIR)/Talking",
-					Companion/Resources/YMM,
-					"$(PROJECT_DIR)/Talking",
-					Companion/Resources/GAI,
-					"$(PROJECT_DIR)/Talking",
-					Companion/Resources/GAI,
-				);
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "Talking Companion";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Talking Companion/Talking_Companion-Bridging-Header.h";
