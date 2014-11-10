@@ -214,14 +214,22 @@
                                     <rect key="frame" x="251" y="38" width="139" height="22"/>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data is fetched from openstreetmap.org" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRq-Ru-WHV">
+                                <rect key="frame" x="171" y="563" width="258" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wld-pq-Qnn" firstAttribute="top" secondItem="W0U-4d-By5" secondAttribute="bottom" constant="18" id="1eQ-5M-dyh"/>
                             <constraint firstAttribute="trailing" secondItem="HHf-i8-Fd5" secondAttribute="trailing" constant="20" symbolic="YES" id="2ne-ix-pJ5"/>
                             <constraint firstItem="OCC-h3-wfG" firstAttribute="centerX" secondItem="HHf-i8-Fd5" secondAttribute="centerX" id="9ZE-eq-SKB"/>
+                            <constraint firstItem="bWo-0v-ahq" firstAttribute="top" secondItem="QRq-Ru-WHV" secondAttribute="bottom" constant="20" id="hdf-r8-xIk"/>
                             <constraint firstAttribute="centerX" secondItem="wld-pq-Qnn" secondAttribute="centerX" constant="-0.5" id="pAg-oQ-M1R"/>
                             <constraint firstItem="OCC-h3-wfG" firstAttribute="leading" secondItem="82M-KM-CGW" secondAttribute="leading" id="pAw-z8-9g2"/>
+                            <constraint firstAttribute="centerX" secondItem="QRq-Ru-WHV" secondAttribute="centerX" id="sBc-4P-WUo"/>
                             <constraint firstItem="OCC-h3-wfG" firstAttribute="top" secondItem="wld-pq-Qnn" secondAttribute="bottom" constant="8" symbolic="YES" id="uF1-TG-46a"/>
                             <constraint firstItem="HHf-i8-Fd5" firstAttribute="top" secondItem="OCC-h3-wfG" secondAttribute="bottom" constant="8" symbolic="YES" id="wgG-yJ-bNo"/>
                             <constraint firstItem="HHf-i8-Fd5" firstAttribute="leading" secondItem="82M-KM-CGW" secondAttribute="leading" constant="20" symbolic="YES" id="xNC-Y1-Tle"/>
