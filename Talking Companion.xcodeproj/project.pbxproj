@@ -50,6 +50,7 @@
 		BD2E7C80195AEAFB00D57518 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */; };
 		BD2EB9BC1966F0E600C8DEDD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */; };
 		BD536AAB196A7E1B0017345D /* OSMBoundingBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */; };
+		BD5E011F1A1169BE0024C715 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD5E011E1A1169BE0024C715 /* Launch Screen.xib */; };
 		BD66797E19B4A6BA00DFB53F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD66797D19B4A6BA00DFB53F /* MainViewController.swift */; };
 		BD71880E1A029F0300FBB2EE /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD71880D1A029F0300FBB2EE /* libGoogleAnalyticsServices.a */; };
 		BD79E6541A0B78FC00027690 /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E6461A0B78FC00027690 /* Calculations.swift */; };
@@ -173,6 +174,7 @@
 		BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMBoundingBoxTests.swift; sourceTree = "<group>"; };
+		BD5E011E1A1169BE0024C715 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		BD66797D19B4A6BA00DFB53F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BD7188031A029F0300FBB2EE /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
 		BD7188041A029F0300FBB2EE /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 				BDB58984195888670090E178 /* Main.storyboard */,
 				BD66797D19B4A6BA00DFB53F /* MainViewController.swift */,
 				BDC820F9199243F60055ABBE /* SettingsViewController.swift */,
+				BD5E011E1A1169BE0024C715 /* Launch Screen.xib */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 			files = (
 				BDA72E8619F13F3000C7DA25 /* Localizable.strings in Resources */,
 				BD7D800B199A504D0069A19D /* map.osm in Resources */,
+				BD5E011F1A1169BE0024C715 /* Launch Screen.xib in Resources */,
 				BD7A7C8C19FA57D7001F5005 /* translation.json in Resources */,
 				BDBAD836199BC34A00BA69EC /* poi.json in Resources */,
 				BDB58986195888670090E178 /* Main.storyboard in Resources */,
