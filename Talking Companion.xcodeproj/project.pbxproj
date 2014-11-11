@@ -51,6 +51,7 @@
 		BD2EB9BC1966F0E600C8DEDD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */; };
 		BD536AAB196A7E1B0017345D /* OSMBoundingBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */; };
 		BD5E011F1A1169BE0024C715 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD5E011E1A1169BE0024C715 /* Launch Screen.xib */; };
+		BD5E01221A1205470024C715 /* logo_splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5E01211A1205470024C715 /* logo_splashscreen.png */; };
 		BD66797E19B4A6BA00DFB53F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD66797D19B4A6BA00DFB53F /* MainViewController.swift */; };
 		BD71880E1A029F0300FBB2EE /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD71880D1A029F0300FBB2EE /* libGoogleAnalyticsServices.a */; };
 		BD79E6541A0B78FC00027690 /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E6461A0B78FC00027690 /* Calculations.swift */; };
@@ -175,6 +176,7 @@
 		BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMBoundingBoxTests.swift; sourceTree = "<group>"; };
 		BD5E011E1A1169BE0024C715 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
+		BD5E01211A1205470024C715 /* logo_splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_splashscreen.png; path = graphics/logo_splashscreen.png; sourceTree = SOURCE_ROOT; };
 		BD66797D19B4A6BA00DFB53F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BD7188031A029F0300FBB2EE /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
 		BD7188041A029F0300FBB2EE /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 		BD0C9F101967388A003A88AC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BD5E01201A12053D0024C715 /* Graphics */,
 				BD7188021A029F0300FBB2EE /* GAI */,
 				BD7A7C8B19FA57D7001F5005 /* translation.json */,
 				BDBAD834199BC34A00BA69EC /* poi.json */,
@@ -328,6 +331,14 @@
 				BD5E011E1A1169BE0024C715 /* Launch Screen.xib */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		BD5E01201A12053D0024C715 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				BD5E01211A1205470024C715 /* logo_splashscreen.png */,
+			);
+			name = Graphics;
 			sourceTree = "<group>";
 		};
 		BD7188021A029F0300FBB2EE /* GAI */ = {
@@ -561,6 +572,7 @@
 				BDB58988195888670090E178 /* Images.xcassets in Resources */,
 				BD7D8009199A504D0069A19D /* empty.osm in Resources */,
 				BD9EEF4619924A9200BC8A02 /* Settings.plist in Resources */,
+				BD5E01221A1205470024C715 /* logo_splashscreen.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

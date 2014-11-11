@@ -24,6 +24,8 @@
 "PointsAround" = "points around";
 "KilometerShort" = "km";
 "MeterShort" = "m";
+"FeetShort" = "ft";
+"MilesShort" = "mi";
 "OverDistance" = "over";
 
 "DirectionFront" = "in front";

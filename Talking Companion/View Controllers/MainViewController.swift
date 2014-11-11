@@ -22,6 +22,11 @@ let kDefaultZoom = 16
 ///
 let kKilometer = 1000
 
+let kMaxFeet = 2640
+
+/// constant for convertion meters to feet
+let kMetersToFeet = 3.2808
+
 ///
 let kMaxDistance:CLLocationDistance = CLLocationDistance(10 * kKilometer)
 
@@ -223,16 +228,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         
         // have a place for announcing
         closestPlaceLocation = closestPlace!.location
-        var distance = ""
-        if distanceToClosestPlace > kMaxDistance {
-            distance = NSString(format: "%@ %d %@", NSLocalizedString("OverDistance", comment: ""), Int(kMaxDistance) / kKilometer, NSLocalizedString("KilometerShort", comment: ""))
-        }
-        else if distanceToClosestPlace > Double(kKilometer) {
-            distance = NSString(format: "%.1lf %@", distanceToClosestPlace / Double(kKilometer), NSLocalizedString("KilometerShort", comment: ""))
-        }
-        else {
-            distance = NSString(format: "%d %@", Int(distanceToClosestPlace), NSLocalizedString("MeterShort", comment: ""))
-        }
+        var distance = self.distanceStringWithDistance(distanceToClosestPlace)
+
         
         if currentLocation != nil && previousLocation != nil {
             let angle = Calculations.thetaForCurrentLocation(currentLocation!, previousLocation: previousLocation!, placeLocation: closestPlaceLocation!)
@@ -249,6 +246,37 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         if let type = transtalor.translatedTypeForTypes(types: closestPlace!.types) {
             self.typeLabel.text = type
         }
+    }
+    
+    // TODO: rewrite
+    func distanceStringWithDistance(var distance:CLLocationDistance) -> String {
+        let isMetric = NSLocale.currentLocale().objectForKey(NSLocaleUsesMetricSystem)!.boolValue!
+        var distanceString = ""
+        if isMetric {
+            
+            if distance > kMaxDistance {
+                distanceString = NSString(format: "%@ %d %@", NSLocalizedString("OverDistance", comment: ""), Int(kMaxDistance) / kKilometer, NSLocalizedString("KilometerShort", comment: ""))
+            }
+            else if distance > Double(kKilometer) {
+                distanceString = NSString(format: "%.1lf %@", distance / Double(kKilometer), NSLocalizedString("KilometerShort", comment: ""))
+            }
+            else {
+                distanceString = NSString(format: "%d %@", Int(distance), NSLocalizedString("MeterShort", comment: ""))
+            }
+        }
+        else {
+            if distance > kMaxDistance * kMetersToFeet {
+                distanceString = NSString(format: "%@ %d %@", NSLocalizedString("OverDistance", comment: ""), Int(kMaxDistance * kMetersToFeet) / kKilometer, NSLocalizedString("MilesShort", comment: ""))
+            }
+            else if distance > Double(kMaxFeet) {
+                distanceString = NSString(format: "%.1lf %@", distance / Double(kMaxFeet), NSLocalizedString("MilesShort", comment: ""))
+            }
+            else {
+                distanceString = NSString(format: "%d %@", Int(distance), NSLocalizedString("FeetShort", comment: ""))
+            }
+        }
+        
+        return distanceString
     }
     
     func speakPlace(place:OSMNode, distance:String) {

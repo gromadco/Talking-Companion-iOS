@@ -24,6 +24,8 @@
 "PointsAround" = "мест(о) поблизости";
 "KilometerShort" = "км";
 "MeterShort" = "м";
+"FeetShort" = "фт";
+"MilesShort" = "миль";
 "OverDistance" = "более";
 
 "DirectionFront" = "впереди";
