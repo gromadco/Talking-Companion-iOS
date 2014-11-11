@@ -250,10 +250,14 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     
     // TODO: rewrite
     func distanceStringWithDistance(var distance:CLLocationDistance) -> String {
-        let isMetric = NSLocale.currentLocale().objectForKey(NSLocaleUsesMetricSystem)!.boolValue!
+        let language = NSLocale.preferredLanguages().first as String
+        var isMetric = true
+        if language != "ru" && NSLocale.currentLocale().objectForKey(NSLocaleUsesMetricSystem)!.boolValue! {
+            isMetric = false
+        }
+        
         var distanceString = ""
         if isMetric {
-            
             if distance > kMaxDistance {
                 distanceString = NSString(format: "%@ %d %@", NSLocalizedString("OverDistance", comment: ""), Int(kMaxDistance) / kKilometer, NSLocalizedString("KilometerShort", comment: ""))
             }
