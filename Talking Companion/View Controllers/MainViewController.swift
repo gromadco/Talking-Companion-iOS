@@ -240,7 +240,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         
         self.speakPlace(closestPlace!, distance: distance)
         
-        self.nameLabel.text = closestPlace!.name
+        self.nameLabel.text = transtalor.traslatedNameForDisplaying(node: closestPlace!)
         self.distanceLabel.text = "\(distance)"
 
         if let type = transtalor.translatedTypeForTypes(types: closestPlace!.types) {
@@ -288,7 +288,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         if let type = transtalor.translatedTypeForTypes(types: place.types) {
             placeString += "\(type). "
         }
-        placeString += "\(place.name!), \(distance)"
+        let name = transtalor.traslatedNameForSpeaking(node: place)
+        placeString += "\(name), \(distance)"
         
         let utterance = AVSpeechUtterance(string: placeString)
         utterance.rate = AVSpeechUtteranceDefaultSpeechRate / kSpeachSpeedReduceRate
