@@ -13,13 +13,13 @@ import AVFoundation
 /// for debug using 5s, for release 60s
 let kDownloadTilesTimeInterval:NSTimeInterval = 60
 
-///
+/// Time for waiting to disappear gear(settings) icon
 let kHideSettingsButtonInterval:NSTimeInterval = 10
 
 /// zoom for tiles from OpenStreetMap
 let kDefaultZoom = 16
 
-///
+/// A kilometer has 1000 meters
 let kKilometer = 1000
 
 let kMaxFeet = 2640
@@ -27,7 +27,10 @@ let kMaxFeet = 2640
 /// constant for convertion meters to feet
 let kMetersToFeet = 3.2808
 
-///
+/// Minimal travelled distance for speaking (meters)
+let kMinimalTravelledDistance:CLLocationDistance = 25
+
+/// 
 let kMaxDistance:CLLocationDistance = CLLocationDistance(10 * kKilometer)
 
 /// choosen by @dudarev (described in issue #30)
@@ -120,6 +123,26 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         announceDistanceTimer!.fire()
     }
     
+    private func isMoving() -> Bool {
+        if currentLocation == nil || previousLocation == nil || currentLocation?.distanceFromLocation(previousLocation) < kMinimalTravelledDistance {
+            return false
+        }
+        return true
+    }
+    
+    private func updateStatus() {
+        var status = ""
+        
+        if !self.isMoving() {
+            status += NSLocalizedString("StartMoving", comment: "")
+            status += "\n"
+        }
+        
+        status += "\(self.nodes.count) "
+        status += NSLocalizedString("PointsAround", comment: "")
+        self.statusLabel.text = status
+    }
+    
     // MARK: - Settings Button
     
     func showSettingsButton(recognizer:UIGestureRecognizer) {
@@ -163,17 +186,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
             }
             self.nodes = tmpNodes
             
-//            if currentLocation?.speed > 0 {
-//                self.statusLabel.text = ""
-//            }
-//            else {
-//                self.statusLabel.text = "Start moving\n\(self.nodes.count) points around"
-//            }
-
-            var status = NSLocalizedString("StartMoving", comment: "")
-            status += "\n\(self.nodes.count) "
-            status += NSLocalizedString("PointsAround", comment: "")
-            self.statusLabel.text = status
+            self.updateStatus()
         }
     }
 
@@ -195,6 +208,11 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     // MARK: - Place details
     
     func announceClosestPlace() {
+        self.updateStatus()
+        if !self.isMoving() {
+            return
+        }
+        
         var closestPlace:OSMNode?
         var distanceToClosestPlace:CLLocationDistance = Double(INT_MAX)
         let bound = min(countElements(nodes), kMaxCountClosestPlaces)
@@ -203,6 +221,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         for var i = 0; i < bound; i++ {
             let node = nodes[i]
             let distance = currentLocation!.distanceFromLocation(node.location)
+            
             if !node.isAnnounced && distanceToClosestPlace > distance {
                 distanceToClosestPlace = distance
                 closestPlace = node
@@ -300,8 +319,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     
     // MARK: - CLLocationManager Delegate
     
-    func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!)
-    {
+    func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
         self.currentLocation = newLocation
 
         if self.previousLocation == nil {
@@ -314,14 +332,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         }
     }
     
-    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus)
-    {
+    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         NSLog("location manager status: \(status.rawValue)")
         self.checkLocationsPermissions(CLLocationManager.locationServicesEnabled())
     }
     
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!)
-    {
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
         NSLog("location manager error: \(error)")
     }
     
