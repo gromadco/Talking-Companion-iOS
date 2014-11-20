@@ -138,7 +138,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
             status += "\n"
         }
         
-        status += "\(self.nodes.count) "
+        status += "\(self.nodes.count) 📍 "
         status += NSLocalizedString("PointsAround", comment: "")
         self.statusLabel.text = status
     }

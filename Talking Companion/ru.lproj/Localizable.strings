@@ -21,7 +21,7 @@
 
 "LoadingData" = "Загрузка...";
 "StartMoving" = "Начните движение";
-"PointsAround" = "мест(о) поблизости";
+"PointsAround" = "поблизости";
 "KilometerShort" = "км";
 "MeterShort" = "м";
 "FeetShort" = "фт";

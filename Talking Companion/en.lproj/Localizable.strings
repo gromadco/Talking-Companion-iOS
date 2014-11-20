@@ -21,7 +21,7 @@
 
 "LoadingData" = "Loading...";
 "StartMoving" = "Start moving";
-"PointsAround" = "points around";
+"PointsAround" = "nearby";
 "KilometerShort" = "km";
 "MeterShort" = "m";
 "FeetShort" = "ft";
