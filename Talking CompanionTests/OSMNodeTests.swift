@@ -17,12 +17,7 @@ class OSMNodeTests: XCTestCase {
         XCTAssertEqual(node.location.coordinate.latitude, 7.0)
         XCTAssertEqual(node.location.coordinate.longitude, 13.0)
     }
-    
-    func testNodeInfoAmenity() {
-        node.amenity = "amenity"
-        XCTAssertEqual(node.amenity!, "amenity")
-    }
-    
+        
     func testNodeAnnounce() {
         XCTAssertEqual(node.isAnnounced, false)
         node.announce()

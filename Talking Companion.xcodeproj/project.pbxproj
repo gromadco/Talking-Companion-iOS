@@ -47,6 +47,17 @@
 		BD0C9F7F196750D5003A88AC /* OSMElementsParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F7E196750D5003A88AC /* OSMElementsParserTests.swift */; };
 		BD0C9F8119675336003A88AC /* OSMWayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F8019675336003A88AC /* OSMWayTests.swift */; };
 		BD11497C1993D406001A07A4 /* libbz2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD11497B1993D406001A07A4 /* libbz2.1.0.dylib */; };
+		BD2241711A1E3C0E00BD3A41 /* OSMTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E64F1A0B78FC00027690 /* OSMTile.swift */; };
+		BD2241721A1E3C1F00BD3A41 /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E6461A0B78FC00027690 /* Calculations.swift */; };
+		BD2241731A1E3C2200BD3A41 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E6471A0B78FC00027690 /* Constants.swift */; };
+		BD2241741A1E3C2500BD3A41 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E6521A0B78FC00027690 /* Database.swift */; };
+		BD2241751A1E3C2A00BD3A41 /* OSMBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E64C1A0B78FC00027690 /* OSMBoundingBox.swift */; };
+		BD2241761A1E3C2D00BD3A41 /* NSData+bz2.m in Sources */ = {isa = PBXBuildFile; fileRef = BD79E64B1A0B78FC00027690 /* NSData+bz2.m */; };
+		BD2241771A1E3C2F00BD3A41 /* OSMNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E64E1A0B78FC00027690 /* OSMNode.swift */; };
+		BD2241781A1E3C3300BD3A41 /* OSMTilesDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E6501A0B78FC00027690 /* OSMTilesDownloader.swift */; };
+		BD2241791A1E3C3600BD3A41 /* OSMWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E6511A0B78FC00027690 /* OSMWay.swift */; };
+		BD22417A1A1E3C3900BD3A41 /* TypeTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E6531A0B78FC00027690 /* TypeTranslator.swift */; };
+		BD22417B1A1E3C3F00BD3A41 /* OSMElementsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E64D1A0B78FC00027690 /* OSMElementsParser.swift */; };
 		BD2E7C80195AEAFB00D57518 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */; };
 		BD2EB9BC1966F0E600C8DEDD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */; };
 		BD536AAB196A7E1B0017345D /* OSMBoundingBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */; };
@@ -408,8 +419,8 @@
 		BDB5897D195888670090E178 /* Talking Companion */ = {
 			isa = PBXGroup;
 			children = (
-				BD79E6451A0B78FC00027690 /* Models */,
 				BD0C9F101967388A003A88AC /* Resources */,
+				BD79E6451A0B78FC00027690 /* Models */,
 				BD4FBD1A1963179200D8F725 /* View Controllers */,
 				BDB58980195888670090E178 /* AppDelegate.swift */,
 				BDB5897E195888670090E178 /* Supporting Files */,
@@ -629,28 +640,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD2241731A1E3C2200BD3A41 /* Constants.swift in Sources */,
 				BD0C9F541967388A003A88AC /* AFURLRequestSerialization.m in Sources */,
 				BD0C9F521967388A003A88AC /* AFURLConnectionOperation.m in Sources */,
 				BD0C9F501967388A003A88AC /* AFSecurityPolicy.m in Sources */,
 				BD0C9F5A1967388A003A88AC /* FMDatabase.m in Sources */,
 				BDBFD5B21975325B0088F1CB /* CalculationsTests.swift in Sources */,
+				BD2241771A1E3C2F00BD3A41 /* OSMNode.swift in Sources */,
 				BD0C9F7D1967505B003A88AC /* OSMTileTests.swift in Sources */,
+				BD22417B1A1E3C3F00BD3A41 /* OSMElementsParser.swift in Sources */,
 				BD0C9F481967388A003A88AC /* AFHTTPRequestOperation.m in Sources */,
+				BD2241721A1E3C1F00BD3A41 /* Calculations.swift in Sources */,
 				BD0C9F601967388A003A88AC /* FMDatabaseQueue.m in Sources */,
 				BD0C9F621967388A003A88AC /* FMResultSet.m in Sources */,
 				BD536AAB196A7E1B0017345D /* OSMBoundingBoxTests.swift in Sources */,
 				BD0C9F581967388A003A88AC /* AFURLSessionManager.m in Sources */,
+				BD2241791A1E3C3600BD3A41 /* OSMWay.swift in Sources */,
+				BD2241781A1E3C3300BD3A41 /* OSMTilesDownloader.swift in Sources */,
 				BD0C9F8119675336003A88AC /* OSMWayTests.swift in Sources */,
 				BD0C9F561967388A003A88AC /* AFURLResponseSerialization.m in Sources */,
 				BD0C9F7F196750D5003A88AC /* OSMElementsParserTests.swift in Sources */,
+				BD2241751A1E3C2A00BD3A41 /* OSMBoundingBox.swift in Sources */,
 				BD0C9F661967388A003A88AC /* SMXMLDocument.m in Sources */,
 				BD0C9F5C1967388A003A88AC /* FMDatabaseAdditions.m in Sources */,
 				BD7D7FFD199A4DCD0069A19D /* SwiftyJSON.swift in Sources */,
 				BD0C9F4C1967388A003A88AC /* AFHTTPSessionManager.m in Sources */,
 				BD0C9F4A1967388A003A88AC /* AFHTTPRequestOperationManager.m in Sources */,
 				BD0C9F5E1967388A003A88AC /* FMDatabasePool.m in Sources */,
+				BD2241761A1E3C2D00BD3A41 /* NSData+bz2.m in Sources */,
+				BD22417A1A1E3C3900BD3A41 /* TypeTranslator.swift in Sources */,
 				BD0C9F4E1967388A003A88AC /* AFNetworkReachabilityManager.m in Sources */,
 				BD0C9F071967332A003A88AC /* OSMNodeTests.swift in Sources */,
+				BD2241741A1E3C2500BD3A41 /* Database.swift in Sources */,
+				BD2241711A1E3C0E00BD3A41 /* OSMTile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
