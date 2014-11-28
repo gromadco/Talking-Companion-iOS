@@ -24,6 +24,10 @@ label {
     color: #34495e;
 }
 
+a {
+    text-decoration: none;
+}
+
 .pure-img-responsive {
     max-width: 100%;
     height: auto;
@@ -125,6 +129,15 @@ a.pure-button-primary {
     color: #AECFE5;
 }
 
+.footer a {
+    color: #6FBEF3;
+}
+.footer a:hover,
+.footer a:focus {
+    background: none;
+    border: none;
+    color: #AECFE5;
+}
 
 /*
  * -- SPLASH STYLES --
