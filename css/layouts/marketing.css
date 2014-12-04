@@ -28,6 +28,15 @@ a {
     text-decoration: none;
 }
 
+#layer1 {
+    z-index: 1; /* The order of the layers */
+    width: 100%; /* Width of the layer with the background */
+    height: 100%; /* Height of the layer with the background */
+    position: absolute; /* Absolute positioning */
+    left: 0; /* The position of the left edge of the window */
+    top: 0; /* The position of the top edge */
+   }
+
 .pure-img-responsive {
     max-width: 100%;
     height: auto;
