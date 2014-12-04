@@ -154,13 +154,19 @@ a.pure-button-primary {
  */
 
 .splash-container {    
-  background-image:url("img/main.png") no-repeat center;
+  background-image:url("img/main.jpg") no-repeat center;
   background-size:cover;
+
+  height: 800px;
+    width: 100%;
+  position: absolute; /* Absolute positioning */
+  left: 0; /* The position of the left edge of the window */
+  top: 0; /* The position of the top edge */
 }
 
 .splash {
     /* absolute center .splash within .splash-container */
-    background-image:url("img/main.png");
+    background-image:url("img/main.jpg");
     width: 80%;
     height: 50%;
     margin: auto;
@@ -304,3 +310,28 @@ a.pure-button-primary {
         -o-background-size: cover;
         background-size: cover;
 }
+
+.banner {
+    background-image:url("img/main.png") no-repeat center;
+    /*
+    background: transparent url('http://24.media.tumblr.com/ccb268832580ac12951828a1c179de69/tumblr_mo2xbk8JUK1st5lhmo1_1280.jpg') 0 0 no-repeat fixed;
+    */
+    text-align: center;
+    background-size: cover;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://24.media.tumblr.com/ccb268832580ac12951828a1c179de69/tumblr_mo2xbk8JUK1st5lhmo1_1280.jpg', sizingMethod='scale');
+
+    height: 800px;
+    width: 100%;
+    margin-bottom: 3em;
+    display: table;
+}
+
+    .banner-head {
+        display: table-cell;
+        vertical-align: middle;
+        margin-bottom: 0;
+        font-size: 2em;
+        color: white;
+        font-weight: 500;
+        text-shadow: 0 1px 1px black;
+    }
