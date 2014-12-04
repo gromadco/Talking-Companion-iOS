@@ -153,25 +153,9 @@ a.pure-button-primary {
  * This is the blue top section that appears on the page.
  */
 
-.splash-container {
-
-    
-  background-image:url("img/main.png");
+.splash-container {    
+  background-image:url("img/main.png") no-repeat center;
   background-size:cover;
-  box-shadow:inset 0px 0px 0 2000px rgba(0,0,0,0.2);
-
-  
-    /*background: #1f8dd6;*/
-    
-    z-index: 1;
-    overflow: hidden;
-    /* The following styles are required for the "scroll-over" effect */
-    width: 100%;
-    height: 88%;
-    top: 0;
-    left: 0;
-    position: fixed !important;
-    background-image:url("img/main.png");
 }
 
 .splash {
@@ -216,7 +200,7 @@ a.pure-button-primary {
     width: 100%;
     min-height: 12%;
     z-index: 2;
-    background: white;
+    background: blue;
 
 }
 
