@@ -24,19 +24,6 @@ label {
     color: #34495e;
 }
 
-a {
-    text-decoration: none;
-}
-
-#layer1 {
-    /* z-index: 1; The order of the layers */
-    width: 100%; /* Width of the layer with the background */
-    height: 100%; /* Height of the layer with the background */
-    position: absolute; /* Absolute positioning */
-    left: 0; /* The position of the left edge of the window */
-    top: 0; /* The position of the top edge */
-   }
-
 .pure-img-responsive {
     max-width: 100%;
     height: auto;
@@ -138,35 +125,30 @@ a.pure-button-primary {
     color: #AECFE5;
 }
 
-.footer a {
-    color: #6FBEF3;
-}
-.footer a:hover,
-.footer a:focus {
-    background: none;
-    border: none;
-    color: #AECFE5;
-}
 
 /*
  * -- SPLASH STYLES --
  * This is the blue top section that appears on the page.
  */
 
-.splash-container {    
-  background-image:url("img/main.jpg") no-repeat center;
-  background-size:cover;
-
-  height: 800px;
+.splash-container {
+    background: url(img/main.jpg) 0 0 no-repeat fixed;
+    text-align: center;
+    background-size: cover;
+    height: 1000px;
     width: 100%;
-  position: absolute; /* Absolute positioning */
-  left: 0; /* The position of the left edge of the window */
-  top: 0; /* The position of the top edge */
+    margin-bottom: 3em;
+    display: table;
+    /* The following styles are required for the "scroll-over" effect */
+    width: 100%;
+    height: 88%;
+    top: 0;
+    left: 0;
+    position: fixed !important;
 }
 
 .splash {
     /* absolute center .splash within .splash-container */
-    background-image:url("img/main.jpg");
     width: 80%;
     height: 50%;
     margin: auto;
@@ -303,35 +285,4 @@ a.pure-button-primary {
     }
 }
 
-.img-main {
-        background: url(img/main.png) no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-}
 
-.banner {
-    background-image:url("img/main.png") no-repeat center;
-    /*
-    background: transparent url('http://24.media.tumblr.com/ccb268832580ac12951828a1c179de69/tumblr_mo2xbk8JUK1st5lhmo1_1280.jpg') 0 0 no-repeat fixed;
-    */
-    text-align: center;
-    background-size: cover;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://24.media.tumblr.com/ccb268832580ac12951828a1c179de69/tumblr_mo2xbk8JUK1st5lhmo1_1280.jpg', sizingMethod='scale');
-
-    height: 800px;
-    width: 100%;
-    margin-bottom: 3em;
-    display: table;
-}
-
-    .banner-head {
-        display: table-cell;
-        vertical-align: middle;
-        margin-bottom: 0;
-        font-size: 2em;
-        color: white;
-        font-weight: 500;
-        text-shadow: 0 1px 1px black;
-    }
