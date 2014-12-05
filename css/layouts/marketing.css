@@ -132,7 +132,7 @@ a.pure-button-primary {
  */
 
 .splash-container {
-    background: url(img/main.jpg) 0 0 no-repeat fixed;
+    background: url('../../img/main.jpg') 0 0 no-repeat fixed;
     text-align: center;
     background-size: cover;
     height: 1000px;
