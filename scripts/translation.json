@@ -827,6 +827,14 @@
       }
     }
   }, 
+  "highway": {
+    "bus_stop": {
+      "translation": {
+        "en": "bus stop", 
+        "ru": "остановка автобуса"
+      }
+    }
+  }, 
   "historic": {
     "aircraft": {
       "translation": {
