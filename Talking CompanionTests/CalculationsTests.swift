@@ -100,6 +100,17 @@ class CalculationsTests: XCTestCase {
         XCTAssert(direction == .Left)
     }
     
+    func testDirectionLeft5() {
+        let current = CLLocation(latitude: -122.02915124, longitude: 37.33070542)
+        let previous = CLLocation(latitude: -122.02962241, longitude: 37.33069782)
+        let place = CLLocation(latitude: -122.0290199, longitude: 37.3324537)
+        
+        let angle = Calculations.thetaForCurrentLocation(current, previousLocation: previous, placeLocation: place)
+        let direction = Direction(angle: angle)
+        
+        XCTAssert(direction == .Left)
+    }
+    
     // MARK: - Back
     
     func testDirectionBack1() {
