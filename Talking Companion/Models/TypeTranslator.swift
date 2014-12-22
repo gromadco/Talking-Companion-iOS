@@ -36,7 +36,7 @@ class TypeTranslator {
         let jsonPath = NSBundle.mainBundle().pathForResource("translation", ofType: "json")!
         let jsonData = NSData(contentsOfFile: jsonPath)
         self.json = JSONValue(jsonData as NSData!)
-        self.relevantTypes = ["amenity", "shop", "leisure", "historic", "tourism", "bridge", "public_transport", "railway", "building", "place", "landuse", "natural", "man_made"]
+        self.relevantTypes = ["amenity", "shop", "leisure", "historic", "tourism", "bridge", "highway", "public_transport", "railway", "building", "place", "landuse", "natural", "man_made"]
     }
     
     func translatedTypeForTypes(#types:[String:String]) -> String? {
