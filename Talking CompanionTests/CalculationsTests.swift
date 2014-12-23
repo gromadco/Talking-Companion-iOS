@@ -18,15 +18,14 @@ class CalculationsTests: XCTestCase {
     // MARK: - Right
     
     func testDirectionRight1() {
-        let current = CLLocation(latitude: -122.032607, longitude: 37.330186)
-        let previous = CLLocation(latitude: -122.032674, longitude: 37.330178)
-        let place = CLLocation(latitude: -122.032662, longitude: 37.331556)
-
+        let current = CLLocation(latitude: 37.330186, longitude: -122.032607)
+        let previous = CLLocation(latitude: 37.330178, longitude: -122.032674)
+        let place = CLLocation(latitude: 37.32974330929756, longitude: -122.0326030254364)
+    
         let angle = Calculations.thetaForCurrentLocation(current, previousLocation: previous, placeLocation: place)
         let direction = Direction(angle: angle)
         
-        XCTAssert(direction == Direction.Right)
-        XCTAssertTrue(direction.description.rangeOfString("right") != nil)
+        XCTAssert(direction == .Right)
     }
     
     func testDirectionRight2() {
@@ -101,9 +100,9 @@ class CalculationsTests: XCTestCase {
     }
     
     func testDirectionLeft5() {
-        let current = CLLocation(latitude: -122.02915124, longitude: 37.33070542)
-        let previous = CLLocation(latitude: -122.02962241, longitude: 37.33069782)
-        let place = CLLocation(latitude: -122.0290199, longitude: 37.3324537)
+        let current = CLLocation(latitude: 37.33070542, longitude: -122.02915124)
+        let previous = CLLocation(latitude: 37.33069782, longitude: -122.02962241)
+        let place = CLLocation(latitude: 37.3324537, longitude: -122.0290199)
         
         let angle = Calculations.thetaForCurrentLocation(current, previousLocation: previous, placeLocation: place)
         let direction = Direction(angle: angle)

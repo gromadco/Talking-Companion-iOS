@@ -41,21 +41,23 @@ enum Direction:Int {
 
 class Calculations: NSObject {
     class func thetaForCurrentLocation(currentLocation:CLLocation, previousLocation:CLLocation, placeLocation:CLLocation) -> Double {
-        
         let y1:Double = sin(currentLocation.coordinate.longitude - previousLocation.coordinate.longitude) * cos(currentLocation.coordinate.latitude);
-        let x1:Double = cos(previousLocation.coordinate.latitude) * sin(currentLocation.coordinate.latitude) - sin(previousLocation.coordinate.latitude)*cos(currentLocation.coordinate.latitude)*cos(currentLocation.coordinate.longitude - previousLocation.coordinate.longitude);
+        let x1:Double = cos(previousLocation.coordinate.latitude) * sin(currentLocation.coordinate.latitude) - sin(previousLocation.coordinate.latitude) * cos(currentLocation.coordinate.latitude) * cos(currentLocation.coordinate.longitude - previousLocation.coordinate.longitude);
         let phi1 = radiansToDegrees(atan2(y1, x1))
         
         let y2 = sin(placeLocation.coordinate.longitude - currentLocation.coordinate.longitude) * cos(placeLocation.coordinate.latitude);
-        let x2 = cos(currentLocation.coordinate.latitude) * sin(placeLocation.coordinate.latitude) - sin(currentLocation.coordinate.latitude)*cos(placeLocation.coordinate.latitude)*cos(placeLocation.coordinate.longitude - currentLocation.coordinate.longitude);
+        let x2 = cos(currentLocation.coordinate.latitude) * sin(placeLocation.coordinate.latitude) - sin(currentLocation.coordinate.latitude) * cos(placeLocation.coordinate.latitude) * cos(placeLocation.coordinate.longitude - currentLocation.coordinate.longitude);
         let phi2 = radiansToDegrees(atan2(y2, x2))
         
-        let theta = Double(abs((phi2 - phi1) % 360))
+        var theta = phi2 - phi1
+        if theta < 0 {
+            theta += 360
+        }
         
-        return theta;
+        return Double(theta);
     }
     
     class func radiansToDegrees(radians:Double) -> Double {
-        return radians * 180 / M_PI
+        return radians * (180 / M_PI)
     }
 }
