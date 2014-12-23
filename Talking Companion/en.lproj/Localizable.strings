@@ -20,7 +20,7 @@
 "ExtractNotFound" = "Extract for this city not found.";
 
 "LoadingData" = "Loading...";
-"StartMoving" = "Start moving";
+"StartMoving" = "Start moving to hear direction";
 "PointsAround" = "nearby";
 "KilometerShort" = "km";
 "MeterShort" = "m";

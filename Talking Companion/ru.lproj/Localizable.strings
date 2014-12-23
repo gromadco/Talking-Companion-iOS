@@ -20,7 +20,7 @@
 "ExtractNotFound" = "Архив для этого города не найден.";
 
 "LoadingData" = "Загрузка...";
-"StartMoving" = "Начните движение";
+"StartMoving" = "Начните двигаться, чтобы слышать направление";
 "PointsAround" = "поблизости";
 "KilometerShort" = "км";
 "MeterShort" = "м";

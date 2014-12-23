@@ -187,6 +187,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
             self.nodes = tmpNodes
             
             self.updateStatus()
+            announceDistanceTimer?.fire()
         }
     }
 
@@ -209,9 +210,6 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     
     func announceClosestPlace() {
         self.updateStatus()
-        if !self.isMoving() {
-            return
-        }
         
         var closestPlace:OSMNode?
         var distanceToClosestPlace:CLLocationDistance = Double(INT_MAX)
@@ -249,8 +247,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         closestPlaceLocation = closestPlace!.location
         var distance = self.distanceStringWithDistance(distanceToClosestPlace)
 
-        
-        if currentLocation != nil && previousLocation != nil {
+        if isMoving() && currentLocation != nil && previousLocation != nil {
             let angle = Calculations.thetaForCurrentLocation(currentLocation!, previousLocation: previousLocation!, placeLocation: closestPlaceLocation!)
             let direction = Direction(angle: angle)
             distance += " \(direction.description)"
@@ -271,7 +268,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     func distanceStringWithDistance(var distance:CLLocationDistance) -> String {
         let language = NSLocale.preferredLanguages().first as String
         var isMetric = true
-        if language != "ru" && NSLocale.currentLocale().objectForKey(NSLocaleUsesMetricSystem)!.boolValue! {
+        if language != "ru" && !NSLocale.currentLocale().objectForKey(NSLocaleUsesMetricSystem)!.boolValue! {
             isMetric = false
         }
         
