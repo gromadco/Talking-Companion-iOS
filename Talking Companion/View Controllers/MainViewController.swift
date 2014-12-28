@@ -179,6 +179,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         if let current = self.currentLocation {
             let centerTile = OSMTile(latitude: current.coordinate.latitude, longitude: current.coordinate.longitude, zoom: kDefaultZoom)
             
+            let shouldSpeak = countElements(self.nodes) == 0;
+            
             var tmpNodes = [OSMNode]()
             let neighboringTiles = centerTile.neighboringTiles()
             for currentTile in neighboringTiles {
@@ -187,7 +189,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
             self.nodes = tmpNodes
             
             self.updateStatus()
-            announceDistanceTimer?.fire()
+            if shouldSpeak {
+                self.voiceFrequencyChanged()
+            }
         }
     }
 
@@ -326,7 +330,6 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
             
             self.updateNodesFromDB()
             self.downloadNeighboringTiles()
-            self.voiceFrequencyChanged()
         }
     }
     
@@ -344,6 +347,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         if isLocationEnabled {
             tilesTimer = NSTimer.scheduledTimerWithTimeInterval(kDownloadTilesTimeInterval, target: self, selector: "downloadNeighboringTiles", userInfo: nil, repeats: true)
             tilesTimer?.fire()
+            NSLog("permissions")
             self.voiceFrequencyChanged()
         }
         else {
