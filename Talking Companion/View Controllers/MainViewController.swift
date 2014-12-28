@@ -231,9 +231,10 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
             var latestDate = NSDate()
             for var i = 0; i < bound; i++ {
                 let node = nodes[i]
-                if node.announcedDate?.compare(latestDate) == NSComparisonResult.OrderedAscending {
+                if node.announcedDate!.compare(latestDate) == NSComparisonResult.OrderedAscending {
                     closestPlace = node
-                    latestDate = closestPlace!.announcedDate!
+                    latestDate = node.announcedDate!
+                    distanceToClosestPlace = currentLocation!.distanceFromLocation(node.location)
                 }
             }
         }
@@ -325,7 +326,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
             
             self.updateNodesFromDB()
             self.downloadNeighboringTiles()
-            self.announceClosestPlace()
+            self.voiceFrequencyChanged()
         }
     }
     
