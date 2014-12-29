@@ -9,12 +9,11 @@
 import UIKit
 
 @objc protocol OSMTilesDownloaderDelegate {
-    func tilesDownloaded();
+    func tileDownloaded()
 }
 
 class OSMTilesDownloader: NSObject {
    
-    var leftDownloading = 0
     var delegate:OSMTilesDownloaderDelegate?
     
     init(delegate:OSMTilesDownloaderDelegate?) {
@@ -44,13 +43,11 @@ class OSMTilesDownloader: NSObject {
                 let tileId = Database.saveTile(tile)
                 let parser = OSMElementsParser(filePath: path)
                 parser.parseWithComplitionHandler() { nodes, _ in
-                    Database.saveNodes(parser.nodes, forTileId: tileId)
+                    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+                        Database.saveNodes(parser.nodes, forTileId: tileId)
+                    }
+                    self.delegate?.tileDownloaded()
                 };
-                
-                self.leftDownloading--;
-                if self.leftDownloading == 0 {
-                    self.delegate?.tilesDownloaded()
-                }
             },
             failure: { [unowned self] (_, error) in
                 NSLog("tile downloading failed")
@@ -58,12 +55,6 @@ class OSMTilesDownloader: NSObject {
             
             NSLog("start downloading @ \(box.url)")
             operation.start()
-            leftDownloading++;
-        }
-        
-        // all tiles already downloaded
-        if self.leftDownloading == 0 {
-            self.delegate?.tilesDownloaded()
         }
     }
 }

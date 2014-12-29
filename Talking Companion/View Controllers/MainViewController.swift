@@ -206,7 +206,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     
     // MARK: - OSMTileDownloader Delegate
     
-    func tilesDownloaded() {
+    func tileDownloaded() {
         self.updateNodesFromDB()
     }
     
