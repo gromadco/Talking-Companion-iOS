@@ -237,6 +237,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="SPc-If-aAW"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="320" height="360"/>
                     <connections>
                         <outlet property="updatingIntervalPickerView" destination="OCC-h3-wfG" id="MhP-Ld-r3y"/>
                     </connections>
