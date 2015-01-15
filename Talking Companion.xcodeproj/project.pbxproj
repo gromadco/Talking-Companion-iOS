@@ -65,6 +65,8 @@
 		BD5E01221A1205470024C715 /* logo_splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5E01211A1205470024C715 /* logo_splashscreen.png */; };
 		BD66797E19B4A6BA00DFB53F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD66797D19B4A6BA00DFB53F /* MainViewController.swift */; };
 		BD71880E1A029F0300FBB2EE /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD71880D1A029F0300FBB2EE /* libGoogleAnalyticsServices.a */; };
+		BD75BF6F1A68775000C3397B /* logo_splashscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD75BF6D1A68775000C3397B /* logo_splashscreen@2x.png */; };
+		BD75BF701A68775000C3397B /* logo_splashscreen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD75BF6E1A68775000C3397B /* logo_splashscreen@3x.png */; };
 		BD79E6541A0B78FC00027690 /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E6461A0B78FC00027690 /* Calculations.swift */; };
 		BD79E6551A0B78FC00027690 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E6471A0B78FC00027690 /* Constants.swift */; };
 		BD79E6581A0B78FC00027690 /* NSData+bz2.m in Sources */ = {isa = PBXBuildFile; fileRef = BD79E64B1A0B78FC00027690 /* NSData+bz2.m */; };
@@ -80,16 +82,13 @@
 		BD7D7FFC199A4DCD0069A19D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FFB199A4DCD0069A19D /* SwiftyJSON.swift */; };
 		BD7D7FFD199A4DCD0069A19D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FFB199A4DCD0069A19D /* SwiftyJSON.swift */; };
 		BD7D8000199A4E730069A19D /* libbz2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD11497B1993D406001A07A4 /* libbz2.1.0.dylib */; };
-		BD7D8009199A504D0069A19D /* empty.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD7D8007199A504D0069A19D /* empty.osm */; };
 		BD7D800A199A504D0069A19D /* empty.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD7D8007199A504D0069A19D /* empty.osm */; };
-		BD7D800B199A504D0069A19D /* map.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD7D8008199A504D0069A19D /* map.osm */; };
 		BD7D800C199A504D0069A19D /* map.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD7D8008199A504D0069A19D /* map.osm */; };
 		BD9EEF4619924A9200BC8A02 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD9EEF4519924A9200BC8A02 /* Settings.plist */; };
 		BDA72E8619F13F3000C7DA25 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BDA72E8819F13F3000C7DA25 /* Localizable.strings */; };
 		BDB58981195888670090E178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB58980195888670090E178 /* AppDelegate.swift */; };
 		BDB58986195888670090E178 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDB58984195888670090E178 /* Main.storyboard */; };
 		BDB58988195888670090E178 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB58987195888670090E178 /* Images.xcassets */; };
-		BDBAD836199BC34A00BA69EC /* poi.json in Resources */ = {isa = PBXBuildFile; fileRef = BDBAD834199BC34A00BA69EC /* poi.json */; };
 		BDBFD5B21975325B0088F1CB /* CalculationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBFD5B11975325B0088F1CB /* CalculationsTests.swift */; };
 		BDC820FA199243F60055ABBE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC820F9199243F60055ABBE /* SettingsViewController.swift */; };
 		BDD89B85195B095F0020ACA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD89B84195B095F0020ACA7 /* AVFoundation.framework */; };
@@ -200,6 +199,8 @@
 		BD71880B1A029F0300FBB2EE /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
 		BD71880C1A029F0300FBB2EE /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
 		BD71880D1A029F0300FBB2EE /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		BD75BF6D1A68775000C3397B /* logo_splashscreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo_splashscreen@2x.png"; path = "graphics/logo_splashscreen@2x.png"; sourceTree = SOURCE_ROOT; };
+		BD75BF6E1A68775000C3397B /* logo_splashscreen@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo_splashscreen@3x.png"; path = "graphics/logo_splashscreen@3x.png"; sourceTree = SOURCE_ROOT; };
 		BD79E6461A0B78FC00027690 /* Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
 		BD79E6471A0B78FC00027690 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BD79E64A1A0B78FC00027690 /* NSData+bz2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+bz2.h"; sourceTree = "<group>"; };
@@ -215,8 +216,8 @@
 		BD7A7C8B19FA57D7001F5005 /* translation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = translation.json; path = scripts/translation.json; sourceTree = SOURCE_ROOT; };
 		BD7D7FFB199A4DCD0069A19D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		BD7D7FFE199A4E530069A19D /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
-		BD7D8007199A504D0069A19D /* empty.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = empty.osm; sourceTree = "<group>"; };
-		BD7D8008199A504D0069A19D /* map.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.osm; sourceTree = "<group>"; };
+		BD7D8007199A504D0069A19D /* empty.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = empty.osm; path = "../Talking Companion/Resources/empty.osm"; sourceTree = "<group>"; };
+		BD7D8008199A504D0069A19D /* map.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = map.osm; path = "../Talking Companion/Resources/map.osm"; sourceTree = "<group>"; };
 		BD9EEF4519924A9200BC8A02 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Settings.plist; path = "View Controllers/Settings.plist"; sourceTree = "<group>"; };
 		BDA72E8A19F13F3300C7DA25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BDA72E8B19F141A200C7DA25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -228,7 +229,6 @@
 		BDB58987195888670090E178 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BDB5898D195888670090E178 /* Talking CompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Talking CompanionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB58992195888670090E178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BDBAD834199BC34A00BA69EC /* poi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = poi.json; sourceTree = "<group>"; };
 		BDBFD5B11975325B0088F1CB /* CalculationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculationsTests.swift; sourceTree = "<group>"; };
 		BDC820F9199243F60055ABBE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BDD89B84195B095F0020ACA7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -266,16 +266,13 @@
 		BD0C9F101967388A003A88AC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BD5E01201A12053D0024C715 /* Graphics */,
-				BD7188021A029F0300FBB2EE /* GAI */,
-				BD7A7C8B19FA57D7001F5005 /* translation.json */,
-				BDBAD834199BC34A00BA69EC /* poi.json */,
-				BD7D8007199A504D0069A19D /* empty.osm */,
-				BD7D8008199A504D0069A19D /* map.osm */,
 				BD0C9F111967388A003A88AC /* AFNetworking */,
 				BD0C9F251967388A003A88AC /* fmdb */,
+				BD7188021A029F0300FBB2EE /* GAI */,
+				BD5E01201A12053D0024C715 /* Graphics */,
 				BD0C9F321967388A003A88AC /* SMXMLDocument */,
 				BD7D7FFA199A4DCD0069A19D /* SwiftyJSON */,
+				BD7A7C8B19FA57D7001F5005 /* translation.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -348,6 +345,8 @@
 			isa = PBXGroup;
 			children = (
 				BD5E01211A1205470024C715 /* logo_splashscreen.png */,
+				BD75BF6D1A68775000C3397B /* logo_splashscreen@2x.png */,
+				BD75BF6E1A68775000C3397B /* logo_splashscreen@3x.png */,
 			);
 			name = Graphics;
 			sourceTree = "<group>";
@@ -368,6 +367,15 @@
 				BD71880D1A029F0300FBB2EE /* libGoogleAnalyticsServices.a */,
 			);
 			path = GAI;
+			sourceTree = "<group>";
+		};
+		BD75BF6B1A68752300C3397B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BD7D8007199A504D0069A19D /* empty.osm */,
+				BD7D8008199A504D0069A19D /* map.osm */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		BD79E6451A0B78FC00027690 /* Models */ = {
@@ -443,6 +451,7 @@
 		BDB58990195888670090E178 /* Talking CompanionTests */ = {
 			isa = PBXGroup;
 			children = (
+				BD75BF6B1A68752300C3397B /* Resources */,
 				BDBFD5B11975325B0088F1CB /* CalculationsTests.swift */,
 				BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */,
 				BD0C9F7E196750D5003A88AC /* OSMElementsParserTests.swift */,
@@ -574,14 +583,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD75BF6F1A68775000C3397B /* logo_splashscreen@2x.png in Resources */,
 				BDA72E8619F13F3000C7DA25 /* Localizable.strings in Resources */,
-				BD7D800B199A504D0069A19D /* map.osm in Resources */,
+				BD75BF701A68775000C3397B /* logo_splashscreen@3x.png in Resources */,
 				BD5E011F1A1169BE0024C715 /* Launch Screen.xib in Resources */,
 				BD7A7C8C19FA57D7001F5005 /* translation.json in Resources */,
-				BDBAD836199BC34A00BA69EC /* poi.json in Resources */,
 				BDB58986195888670090E178 /* Main.storyboard in Resources */,
 				BDB58988195888670090E178 /* Images.xcassets in Resources */,
-				BD7D8009199A504D0069A19D /* empty.osm in Resources */,
 				BD9EEF4619924A9200BC8A02 /* Settings.plist in Resources */,
 				BD5E01221A1205470024C715 /* logo_splashscreen.png in Resources */,
 			);
