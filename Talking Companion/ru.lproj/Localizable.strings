@@ -19,7 +19,7 @@
 "ExtractDownloadingError" = "Произошла ошибка при скачивании архива.";
 "ExtractNotFound" = "Архив для этого города не найден.";
 
-"LoadingData" = "Загрузка...";
+"LoadingData" = "Загрузка ближащих мест...";
 "StartMoving" = "Начните двигаться, чтобы слышать направление";
 "PointsAround" = "поблизости";
 "KilometerShort" = "км";

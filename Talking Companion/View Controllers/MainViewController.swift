@@ -82,6 +82,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         super.viewDidLoad()
         NSLog("path to documents: \(NSHomeDirectory())")
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "voiceFrequencyChanged", name: kVoiceFrequencyNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "requestAccessToLocationServices", name: kApplicationBecomeActiveNotification, object: nil)
         self.settingsButton.setTitle(kSettingsButtonIcon, forState: .Normal)
         
         let language = NSLocale.preferredLanguages().first as String
@@ -106,9 +107,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     func loadLocationManager() {
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        if (self.locationManager.respondsToSelector("requestAlwaysAuthorization")) {
-            self.locationManager.requestAlwaysAuthorization()
-        }
+        self.requestAccessToLocationServices()
         self.locationManager.startUpdatingLocation()
     }
     
@@ -141,6 +140,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         status += "\(self.nodes.count) 📍 "
         status += NSLocalizedString("PointsAround", comment: "")
         self.statusLabel.text = status
+    }
+    
+    func requestAccessToLocationServices() {
+        if (self.locationManager.respondsToSelector("requestAlwaysAuthorization")) {
+            self.locationManager.requestAlwaysAuthorization()
+        }
     }
     
     // MARK: - Settings Button
@@ -179,7 +184,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         if let current = self.currentLocation {
             let centerTile = OSMTile(latitude: current.coordinate.latitude, longitude: current.coordinate.longitude, zoom: kDefaultZoom)
             
-            let shouldSpeak = countElements(self.nodes) == 0;
+            let shoulUpdateFrequencyTimer = countElements(self.nodes) == 0
             
             var tmpNodes = [OSMNode]()
             let neighboringTiles = centerTile.neighboringTiles()
@@ -189,12 +194,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
             self.nodes = tmpNodes
             
             self.updateStatus()
-            if shouldSpeak {
+            if shoulUpdateFrequencyTimer {
                 self.voiceFrequencyChanged()
             }
         }
     }
-
+    
     func downloadNeighboringTiles() {
         if let current = self.currentLocation {
             self.statusLabel.text = NSLocalizedString("LoadingData", comment: "")
@@ -325,7 +330,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         self.currentLocation = newLocation
 
         if self.previousLocation == nil {
-            NSLog("initial coordinates: \(currentLocation?.coordinate.latitude); \(currentLocation?.coordinate.longitude)");
+            NSLog("initial coordinates: \(currentLocation?.coordinate.latitude); \(currentLocation?.coordinate.longitude)")
             self.previousLocation = newLocation
             
             self.updateNodesFromDB()
@@ -335,19 +340,21 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         NSLog("location manager status: \(status.rawValue)")
-        self.checkLocationsPermissions(CLLocationManager.locationServicesEnabled())
+        self.checkLocationsPermissions()
     }
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
         NSLog("location manager error: \(error)")
+        self.checkLocationsPermissions()
     }
     
     // start or stop downloading
-    func checkLocationsPermissions(isLocationEnabled:Bool) {
+    func checkLocationsPermissions() {
+        let isLocationEnabled = CLLocationManager.locationServicesEnabled() && (CLLocationManager.authorizationStatus() == .Authorized || CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse)
+        
         if isLocationEnabled {
             tilesTimer = NSTimer.scheduledTimerWithTimeInterval(kDownloadTilesTimeInterval, target: self, selector: "downloadNeighboringTiles", userInfo: nil, repeats: true)
             tilesTimer?.fire()
-            NSLog("permissions")
             self.voiceFrequencyChanged()
         }
         else {

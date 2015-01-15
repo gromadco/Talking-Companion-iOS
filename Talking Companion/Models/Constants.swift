@@ -16,6 +16,7 @@ let kSettingsButtonIcon = "⚙"
 
 let kVoiceFrequency = "VoiceFrequency"
 let kVoiceFrequencyNotification = "VoiceFrequencyNotification"
+let kApplicationBecomeActiveNotification = "ApplicationBecomeActiveNotification"
 
 // MARK: - Network
 

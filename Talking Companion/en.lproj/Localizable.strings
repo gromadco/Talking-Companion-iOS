@@ -19,7 +19,7 @@
 "ExtractDownloadingError" = "Extract for this city not found.";
 "ExtractNotFound" = "Extract for this city not found.";
 
-"LoadingData" = "Loading...";
+"LoadingData" = "Downloading places nearby...";
 "StartMoving" = "Start moving to hear direction";
 "PointsAround" = "nearby";
 "KilometerShort" = "km";
