@@ -10,6 +10,7 @@
 #import "AFNetworking.h"
 #import "FMDB.h"
 #import "NSData+bz2.h"
+#import "UINavigationController+Orientation.h"
 
 #import "GAI.h"
 #import "GAIDictionaryBuilder.h"

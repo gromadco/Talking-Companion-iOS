@@ -67,6 +67,7 @@
 		BD71880E1A029F0300FBB2EE /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD71880D1A029F0300FBB2EE /* libGoogleAnalyticsServices.a */; };
 		BD75BF6F1A68775000C3397B /* logo_splashscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD75BF6D1A68775000C3397B /* logo_splashscreen@2x.png */; };
 		BD75BF701A68775000C3397B /* logo_splashscreen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD75BF6E1A68775000C3397B /* logo_splashscreen@3x.png */; };
+		BD76B8C51A713DEC00546FF7 /* UINavigationController+Orientation.m in Sources */ = {isa = PBXBuildFile; fileRef = BD76B8C41A713DEC00546FF7 /* UINavigationController+Orientation.m */; };
 		BD79E6541A0B78FC00027690 /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E6461A0B78FC00027690 /* Calculations.swift */; };
 		BD79E6551A0B78FC00027690 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E6471A0B78FC00027690 /* Constants.swift */; };
 		BD79E6581A0B78FC00027690 /* NSData+bz2.m in Sources */ = {isa = PBXBuildFile; fileRef = BD79E64B1A0B78FC00027690 /* NSData+bz2.m */; };
@@ -201,6 +202,8 @@
 		BD71880D1A029F0300FBB2EE /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		BD75BF6D1A68775000C3397B /* logo_splashscreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo_splashscreen@2x.png"; path = "graphics/logo_splashscreen@2x.png"; sourceTree = SOURCE_ROOT; };
 		BD75BF6E1A68775000C3397B /* logo_splashscreen@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo_splashscreen@3x.png"; path = "graphics/logo_splashscreen@3x.png"; sourceTree = SOURCE_ROOT; };
+		BD76B8C31A713DEC00546FF7 /* UINavigationController+Orientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Orientation.h"; sourceTree = "<group>"; };
+		BD76B8C41A713DEC00546FF7 /* UINavigationController+Orientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Orientation.m"; sourceTree = "<group>"; };
 		BD79E6461A0B78FC00027690 /* Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
 		BD79E6471A0B78FC00027690 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BD79E64A1A0B78FC00027690 /* NSData+bz2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+bz2.h"; sourceTree = "<group>"; };
@@ -393,6 +396,8 @@
 				BD79E6501A0B78FC00027690 /* OSMTilesDownloader.swift */,
 				BD79E6511A0B78FC00027690 /* OSMWay.swift */,
 				BD79E6531A0B78FC00027690 /* TypeTranslator.swift */,
+				BD76B8C31A713DEC00546FF7 /* UINavigationController+Orientation.h */,
+				BD76B8C41A713DEC00546FF7 /* UINavigationController+Orientation.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -622,6 +627,7 @@
 				BD79E65A1A0B78FC00027690 /* OSMElementsParser.swift in Sources */,
 				BD0C9F531967388A003A88AC /* AFURLRequestSerialization.m in Sources */,
 				BD0C9F651967388A003A88AC /* SMXMLDocument.m in Sources */,
+				BD76B8C51A713DEC00546FF7 /* UINavigationController+Orientation.m in Sources */,
 				BD79E65F1A0B78FC00027690 /* Database.swift in Sources */,
 				BD79E65B1A0B78FC00027690 /* OSMNode.swift in Sources */,
 				BD0C9F571967388A003A88AC /* AFURLSessionManager.m in Sources */,
