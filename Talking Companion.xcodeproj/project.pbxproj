@@ -47,6 +47,9 @@
 		BD0C9F7F196750D5003A88AC /* OSMElementsParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F7E196750D5003A88AC /* OSMElementsParserTests.swift */; };
 		BD0C9F8119675336003A88AC /* OSMWayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F8019675336003A88AC /* OSMWayTests.swift */; };
 		BD11497C1993D406001A07A4 /* libbz2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD11497B1993D406001A07A4 /* libbz2.1.0.dylib */; };
+		BD1C1B891AE670C20001384F /* translation.json in Resources */ = {isa = PBXBuildFile; fileRef = BD7A7C8B19FA57D7001F5005 /* translation.json */; };
+		BD1C1B8A1AE670F70001384F /* empty.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD7D8007199A504D0069A19D /* empty.osm */; };
+		BD1C1B8B1AE670F90001384F /* map.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD7D8008199A504D0069A19D /* map.osm */; };
 		BD2241711A1E3C0E00BD3A41 /* OSMTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E64F1A0B78FC00027690 /* OSMTile.swift */; };
 		BD2241721A1E3C1F00BD3A41 /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E6461A0B78FC00027690 /* Calculations.swift */; };
 		BD2241731A1E3C2200BD3A41 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E6471A0B78FC00027690 /* Constants.swift */; };
@@ -591,10 +594,12 @@
 				BD75BF6F1A68775000C3397B /* logo_splashscreen@2x.png in Resources */,
 				BDA72E8619F13F3000C7DA25 /* Localizable.strings in Resources */,
 				BD75BF701A68775000C3397B /* logo_splashscreen@3x.png in Resources */,
+				BD1C1B8A1AE670F70001384F /* empty.osm in Resources */,
 				BD5E011F1A1169BE0024C715 /* Launch Screen.xib in Resources */,
 				BD7A7C8C19FA57D7001F5005 /* translation.json in Resources */,
 				BDB58986195888670090E178 /* Main.storyboard in Resources */,
 				BDB58988195888670090E178 /* Images.xcassets in Resources */,
+				BD1C1B8B1AE670F90001384F /* map.osm in Resources */,
 				BD9EEF4619924A9200BC8A02 /* Settings.plist in Resources */,
 				BD5E01221A1205470024C715 /* logo_splashscreen.png in Resources */,
 			);
@@ -605,6 +610,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD7D800C199A504D0069A19D /* map.osm in Resources */,
+				BD1C1B891AE670C20001384F /* translation.json in Resources */,
 				BD7D800A199A504D0069A19D /* empty.osm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

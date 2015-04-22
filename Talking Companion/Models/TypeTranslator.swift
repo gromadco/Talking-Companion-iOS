@@ -21,7 +21,7 @@ extension String {
 class TypeTranslator {
     
     private let language:String
-    private let json:JSONValue
+    public let json:JSON
     private let relevantTypes:[String]
     
     init (var language:String) {
@@ -35,7 +35,7 @@ class TypeTranslator {
         
         let jsonPath = NSBundle.mainBundle().pathForResource("translation", ofType: "json")!
         let jsonData = NSData(contentsOfFile: jsonPath)
-        self.json = JSONValue(jsonData as NSData!)
+        self.json = JSON(jsonData as NSData!)
         self.relevantTypes = ["amenity", "shop", "leisure", "historic", "tourism", "bridge", "highway", "public_transport", "railway", "building", "place", "landuse", "natural", "man_made"]
     }
     
@@ -88,7 +88,7 @@ class TypeTranslator {
         string = string.lowercaseString
         var romanization = ""
         
-        for var i = 0; i < countElements(string); i++ {
+        for var i = 0; i < count(string); i++ {
             let char = Array(string)[i]
             
             switch char {
@@ -112,7 +112,7 @@ class TypeTranslator {
                 case "ж": romanization += "zh"
                 case "з": romanization += "z"
                 case "и": romanization += "i"
-                case "й": if i < countElements(string)-1 && (string[i+1] == "а" || string[i+1] == "у" || string[i+1] == "ы" || string[i+1] == "э") {
+                case "й": if i < count(string)-1 && (string[i+1] == "а" || string[i+1] == "у" || string[i+1] == "ы" || string[i+1] == "э") {
                     romanization += "y·"
                 }
                 else {
@@ -135,7 +135,7 @@ class TypeTranslator {
                 case "ш": romanization += "sh"
                 case "щ": romanization += "shch"
                 case "ъ": romanization += "\""
-                case "ы": if i < countElements(string)-1 && (string[i+1] == "а" || string[i+1] == "у" || string[i+1] == "ы" || string[i+1] == "э") {
+                case "ы": if i < count(string)-1 && (string[i+1] == "а" || string[i+1] == "у" || string[i+1] == "ы" || string[i+1] == "э") {
                     romanization += "y·"
                 }
                 else if i > 0 && isVowelChar(string[i-1]) {

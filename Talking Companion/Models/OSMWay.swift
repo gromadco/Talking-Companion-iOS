@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class OSMWay : NSObject {
+class OSMWay {
    
     // MARK: - Properties
     

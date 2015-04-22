@@ -33,7 +33,7 @@ class OSMTilesDownloader: NSObject {
             // downloading .osm
             let request = NSURLRequest(URL: NSURL(string: box.url)!)
             let operation = AFHTTPRequestOperation(request: request)
-            var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+            var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
             path += "/map\(index).osm"
             operation.outputStream = NSOutputStream(toFileAtPath: path, append: false)
 

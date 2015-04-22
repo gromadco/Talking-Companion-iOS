@@ -13,7 +13,7 @@ let kOneDay:NSTimeInterval = 60*60*24
 
 // TODO: name is a required property
 
-class OSMNode: NSObject {
+class OSMNode {
     
     // MARK: - Properties
     
@@ -48,7 +48,7 @@ class OSMNode: NSObject {
     
     // TODO: impelement
     var type:String {
-        var type:String = "\(countElements(types)) types: \(types)"
+        var type:String = "\(count(types)) types: \(types)"
         return type
     }
     

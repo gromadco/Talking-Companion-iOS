@@ -10,12 +10,13 @@ import UIKit
 import CoreLocation
 import ObjectiveC
 
-class OSMTile: NSObject {
+class OSMTile: Equatable, Hashable {
     var uid:Int?
     let x:Int
     let y:Int
     let zoom:Int
     var url:String { return "\(OSMTileURL)\(zoom)/\(x)/\(y).png" }
+    var hashValue: Int { return "\(x):\(y):\(zoom)".hashValue }
    
     init(x:Int, y:Int, zoom:Int) {
         self.x = x
@@ -63,7 +64,7 @@ class OSMTile: NSObject {
         let rightBottom = OSMTile(latitude: center.latitude + deltas.latitude/4, longitude: center.longitude - deltas.longitude/4, zoom: zoom)
         
         let set = NSMutableSet(array: [self, leftTop, leftMiddle, leftBottom, centerTop, centerBottom, rightTop, rightMiddle, rightBottom])
-        let tiles:[OSMTile] = set.allObjects as [OSMTile]
+        let tiles:[OSMTile] = set.allObjects as! [OSMTile]
         return tiles
     }
     
@@ -88,16 +89,9 @@ class OSMTile: NSObject {
     func description() -> String {
         return "(\(x); \(y); \(zoom))"
     }
-    
-    override func isEqual(object: AnyObject!) -> Bool {
-        if let tile = object as? OSMTile {
-            return x == tile.x && y == tile.y && zoom == tile.zoom
-        }
-        
-        return false
-    }
-    
-    func hash() -> Int {
-        return "\(x):\(y):\(zoom)".hash
-    }
+
+}
+
+func ==(lhs: OSMTile, rhs: OSMTile) -> Bool {
+    return lhs.x == rhs.x && lhs.y == rhs.y && lhs.zoom == rhs.zoom
 }

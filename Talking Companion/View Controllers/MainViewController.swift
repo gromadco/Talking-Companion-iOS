@@ -85,7 +85,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "requestAccessToLocationServices", name: kApplicationBecomeActiveNotification, object: nil)
         self.settingsButton.setTitle(kSettingsButtonIcon, forState: .Normal)
         
-        let language = NSLocale.preferredLanguages().first as String
+        let language = NSLocale.preferredLanguages().first as! String
         self.transtalor = TypeTranslator(language: language)
         
         self.updateNodesFromDB()
@@ -116,7 +116,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         
         let index = NSUserDefaults.standardUserDefaults().integerForKey(kVoiceFrequency)
         let settings = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Settings", ofType: "plist")!)!
-        let durations = settings["Durations"] as [Double]
+        let durations = settings["Durations"] as! [Double]
         announceDistanceTimeInterval = durations[index]
         announceDistanceTimer = NSTimer.scheduledTimerWithTimeInterval(announceDistanceTimeInterval!, target: self, selector: "announceClosestPlace", userInfo: nil, repeats: true)
         announceDistanceTimer!.fire()
@@ -184,7 +184,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         if let current = self.currentLocation {
             let centerTile = OSMTile(latitude: current.coordinate.latitude, longitude: current.coordinate.longitude, zoom: kDefaultZoom)
             
-            let shoulUpdateFrequencyTimer = countElements(self.nodes) == 0
+            let shoulUpdateFrequencyTimer = count(self.nodes) == 0
             
             var tmpNodes = [OSMNode]()
             let neighboringTiles = centerTile.neighboringTiles()
@@ -222,7 +222,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         
         var closestPlace:OSMNode?
         var distanceToClosestPlace:CLLocationDistance = Double(INT_MAX)
-        let bound = min(countElements(nodes), kMaxCountClosestPlaces)
+        let bound = min(count(nodes), kMaxCountClosestPlaces)
         
         // choose unannounced
         for var i = 0; i < bound; i++ {
@@ -276,7 +276,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     
     // TODO: rewrite
     func distanceStringWithDistance(var distance:CLLocationDistance) -> String {
-        let language = NSLocale.preferredLanguages().first as String
+        let language = NSLocale.preferredLanguages().first as! String
         var isMetric = true
         if language != "ru" && !NSLocale.currentLocale().objectForKey(NSLocaleUsesMetricSystem)!.boolValue! {
             isMetric = false
@@ -285,24 +285,24 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
         var distanceString = ""
         if isMetric {
             if distance > kMaxDistance {
-                distanceString = NSString(format: "%@ %d %@", NSLocalizedString("OverDistance", comment: ""), Int(kMaxDistance) / kKilometer, NSLocalizedString("KilometerShort", comment: ""))
+                distanceString = NSString(format: "%@ %d %@", NSLocalizedString("OverDistance", comment: ""), Int(kMaxDistance) / kKilometer, NSLocalizedString("KilometerShort", comment: "")) as String
             }
             else if distance > Double(kKilometer) {
-                distanceString = NSString(format: "%.1lf %@", distance / Double(kKilometer), NSLocalizedString("KilometerShort", comment: ""))
+                distanceString = NSString(format: "%.1lf %@", distance / Double(kKilometer), NSLocalizedString("KilometerShort", comment: "")) as String
             }
             else {
-                distanceString = NSString(format: "%d %@", Int(distance), NSLocalizedString("MeterShort", comment: ""))
+                distanceString = NSString(format: "%d %@", Int(distance), NSLocalizedString("MeterShort", comment: "")) as String
             }
         }
         else {
             if distance > kMaxDistance * kMetersToFeet {
-                distanceString = NSString(format: "%@ %d %@", NSLocalizedString("OverDistance", comment: ""), Int(kMaxDistance * kMetersToFeet) / kKilometer, NSLocalizedString("MilesShort", comment: ""))
+                distanceString = NSString(format: "%@ %d %@", NSLocalizedString("OverDistance", comment: ""), Int(kMaxDistance * kMetersToFeet) / kKilometer, NSLocalizedString("MilesShort", comment: "")) as String
             }
             else if distance > Double(kMaxFeet) {
-                distanceString = NSString(format: "%.1lf %@", distance / Double(kMaxFeet), NSLocalizedString("MilesShort", comment: ""))
+                distanceString = NSString(format: "%.1lf %@", distance / Double(kMaxFeet), NSLocalizedString("MilesShort", comment: "")) as String
             }
             else {
-                distanceString = NSString(format: "%d %@", Int(distance), NSLocalizedString("FeetShort", comment: ""))
+                distanceString = NSString(format: "%d %@", Int(distance), NSLocalizedString("FeetShort", comment: "")) as String
             }
         }
         
@@ -350,7 +350,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, OSMTilesD
     
     // start or stop downloading
     func checkLocationsPermissions() {
-        let isLocationEnabled = CLLocationManager.locationServicesEnabled() && (CLLocationManager.authorizationStatus() == .Authorized || CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse)
+        let isLocationEnabled = CLLocationManager.locationServicesEnabled()
+//        let correctPermissions = CLLocationManager.authorizationStatus() == .Authorized || CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse)
         
         if isLocationEnabled {
             tilesTimer = NSTimer.scheduledTimerWithTimeInterval(kDownloadTilesTimeInterval, target: self, selector: "downloadNeighboringTiles", userInfo: nil, repeats: true)

@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import Talking_Companion
 
 class OSMBoundingBoxTests: XCTestCase {
     

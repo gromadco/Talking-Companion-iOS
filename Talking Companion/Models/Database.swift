@@ -87,7 +87,7 @@ class Database: NSObject {
             let type = component.componentsSeparatedByString("=")
             let key = type.first!
             let value = type.last!
-            if countElements(value) > 0 {
+            if count(value) > 0 {
                 types[key] = value
             }
         }

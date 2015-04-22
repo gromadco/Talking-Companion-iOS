@@ -8,7 +8,7 @@
 
 import UIKit
 import XCTest
-import Talking_Companion
+//import Talking_Companion
 import CoreLocation
 
 let degreeThreshold = 0.0001

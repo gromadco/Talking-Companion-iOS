@@ -20,8 +20,8 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         super.viewDidLoad()
         
         let settings = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Settings", ofType: "plist")!)!
-        self.intervalsDutation = settings["Durations"] as [Int]
-        self.intervalsLabels = settings["Labels"] as [String]
+        self.intervalsDutation = settings["Durations"] as! [Int]
+        self.intervalsLabels = settings["Labels"] as! [String]
         
         self.loadDefaults()
     }

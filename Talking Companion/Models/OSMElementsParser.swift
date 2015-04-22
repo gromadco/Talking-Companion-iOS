@@ -60,7 +60,7 @@ class OSMElementsParser {
         NSLog("start parsing nodes: \(nodesXML.count)")
         
         for nodeXML:AnyObject in nodesXML {
-            let element:SMXMLElement = nodeXML as SMXMLElement
+            let element:SMXMLElement = nodeXML as! SMXMLElement
             
             // required properties
             let uid:String = element.attributeNamed("id")
@@ -112,7 +112,7 @@ class OSMElementsParser {
         else { return [OSMWay]() }
         
         for wayXML:AnyObject in waysXML {
-            let element:SMXMLElement = wayXML as SMXMLElement
+            let element:SMXMLElement = wayXML as! SMXMLElement
             
             // required properties
             let wayId = element.attributeNamed("id")
@@ -121,7 +121,7 @@ class OSMElementsParser {
             // check nodes of way
             if let nodesXML = element.childrenNamed("nd") {
                 for nodeXML:AnyObject in nodesXML {
-                    let nodeElement = nodeXML as SMXMLElement
+                    let nodeElement = nodeXML as! SMXMLElement
                     let ref = nodeElement.attributeNamed("ref")
                     way.nodes.append(ref)
                 }
@@ -130,7 +130,7 @@ class OSMElementsParser {
             // check tags
             if let tagsXML = element.childrenNamed("tag") {
                 for tagXML:AnyObject in tagsXML {
-                    let tagElement = tagXML as SMXMLElement
+                    let tagElement = tagXML as! SMXMLElement
                     
                     if tagElement.attributeNamed("k") == "amenity" {
                         way.amenity = tagElement.attributeNamed("v")

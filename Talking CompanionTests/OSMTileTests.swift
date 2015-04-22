@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import Talking_Companion
 
 let coordinatesThreshold = 0.000001
 let deltasThreshold = 0.00000000001
@@ -50,12 +49,13 @@ class OSMTileTests: XCTestCase {
     func testNeighboringTiles() {
         let tile = OSMTile(x: 39584, y: 25406, zoom: 16)
         let neighboringTiles = tile.neighboringTiles()
-        let neighboringTilesSet = NSSet(array: neighboringTiles)
+        let neighboringTilesSet = Set(neighboringTiles)
 
-        XCTAssert(neighboringTilesSet.containsObject(OSMTile(x: 39583, y: 25406, zoom: 16)))
-        XCTAssert(neighboringTilesSet.containsObject(OSMTile(x: 39584, y: 25406, zoom: 16)))
-        XCTAssert(neighboringTilesSet.containsObject(OSMTile(x: 39583, y: 25405, zoom: 16)))
-        XCTAssert(neighboringTilesSet.containsObject(OSMTile(x: 39584, y: 25405, zoom: 16)))
+
+        XCTAssert(neighboringTilesSet.contains(OSMTile(x: 39583, y: 25406, zoom: 16)))
+        XCTAssert(neighboringTilesSet.contains(OSMTile(x: 39584, y: 25406, zoom: 16)))
+        XCTAssert(neighboringTilesSet.contains(OSMTile(x: 39583, y: 25405, zoom: 16)))
+        XCTAssert(neighboringTilesSet.contains(OSMTile(x: 39584, y: 25405, zoom: 16)))
     }
     
     func testBoundingBox() {
