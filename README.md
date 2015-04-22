@@ -2,12 +2,14 @@
 
 An app that announces places nearby. 
 
+## Compatibility
+
+Swift 1.2 and Xcode 6.3, 6.4b.
+
 ## How to Build
 
-1. Download and install latest version of Xcode with supporting Swift (e.g. https://imzdl.com/osx.php).
-2. Clone the project.
-3. Launch "Talking Companion.xcodeproj".
-4. Run the project (Cmd + R).
+1. Install [Carthage](https://github.com/Carthage/Carthage#installing-carthage). 
+2. Run `carthage update`.
 
 ## Beta testers
 
