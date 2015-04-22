@@ -83,13 +83,12 @@
 		BD79E65F1A0B78FC00027690 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E6521A0B78FC00027690 /* Database.swift */; };
 		BD79E6601A0B78FC00027690 /* TypeTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E6531A0B78FC00027690 /* TypeTranslator.swift */; };
 		BD7A7C8C19FA57D7001F5005 /* translation.json in Resources */ = {isa = PBXBuildFile; fileRef = BD7A7C8B19FA57D7001F5005 /* translation.json */; };
-		BD7D7FFC199A4DCD0069A19D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FFB199A4DCD0069A19D /* SwiftyJSON.swift */; };
-		BD7D7FFD199A4DCD0069A19D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D7FFB199A4DCD0069A19D /* SwiftyJSON.swift */; };
 		BD7D8000199A4E730069A19D /* libbz2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD11497B1993D406001A07A4 /* libbz2.1.0.dylib */; };
 		BD7D800A199A504D0069A19D /* empty.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD7D8007199A504D0069A19D /* empty.osm */; };
 		BD7D800C199A504D0069A19D /* map.osm in Resources */ = {isa = PBXBuildFile; fileRef = BD7D8008199A504D0069A19D /* map.osm */; };
 		BD9EEF4619924A9200BC8A02 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD9EEF4519924A9200BC8A02 /* Settings.plist */; };
 		BDA72E8619F13F3000C7DA25 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BDA72E8819F13F3000C7DA25 /* Localizable.strings */; };
+		BDB2F1671AE804DE0082DE27 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB2F1661AE804DE0082DE27 /* SwiftyJSON.framework */; };
 		BDB58981195888670090E178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB58980195888670090E178 /* AppDelegate.swift */; };
 		BDB58986195888670090E178 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDB58984195888670090E178 /* Main.storyboard */; };
 		BDB58988195888670090E178 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB58987195888670090E178 /* Images.xcassets */; };
@@ -220,7 +219,6 @@
 		BD79E6521A0B78FC00027690 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		BD79E6531A0B78FC00027690 /* TypeTranslator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeTranslator.swift; sourceTree = "<group>"; };
 		BD7A7C8B19FA57D7001F5005 /* translation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = translation.json; path = scripts/translation.json; sourceTree = SOURCE_ROOT; };
-		BD7D7FFB199A4DCD0069A19D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		BD7D7FFE199A4E530069A19D /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		BD7D8007199A504D0069A19D /* empty.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = empty.osm; path = "../Talking Companion/Resources/empty.osm"; sourceTree = "<group>"; };
 		BD7D8008199A504D0069A19D /* map.osm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = map.osm; path = "../Talking Companion/Resources/map.osm"; sourceTree = "<group>"; };
@@ -228,6 +226,7 @@
 		BDA72E8A19F13F3300C7DA25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BDA72E8B19F141A200C7DA25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BDA72E8C19F1432700C7DA25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BDB2F1661AE804DE0082DE27 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
 		BDB5897B195888670090E178 /* Talking Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Talking Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB5897F195888670090E178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDB58980195888670090E178 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -245,6 +244,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDB2F1671AE804DE0082DE27 /* SwiftyJSON.framework in Frameworks */,
 				BD0B41841A00161700B11A83 /* SystemConfiguration.framework in Frameworks */,
 				BD0B41821A00160F00B11A83 /* libz.dylib in Frameworks */,
 				BD71880E1A029F0300FBB2EE /* libGoogleAnalyticsServices.a in Frameworks */,
@@ -277,7 +277,6 @@
 				BD7188021A029F0300FBB2EE /* GAI */,
 				BD5E01201A12053D0024C715 /* Graphics */,
 				BD0C9F321967388A003A88AC /* SMXMLDocument */,
-				BD7D7FFA199A4DCD0069A19D /* SwiftyJSON */,
 				BD7A7C8B19FA57D7001F5005 /* translation.json */,
 			);
 			path = Resources;
@@ -405,14 +404,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		BD7D7FFA199A4DCD0069A19D /* SwiftyJSON */ = {
-			isa = PBXGroup;
-			children = (
-				BD7D7FFB199A4DCD0069A19D /* SwiftyJSON.swift */,
-			);
-			path = SwiftyJSON;
-			sourceTree = "<group>";
-		};
 		BDB58972195888670090E178 = {
 			isa = PBXGroup;
 			children = (
@@ -482,6 +473,7 @@
 		BDFFA009195C367700288E6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BDB2F1661AE804DE0082DE27 /* SwiftyJSON.framework */,
 				BD0B41831A00161700B11A83 /* SystemConfiguration.framework */,
 				BD0B41811A00160F00B11A83 /* libz.dylib */,
 				BD0B417F1A00160400B11A83 /* AdSupport.framework */,
@@ -506,6 +498,7 @@
 				BDB58977195888670090E178 /* Sources */,
 				BDB58978195888670090E178 /* Frameworks */,
 				BDB58979195888670090E178 /* Resources */,
+				BDB2F1681AE804F90082DE27 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -617,6 +610,24 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BDB2F1681AE804F90082DE27 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BDB58977195888670090E178 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -638,7 +649,6 @@
 				BD79E65B1A0B78FC00027690 /* OSMNode.swift in Sources */,
 				BD0C9F571967388A003A88AC /* AFURLSessionManager.m in Sources */,
 				BD0C9F491967388A003A88AC /* AFHTTPRequestOperationManager.m in Sources */,
-				BD7D7FFC199A4DCD0069A19D /* SwiftyJSON.swift in Sources */,
 				BD79E6581A0B78FC00027690 /* NSData+bz2.m in Sources */,
 				BDB58981195888670090E178 /* AppDelegate.swift in Sources */,
 				BD0C9F551967388A003A88AC /* AFURLResponseSerialization.m in Sources */,
@@ -683,7 +693,6 @@
 				BD2241751A1E3C2A00BD3A41 /* OSMBoundingBox.swift in Sources */,
 				BD0C9F661967388A003A88AC /* SMXMLDocument.m in Sources */,
 				BD0C9F5C1967388A003A88AC /* FMDatabaseAdditions.m in Sources */,
-				BD7D7FFD199A4DCD0069A19D /* SwiftyJSON.swift in Sources */,
 				BD0C9F4C1967388A003A88AC /* AFHTTPSessionManager.m in Sources */,
 				BD0C9F4A1967388A003A88AC /* AFHTTPRequestOperationManager.m in Sources */,
 				BD0C9F5E1967388A003A88AC /* FMDatabasePool.m in Sources */,
@@ -846,6 +855,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Talking Companion/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -864,6 +877,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Talking Companion/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -367,7 +367,7 @@ extension JSON {
 
 // MARK: - LiteralConvertible
 
-extension JSON: Swift.StringLiteralConvertible {
+extension JSON: StringLiteralConvertible {
 	
 	public init(stringLiteral value: StringLiteralType) {
 		self.init(value)
@@ -382,28 +382,28 @@ extension JSON: Swift.StringLiteralConvertible {
 	}
 }
 
-extension JSON: Swift.IntegerLiteralConvertible {
+extension JSON: IntegerLiteralConvertible {
 
 	public init(integerLiteral value: IntegerLiteralType) {
 		self.init(value)
 	}
 }
 
-extension JSON: Swift.BooleanLiteralConvertible {
+extension JSON: BooleanLiteralConvertible {
 	
 	public init(booleanLiteral value: BooleanLiteralType) {
 		self.init(value)
 	}
 }
 
-extension JSON: Swift.FloatLiteralConvertible {
+extension JSON: FloatLiteralConvertible {
 	
 	public init(floatLiteral value: FloatLiteralType) {
 		self.init(value)
 	}
 }
 
-extension JSON: Swift.DictionaryLiteralConvertible {
+extension JSON: DictionaryLiteralConvertible {
 	
 	public init(dictionaryLiteral elements: (String, AnyObject)...) {
 		var dictionary_ = [String : AnyObject]()
@@ -414,14 +414,14 @@ extension JSON: Swift.DictionaryLiteralConvertible {
 	}
 }
 
-extension JSON: Swift.ArrayLiteralConvertible {
+extension JSON: ArrayLiteralConvertible {
 	
 	public init(arrayLiteral elements: AnyObject...) {
 		self.init(elements)
 	}
 }
 
-extension JSON: Swift.NilLiteralConvertible {
+extension JSON: NilLiteralConvertible {
 	
 	public init(nilLiteral: ()) {
 		self.init(NSNull())
@@ -430,7 +430,7 @@ extension JSON: Swift.NilLiteralConvertible {
 
 // MARK: - Raw
 
-extension JSON: Swift.RawRepresentable {
+extension JSON: RawRepresentable {
 	
 	public init?(rawValue: AnyObject) {
 		if JSON(rawValue).type == .Unknown {
@@ -472,7 +472,7 @@ extension JSON: Swift.RawRepresentable {
 
 // MARK: - Printable, DebugPrintable
 
-extension JSON: Swift.Printable, Swift.DebugPrintable {
+extension JSON: Printable, DebugPrintable {
     
     public var description: String {
         if let string = self.rawString(options:.PrettyPrinted) {
@@ -581,7 +581,7 @@ extension JSON {
 
 // MARK: - Bool
 
-extension JSON: Swift.BooleanType {
+extension JSON: BooleanType {
     
     //Optional bool
     public var bool: Bool? {
@@ -1014,7 +1014,7 @@ extension JSON {
 }
 
 //MARK: - Comparable
-extension JSON: Swift.Comparable {}
+extension JSON: Comparable {}
 
 public func ==(lhs: JSON, rhs: JSON) -> Bool {
     
@@ -1107,7 +1107,7 @@ private let falseObjCType = String.fromCString(falseNumber.objCType)
 
 // MARK: - NSNumber: Comparable
 
-extension NSNumber: Swift.Comparable {
+extension NSNumber: Comparable {
     var isBool:Bool {
         get {
             let objCType = String.fromCString(self.objCType)

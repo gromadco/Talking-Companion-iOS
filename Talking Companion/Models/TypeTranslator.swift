@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 let kEnglishLocale = "en"
 let kRussianLocale = "ru"
