@@ -21,8 +21,8 @@ extension String {
 
 class TypeTranslator {
     
+    private let json:JSON
     private let language:String
-    public let json:JSON
     private let relevantTypes:[String]
     
     init (var language:String) {

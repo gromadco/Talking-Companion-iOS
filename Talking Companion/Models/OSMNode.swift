@@ -17,8 +17,8 @@ class OSMNode {
     
     // MARK: - Properties
     
-    var uid:String
-    var location:CLLocation
+    let uid:String
+    let location:CLLocation
     var announcedDate:NSDate?
     lazy var types = [String:String]()
     var name:String!
@@ -31,9 +31,9 @@ class OSMNode {
             
             let announcedInterval = NSDate().timeIntervalSinceDate(announcedDate!)
             if announcedInterval > kOneDay {
-                return false;
+                return false
             }
-            return true;
+            return true
         }
     }
 

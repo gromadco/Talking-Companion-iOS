@@ -18,15 +18,16 @@ class OSMElementsParser {
     
     // MARK: - Properties
     
-    var nodes = [OSMNode]()
-    var ways = [OSMWay]()
-    let xmlData:NSData?
+    private(set) var nodes = [OSMNode]()
+    private(set) var ways = [OSMWay]()
+    private let xmlData:NSData?
     
     // MARK: - Initializing
     
+    // TODO: - Check a data for nil value
     convenience init(filePath:String)  {
-        let data = NSData(contentsOfFile:filePath)!
-        self.init(xmlData:data)
+        let data = NSData(contentsOfFile:filePath)
+        self.init(xmlData:data!)
     }
     
     init(xmlData:NSData) {
@@ -87,7 +88,7 @@ class OSMElementsParser {
                 nodes.append(node)
             }
         }
-        return nodes;
+        return nodes
     }
     
     private func hasName(tags:[SMXMLElement]) -> Bool {
@@ -107,7 +108,7 @@ class OSMElementsParser {
         let parser:SMXMLDocument = self.parser() as SMXMLDocument
         var ways = [OSMWay]()
         
-        let waysXML = parser.childrenNamed("way");
+        let waysXML = parser.childrenNamed("way")
         if let _ = waysXML{}
         else { return [OSMWay]() }
         
@@ -149,6 +150,6 @@ class OSMElementsParser {
             
             ways.append(way)
         }
-        return ways;
+        return ways
     }
 }

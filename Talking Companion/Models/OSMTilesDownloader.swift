@@ -47,7 +47,7 @@ class OSMTilesDownloader: NSObject {
                         Database.saveNodes(parser.nodes, forTileId: tileId)
                     }
                     self.delegate?.tileDownloaded()
-                };
+                }
             },
             failure: { [unowned self] (_, error) in
                 NSLog("tile downloading failed")

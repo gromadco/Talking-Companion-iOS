@@ -21,11 +21,4 @@ let kApplicationBecomeActiveNotification = "ApplicationBecomeActiveNotification"
 // MARK: - Network
 
 let OSMBoundingBoxURL = "http://api.openstreetmap.org/api/0.6/map?bbox="
-
 let OSMTileURL = "http://tile.openstreetmap.org/"
-
-let OSMExtractURL = "https://s3.amazonaws.com/metro-extracts.mapzen.com/"
-let OSMExtractFormat = ".osm.bz2"
-
-let JSONExtractURL = "http://download.locograph.com/city/"
-let JSONExtractFormat = ".json.bz2"

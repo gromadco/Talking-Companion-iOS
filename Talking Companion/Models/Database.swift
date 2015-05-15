@@ -60,7 +60,7 @@ class Database: NSObject {
         }
         
         db.close()
-        return nodes;
+        return nodes
     }
     
     class func updateNode(node:OSMNode) {
@@ -97,7 +97,7 @@ class Database: NSObject {
         node.announcedDate = announcedDate
         node.types = types
         
-        return node;
+        return node
     }
 
     // MARK: - Tiles
@@ -133,7 +133,7 @@ class Database: NSObject {
             }
             db.close()
         }
-        return has;
+        return has
     }
     
     class func idOfTile(tile:OSMTile) -> Int {
@@ -146,7 +146,7 @@ class Database: NSObject {
             uid = Int(result.intForColumn("id"))
             db.close()
         }
-        return uid;
+        return uid
     }
     
     class func tiles() -> [OSMTile] {
