@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-let kOneDay:NSTimeInterval = 60*60*24
+let kOneDay:NSTimeInterval = 60 * 60 * 24
 
 // TODO: name is a required property
 
@@ -45,12 +45,6 @@ class OSMNode {
     }
     
     // MARK: - Other
-    
-    // TODO: impelement
-    var type:String {
-        var type:String = "\(count(types)) types: \(types)"
-        return type
-    }
     
     func description() -> String {
         let description:String = "element '\(name)' at (\(self.location.coordinate.latitude); \(self.location.coordinate.longitude))"

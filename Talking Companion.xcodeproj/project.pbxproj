@@ -65,6 +65,18 @@
 		BD2EB9BC1966F0E600C8DEDD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */; };
 		BD37C8611B1CB3FC00FAAAF5 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD37C83F1B1CB12A00FAAAF5 /* Nimble.framework */; };
 		BD37C8621B1CB3FF00FAAAF5 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD37C8401B1CB12A00FAAAF5 /* Quick.framework */; };
+		BD37C8651B1CB7B000FAAAF5 /* OSMNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD37C8641B1CB7B000FAAAF5 /* OSMNodeTests.swift */; };
+		BD37C8661B1CB89E00FAAAF5 /* OSMNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E64E1A0B78FC00027690 /* OSMNode.swift */; };
+		BD37C8671B1CB9A300FAAAF5 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E6521A0B78FC00027690 /* Database.swift */; };
+		BD37C8681B1CB9B000FAAAF5 /* OSMBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E64C1A0B78FC00027690 /* OSMBoundingBox.swift */; };
+		BD37C8691B1CB9B000FAAAF5 /* OSMElementsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E64D1A0B78FC00027690 /* OSMElementsParser.swift */; };
+		BD37C86A1B1CB9B000FAAAF5 /* OSMTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E64F1A0B78FC00027690 /* OSMTile.swift */; };
+		BD37C86B1B1CB9B000FAAAF5 /* OSMTilesDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E6501A0B78FC00027690 /* OSMTilesDownloader.swift */; };
+		BD37C86C1B1CB9B000FAAAF5 /* OSMWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E6511A0B78FC00027690 /* OSMWay.swift */; };
+		BD37C86D1B1CB9B000FAAAF5 /* TypeTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E6531A0B78FC00027690 /* TypeTranslator.swift */; };
+		BD37C86E1B1CB9B300FAAAF5 /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E6461A0B78FC00027690 /* Calculations.swift */; };
+		BD37C86F1B1CB9B300FAAAF5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E6471A0B78FC00027690 /* Constants.swift */; };
+		BD37C8701B1CC36D00FAAAF5 /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0C9F341967388A003A88AC /* SMXMLDocument.m */; };
 		BD536AAB196A7E1B0017345D /* OSMBoundingBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */; };
 		BD5E011F1A1169BE0024C715 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD5E011E1A1169BE0024C715 /* Launch Screen.xib */; };
 		BD5E01221A1205470024C715 /* logo_splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5E01211A1205470024C715 /* logo_splashscreen.png */; };
@@ -200,6 +212,7 @@
 		BD37C8401B1CB12A00FAAAF5 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = SOURCE_ROOT; };
 		BD37C8561B1CB3F700FAAAF5 /* xSpecTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = xSpecTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD37C8591B1CB3F700FAAAF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD37C8641B1CB7B000FAAAF5 /* OSMNodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMNodeTests.swift; sourceTree = "<group>"; };
 		BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMBoundingBoxTests.swift; sourceTree = "<group>"; };
 		BD5E011E1A1169BE0024C715 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		BD5E01211A1205470024C715 /* logo_splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_splashscreen.png; path = graphics/logo_splashscreen.png; sourceTree = SOURCE_ROOT; };
@@ -361,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				BD37C8581B1CB3F700FAAAF5 /* Supporting Files */,
+				BD37C8641B1CB7B000FAAAF5 /* OSMNodeTests.swift */,
 			);
 			path = xSpecTests;
 			sourceTree = "<group>";
@@ -707,6 +721,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD37C8691B1CB9B000FAAAF5 /* OSMElementsParser.swift in Sources */,
+				BD37C86F1B1CB9B300FAAAF5 /* Constants.swift in Sources */,
+				BD37C8671B1CB9A300FAAAF5 /* Database.swift in Sources */,
+				BD37C8681B1CB9B000FAAAF5 /* OSMBoundingBox.swift in Sources */,
+				BD37C86E1B1CB9B300FAAAF5 /* Calculations.swift in Sources */,
+				BD37C86D1B1CB9B000FAAAF5 /* TypeTranslator.swift in Sources */,
+				BD37C8651B1CB7B000FAAAF5 /* OSMNodeTests.swift in Sources */,
+				BD37C8661B1CB89E00FAAAF5 /* OSMNode.swift in Sources */,
+				BD37C86A1B1CB9B000FAAAF5 /* OSMTile.swift in Sources */,
+				BD37C86B1B1CB9B000FAAAF5 /* OSMTilesDownloader.swift in Sources */,
+				BD37C8701B1CC36D00FAAAF5 /* SMXMLDocument.m in Sources */,
+				BD37C86C1B1CB9B000FAAAF5 /* OSMWay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -853,6 +879,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -869,6 +896,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "Talking Companion/Talking_Companion-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Talking Companion.app/Talking Companion";
 			};
 			name = Debug;
@@ -877,6 +907,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -890,6 +921,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "Talking Companion/Talking_Companion-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Talking Companion.app/Talking Companion";
 			};
 			name = Release;
