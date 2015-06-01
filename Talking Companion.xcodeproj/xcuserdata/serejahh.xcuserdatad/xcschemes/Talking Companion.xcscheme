@@ -20,6 +20,34 @@
                ReferencedContainer = "container:Talking Companion.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BD37C8461B1CB34800FAAAF5"
+               BuildableName = "xSpec Tests.xctest"
+               BlueprintName = "xSpec Tests"
+               ReferencedContainer = "container:Talking Companion.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BD37C8551B1CB3F700FAAAF5"
+               BuildableName = "xSpecTests.xctest"
+               BlueprintName = "xSpecTests"
+               ReferencedContainer = "container:Talking Companion.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -35,6 +63,26 @@
                BlueprintIdentifier = "BDB5898C195888670090E178"
                BuildableName = "Talking CompanionTests.xctest"
                BlueprintName = "Talking CompanionTests"
+               ReferencedContainer = "container:Talking Companion.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BD37C8461B1CB34800FAAAF5"
+               BuildableName = "xSpec Tests.xctest"
+               BlueprintName = "xSpec Tests"
+               ReferencedContainer = "container:Talking Companion.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BD37C8551B1CB3F700FAAAF5"
+               BuildableName = "xSpecTests.xctest"
+               BlueprintName = "xSpecTests"
                ReferencedContainer = "container:Talking Companion.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -58,7 +106,8 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "NO">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BDB5897A195888670090E178"
@@ -80,7 +129,8 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BDB5897A195888670090E178"

@@ -63,6 +63,8 @@
 		BD22417B1A1E3C3F00BD3A41 /* OSMElementsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79E64D1A0B78FC00027690 /* OSMElementsParser.swift */; };
 		BD2E7C80195AEAFB00D57518 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */; };
 		BD2EB9BC1966F0E600C8DEDD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */; };
+		BD37C8611B1CB3FC00FAAAF5 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD37C83F1B1CB12A00FAAAF5 /* Nimble.framework */; };
+		BD37C8621B1CB3FF00FAAAF5 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD37C8401B1CB12A00FAAAF5 /* Quick.framework */; };
 		BD536AAB196A7E1B0017345D /* OSMBoundingBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */; };
 		BD5E011F1A1169BE0024C715 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD5E011E1A1169BE0024C715 /* Launch Screen.xib */; };
 		BD5E01221A1205470024C715 /* logo_splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5E01211A1205470024C715 /* logo_splashscreen.png */; };
@@ -120,6 +122,13 @@
 			remoteInfo = "Talking Companion";
 		};
 		BD0C9F79196738A9003A88AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BDB58973195888670090E178 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDB5897A195888670090E178;
+			remoteInfo = "Talking Companion";
+		};
+		BD37C85C1B1CB3F700FAAAF5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BDB58973195888670090E178 /* Project object */;
 			proxyType = 1;
@@ -187,6 +196,10 @@
 		BD11497B1993D406001A07A4 /* libbz2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libbz2.1.0.dylib; path = usr/lib/libbz2.1.0.dylib; sourceTree = SDKROOT; };
 		BD2E7C7F195AEAFB00D57518 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BD2EB9BB1966F0E600C8DEDD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		BD37C83F1B1CB12A00FAAAF5 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = SOURCE_ROOT; };
+		BD37C8401B1CB12A00FAAAF5 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = SOURCE_ROOT; };
+		BD37C8561B1CB3F700FAAAF5 /* xSpecTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = xSpecTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD37C8591B1CB3F700FAAAF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD536AAA196A7E1B0017345D /* OSMBoundingBoxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMBoundingBoxTests.swift; sourceTree = "<group>"; };
 		BD5E011E1A1169BE0024C715 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		BD5E01211A1205470024C715 /* logo_splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_splashscreen.png; path = graphics/logo_splashscreen.png; sourceTree = SOURCE_ROOT; };
@@ -240,6 +253,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BD37C8531B1CB3F700FAAAF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD37C8621B1CB3FF00FAAAF5 /* Quick.framework in Frameworks */,
+				BD37C8611B1CB3FC00FAAAF5 /* Nimble.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BDB58978195888670090E178 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -335,6 +357,22 @@
 			path = SMXMLDocument;
 			sourceTree = "<group>";
 		};
+		BD37C8571B1CB3F700FAAAF5 /* xSpecTests */ = {
+			isa = PBXGroup;
+			children = (
+				BD37C8581B1CB3F700FAAAF5 /* Supporting Files */,
+			);
+			path = xSpecTests;
+			sourceTree = "<group>";
+		};
+		BD37C8581B1CB3F700FAAAF5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BD37C8591B1CB3F700FAAAF5 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		BD4FBD1A1963179200D8F725 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,6 +447,7 @@
 			children = (
 				BDB5897D195888670090E178 /* Talking Companion */,
 				BDB58990195888670090E178 /* Talking CompanionTests */,
+				BD37C8571B1CB3F700FAAAF5 /* xSpecTests */,
 				BDFFA009195C367700288E6D /* Frameworks */,
 				BDB5897C195888670090E178 /* Products */,
 			);
@@ -419,6 +458,7 @@
 			children = (
 				BDB5897B195888670090E178 /* Talking Companion.app */,
 				BDB5898D195888670090E178 /* Talking CompanionTests.xctest */,
+				BD37C8561B1CB3F700FAAAF5 /* xSpecTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -473,6 +513,8 @@
 		BDFFA009195C367700288E6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD37C83F1B1CB12A00FAAAF5 /* Nimble.framework */,
+				BD37C8401B1CB12A00FAAAF5 /* Quick.framework */,
 				BDB2F1661AE804DE0082DE27 /* SwiftyJSON.framework */,
 				BD0B41831A00161700B11A83 /* SystemConfiguration.framework */,
 				BD0B41811A00160F00B11A83 /* libz.dylib */,
@@ -491,6 +533,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BD37C8551B1CB3F700FAAAF5 /* xSpecTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD37C85E1B1CB3F700FAAAF5 /* Build configuration list for PBXNativeTarget "xSpecTests" */;
+			buildPhases = (
+				BD37C8521B1CB3F700FAAAF5 /* Sources */,
+				BD37C8531B1CB3F700FAAAF5 /* Frameworks */,
+				BD37C8541B1CB3F700FAAAF5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BD37C85D1B1CB3F700FAAAF5 /* PBXTargetDependency */,
+			);
+			name = xSpecTests;
+			productName = xSpecTests;
+			productReference = BD37C8561B1CB3F700FAAAF5 /* xSpecTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		BDB5897A195888670090E178 /* Talking Companion */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDB58997195888670090E178 /* Build configuration list for PBXNativeTarget "Talking Companion" */;
@@ -541,6 +601,10 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "serejahh inc.";
 				TargetAttributes = {
+					BD37C8551B1CB3F700FAAAF5 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = BDB5897A195888670090E178;
+					};
 					BDB5897A195888670090E178 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = FLCRYA4YN2;
@@ -575,11 +639,19 @@
 			targets = (
 				BDB5897A195888670090E178 /* Talking Companion */,
 				BDB5898C195888670090E178 /* Talking CompanionTests */,
+				BD37C8551B1CB3F700FAAAF5 /* xSpecTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BD37C8541B1CB3F700FAAAF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BDB58979195888670090E178 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -618,6 +690,8 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -629,6 +703,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BD37C8521B1CB3F700FAAAF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BDB58977195888670090E178 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -728,6 +809,11 @@
 			target = BDB5897A195888670090E178 /* Talking Companion */;
 			targetProxy = BD0C9F79196738A9003A88AC /* PBXContainerItemProxy */;
 		};
+		BD37C85D1B1CB3F700FAAAF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BDB5897A195888670090E178 /* Talking Companion */;
+			targetProxy = BD37C85C1B1CB3F700FAAAF5 /* PBXContainerItemProxy */;
+		};
 		BD536AAD196A82780017345D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BDB5897A195888670090E178 /* Talking Companion */;
@@ -763,6 +849,51 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BD37C85F1B1CB3F700FAAAF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = xSpecTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Talking Companion.app/Talking Companion";
+			};
+			name = Debug;
+		};
+		BD37C8601B1CB3F700FAAAF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = xSpecTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Talking Companion.app/Talking Companion";
+			};
+			name = Release;
+		};
 		BDB58995195888670090E178 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -933,6 +1064,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BD37C85E1B1CB3F700FAAAF5 /* Build configuration list for PBXNativeTarget "xSpecTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD37C85F1B1CB3F700FAAAF5 /* Debug */,
+				BD37C8601B1CB3F700FAAAF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		BDB58976195888670090E178 /* Build configuration list for PBXProject "Talking Companion" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
